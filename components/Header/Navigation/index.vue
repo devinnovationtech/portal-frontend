@@ -17,6 +17,7 @@
           :title="menuItems.title"
           :link="menuItems.link"
           :items="menuItems.items"
+          :gtag-event="menuItems.gtagEvent"
           @close="closeDropdownMenu(activeMenu)"
         />
       </transition>
@@ -50,9 +51,9 @@ export default {
       this.activeMenu = id
       this.$emit('active', id)
     },
-    closeDropdownMenu (activeMenu) {
+    closeDropdownMenu (index) {
       // active menu title get menu title based on index
-      const activeMenuTitle = this.menus[activeMenu - 1].title
+      const activeMenuTitle = this.menus[index - 1].title
       this.setActiveMenu(null)
       this.gtagCloseMenu(activeMenuTitle)
     },
