@@ -5,7 +5,7 @@
         class="py-6 md:py-12 flex flex-col gap-6 md:gap-12 bg-no-repeat"
         :style="{ backgroundImage: `url('/images/menu.svg')`, backgroundPosition: '100% 100%' }"
       >
-        <Link link="/" class="w-[fit-content]">
+        <Link link="/" class="w-[fit-content]" @click.native="gtagFooterLogo">
           <div class="flex items-center gap-4">
             <img src="/logo.png" alt="Logo Jawa Barat" width="65" height="76">
             <div>
@@ -25,3 +25,16 @@
     <FooterCopyright />
   </footer>
 </template>
+
+<script>
+export default {
+  methods: {
+    gtagFooterLogo () {
+      this.$gtag.event('click', {
+        event_category: 'click_logo',
+        value: 'Footer Logo'
+      })
+    }
+  }
+}
+</script>
