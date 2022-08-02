@@ -21,6 +21,7 @@ export const navigationMenu = [
     id: 1,
     title: 'Berita Jawa Barat',
     link: '/berita',
+    gtagEvent: 'click_menu_berita',
     items: [
       {
         id: 1,
@@ -77,6 +78,7 @@ export const navigationMenu = [
     id: 2,
     title: 'Layanan Publik',
     link: '',
+    gtagEvent: 'click_menu_layanan',
     items: [
       {
         id: 1,
@@ -126,6 +128,7 @@ export const navigationMenu = [
     id: 3,
     title: 'Dashboard Publik',
     link: '',
+    gtagEvent: 'click_menu_dashboard',
     items: [
       {
         id: 1,
@@ -161,6 +164,7 @@ export const navigationMenu = [
     id: 4,
     title: 'Profil Jawa Barat',
     link: '',
+    gtagEvent: 'click_menu_profil',
     items: [
       {
         id: 1,
