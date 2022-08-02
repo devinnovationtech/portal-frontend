@@ -1,6 +1,10 @@
 <template>
   <nav class="flex items-center">
-    <Link link="/" class="mr-auto w-8 h-8 lg:w-[60px] lg:h-[60px]">
+    <Link
+      link="/"
+      class="mr-auto w-8 h-8 lg:w-[60px] lg:h-[60px]"
+      @click.native="gtagHeaderLogo"
+    >
       <img src="/logo.png" width="55" height="60" alt="Beranda">
     </Link>
     <HeaderMenu class="hidden lg:flex">
@@ -73,6 +77,12 @@ export default {
         event_category: 'click_close_menu',
         event_label: `Click Close Menu ${title}`,
         value: title
+      })
+    },
+    gtagHeaderLogo () {
+      this.$gtag.event('click', {
+        event_category: 'click_logo',
+        value: 'Header Logo'
       })
     }
   }
