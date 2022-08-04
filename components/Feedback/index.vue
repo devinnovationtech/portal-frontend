@@ -144,7 +144,7 @@
             :loading="isLoading"
             @click="submitHandler"
           >
-            Kirim Survey
+            Kirim Masukan
           </Button>
         </div>
       </template>
