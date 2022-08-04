@@ -5,7 +5,7 @@
       <!-- Form Header -->
       <template #header>
         <h1 class="font-roboto font-medium text-[21px] leading-[34px] text-green-700 px-6 py-2 max-w-[568px]">
-          Berikan Masukkan untuk Perbaikan Portal Jabarprov
+          Berikan Masukan untuk Perbaikan Portal Jabarprov
         </h1>
       </template>
       <!-- Form Body -->
@@ -73,7 +73,7 @@
         </section>
 
         <section class="flex flex-col mb-5">
-          <label id="compliments" class="text-sm leading-6 text-gray-800 mb-4">
+          <label for="compliments" class="text-sm leading-6 text-gray-800 mb-4">
             Apa yang bermanfaat bagi Anda dari Portal Jabarprov?
           </label>
           <textarea
@@ -92,7 +92,7 @@
         </section>
 
         <section class="flex flex-col mb-5">
-          <label id="criticism" class="text-sm leading-6 text-gray-800 mb-4">
+          <label for="criticism" class="text-sm leading-6 text-gray-800 mb-4">
             Apakah yang perlu diperbaiki dari Portal Jabarprov?
           </label>
           <textarea
@@ -111,7 +111,7 @@
         </section>
 
         <section class="flex flex-col mb-5">
-          <label id="suggestions" class="text-sm leading-6 text-gray-800 mb-4">
+          <label for="suggestions" class="text-sm leading-6 text-gray-800 mb-4">
             Menurut Anda apa yang perlu disediakan dari Portal Jabarprov?
           </label>
           <textarea
