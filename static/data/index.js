@@ -278,21 +278,21 @@ export const featuredProgramMenu = [
   {
     id: 1,
     title: 'Sapawarga',
-    description: 'Temukan informasi dan akses layanan tentang Organisasi Perangkat Daerah di Jawa Barat',
+    description: 'Sapawarga bantu warga salurkan aspirasi, dapatkan informasi penting, dan akses layanan publik secara digital.',
     icon: '/icons/program-unggulan/sapawarga.svg',
     link: 'https://digitalservice.jabarprov.go.id/sapawarga'
   },
   {
     id: 2,
     title: 'Desa Digital',
-    description: 'Temukan informasi dan akses layanan tentang Organisasi Perangkat Daerah di Jawa Barat',
+    description: 'Desa Digital merupakan program pemberdayaan masyarakat melalui pemanfaatan teknologi digital dan internet dalam pengembangan potensi desa, pemasaran, dan percepatan akses serta pelayanan informasi. Melalui peningkatan literasi digital, masyarakat dapat memanfaatkan akses internet untuk meningkatkan kualitas hidup masyarakat dalam berbagai aspek, di antaranya pengelolaan lingkungan, ekonomi, pendidikan, peluang inovasi, dan stabilitas sosial.',
     icon: '/icons/program-unggulan/desa-digital.svg',
     link: 'https://desadigital.jabarprov.go.id/'
   },
   {
     id: 3,
     title: 'Ekosistem Data Jabar',
-    description: 'Temukan informasi dan akses layanan tentang Organisasi Perangkat Daerah di Jawa Barat',
+    description: 'Ekosistem Data Jabar adalah portal terintegrasi untuk pengelolaan, keterbukaan, dan kemudahan akses data bagi warga dan pemerintah Jawa Barat.',
     icon: '/icons/program-unggulan/ekosistem-data-jabar.svg',
     link: 'http://data.jabarprov.go.id'
   }

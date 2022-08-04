@@ -43,7 +43,7 @@
                     {{ menu.title }}
                   </h3>
                 </Link>
-                <p class="text-sm leading-6 text-blue-gray-800 group-hover:text-blue-gray-900">
+                <p class="text-sm leading-6 text-blue-gray-800 group-hover:text-blue-gray-900 line-clamp-3 md:line-clamp-2">
                   {{ menu.description }}
                 </p>
                 <Link :link="menu.link" class="self-start">
@@ -78,7 +78,7 @@
               {{ menu.title }}
             </h3>
           </Link>
-          <p class="text-sm leading-6 text-blue-gray-600 group-hover:text-blue-gray-900">
+          <p class="text-sm leading-6 text-blue-gray-600 group-hover:text-blue-gray-900 line-clamp-2">
             {{ menu.description }}
           </p>
           <Link :link="menu.link" class="self-start">
