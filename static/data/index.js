@@ -21,7 +21,6 @@ export const navigationMenu = [
     id: 1,
     title: 'Berita Jawa Barat',
     link: '/berita',
-    gtagEvent: 'click_menu_berita',
     items: [
       {
         id: 1,
@@ -72,13 +71,14 @@ export const navigationMenu = [
         icon: '/icons/navigation/teknologi.svg',
         link: '/berita?kategori=teknologi'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_berita',
+    gtagEventSitemap: 'click_sitemap_berita'
   },
   {
     id: 2,
     title: 'Layanan Publik',
     link: '',
-    gtagEvent: 'click_menu_layanan',
     items: [
       {
         id: 1,
@@ -122,13 +122,14 @@ export const navigationMenu = [
         icon: '/icons/navigation/ketenagakerjaan.svg',
         link: 'https://jabarjawara.id'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_layanan',
+    gtagEventSitemap: 'click_sitemap_layanan'
   },
   {
     id: 3,
     title: 'Dashboard Publik',
     link: '',
-    gtagEvent: 'click_menu_dashboard',
     items: [
       {
         id: 1,
@@ -158,13 +159,14 @@ export const navigationMenu = [
         icon: '/icons/navigation/pendidikan.svg',
         link: 'https://dashboard.jabarprov.go.id/id/topic/pendidikan'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_dashboard',
+    gtagEventSitemap: 'click_sitemap_dashboard'
   },
   {
     id: 4,
     title: 'Profil Jawa Barat',
     link: '',
-    gtagEvent: 'click_menu_profil',
     items: [
       {
         id: 1,
@@ -187,7 +189,9 @@ export const navigationMenu = [
         icon: '/icons/navigation/tentang-jawa-barat.svg',
         link: '/tentang-jawa-barat'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_profil',
+    gtagEventSitemap: 'click_sitemap_profil'
   }
 ]
 
