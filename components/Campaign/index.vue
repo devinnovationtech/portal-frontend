@@ -14,8 +14,8 @@
         </button>
       </div>
     </template>
-    <div class="flex min-w-0 w-full justify-center overflow-y-auto overflow-x-hidden">
-      <figure class="md:max-w-[550px] lg:max-w-[700px]">
+    <div class="flex min-w-0 w-full justify-center">
+      <figure class="md:w-[550px] lg:w-[700px]">
         <img
           v-if="device.isMobile"
           src="/images/campaign/bian-mobile.jpg"
