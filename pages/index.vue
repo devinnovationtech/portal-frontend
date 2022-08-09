@@ -1,5 +1,6 @@
 <template>
   <main class="overflow-hidden">
+    <Campaign />
     <Hero />
     <MostPopularServices />
     <FeaturedProgramPreview />

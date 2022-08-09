@@ -3,7 +3,7 @@
     <div
       v-if="show"
       id="modal"
-      class="fixed w-full h-full inset-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm z-[100] md:flex md:justify-center md:items-center overflow-hidden"
+      class="fixed w-full h-full inset-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm z-[100] flex justify-center items-center overflow-hidden"
     >
       <!-- Bottom Sheet (Mobile Only) -->
       <section
@@ -31,7 +31,7 @@
           <slot />
         </div>
         <slot name="footer">
-          <div class="bg-gray-50 flex w-full items-center justify-center py-4 z-[100] mt-auto px-6">
+          <div class="bg-gray-50 flex w-full items-center justify-center py-4 z-[100] mt-auto md:mt-0 px-6">
             <Button class="w-full !justify-center" @click="closeModal">
               {{ buttonLabel }}
             </Button>
