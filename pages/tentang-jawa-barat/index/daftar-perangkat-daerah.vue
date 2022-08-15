@@ -183,6 +183,10 @@ export default {
           ...this.pagination,
           currentPage: 1
         }
+
+        // record search perangkat daerah by gtag
+        this.gtagSearchPerangkatDaerah()
+
         this.$fetch()
       }
     },
@@ -231,6 +235,13 @@ export default {
     },
     scrollToTop () {
       window.scrollTo({ top: 200 })
+    },
+    gtagSearchPerangkatDaerah () {
+      this.$gtag.event('search', {
+        event_category: 'search_opd',
+        event_label: `search perangkat daerah ${this.searchKeyword}`,
+        value: this.searchKeyword
+      })
     }
   }
 }
