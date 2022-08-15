@@ -102,6 +102,7 @@
                 rel="noopener noreferrer"
                 target="_blank"
                 class="font-lato text-xs font-normal leading-5 text-[#1976D2] flex items-center gap-2"
+                @click="gtagClickSiteOpd(item)"
               >
                 {{ item.website }}
                 <Icon name="open-new-tab" fill="#1976D2" size="14px" />
@@ -173,6 +174,11 @@ export default {
       return this.$store.state.device.device
     }
   },
+  watch: {
+    listView (value) {
+      this.gtagClickOpdTypeDisplay(value)
+    }
+  },
   methods: {
     onListViewChange (listView) {
       this.listView = listView
@@ -241,6 +247,22 @@ export default {
         event_category: 'search_opd',
         event_label: `search perangkat daerah ${this.searchKeyword}`,
         value: this.searchKeyword
+      })
+    },
+    gtagClickSiteOpd (value) {
+      const { name, website } = value
+      this.$gtag.event('click', {
+        event_category: 'click_web_opd',
+        event_label: `click web opd ${name}`,
+        value: name,
+        website
+      })
+    },
+    gtagClickOpdTypeDisplay () {
+      this.$gtag.event('click', {
+        event_category: 'click_opd_type_display',
+        event_label: `click opd type display ${this.listView}`,
+        value: this.listView
       })
     }
   }
