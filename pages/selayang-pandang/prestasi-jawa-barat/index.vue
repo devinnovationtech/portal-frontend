@@ -139,6 +139,11 @@ export default {
       return this.achievementsData.length > 0
     }
   },
+  watch: {
+    listView (value) {
+      this.gtagClickAwardsTypeDisplay(value)
+    }
+  },
   methods: {
     onPaginationChange (action, value) {
       this.scrollToTop()
@@ -217,6 +222,13 @@ export default {
         event_category: 'search_awards',
         event_label: `Search awards ${keyword}`,
         value: keyword
+      })
+    },
+    gtagClickAwardsTypeDisplay () {
+      this.$gtag.event('click', {
+        event_category: 'click_awards_type_display',
+        event_label: `click awards type display ${this.listView}`,
+        value: this.listView
       })
     }
   }
