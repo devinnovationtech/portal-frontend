@@ -202,11 +202,22 @@ export default {
           ...this.pagination,
           currentPage: 1
         }
+
+        // record search history awards by gtag
+        this.gtagSearchAwards(this.searchKeyword)
+
         this.$fetch()
       }
     },
     scrollToTop () {
       window.scrollTo({ top: 200 })
+    },
+    gtagSearchAwards (keyword) {
+      this.$gtag.event('search', {
+        event_category: 'search_awards',
+        event_label: `Search awards ${keyword}`,
+        value: keyword
+      })
     }
   }
 }
