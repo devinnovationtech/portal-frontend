@@ -197,6 +197,9 @@ export default {
       this.$fetch()
     },
     onChangeSort (sortOrder) {
+      // record click sort order awards
+      this.gtagClickAwardsSortOrder(sortOrder)
+
       if (!sortOrder || sortOrder.toUpperCase() === this.sortOrder) { return }
       this.sortOrder = sortOrder.toUpperCase()
       this.$fetch()
@@ -229,6 +232,14 @@ export default {
         event_category: 'click_awards_type_display',
         event_label: `click awards type display ${this.listView}`,
         value: this.listView
+      })
+    },
+    gtagClickAwardsSortOrder (value) {
+      const order = value === 'ASC' ? 'Judul A - Z' : 'Judul Z - A'
+      this.$gtag.event('click', {
+        event_category: 'click_awards_order',
+        event_label: `click awards sort order ${order}`,
+        value: order
       })
     }
   }
