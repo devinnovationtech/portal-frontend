@@ -98,6 +98,9 @@ export default {
     setSelected (category) {
       let checked = []
 
+      // record click filter category by gtag
+      this.gtagCategoryFilter(category)
+
       if (!this.selected.includes(category)) {
         checked = [...this.selected, category]
         this.selected = [...checked]
@@ -106,6 +109,16 @@ export default {
 
       checked = this.selected.filter(item => item !== category)
       this.selected = [...checked]
+    },
+    async gtagCategoryFilter (category) {
+      await this.$nextTick()
+      if (this.isSelected(category)) {
+        this.$gtag.event('click', {
+          event_category: 'click_filter_category',
+          event_label: `Click filter category ${category}`,
+          value: category
+        })
+      }
     }
   }
 }
