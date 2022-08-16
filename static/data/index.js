@@ -143,10 +143,10 @@ export const navigationMenu = [
       },
       {
         id: 3,
-        title: 'Ekonomi',
-        description: 'Dapatkan data ekonomi di Jawa Barat dari UMKM hingga keuangan daerah',
-        icon: '/icons/navigation/ekonomi.svg',
-        link: 'https://dashboard.jabarprov.go.id/id/topic/ekonomi'
+        title: 'Industri',
+        description: 'Dapatkan data ekonomi di Jawa Barat mulai dari UMKM hingga keuangan daerah',
+        icon: '/icons/navigation/industri.svg',
+        link: 'https://dashboard.jabarprov.go.id/id/topic/industri'
       },
       {
         id: 4,
@@ -154,6 +154,13 @@ export const navigationMenu = [
         description: 'Dapatkan ragam informasi terkait pendidikan di Jawa Barat',
         icon: '/icons/navigation/pendidikan.svg',
         link: 'https://dashboard.jabarprov.go.id/id/topic/pendidikan'
+      },
+      {
+        id: 5,
+        title: 'Informasi Covid-19',
+        description: 'Dapatkan informasi terkait perkembangan Covid-19 di Jawa Barat',
+        icon: '/icons/navigation/covid19.svg',
+        link: 'https://dashboard.jabarprov.go.id/id/dashboard-pikobar/trace/statistik'
       }
     ]
   },
@@ -322,10 +329,10 @@ export const quickLinkMenu = [
   },
   {
     id: 4,
-    title: 'Info Harga Pangan',
+    title: 'Info Harga Komunitas Pangan',
     description: 'Dapatkan info harga rata-rata komoditas harian di daerah sekitar Jawa Barat.',
     icon: '/icons/akses-cepat/info-harga-pangan.svg',
-    link: 'https://disperindag.jabarprov.go.id/hargakomoditi_indag'
+    link: 'http://silinda.jabarprov.go.id/komoditas'
   },
   {
     id: 5,
