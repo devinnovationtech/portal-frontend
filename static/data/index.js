@@ -329,7 +329,7 @@ export const quickLinkMenu = [
   },
   {
     id: 4,
-    title: 'Info Harga Komunitas Pangan',
+    title: 'Info Harga Komoditas Pangan',
     description: 'Dapatkan info harga rata-rata komoditas harian di daerah sekitar Jawa Barat.',
     icon: '/icons/akses-cepat/info-harga-pangan.svg',
     link: 'http://silinda.jabarprov.go.id/komoditas'
