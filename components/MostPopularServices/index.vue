@@ -37,6 +37,7 @@
                     target="_blank"
                     rel="noreferrer"
                     class="w-full flex flex-col gap-1"
+                    @click="gtagClickPopularService(item)"
                   >
                     <Icon
                       :src="item.icon"
@@ -94,6 +95,7 @@
                   target="_blank"
                   rel="noreferrer"
                   class="w-full flex flex-col gap-1"
+                  @click="gtagClickPopularService(item)"
                 >
                   <div class="min-w-0 flex justify-between items-center">
                     <Icon
@@ -138,6 +140,15 @@ export default {
             slidesPerView: 3
           }
         }
+      })
+    }
+  },
+  methods: {
+    gtagClickPopularService (value) {
+      this.$gtag.event('click', {
+        event_category: 'click_popular_service',
+        event_label: `Click popular service ${value.title}`,
+        value: value.title
       })
     }
   }
