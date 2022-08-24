@@ -161,6 +161,13 @@ export const navigationMenu = [
         description: 'Dapatkan informasi terkait perkembangan Covid-19 di Jawa Barat',
         icon: '/icons/navigation/covid19.svg',
         link: 'https://dashboard.jabarprov.go.id/id/dashboard-pikobar/trace/statistik'
+      },
+      {
+        id: 6,
+        title: 'BIAN',
+        description: 'Dapatkan informasi terkait Bulan Imunisasi Anak Nasional',
+        icon: '/icons/navigation/bian.svg',
+        link: 'https://dashboard.jabarprov.go.id/id/topic/bian'
       }
     ]
   },
