@@ -15,11 +15,17 @@
           class="banner-button w-full md:w-auto"
           type="button"
           variant="primary"
+          @click="isOpen = true"
         >
           Tonton Sekarang
           <Icon name="open-new-tab" size="14px" />
         </Button>
       </Link>
+      <BaseVideoPlayer
+        :show="isOpen"
+        src="https://dvgddkosknh6r.cloudfront.net/staging/media/videos/Our_West_Java.mp4"
+        @close="isOpen = false"
+      />
     </div>
     <div class="hidden w-full h-full p-4 md:px-6 xl:px-8 xl:py-12 md:flex items-center justify-end relative overflow-hidden">
       <ProfileHighlightBannerBackground />
@@ -35,6 +41,16 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      isOpen: false
+    }
+  }
+}
+</script>
 
 <style>
 .banner-button.jds-button--primary {
