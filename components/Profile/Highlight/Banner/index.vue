@@ -10,17 +10,15 @@
       <p class="text-white text-sm leading-[23px] text-center md:text-left mb-4 md:line-clamp-3 lg:max-w-[60ch]">
         Simak siapa saja yang turut andil dalam menjadikan Provinsi Jawa Barat, menjadi Provinsi yang responsif dan Juara Lahir Batin.
       </p>
-      <Link link="#" tabindex="-1">
-        <Button
-          class="banner-button w-full md:w-auto"
-          type="button"
-          variant="primary"
-          @click="isOpen = true"
-        >
-          Tonton Sekarang
-          <Icon name="open-new-tab" size="14px" />
-        </Button>
-      </Link>
+      <Button
+        class="banner-button w-full md:w-auto"
+        type="button"
+        variant="primary"
+        @click="isOpen = true"
+      >
+        Tonton Sekarang
+        <Icon name="open-new-tab" size="14px" />
+      </Button>
       <BaseVideoPlayer
         :show="isOpen"
         src="https://dvgddkosknh6r.cloudfront.net/staging/media/videos/Our_West_Java.mp4"
