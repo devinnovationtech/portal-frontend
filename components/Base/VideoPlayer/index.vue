@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { lockScroll } from '~/utils/browser'
 export default {
   props: {
     show: {
@@ -32,6 +33,11 @@ export default {
     src: {
       type: String,
       required: true
+    }
+  },
+  watch: {
+    show () {
+      lockScroll(this.show)
     }
   }
 }
