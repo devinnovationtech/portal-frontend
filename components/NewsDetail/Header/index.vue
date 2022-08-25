@@ -94,7 +94,7 @@
                 <Icon name="eye" size="12px" />
               </div>
               <div>
-                <p>{{ getViewsText(news.views) }} kali</p>
+                <p>{{ getViewsText(views) }} kali</p>
                 <p class="text-xs text-blue-gray-100">
                   Berita ini dilihat
                 </p>
@@ -167,6 +167,10 @@ export default {
     news: {
       type: Object,
       required: true
+    },
+    views: {
+      type: [String, Number],
+      default: 0
     },
     loading: {
       type: Boolean,

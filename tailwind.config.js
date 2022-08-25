@@ -10,6 +10,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      screens: {
+        xs: '450px'
+        // => @media (min-width: 450px) { ... }
+      },
       fontFamily: {
         lato: ['Lato', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],

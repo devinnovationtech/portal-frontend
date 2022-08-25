@@ -3,6 +3,7 @@
     <Campaign />
     <Hero />
     <MostPopularServices />
+    <BannerBIAN />
     <FeaturedProgramPreview />
     <section class="pb-10">
       <BaseContainer>
