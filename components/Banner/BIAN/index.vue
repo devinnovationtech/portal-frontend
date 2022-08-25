@@ -16,7 +16,7 @@
             alt="Banner Dashboard Publik Bulan Imunisasi Anak Nasional (BIAN)"
             width="360"
             height="350"
-            class="min-w-full min-h-[350px] object-contain xs:rounded-2xl overflow-hidden"
+            class="min-w-full min-h-full object-contain xs:rounded-2xl overflow-hidden"
           >
         </picture>
       </a>
