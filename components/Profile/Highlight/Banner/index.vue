@@ -8,7 +8,7 @@
         Jelajahi pesona Jawa Barat mulai dari kekayaan alam, budaya khas hingga tradisi yang tak lekang oleh waktu.
       </p>
       <Button
-        class="banner-button w-full md:w-auto"
+        class="banner-button w-full lg:max-w-[190px]"
         type="button"
         variant="primary"
         @click="isOpen = true"
