@@ -33,7 +33,6 @@
               >
                 <section class="rounded-md w-full min-h-[130px] flex justify-start items-start p-4 pl-0">
                   <a
-                    v-if="!item.isHidden"
                     :href="item.link"
                     target="_blank"
                     rel="noreferrer"
