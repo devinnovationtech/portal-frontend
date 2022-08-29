@@ -83,18 +83,14 @@
             </div>
           </div>
           <div class="divide divide-left" />
-          <ul class="grid grid-cols-3 grid-rows-3 grid-flow-col gap-x-14 gap-y-7">
+          <ul class="grid grid-cols-3 grid-rows-2 grid-flow-col gap-x-14 gap-y-7">
             <template v-for="menu in menus">
               <li
                 v-for="item in menu.items"
                 :key="item.id"
-                :class="{
-                  'rounded-md flex justify-start items-start px-4 py-3 group transition-all ease-brand duration-250': true,
-                  'hover:bg-green-50': !item.isHidden
-                }"
+                class="rounded-md flex justify-start items-start px-4 py-3 group hover:bg-green-50 transition-all ease-brand duration-250"
               >
                 <a
-                  v-if="!item.isHidden"
                   :href="item.link"
                   target="_blank"
                   rel="noreferrer"
@@ -140,7 +136,7 @@ export default {
         passiveListeners: true,
         breakpoints: {
           768: {
-            slidesPerView: 3
+            slidesPerView: 2
           }
         }
       })
