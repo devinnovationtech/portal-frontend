@@ -2,7 +2,7 @@
   <main>
     <article class="article">
       <!-- News Header -->
-      <NewsDetailHeader :news="news" :views="views" />
+      <NewsDetailHeader :news="news" :views="views" :shared="shared" />
 
       <!-- News Content -->
       <BaseContainer class="mt-12 mb-12 mx-auto">
@@ -62,9 +62,9 @@ export default {
       const viewCountResponse = await $axios.get(`/v1/public/news/slug/${slug}/view`)
 
       const { data: news } = newsResponse.data
-      const { views } = viewCountResponse.data
+      const { views, shared } = viewCountResponse.data
 
-      return { news, views }
+      return { news, views, shared }
     } catch (error) {
       // silent error
     }
@@ -73,6 +73,7 @@ export default {
     return {
       news: {},
       views: 0,
+      shared: 0,
       relatedNews: [],
       maxHeight: null,
       loading: true

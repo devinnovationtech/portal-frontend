@@ -4,7 +4,7 @@
       v-if="show"
       id="modal"
       class="fixed flex justify-center items-center w-full h-full z-[100] inset-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm"
-      @click="$emit('close')"
+      @click.self="$emit('close')"
     >
       <video
         :src="src"
