@@ -13,7 +13,7 @@
         variant="primary"
         @click="isOpen = true"
       >
-        Tonton Sekarang
+        Lihat videonya di sini
         <Icon name="open-new-tab" size="14px" />
       </Button>
       <BaseVideoPlayer
@@ -26,7 +26,7 @@
       <ProfileHighlightBannerBackground />
       <div class="hidden aspect-w-16 aspect-h-9 xl:aspect-w-2 xl:aspect-h-1 md:block w-full max-w-[513px] rounded-xl overflow-hidden">
         <img
-          src="/images/banners/profile-highlight/behind-the-scene.webp"
+          src="/images/about/background.png"
           class="object-cover max-w-full max-h-full"
           width="513"
           height="278"
