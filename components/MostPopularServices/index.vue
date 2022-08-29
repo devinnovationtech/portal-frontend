@@ -33,6 +33,7 @@
               >
                 <section class="rounded-md w-full min-h-[130px] flex justify-start items-start p-4 pl-0">
                   <a
+                    v-if="!item.isHidden"
                     :href="item.link"
                     target="_blank"
                     rel="noreferrer"
@@ -87,9 +88,13 @@
               <li
                 v-for="item in menu.items"
                 :key="item.id"
-                class="rounded-md flex justify-start items-start px-4 py-3 group hover:bg-green-50 transition-all ease-brand duration-250"
+                :class="{
+                  'rounded-md flex justify-start items-start px-4 py-3 group transition-all ease-brand duration-250': true,
+                  'hover:bg-green-50': !item.isHidden
+                }"
               >
                 <a
+                  v-if="!item.isHidden"
                   :href="item.link"
                   target="_blank"
                   rel="noreferrer"
