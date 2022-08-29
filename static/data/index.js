@@ -480,3 +480,26 @@ export const popularSearchSuggestions = [
   'G20',
   'Minyak Goreng'
 ]
+
+export const archiveAndDocumentTopics = [
+  {
+    label: 'Dokumen Perencanaan',
+    value: 'dokumen perencanaan'
+  },
+  {
+    label: 'Laporan Pertanggungjawaban',
+    value: 'laporan pertanggungjawaban'
+  },
+  {
+    label: 'Produk Hukum',
+    value: 'produk hukum'
+  },
+  {
+    label: 'Transparansi Kepegawaian',
+    value: 'transparansi kepegawaian'
+  },
+  {
+    label: 'Transparansi Pengelolaan Keuangan Daerah',
+    value: 'transparansi pengelolaan keuangan daerah'
+  }
+]
