@@ -220,14 +220,15 @@ export const mostPopularServicesMenu = [
         description: 'Temukan informasi dan layanan mengenai Pajak Kendaran Bermotor (PKB) di sini.',
         link: 'https://bapenda.jabarprov.go.id/infopkb',
         icon: '/icons/layanan-terpopuler/pajak-kendaraan-bermotor.svg'
-      },
-      {
-        id: 3,
-        title: 'Perizinan Bangunan',
-        description: 'Layanan informasi tentang syarat dan cara melakukan pembayaran Pajak Bumi dan Bangunan (PBB).',
-        link: 'https://dpmptsp.jabarprov.go.id/jelita/main/pendaftaranbaru/perizinanonline',
-        icon: '/icons/layanan-terpopuler/perizinan-bangunan.svg'
       }
+      // Temporary Hide Content
+      // {
+      //   id: 3,
+      //   title: 'Perizinan Bangunan',
+      //   description: 'Layanan informasi tentang syarat dan cara melakukan pembayaran Pajak Bumi dan Bangunan (PBB).',
+      //   link: 'https://dpmptsp.jabarprov.go.id/jelita/main/pendaftaranbaru/perizinanonline',
+      //   icon: '/icons/layanan-terpopuler/perizinan-bangunan.svg'
+      // }
     ]
   },
   {
@@ -239,23 +240,24 @@ export const mostPopularServicesMenu = [
         id: 4,
         title: 'Perizinan Industri Rumah Tangga (PIRT)',
         description: 'Temukan informasi dan layanan mengenai Perizinan Industri Rumah Tangga (PIRT) di sini.',
-        link: 'https://dpmptsp.jabarprov.go.id/jelita/main/pendaftaranbaru/perizinanonline',
+        link: 'https://sppirt.pom.go.id/',
         icon: '/icons/layanan-terpopuler/perizinan-industri-rumah-tangga.svg'
       },
       {
         id: 5,
-        title: 'Bantuan Langsung Tunai (BLT)',
-        description: 'Temukan Informasi mengenai Bantuan Langsung Tunai (BLT) di sini.',
-        link: 'https://www.jabarprov.go.id/index.php/news/39744/2020/10/21/Mudah-Cek-BLT-BPUM-24-Juta-Lewat-Sini',
-        icon: '/icons/layanan-terpopuler/bantuan-langsung-tunai.svg'
-      },
-      {
-        id: 6,
         title: 'Pengajuan Sertifikasi Halal',
         description: 'Temukan informasi dan layanan mengenai pengajuan sertifikasi halal di sini.',
         link: 'https://www.halalmui.org/mui14/main/page/prosedur-sertifikasi-halal-mui',
         icon: '/icons/layanan-terpopuler/pengajuan-sertifikasi-halal.svg'
       }
+      // Temporary Hide Content
+      // {
+      //   id: 6,
+      //   title: 'Bantuan Langsung Tunai (BLT)',
+      //   description: 'Temukan Informasi mengenai Bantuan Langsung Tunai (BLT) di sini.',
+      //   link: 'https://www.jabarprov.go.id/index.php/news/39744/2020/10/21/Mudah-Cek-BLT-BPUM-24-Juta-Lewat-Sini',
+      //   icon: '/icons/layanan-terpopuler/bantuan-langsung-tunai.svg'
+      // }
     ]
   },
   {
@@ -270,13 +272,14 @@ export const mostPopularServicesMenu = [
         link: 'https://disparbud.jabarprov.go.id',
         icon: '/icons/layanan-terpopuler/info-wisata-jabar.svg'
       },
-      {
-        id: 8,
-        title: 'Hotel Murah di Jawa Barat',
-        description: 'Temukan informasi mengenai tempat menginap di Jawa Barat sesuai keinginan.',
-        link: 'https://uspar.braga.co.id',
-        icon: '/icons/layanan-terpopuler/hotel-murah-di-jawa-barat.svg'
-      },
+      // Temporary Hide Content
+      // {
+      //   id: 8,
+      //   title: 'Hotel Murah di Jawa Barat',
+      //   description: 'Temukan informasi mengenai tempat menginap di Jawa Barat sesuai keinginan.',
+      //   link: 'https://uspar.braga.co.id',
+      //   icon: '/icons/layanan-terpopuler/hotel-murah-di-jawa-barat.svg'
+      // },
       {
         id: 9,
         title: 'Daerah Wisata Jawa Barat',
