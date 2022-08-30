@@ -13,8 +13,8 @@
       <h3 class="font-lato font-medium text-lg text-blue-gray-800 md:mb-2">
         {{ title }}
       </h3>
-      <p class="hidden md:block font-lato font-normal text-base text-blue-gray-800 md:line-clamp-2">
-        {{ excerpt }}
+      <p class="hidden md:block font-lato font-normal text-sm text-blue-gray-800 md:line-clamp-2">
+        {{ description }}
       </p>
     </section>
     <section class="grid h-[fit-content] grid-cols-2 gap-4 md:col-start-2 md:flex">
@@ -56,7 +56,7 @@ export default {
       type: String,
       default: ''
     },
-    excerpt: {
+    description: {
       type: String,
       default: ''
     },

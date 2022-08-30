@@ -101,7 +101,7 @@ export default {
   data () {
     return {
       jumbotron: {
-        title: 'Arsip',
+        title: 'Arsip dan Dokumen',
         subtitle: 'Akses dan unduh dokumen resmi yang dirilis Pemerintah Jawa Barat.',
         backgroundImageUrl: '/images/jumbotron/default.webp'
       },

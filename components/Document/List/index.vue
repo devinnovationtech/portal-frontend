@@ -15,7 +15,7 @@
         <DocumentItem
           :id="document.id"
           :title="document.title"
-          :excerpt="document.excerpt"
+          :description="document.description"
           :source="document.source"
           :mime-type="document.mimetype"
           :category="document.category"
