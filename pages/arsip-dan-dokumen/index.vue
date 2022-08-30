@@ -7,7 +7,7 @@
     </Jumbotron>
     <section class="w-full bg-gray-200">
       <BaseContainer class="relative -top-24 z-20">
-        <div class="p-3 md:p-4 lg:py-8 lg:px-10 rounded-xl bg-white min-h-screen w-full xl:grid xl:grid-cols-[268px,1fr] lg:gap-6">
+        <div class="p-3 md:p-4 lg:py-8 lg:px-10 rounded-xl bg-white min-h-screen w-full xl:grid xl:grid-cols-[268px,1fr] xl:grid-rows-[1fr,auto] lg:gap-6">
           <!-- Archive and Document Topics -->
           <aside class="hidden xl:block p-4 border border-green-50 rounded-xl h-[fit-content]">
             <h2 class="font-lato font-bold text-sm text-gray-800">
@@ -45,6 +45,8 @@
               :clear="false"
               placeholder="Cari di sini"
               class="mb-6"
+              @submit="handleSearch"
+              @clear="handleClearSearch"
             />
             <Select
               class="!gap-0 mb-6 xl:hidden"
@@ -52,13 +54,25 @@
               :value="selectedTopics"
               @click="setActiveTopic"
             />
-            <DocumentList class="mb-6" @open-detail="handleOpenDetail($event)" />
+            <DocumentList
+              :documents="documents"
+              :loading="$fetchState.pending"
+              :empty-result="emptyResult"
+              :items-per-page="pagination.itemsPerPage"
+              :search-keyword="searchKeyword"
+              @open-detail="handleOpenDetail($event)"
+            />
           </section>
 
           <!-- Pagination -->
           <Pagination
+            v-if="!emptyResult"
             v-bind="pagination"
             class="col-start-2"
+            @previous-page="onPaginationChange('prev-page', $event)"
+            @next-page="onPaginationChange('next-page', $event)"
+            @page-change="onPaginationChange('page-change', $event)"
+            @per-page-change="onPaginationChange('per-page-change', $event)"
           />
         </div>
       </BaseContainer>
@@ -79,8 +93,9 @@
 </template>
 
 <script>
+import debounce from 'lodash/debounce'
 import { archiveAndDocumentTopics } from '~/static/data'
-import { format } from '~/utils/date'
+import { formatTz } from '~/utils/date'
 
 export default {
   data () {
@@ -93,14 +108,9 @@ export default {
       topicOptions: archiveAndDocumentTopics,
       selectedTopics: archiveAndDocumentTopics[0].value,
       searchKeyword: '',
-      pagination: {
-        currentPage: 1,
-        itemsPerPage: 10,
-        totalRows: 0,
-        itemsPerPageOptions: [10, 20, 30]
-      },
-      isDetailOpen: false,
       documents: [],
+      meta: {},
+      isDetailOpen: false,
       documentDetail: {
         id: '',
         title: '',
@@ -109,7 +119,41 @@ export default {
         mimetype: '',
         category: '',
         updatedAt: ''
+      },
+      pagination: {
+        currentPage: 1,
+        itemsPerPage: 5,
+        totalRows: 0,
+        itemsPerPageOptions: [5, 10, 20]
       }
+    }
+  },
+  async fetch () {
+    try {
+      const params = {
+        q: this.searchKeyword,
+        cat: this.selectedTopics,
+        page: this.pagination.currentPage,
+        per_page: this.pagination.itemsPerPage
+      }
+
+      const response = await this.$axios.get('v1/public/document-archives', { params })
+      const { data, meta } = response.data
+
+      this.documents = data
+      this.meta = meta
+
+      const paginationObj = {
+        ...this.pagination,
+        currentPage: this.meta.current_page,
+        itemsPerPage: this.meta.per_page,
+        totalRows: this.meta.total_count
+      }
+
+      this.pagination = JSON.parse(JSON.stringify(paginationObj))
+    } catch (error) {
+      this.documents = []
+      this.meta = []
     }
   },
   computed: {
@@ -128,6 +172,18 @@ export default {
     activeTopicTitle () {
       const activeTopic = archiveAndDocumentTopics.find(topic => topic.value === this.selectedTopics)
       return activeTopic.label
+    },
+    emptyResult () {
+      return !this.$fetchState.pending && this.documents.length === 0
+    }
+  },
+  watch: {
+    selectedTopics (newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.resetPagination()
+        this.$fetchState.pending = true
+        debounce(this.$fetch, 500)()
+      }
     }
   },
   methods: {
@@ -145,21 +201,16 @@ export default {
       this.isDetailOpen = false
     },
     setDocumentDetail (id) {
-      // @TODO: get document detail using `id`
+      const detail = this.documents.find(document => document.id === id)
+
       this.documentDetail = {
-        id: 2,
-        title: 'Jabar Dalam Angka 2012',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim velit, senectus rhoncus gravida nisl, leo eu pharetra et. Enim sodales in amet blandit gravida nulla erat tincidunt. Pretium aliquam pellentesque a consequat dictum varius lorem faucibus.',
-        source: 'https://jabarprov.go.id/assets/images/berita/gambar_43509.jpg',
-        mimetype: 'application/pdf',
-        category: 'Dokumen Perencanaan',
-        updatedAt: format(new Date('2021-08-05T06:53:14.000000Z'),
-          {
-            weekday: 'long',
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-          })
+        id: detail.id,
+        title: detail.title,
+        description: detail.description,
+        source: detail.source,
+        mimetype: detail.mimetype,
+        category: detail.category,
+        updatedAt: formatTz(new Date(detail.updated_at), 'Asia/Jakarta', 'EEEE, dd MMMM yyyy HH:mm') + ' WIB'
       }
     },
     resetDocumentDetail () {
@@ -172,6 +223,72 @@ export default {
         category: '',
         updatedAt: ''
       }
+    },
+    resetPagination () {
+      this.pagination = {
+        currentPage: 1,
+        itemsPerPage: 5,
+        totalRows: 0,
+        itemsPerPageOptions: [5, 10, 20]
+      }
+    },
+    onPaginationChange (action, value) {
+      this.scrollToTop()
+
+      const paginationObj = { ...this.pagination }
+
+      switch (action) {
+        case 'prev-page':
+          paginationObj.currentPage = this.pagination.currentPage - 1
+          break
+        case 'next-page':
+          paginationObj.currentPage = this.pagination.currentPage + 1
+          break
+        case 'page-change':
+          paginationObj.currentPage = value
+          break
+        case 'per-page-change':
+          paginationObj.itemsPerPage = value
+          break
+        default:
+          break
+      }
+
+      this.pagination = JSON.parse(JSON.stringify(paginationObj))
+
+      /**
+       *  NOTE:
+       *  `jds-pagination` emits `page-change` and `per-page-change` events
+       *  whenever user changes per page value.
+       *
+       *  To avoid double fetch, we immediately stop this function on
+       *  `per-page-change` event and let `page-change` event to
+       *  fetch data from API
+       */
+      if (action === 'per-page-change') {
+        return
+      }
+
+      this.$fetch()
+    },
+    scrollToTop () {
+      window.scrollTo({ top: 200 })
+    },
+    handleSearch () {
+      if (this.searchKeyword.length >= 3) {
+        this.pagination = {
+          ...this.pagination,
+          currentPage: 1
+        }
+        this.$fetch()
+      }
+    },
+    handleClearSearch () {
+      this.pagination = {
+        ...this.pagination,
+        currentPage: 1
+      }
+      this.$fetch()
     }
   }
 }

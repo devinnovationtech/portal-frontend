@@ -53,7 +53,7 @@
               class="inline-block rounded-md px-[10px] py-2 text-xs font-normal text-gray-700 bg-gray-100 mb-4
             hover:text-green-700 hover:bg-green-50"
             >
-              {{ mimeType || '-' }}
+              {{ mimeTypeLabel }}
             </p>
           </div>
         </section>
@@ -108,6 +108,23 @@ export default {
     source: {
       type: String,
       default: ''
+    }
+  },
+  computed: {
+    mimeTypeLabel () {
+      switch (this.mimeType) {
+        case 'application/pdf':
+          return 'Portable Document Format (PDF)'
+
+        case 'application/msword':
+          return 'Microsoft Word'
+
+        case 'application/vnd.ms-excel':
+          return 'Microsoft Excel'
+
+        default:
+          return '-'
+      }
     }
   }
 }

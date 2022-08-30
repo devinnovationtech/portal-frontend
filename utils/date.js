@@ -20,8 +20,15 @@ import {
   startOfWeek
 } from 'date-fns'
 
+import { formatInTimeZone } from 'date-fns-tz'
+import ID from 'date-fns/locale/id'
+
 export function format (date, options) {
   return new Date(date).toLocaleDateString('id-ID', options)
+}
+
+export function formatTz (date, timeZone, options) {
+  return formatInTimeZone(date, timeZone, options, { locale: ID })
 }
 
 export function formatISODate (date) {
