@@ -28,7 +28,11 @@
         Lihat
       </Button>
       <Link :link="source" :title="title" download>
-        <Button type="button" class="w-full md:w-auto !justify-center">
+        <Button
+          type="button"
+          class="w-full md:w-auto !justify-center disabled:!bg-gray-300"
+          :disabled="!source"
+        >
           <Icon name="cloud-download" size="18px" />
           Unduh
         </Button>
