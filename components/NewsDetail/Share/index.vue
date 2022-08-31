@@ -14,7 +14,7 @@
         :quote="quote"
         :hashtags="hastags"
         class="flex flex-col gap-1 w-full h-full items-center justify-center capitalize"
-        @close="$emit('share', id)"
+        @open="$emit('share', id)"
       >
         <!-- NOTE: Make sure the icons are available -->
         <Icon
