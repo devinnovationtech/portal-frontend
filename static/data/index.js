@@ -194,8 +194,78 @@ export const navigationMenu = [
         id: 3,
         title: 'Tentang Jawa Barat',
         description: 'Cari tahu sejarah, pimpinan, dan pemerintahan Jawa Barat selengkapnya',
-        icon: '/icons/navigation/tentang-jawa-barat.svg',
+        icon: '/icons/navigation/informasi.svg',
         link: '/tentang-jawa-barat'
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: 'PPID',
+    link: '',
+    items: [
+      {
+        id: 1,
+        title: 'Profil PPID',
+        description: 'Cari tahu tentang Profil PPID, Struktur Organisasi, Visi & Misi, dan Uraian Tugas dari PPID Jawa Barat',
+        icon: '/icons/navigation/pemerintahan.svg',
+        link: 'https://ppid.jabarprov.go.id/page/414-TENTANG-PPID'
+      },
+      {
+        id: 2,
+        title: 'Alur Layanan Informasi Publik',
+        description: 'Informasi seputar pengajuan permohonan informasi publik PPID Provinsi Jawa Barat',
+        icon: '/icons/navigation/teknologi.svg',
+        link: 'https://ppid.jabarprov.go.id/page/561-TATA-CARA-MEMPEROLEH-INFROMASI'
+      },
+      {
+        id: 3,
+        title: 'Permohonan Informasi Publik',
+        description: 'Ajukan permohonan informasi publik kepada PPID Provinsi Jawa Barat',
+        icon: '/icons/navigation/informasi.svg',
+        link: 'https://ppid.jabarprov.go.id/permohonan'
+      },
+      {
+        id: 4,
+        title: 'Pengajuan Keberatan',
+        description: 'Informasi tata cara pengajuan keberatan terkait permohonan informasi kepada PPID Provinsi Jawa Barat',
+        icon: '/icons/navigation/informasi.svg',
+        link: 'https://ppid.jabarprov.go.id/page/563-FORM-PENGAJUAN-KEBERATAN'
+      },
+      {
+        id: 5,
+        title: 'Daftar Informasi Publik',
+        description: 'Daftar informasi publik Pemerintah Provinsi Jawa Barat yang tersedia dan dapat diakses masyarakat',
+        icon: '/icons/navigation/informasi.svg',
+        link: 'https://ppid.jabarprov.go.id/page/3448-Daftar-Informasi-Publik'
+      },
+      {
+        id: 6,
+        title: 'Informasi Publik Berkala',
+        description: 'Informasi yang wajib diperbaharui kemudian disediakan dan diumumkan kepada publik secara rutin atau berkala sekurang-kurangnya setiap 6 bulan sekali',
+        icon: '/icons/navigation/informasi.svg',
+        link: 'https://ppid.jabarprov.go.id/page/568-Informasi-Berkala'
+      },
+      {
+        id: 7,
+        title: 'Informasi Publik Serta Merta',
+        description: 'Informasi yang berkaitan dengan hajat hidup orang banyak dan ketertiban umum dan wajib diumumkan secara serta merta tanpa penundaan',
+        icon: '/icons/navigation/sosial.svg',
+        link: 'https://ppid.jabarprov.go.id/page/756-Informasi-Serta-Merta'
+      },
+      {
+        id: 8,
+        title: 'Tata Cara Penyelesaian Sengketa',
+        description: 'Informasi tata cara penyelesaian sengketa informasi ke Komisi Informasi',
+        icon: '/icons/navigation/informasi.svg',
+        link: 'https://ppid.jabarprov.go.id/page/645-TATA-CARA-PENYELSAIAN-SENGKETA'
+      },
+      {
+        id: 9,
+        title: 'Tata Cara Pengaduan',
+        description: 'Informasi tata cara pengaduan penyalahgunaan wewenang atau pelanggaran yang dilakukan oleh Pejabat Badan Publik',
+        icon: '/icons/navigation/informasi.svg',
+        link: 'https://ppid.jabarprov.go.id/page/3900-Tata-Cara-Pengaduan-Penyalahgunaan-Wewenang-atau-Pelaporan-Yang-Dilakukan-oleh-Pejabat-Badan-Publik'
       }
     ]
   }
