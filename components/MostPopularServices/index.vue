@@ -82,7 +82,7 @@
             </div>
           </div>
           <div class="divide divide-left" />
-          <ul class="grid grid-cols-3 grid-rows-2 grid-flow-col gap-x-14 gap-y-7">
+          <ul class="grid grid-cols-3 grid-rows-3 grid-flow-col gap-x-14 gap-y-4">
             <template v-for="menu in menus">
               <li
                 v-for="item in menu.items"
@@ -135,7 +135,7 @@ export default {
         passiveListeners: true,
         breakpoints: {
           768: {
-            slidesPerView: 2
+            slidesPerView: 3
           }
         }
       })
