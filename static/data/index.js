@@ -214,7 +214,7 @@ export const navigationMenu = [
       {
         id: 4,
         title: 'Jaringan Dokumentasi dan Informasi Hukum',
-        description: 'Layanan transparansi informasi produk hukum terpadu di lingkungan Pemdaprov Jawa Barat secara lengkap, akurat dan berkesinambungan',
+        description: 'Layanan transparansi informasi produk hukum terpadu di lingkungan Pemdaprov Jawa Barat',
         icon: '/icons/navigation/arsip-dan-dokumen.svg',
         link: 'https://jdih.jabarprov.go.id'
       },
