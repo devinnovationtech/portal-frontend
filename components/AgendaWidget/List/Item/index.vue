@@ -119,7 +119,7 @@
               <p class="text-xs text-blue-gray-200">
                 Link Kegiatan
               </p>
-              <Link :link="url" class="text-sm text-blue-600 underline">
+              <Link :link="url" class="text-sm text-blue-600 underline" @click.native="gtagClickAgenda">
                 {{ url }}
               </Link>
             </div>
@@ -310,6 +310,14 @@ export default {
   methods: {
     toggleEventDetail () {
       this.isEventDetailOpen = !this.isEventDetailOpen
+    },
+    gtagClickAgenda () {
+      this.$gtag.event('click', {
+        event_category: 'click_agenda',
+        event_label: `click agenda ${this.title}`,
+        value: this.title,
+        url: this.url
+      })
     }
   }
 }
