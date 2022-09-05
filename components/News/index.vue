@@ -143,6 +143,9 @@ export default {
       this.$fetch()
     }
   },
+  mounted () {
+    this.gtagPageViewNews()
+  },
   methods: {
     setCurrentCategory (category) {
       this.$router.push({ path: this.$route.path, query: { kategori: category } })
@@ -226,6 +229,13 @@ export default {
         itemsPerPage: 5,
         totalRows: 0
       }
+    },
+    gtagPageViewNews () {
+      this.$gtag.event('page_view', {
+        event_category: 'page_view_news',
+        event_label: `page view news ${this.currentCategory}`,
+        category: this.currentCategory
+      })
     }
   }
 }
