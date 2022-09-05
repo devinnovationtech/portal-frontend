@@ -19,6 +19,7 @@
           :loading="mainNewsLoading"
           :max-item="pagination.itemsPerPage"
           :class="mainNews.length ? 'min-h-[540px] md:min-h-[850px]' : ''"
+          category-news="terhangat"
         >
           <!-- Main News Pagination -->
           <template #footer>
@@ -36,14 +37,14 @@
       </section>
       <section class="w-full flex flex-col gap-8 lg:gap-14">
         <!-- Latest News -->
-        <NewsList :items="latestNews" small :loading="loading">
+        <NewsList :items="latestNews" small :loading="loading" category-news="terbaru">
           <template #header>
             <NewsListHeader label="Berita Terbaru" :category="currentCategory" class="mb-2" />
           </template>
         </NewsList>
 
         <!-- Popular News -->
-        <NewsList :items="popularNews" small :loading="loading">
+        <NewsList :items="popularNews" small :loading="loading" category-news="terpopuler">
           <template #header>
             <NewsListHeader label="Berita Terpopuler" :category="currentCategory" class="mb-2" />
           </template>
