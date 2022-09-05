@@ -15,6 +15,7 @@
         :hashtags="hastags"
         class="flex flex-col gap-1 w-full h-full items-center justify-center capitalize"
         @close="$emit('share', id)"
+        @click.native="gtagClickShareSocialMedia(network)"
       >
         <!-- NOTE: Make sure the icons are available -->
         <Icon
@@ -68,6 +69,16 @@ export default {
       type: String,
       required: false,
       default: ''
+    }
+  },
+  methods: {
+    gtagClickShareSocialMedia (network) {
+      this.$gtag.event('click', {
+        event_category: 'click_share_news',
+        event_label: `click share news ${this.title}`,
+        value: network,
+        url: document.URL
+      })
     }
   }
 }
