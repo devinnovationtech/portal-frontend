@@ -60,6 +60,14 @@ export default {
   methods: {
     toggleOpen () {
       this.isOpen = !this.isOpen
+      this.gtagToggleGPRWidget()
+    },
+    gtagToggleGPRWidget () {
+      this.$gtag.event('click', {
+        event_category: 'click_gpr_widget',
+        event_label: 'click GRP widget',
+        value: this.isOpen ? 'open' : 'close'
+      })
     }
   }
 }
