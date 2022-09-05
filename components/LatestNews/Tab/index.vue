@@ -23,6 +23,7 @@
         :published-at="item.published_at"
         :category="item.category"
         :fetch-state="$fetchState"
+        :selected-tab="selectedTab"
       />
     </ul>
   </div>

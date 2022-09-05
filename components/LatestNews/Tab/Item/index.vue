@@ -49,6 +49,10 @@ export default {
     fetchState: {
       type: Object,
       required: true
+    },
+    selectedTab: {
+      type: String,
+      required: true
     }
   },
   computed: {
@@ -64,9 +68,20 @@ export default {
   },
   methods: {
     gtagClickLatestNews () {
+      let eventCategory
+      let eventLabel
+
+      if (this.selectedTab === 'terbaru') {
+        eventCategory = 'click_latest_news'
+        eventLabel = 'click latest news'
+      } else if (this.selectedTab === 'terpopuler') {
+        eventCategory = 'click_popular_news'
+        eventLabel = 'click popular news'
+      }
+
       this.$gtag.event('click', {
-        event_category: 'click_latest_news',
-        event_label: `click latest news ${this.title}`,
+        event_category: eventCategory,
+        event_label: `${eventLabel} ${this.title}`,
         value: this.title,
         url: `${document.location.origin}/berita/${this.slug}`
       })
