@@ -462,10 +462,10 @@ export const quickLinkMenu = [
   },
   {
     id: 8,
-    title: 'Lapor',
-    description: 'Layanan aspirasi dan pengaduan daring untuk warga Jawa Barat.',
+    title: 'Laporan Pengaduan Masyarakat',
+    description: 'Sarana penyampaian aspirasi dan pengaduan masyarakat Jawa Barat',
     icon: '/icons/akses-cepat/lapor.svg',
-    link: 'https://www.lapor.go.id'
+    link: 'https://inspektorat.jabarprov.go.id/sarana-pengaduan-masyarakat'
   }
 ]
 
