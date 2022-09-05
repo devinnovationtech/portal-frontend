@@ -1,7 +1,7 @@
 <template>
   <LatestNewsTabItemSkeleton v-if="fetchState.pending" />
   <li v-else class="hover:bg-green-50 p-3 rounded-lg group transition-colors ease-brand duration-250">
-    <Link :link="`/berita/${slug}`">
+    <Link :link="`/berita/${slug}`" @click.native="gtagClickLatestNews">
       <div class="flex flex-col gap-3 w-full">
         <p class="line-clamp-2 font-medium leading-7 group-hover:text-green-900">
           {{ title }}
@@ -60,6 +60,16 @@ export default {
       }
 
       return relativeTime(this.publishedAt)
+    }
+  },
+  methods: {
+    gtagClickLatestNews () {
+      this.$gtag.event('click', {
+        event_category: 'click_latest_news',
+        event_label: `click latest news ${this.title}`,
+        value: this.title,
+        url: `${document.location.origin}/berita/${this.slug}`
+      })
     }
   }
 }
