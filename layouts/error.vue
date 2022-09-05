@@ -26,3 +26,21 @@
     </section>
   </main>
 </template>
+
+<script>
+export default {
+  mounted () {
+    this.gtagPageViewError404()
+  },
+  methods: {
+    gtagPageViewError404 () {
+      this.$gtag.event('page_view', {
+        event_category: 'page_view_error',
+        event_label: 'page view error',
+        value: document.URL,
+        url: document.URL
+      })
+    }
+  }
+}
+</script>
