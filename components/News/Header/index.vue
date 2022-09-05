@@ -80,7 +80,7 @@
                     :key="news.id"
                     class="sm:!w-[fit-content]"
                   >
-                    <Link :link="`/berita/${news.slug}`" class="group">
+                    <Link :link="`/berita/${news.slug}`" class="group" @click.native="gtagClickRelatedNews(news)">
                       <div class="h-full sm:min-w-[300px] sm:max-w-[380px] flex gap-3 py-2 bg-white bg-opacity-0 rounded-xl">
                         <div class="flex-shrink-0 overflow-hidden rounded-xl w-16 h-16 md:w-24 md:h-24">
                           <img
@@ -117,7 +117,7 @@
                   Berita Terkait
                 </p>
                 <div class="flex flex-col gap-2">
-                  <Link v-for="news of item.related_news.slice(0, 4)" :key="news.id" :link="`/berita/${news.slug}`" class="group">
+                  <Link v-for="news of item.related_news.slice(0, 4)" :key="news.id" :link="`/berita/${news.slug}`" class="group" @click.native="gtagClickRelatedNews(news)">
                     <div class="flex gap-4 p-2 bg-white bg-opacity-0 group-hover:bg-opacity-5 rounded-xl">
                       <div class="flex-shrink-0 overflow-hidden rounded-xl" style="width: 92px; height: 92px;">
                         <img
@@ -215,6 +215,14 @@ export default {
       }
 
       return this.items[relativeSlide].related_news[list].slug
+    },
+    gtagClickRelatedNews (item) {
+      this.$gtag.event('click', {
+        event_category: 'click_related_news',
+        event_label: `click related news ${item.title}`,
+        value: item.title,
+        url: `${document.location.origin}/berita/${item.slug}`
+      })
     }
   }
 }
