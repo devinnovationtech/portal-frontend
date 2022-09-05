@@ -166,6 +166,7 @@ export default {
       // silent error
     } finally {
       this.loading = false
+      this.gtagSearchResults()
     }
   },
   computed: {
@@ -204,6 +205,13 @@ export default {
   methods: {
     hasData (data) {
       return Array.isArray(data) && data.length > 0
+    },
+    gtagSearchResults () {
+      this.$gtag.event('search', {
+        event_category: 'search_main',
+        value: this.searchKeyword,
+        result: !this.noResult
+      })
     }
   }
 }

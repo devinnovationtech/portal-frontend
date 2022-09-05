@@ -71,7 +71,9 @@ export const navigationMenu = [
         icon: '/icons/navigation/teknologi.svg',
         link: '/berita?kategori=teknologi'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_berita',
+    gtagEventSitemap: 'click_sitemap_berita'
   },
   {
     id: 2,
@@ -120,7 +122,9 @@ export const navigationMenu = [
         icon: '/icons/navigation/ketenagakerjaan.svg',
         link: 'https://jabarjawara.id'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_layanan',
+    gtagEventSitemap: 'click_sitemap_layanan'
   },
   {
     id: 3,
@@ -155,7 +159,9 @@ export const navigationMenu = [
         icon: '/icons/navigation/pendidikan.svg',
         link: 'https://dashboard.jabarprov.go.id/id/topic/pendidikan'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_dashboard',
+    gtagEventSitemap: 'click_sitemap_dashboard'
   },
   {
     id: 4,
@@ -183,7 +189,9 @@ export const navigationMenu = [
         icon: '/icons/navigation/tentang-jawa-barat.svg',
         link: '/tentang-jawa-barat'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_profil',
+    gtagEventSitemap: 'click_sitemap_profil'
   }
 ]
 
