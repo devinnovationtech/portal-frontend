@@ -221,7 +221,7 @@ export const navigationMenu = [
       {
         id: 5,
         title: 'Layanan Pengadaan Secara Elektronik',
-        description: 'Sistem pengadaan berbasis E-ProcurJikaement (SPSE) Pemerintah Provinsi Jawa Barat',
+        description: 'Sistem pengadaan berbasis E-Procurement (SPSE) Pemerintah Provinsi Jawa Barat',
         icon: '/icons/navigation/arsip-dan-dokumen.svg',
         link: 'www.lpse.jabarprov.go.id'
       }
