@@ -16,18 +16,18 @@
             <li v-for="item in items" :key="item.id">
               <Link
                 :link="item.link"
-                class="flex gap-4 items-start"
+                class="flex items-start"
                 @click.native="gtagNavigationItem(item)"
               >
                 <img
-                  class="py-1.5"
+                  class="w-[52px] h-[52px] mt-1.5"
                   :src="item.icon"
                   width="52"
                   height="52"
                   :alt="item.title"
                 >
-                <div>
-                  <h4 class="text-lg font-bold text-gray-50 whitespace-nowrap">
+                <div class="ml-4">
+                  <h4 class="text-lg font-bold text-gray-50 mb-1">
                     {{ item.title }}
                   </h4>
                   <p class="text-sm text-gray-50 font-roboto opacity-80">

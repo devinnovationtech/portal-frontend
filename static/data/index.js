@@ -147,10 +147,10 @@ export const navigationMenu = [
       },
       {
         id: 3,
-        title: 'Ekonomi',
-        description: 'Dapatkan data ekonomi di Jawa Barat dari UMKM hingga keuangan daerah',
-        icon: '/icons/navigation/ekonomi.svg',
-        link: 'https://dashboard.jabarprov.go.id/id/topic/ekonomi'
+        title: 'Industri',
+        description: 'Dapatkan data ekonomi di Jawa Barat mulai dari UMKM hingga keuangan daerah',
+        icon: '/icons/navigation/industri.svg',
+        link: 'https://dashboard.jabarprov.go.id/id/topic/industri'
       },
       {
         id: 4,
@@ -158,6 +158,20 @@ export const navigationMenu = [
         description: 'Dapatkan ragam informasi terkait pendidikan di Jawa Barat',
         icon: '/icons/navigation/pendidikan.svg',
         link: 'https://dashboard.jabarprov.go.id/id/topic/pendidikan'
+      },
+      {
+        id: 5,
+        title: 'Informasi Covid-19',
+        description: 'Dapatkan informasi terkait perkembangan Covid-19 di Jawa Barat',
+        icon: '/icons/navigation/covid19.svg',
+        link: 'https://dashboard.jabarprov.go.id/id/dashboard-pikobar/trace/statistik'
+      },
+      {
+        id: 6,
+        title: 'BIAN',
+        description: 'Dapatkan informasi terkait Bulan Imunisasi Anak Nasional',
+        icon: '/icons/navigation/bian.svg',
+        link: 'https://dashboard.jabarprov.go.id/id/topic/bian'
       }
     ],
     gtagEvent: 'click_menu_dashboard',
@@ -186,12 +200,82 @@ export const navigationMenu = [
         id: 3,
         title: 'Tentang Jawa Barat',
         description: 'Cari tahu sejarah, pimpinan, dan pemerintahan Jawa Barat selengkapnya',
-        icon: '/icons/navigation/tentang-jawa-barat.svg',
+        icon: '/icons/navigation/informasi.svg',
         link: '/tentang-jawa-barat'
       }
     ],
     gtagEvent: 'click_menu_profil',
     gtagEventSitemap: 'click_sitemap_profil'
+  },
+  {
+    id: 5,
+    title: 'PPID',
+    link: '',
+    items: [
+      {
+        id: 1,
+        title: 'Profil PPID',
+        description: 'Cari tahu tentang Profil PPID, Struktur Organisasi, Visi & Misi, dan Uraian Tugas dari PPID Jawa Barat',
+        icon: '/icons/navigation/pemerintahan.svg',
+        link: 'https://ppid.jabarprov.go.id/page/414-TENTANG-PPID'
+      },
+      {
+        id: 2,
+        title: 'Alur Layanan Informasi Publik',
+        description: 'Informasi seputar pengajuan permohonan informasi publik PPID Provinsi Jawa Barat',
+        icon: '/icons/navigation/teknologi.svg',
+        link: 'https://ppid.jabarprov.go.id/page/561-TATA-CARA-MEMPEROLEH-INFROMASI'
+      },
+      {
+        id: 3,
+        title: 'Permohonan Informasi Publik',
+        description: 'Ajukan permohonan informasi publik kepada PPID Provinsi Jawa Barat',
+        icon: '/icons/navigation/informasi.svg',
+        link: 'https://ppid.jabarprov.go.id/permohonan'
+      },
+      {
+        id: 4,
+        title: 'Pengajuan Keberatan',
+        description: 'Informasi tata cara pengajuan keberatan terkait permohonan informasi kepada PPID Provinsi Jawa Barat',
+        icon: '/icons/navigation/informasi.svg',
+        link: 'https://ppid.jabarprov.go.id/page/563-FORM-PENGAJUAN-KEBERATAN'
+      },
+      {
+        id: 5,
+        title: 'Daftar Informasi Publik',
+        description: 'Daftar informasi publik Pemerintah Provinsi Jawa Barat yang tersedia dan dapat diakses masyarakat',
+        icon: '/icons/navigation/informasi.svg',
+        link: 'https://ppid.jabarprov.go.id/page/3448-Daftar-Informasi-Publik'
+      },
+      {
+        id: 6,
+        title: 'Informasi Publik Berkala',
+        description: 'Informasi yang wajib diperbaharui kemudian disediakan dan diumumkan kepada publik secara rutin atau berkala sekurang-kurangnya setiap 6 bulan sekali',
+        icon: '/icons/navigation/informasi.svg',
+        link: 'https://ppid.jabarprov.go.id/page/568-Informasi-Berkala'
+      },
+      {
+        id: 7,
+        title: 'Informasi Publik Serta Merta',
+        description: 'Informasi yang berkaitan dengan hajat hidup orang banyak dan ketertiban umum dan wajib diumumkan secara serta merta tanpa penundaan',
+        icon: '/icons/navigation/sosial.svg',
+        link: 'https://ppid.jabarprov.go.id/page/756-Informasi-Serta-Merta'
+      },
+      {
+        id: 8,
+        title: 'Tata Cara Penyelesaian Sengketa',
+        description: 'Informasi tata cara penyelesaian sengketa informasi ke Komisi Informasi',
+        icon: '/icons/navigation/informasi.svg',
+        link: 'https://ppid.jabarprov.go.id/page/645-TATA-CARA-PENYELSAIAN-SENGKETA'
+      },
+      {
+        id: 9,
+        title: 'Tata Cara Pengaduan',
+        description: 'Informasi tata cara pengaduan penyalahgunaan wewenang atau pelanggaran yang dilakukan oleh Pejabat Badan Publik',
+        icon: '/icons/navigation/informasi.svg',
+        link: 'https://ppid.jabarprov.go.id/page/3900-Tata-Cara-Pengaduan-Penyalahgunaan-Wewenang-atau-Pelaporan-Yang-Dilakukan-oleh-Pejabat-Badan-Publik'
+      }
+    ]
   }
 ]
 
@@ -217,10 +301,10 @@ export const mostPopularServicesMenu = [
       },
       {
         id: 3,
-        title: 'Perizinan Bangunan',
-        description: 'Layanan informasi tentang syarat dan cara melakukan pembayaran Pajak Bumi dan Bangunan (PBB).',
-        link: 'https://dpmptsp.jabarprov.go.id/jelita/main/pendaftaranbaru/perizinanonline',
-        icon: '/icons/layanan-terpopuler/perizinan-bangunan.svg'
+        title: 'Jabar Jawara',
+        description: 'Layanan informasi seputar lowongan pekerjaan, pengembangan diri, beasiswa, hingga cara untuk mengembangkan bisnis untuk pelaku UMKM di Jawa Barat.',
+        link: 'https://www.jabarjawara.id',
+        icon: '/icons/layanan-terpopuler/jabar-jawara.svg'
       }
     ]
   },
@@ -231,17 +315,17 @@ export const mostPopularServicesMenu = [
     items: [
       {
         id: 4,
-        title: 'Perizinan Industri Rumah Tangga (PIRT)',
-        description: 'Temukan informasi dan layanan mengenai Perizinan Industri Rumah Tangga (PIRT) di sini.',
-        link: 'https://dpmptsp.jabarprov.go.id/jelita/main/pendaftaranbaru/perizinanonline',
+        title: 'SPP-IRT',
+        description: 'Layanan sertifikasi atau perizinan khusus industri pangan kelas rumahan.',
+        link: 'https://sppirt.pom.go.id/',
         icon: '/icons/layanan-terpopuler/perizinan-industri-rumah-tangga.svg'
       },
       {
         id: 5,
-        title: 'Bantuan Langsung Tunai (BLT)',
-        description: 'Temukan Informasi mengenai Bantuan Langsung Tunai (BLT) di sini.',
-        link: 'https://www.jabarprov.go.id/index.php/news/39744/2020/10/21/Mudah-Cek-BLT-BPUM-24-Juta-Lewat-Sini',
-        icon: '/icons/layanan-terpopuler/bantuan-langsung-tunai.svg'
+        title: 'Perizinan Usaha',
+        description: 'Layanan informasi dan kepengurusan perizinan usaha.',
+        link: 'https://dpmptsp.jabarprov.go.id/web/pages/detail/220-layanan-online/87',
+        icon: '/icons/layanan-terpopuler/perizinan-usaha.svg'
       },
       {
         id: 6,
@@ -266,10 +350,10 @@ export const mostPopularServicesMenu = [
       },
       {
         id: 8,
-        title: 'Hotel Murah di Jawa Barat',
-        description: 'Temukan informasi mengenai tempat menginap di Jawa Barat sesuai keinginan.',
-        link: 'https://uspar.braga.co.id',
-        icon: '/icons/layanan-terpopuler/hotel-murah-di-jawa-barat.svg'
+        title: 'Informasi Rute Angkutan Umum',
+        description: 'Temukan informasi rute angkutan umum yang terdapat di Jawa Barat.',
+        link: 'http://dishub.jabarprov.go.id/angkutan.html',
+        icon: '/icons/layanan-terpopuler/informasi-rute-angkutan-umum.svg'
       },
       {
         id: 9,
@@ -286,21 +370,21 @@ export const featuredProgramMenu = [
   {
     id: 1,
     title: 'Sapawarga',
-    description: 'Temukan informasi dan akses layanan tentang Organisasi Perangkat Daerah di Jawa Barat',
+    description: 'Sapawarga bantu warga salurkan aspirasi, dapatkan informasi penting, dan akses layanan publik secara digital.',
     icon: '/icons/program-unggulan/sapawarga.svg',
     link: 'https://digitalservice.jabarprov.go.id/sapawarga'
   },
   {
     id: 2,
     title: 'Desa Digital',
-    description: 'Temukan informasi dan akses layanan tentang Organisasi Perangkat Daerah di Jawa Barat',
+    description: 'Desa Digital merupakan program pemberdayaan masyarakat melalui pemanfaatan teknologi digital dan internet dalam pengembangan potensi desa, pemasaran, dan percepatan akses serta pelayanan informasi. Melalui peningkatan literasi digital, masyarakat dapat memanfaatkan akses internet untuk meningkatkan kualitas hidup masyarakat dalam berbagai aspek, di antaranya pengelolaan lingkungan, ekonomi, pendidikan, peluang inovasi, dan stabilitas sosial.',
     icon: '/icons/program-unggulan/desa-digital.svg',
     link: 'https://desadigital.jabarprov.go.id/'
   },
   {
     id: 3,
     title: 'Ekosistem Data Jabar',
-    description: 'Temukan informasi dan akses layanan tentang Organisasi Perangkat Daerah di Jawa Barat',
+    description: 'Ekosistem Data Jabar adalah portal terintegrasi untuk pengelolaan, keterbukaan, dan kemudahan akses data bagi warga dan pemerintah Jawa Barat.',
     icon: '/icons/program-unggulan/ekosistem-data-jabar.svg',
     link: 'http://data.jabarprov.go.id'
   }
@@ -330,10 +414,10 @@ export const quickLinkMenu = [
   },
   {
     id: 4,
-    title: 'Info Harga Pangan',
+    title: 'Info Harga Komoditas Pangan',
     description: 'Dapatkan info harga rata-rata komoditas harian di daerah sekitar Jawa Barat.',
     icon: '/icons/akses-cepat/info-harga-pangan.svg',
-    link: 'https://disperindag.jabarprov.go.id/hargakomoditi_indag'
+    link: 'http://silinda.jabarprov.go.id/komoditas'
   },
   {
     id: 5,
@@ -473,4 +557,27 @@ export const popularSearchSuggestions = [
   'Covid-19',
   'G20',
   'Minyak Goreng'
+]
+
+export const archiveAndDocumentTopics = [
+  {
+    label: 'Dokumen Perencanaan',
+    value: 'dokumen perencanaan'
+  },
+  {
+    label: 'Laporan Pertanggungjawaban',
+    value: 'laporan pertanggungjawaban'
+  },
+  {
+    label: 'Produk Hukum',
+    value: 'produk hukum'
+  },
+  {
+    label: 'Transparansi Kepegawaian',
+    value: 'transparansi kepegawaian'
+  },
+  {
+    label: 'Transparansi Pengelolaan Keuangan Daerah',
+    value: 'transparansi pengelolaan keuangan daerah'
+  }
 ]

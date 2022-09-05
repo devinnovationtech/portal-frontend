@@ -204,9 +204,11 @@ export default {
   watch: {
     $route: {
       handler () {
-        this.closeDropdown()
-        this.setActiveMenuBasedOnRoute()
-        this.slideToActiveIndex()
+        if (this.$route.path.includes('tentang-jawa-barat')) {
+          this.closeDropdown()
+          this.setActiveMenuBasedOnRoute()
+          this.slideToActiveIndex()
+        }
       }
     }
   },

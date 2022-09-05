@@ -5,7 +5,7 @@
     @click.self="toggleOpen"
   >
     <div
-      class="gpr-widget__container sticky top-[190px] grid grid-cols-[350px,auto] max-w-max mb-6
+      class="gpr-widget__container sticky md:top-[220px] lg:top-[240px] grid grid-cols-[350px,auto] max-w-max mb-6
       transition-transform ease-in duration-150"
       :class="{ 'gpr-widget__container--open' : isOpen }"
     >

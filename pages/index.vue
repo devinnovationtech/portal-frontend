@@ -1,7 +1,9 @@
 <template>
   <main class="overflow-hidden">
+    <Campaign />
     <Hero />
     <MostPopularServices />
+    <BannerBIAN />
     <FeaturedProgramPreview />
     <section class="pb-10">
       <BaseContainer>
