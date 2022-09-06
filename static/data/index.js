@@ -131,8 +131,8 @@ export const navigationMenu = [
       },
       {
         id: 8,
-        title: 'Perijinan Online',
-        description: 'Layanan informasi dan kepengurusan perizinan usaha',
+        title: 'Perizinan Online',
+        description: 'Layanan informasi dan kepengurusan perizinan usaha secara online',
         icon: '/icons/navigation/perijinan-online.svg',
         link: 'https://dpmptsp.jabarprov.go.id/jelita/main/pendaftaranbaru/perizinanonline'
       }
@@ -229,7 +229,7 @@ export const navigationMenu = [
         title: 'Layanan Pengadaan Secara Elektronik',
         description: 'Sistem pengadaan berbasis E-Procurement (SPSE) Pemerintah Provinsi Jawa Barat',
         icon: '/icons/navigation/arsip-dan-dokumen.svg',
-        link: 'www.lpse.jabarprov.go.id'
+        link: 'https://lpse.jabarprov.go.id'
       }
     ],
     gtagEvent: 'click_menu_profil',
