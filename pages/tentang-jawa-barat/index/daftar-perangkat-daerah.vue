@@ -93,20 +93,31 @@
               <p class="font-roboto text-sm font-medium text-blue-gray-500 leading-6 line-clamp-1 mb-2">
                 {{ item.chief }}
               </p>
-              <p class="font-lato text-xs font-normal text-[#717F8C] leading-5 line-clamp-1 mb-1">
+              <p class="font-lato text-xs font-normal text-[#717F8C] leading-5 line-clamp-1 mb-2">
                 {{ item.address }}
               </p>
-              <a
-                v-if="item.website"
-                :href="item.website"
-                rel="noopener noreferrer"
-                target="_blank"
-                class="font-lato text-xs font-normal leading-5 text-[#1976D2] flex items-center gap-2"
-                @click="gtagClickSiteOpd(item)"
-              >
-                {{ item.website }}
-                <Icon name="open-new-tab" fill="#1976D2" size="14px" />
-              </a>
+              <div class="flex flex-col md:flex-row">
+                <Link v-if="item.website" :link="item.website" tabindex="-1" @click.native="gtagClickSiteOpd(item)">
+                  <Button
+                    class="w-full lg:max-w-[171px]"
+                    type="button"
+                    variant="primary"
+                  >
+                    Kunjungi Website
+                    <Icon name="open-new-tab" size="14px" />
+                  </Button>
+                </Link>
+                <Link v-if="item.ppid" :link="item.ppid" tabindex="-1">
+                  <Button
+                    class="w-full lg:max-w-[160px] mt-2 md:mt-0 md:ml-4"
+                    type="button"
+                    variant="secondary"
+                  >
+                    Kunjungi PPID
+                    <Icon name="open-new-tab" size="14px" />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </li>
         </template>
