@@ -13,7 +13,7 @@
         '!w-[72px] !h-[72px]': small
       }"
     >
-      <Link :link="`/berita/${item.slug}`">
+      <Link :link="`/berita/${item.slug}`" @click.native="gtagClickNewsItem(item)">
         <LazyImg
           v-show="!loading"
           ref="news-item-image"
@@ -38,7 +38,7 @@
         <div class="w-1/2 h-4 bg-gray-200 animate-pulse rounded-md mb-2" />
       </div>
       <template v-else>
-        <Link :link="`/berita/${item.slug}`">
+        <Link :link="`/berita/${item.slug}`" @click.native="gtagClickNewsItem(item)">
           <h2
             ref="news-item-title"
             class="text-base md:text-lg cursor-pointer font-lato font-medium text-blue-gray-800 mb-2
@@ -75,6 +75,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    categoryNews: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   methods: {
@@ -86,6 +91,28 @@ export default {
       }
 
       return relativeTime(date)
+    },
+    gtagClickNewsItem (item) {
+      let eventCategory
+      let eventLabel
+
+      if (this.categoryNews === 'terpopuler') {
+        eventCategory = 'click_popular_news'
+        eventLabel = 'click popular news'
+      } else if (this.categoryNews === 'terbaru') {
+        eventCategory = 'click_latest_news'
+        eventLabel = 'click latest news'
+      } else if (this.categoryNews === 'terhangat') {
+        eventCategory = 'click_hot_news'
+        eventLabel = 'click hot news'
+      }
+
+      this.$gtag.event('click', {
+        event_category: eventCategory,
+        event_label: `${eventLabel} ${item.title}`,
+        value: item.title,
+        url: `${document.location.origin}/berita/${item.slug}`
+      })
     }
   }
 }

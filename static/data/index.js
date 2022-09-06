@@ -71,7 +71,9 @@ export const navigationMenu = [
         icon: '/icons/navigation/teknologi.svg',
         link: '/berita?kategori=teknologi'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_berita',
+    gtagEventSitemap: 'click_sitemap_berita'
   },
   {
     id: 2,
@@ -134,7 +136,9 @@ export const navigationMenu = [
         icon: '/icons/navigation/perijinan-online.svg',
         link: 'https://dpmptsp.jabarprov.go.id/jelita/main/pendaftaranbaru/perizinanonline'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_layanan',
+    gtagEventSitemap: 'click_sitemap_layanan'
   },
   {
     id: 3,
@@ -183,7 +187,9 @@ export const navigationMenu = [
         icon: '/icons/navigation/bian.svg',
         link: 'https://dashboard.jabarprov.go.id/id/topic/bian'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_dashboard',
+    gtagEventSitemap: 'click_sitemap_dashboard'
   },
   {
     id: 4,
@@ -225,7 +231,9 @@ export const navigationMenu = [
         icon: '/icons/navigation/arsip-dan-dokumen.svg',
         link: 'www.lpse.jabarprov.go.id'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_profil',
+    gtagEventSitemap: 'click_sitemap_profil'
   },
   {
     id: 5,

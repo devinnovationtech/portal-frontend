@@ -102,6 +102,7 @@
                 rel="noopener noreferrer"
                 target="_blank"
                 class="font-lato text-xs font-normal leading-5 text-[#1976D2] flex items-center gap-2"
+                @click="gtagClickSiteRegency(item)"
               >
                 {{ item.website }}
                 <Icon name="open-new-tab" fill="#1976D2" size="14px" />
@@ -169,6 +170,12 @@ export default {
       return this.data.length > 0
     }
   },
+  watch: {
+    listView (value) {
+      // record regencies type display by gtag
+      this.gtagClickRegenciesTypeDisplay(value)
+    }
+  },
   methods: {
     onListViewChange (listView) {
       this.listView = listView
@@ -179,6 +186,10 @@ export default {
           ...this.pagination,
           currentPage: 1
         }
+
+        // record search regencies by gtag
+        this.gtagSearchRegencies()
+
         this.$fetch()
       }
     },
@@ -230,6 +241,29 @@ export default {
     },
     scrollToTop () {
       window.scrollTo({ top: 200 })
+    },
+    gtagSearchRegencies () {
+      this.$gtag.event('search', {
+        event_category: 'search_regencies',
+        event_label: `search regency ${this.searchKeyword}`,
+        value: this.searchKeyword
+      })
+    },
+    gtagClickSiteRegency (value) {
+      const { name, website } = value
+      this.$gtag.event('click', {
+        event_category: 'click_web_regency',
+        event_label: `click web regenciy ${name}`,
+        value: name,
+        website
+      })
+    },
+    gtagClickRegenciesTypeDisplay () {
+      this.$gtag.event('click', {
+        event_category: 'click_regencies_type_display',
+        event_label: `click regencies type display ${this.listView}`,
+        value: this.listView
+      })
     }
   }
 }

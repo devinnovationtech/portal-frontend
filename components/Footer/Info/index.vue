@@ -20,7 +20,7 @@
         <p class="font-roboto font-bold leading-7">
           Surel
         </p>
-        <a href="mailto:info@jabarprov.go.id" class="text-sm leading-6">info@jabarprov.go.id</a>
+        <a href="mailto:info@jabarprov.go.id" class="text-sm leading-6" @click="gtagFooterEmail">info@jabarprov.go.id</a>
       </div>
     </div>
     <!-- Feedback -->
@@ -30,7 +30,11 @@
         <p class="font-bold">
           Umpan Balik
         </p>
-        <button type="button" class="text-sm text-left leading-6" @click="toggleFeedbackForm">
+        <button
+          type="button"
+          class="text-sm text-left leading-6"
+          @click="clickFeedbackForm"
+        >
           Isi survei performa situs web
         </button>
         <Feedback :show="isFeedbackFormOpen" @close="toggleFeedbackForm" />
@@ -52,6 +56,7 @@
             :aria-label="socialMediaSite.name"
             rel="noreferrer"
             class="p-2 flex justify-center items-center rounded border border-white border-opacity-20"
+            @click="gtagFooterSocialMedia(socialMediaSite.name)"
           >
             <Icon :name="socialMediaSite.icon" size="18px" />
           </a>
@@ -72,8 +77,30 @@ export default {
     }
   },
   methods: {
+    clickFeedbackForm () {
+      this.toggleFeedbackForm()
+      this.gtagFeedbackForm()
+    },
     toggleFeedbackForm () {
       this.isFeedbackFormOpen = !this.isFeedbackFormOpen
+    },
+    gtagFooterEmail () {
+      this.$gtag.event('click', {
+        event_category: 'click_email',
+        value: 'Click Email'
+      })
+    },
+    gtagFeedbackForm () {
+      this.$gtag.event('click', {
+        event_category: 'click_feedback',
+        value: 'Click Feedback'
+      })
+    },
+    gtagFooterSocialMedia (name) {
+      this.$gtag.event('click', {
+        event_category: 'click_sosmed_footer',
+        value: name
+      })
     }
   }
 }

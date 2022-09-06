@@ -412,11 +412,22 @@ export default {
     setSelectedProfile (selectedProfile) {
       if (!['gubernur', 'wakil gubernur'].includes(selectedProfile)) { return }
 
+      // record click profile gubernur by gtag
+      this.gtagClickProfileGubernur(selectedProfile)
+
       this.selectedProfile = selectedProfile
       this.showModal()
     },
     setCurrentSlide () {
       this.currentSlide = this.swiper.activeIndex
+    },
+    gtagClickProfileGubernur (value) {
+      const profile = value === 'gubernur' ? 'Gubernur' : 'Wakil Gubernur'
+      this.$gtag.event('click', {
+        event_category: 'click_profile_gubernur',
+        event_label: `click profile ${value}`,
+        value: profile
+      })
     }
   }
 }

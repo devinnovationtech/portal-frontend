@@ -62,7 +62,7 @@
                 </template>
                 <JdsPopoverDropdown class="p-3">
                   <div v-for="item in menus[activeMenuIndex].items" :key="item.id">
-                    <NuxtLink :to="item.link" class="text-sm text-gray-700 hover:text-green-700">
+                    <NuxtLink :to="item.link" class="text-sm text-gray-700 hover:text-green-700" @click.native="gtagClickMenuAbout(item.label)">
                       {{ item.label }}
                     </NuxtLink>
                   </div>
@@ -77,7 +77,7 @@
                   {{ menu.title }}
                 </p>
                 <li v-for="item in menu.items" :key="item.id" class="mb-5 ml-7">
-                  <NuxtLink :to="item.link" class="text-sm text-gray-700 hover:text-green-700">
+                  <NuxtLink :to="item.link" class="text-sm text-gray-700 hover:text-green-700" @click.native="gtagClickMenuAbout(item.label)">
                     {{ item.label }}
                   </NuxtLink>
                 </li>
@@ -232,6 +232,13 @@ export default {
       if (this.isSwiperReady) {
         this.swiper.slideTo(this.activeMenuIndex)
       }
+    },
+    gtagClickMenuAbout (value) {
+      this.$gtag.event('click', {
+        event_category: 'click_menu_about',
+        event_label: `click menu about ${value}`,
+        value
+      })
     }
   }
 }

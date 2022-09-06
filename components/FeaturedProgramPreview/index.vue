@@ -38,7 +38,7 @@
               bg-white p-6 rounded-xl border border-white hover:border-green-700 hover:shadow transition-colors ease-brand duration-250"
               >
                 <LazyImg :src="menu.icon" :alt="menu.title" width="32" height="32" />
-                <Link :link="menu.link">
+                <Link :link="menu.link" @click.native="gtagClickProgram(menu)">
                   <h3 class="font-bold text-xl md:text-2xl leading-normal group-hover:text-green-700">
                     {{ menu.title }}
                   </h3>
@@ -46,7 +46,7 @@
                 <p class="text-sm leading-6 text-blue-gray-800 group-hover:text-blue-gray-900 line-clamp-3 md:line-clamp-2">
                   {{ menu.description }}
                 </p>
-                <Link :link="menu.link" class="self-start">
+                <Link :link="menu.link" class="self-start" @click.native="gtagClickProgram(menu)">
                   <Button type="button" variant="tertiary-paddingless" tabindex="-1">
                     Selengkapnya
                     <Icon name="arrow-right" size="14px" />
@@ -73,7 +73,7 @@
           transition-colors ease-brand duration-250"
         >
           <LazyImg :src="menu.icon" :alt="menu.title" width="32" height="32" />
-          <Link :link="menu.link" class="self-start">
+          <Link :link="menu.link" class="self-start" @click.native="gtagClickProgram(menu)">
             <h3 class="font-bold text-2xl leading-normal group-hover:text-green-700">
               {{ menu.title }}
             </h3>
@@ -81,7 +81,7 @@
           <p class="text-sm leading-6 text-blue-gray-600 group-hover:text-blue-gray-900 line-clamp-2">
             {{ menu.description }}
           </p>
-          <Link :link="menu.link" class="self-start">
+          <Link :link="menu.link" class="self-start" @click.native="gtagClickProgram(menu)">
             <Button type="button" variant="tertiary-paddingless" tabindex="-1">
               Selengkapnya
               <Icon name="arrow-right" size="14px" />
@@ -105,6 +105,15 @@ export default {
         spaceBetween: 16,
         mousewheel: true,
         passiveListeners: true
+      })
+    }
+  },
+  methods: {
+    gtagClickProgram (value) {
+      this.$gtag.event('click', {
+        event_category: 'click_program',
+        event_label: `Click program ${value.title}`,
+        value: value.title
       })
     }
   }

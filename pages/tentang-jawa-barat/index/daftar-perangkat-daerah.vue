@@ -97,7 +97,7 @@
                 {{ item.address }}
               </p>
               <div class="flex flex-col md:flex-row">
-                <Link v-if="item.website" :link="item.website" tabindex="-1">
+                <Link v-if="item.website" :link="item.website" tabindex="-1" @click.native="gtagClickSiteOpd(item)">
                   <Button
                     class="w-full lg:max-w-[171px]"
                     type="button"
@@ -185,6 +185,11 @@ export default {
       return this.$store.state.device.device
     }
   },
+  watch: {
+    listView (value) {
+      this.gtagClickOpdTypeDisplay(value)
+    }
+  },
   methods: {
     onListViewChange (listView) {
       this.listView = listView
@@ -195,6 +200,10 @@ export default {
           ...this.pagination,
           currentPage: 1
         }
+
+        // record search perangkat daerah by gtag
+        this.gtagSearchPerangkatDaerah()
+
         this.$fetch()
       }
     },
@@ -243,6 +252,29 @@ export default {
     },
     scrollToTop () {
       window.scrollTo({ top: 200 })
+    },
+    gtagSearchPerangkatDaerah () {
+      this.$gtag.event('search', {
+        event_category: 'search_opd',
+        event_label: `search perangkat daerah ${this.searchKeyword}`,
+        value: this.searchKeyword
+      })
+    },
+    gtagClickSiteOpd (value) {
+      const { name, website } = value
+      this.$gtag.event('click', {
+        event_category: 'click_web_opd',
+        event_label: `click web opd ${name}`,
+        value: name,
+        website
+      })
+    },
+    gtagClickOpdTypeDisplay () {
+      this.$gtag.event('click', {
+        event_category: 'click_opd_type_display',
+        event_label: `click opd type display ${this.listView}`,
+        value: this.listView
+      })
     }
   }
 }

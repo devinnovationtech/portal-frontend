@@ -21,7 +21,7 @@
       </div>
     </template>
     <template v-else>
-      <nuxt-link :to="`/berita/${item.slug}`" :aria-label="item.title">
+      <nuxt-link :to="`/berita/${item.slug}`" :aria-label="item.title" @click.native="gtagClickHotNews(item)">
         <div
           ref="news-headline-image"
           v-lazy:background-image="item.image"
@@ -65,7 +65,7 @@
             </div>
           </div>
           <div class="block md:flex md:justify-between md:items-center">
-            <Link :link="`/berita/${item.slug}`">
+            <Link :link="`/berita/${item.slug}`" @click="gtagClickHotNews(item)">
               <button type="button" class="w-full md:w-[fit-content] border border-white border-opacity-30 px-4 py-2 rounded-lg">
                 Baca Selengkapnya
               </button>
@@ -112,6 +112,14 @@ export default {
       }
 
       return relativeTime(date)
+    },
+    gtagClickHotNews (item) {
+      this.$gtag.event('click', {
+        event_category: 'click_hot_news',
+        event_label: `click hot news ${item.title}`,
+        value: item.title,
+        url: `${document.location.origin}/berita/${item.slug}`
+      })
     }
   }
 }
