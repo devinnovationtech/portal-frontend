@@ -119,7 +119,7 @@
               <p class="text-xs text-blue-gray-200">
                 Link Kegiatan
               </p>
-              <Link :link="url" class="text-sm text-blue-600 underline" @click.native="gtagClickAgenda">
+              <Link :link="url" class="text-sm text-blue-600 underline">
                 {{ url }}
               </Link>
             </div>
@@ -304,6 +304,13 @@ export default {
         'text-gray-600': this.notStarted,
         'text-green-700': this.done,
         'text-white': this.ongoing
+      }
+    }
+  },
+  watch: {
+    isEventDetailOpen (value) {
+      if (value) {
+        this.gtagClickAgenda()
       }
     }
   },
