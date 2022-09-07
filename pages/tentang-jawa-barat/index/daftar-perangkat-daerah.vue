@@ -107,9 +107,9 @@
                     <Icon name="open-new-tab" size="14px" />
                   </Button>
                 </Link>
-                <Link v-if="item.ppid" :link="item.ppid" tabindex="-1">
+                <Link v-if="item.ppid" :link="item.ppid" tabindex="-1" class="mt-2 md:mt-0 md:ml-4">
                   <Button
-                    class="w-full lg:max-w-[160px] mt-2 md:mt-0 md:ml-4"
+                    class="w-full lg:max-w-[160px]"
                     type="button"
                     variant="secondary"
                   >
