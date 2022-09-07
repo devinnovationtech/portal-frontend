@@ -133,6 +133,7 @@ export default {
     currentCategory () {
       this.resetPagination()
       this.$fetch()
+      this.gtagPageViewNews()
     }
   },
   activated () {
