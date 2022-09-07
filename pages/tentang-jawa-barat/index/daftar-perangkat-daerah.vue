@@ -94,7 +94,7 @@
                 {{ item.chief }}
               </p>
               <p class="font-lato text-xs font-normal text-[#717F8C] leading-5 line-clamp-1 mb-2">
-                {{ item.address }}
+                {{ item.address }}, Telp. {{ item.phone }}
               </p>
               <div class="flex flex-col md:flex-row">
                 <Link v-if="item.website" :link="item.website" tabindex="-1" @click.native="gtagClickSiteOpd(item)">
@@ -107,9 +107,9 @@
                     <Icon name="open-new-tab" size="14px" />
                   </Button>
                 </Link>
-                <Link v-if="item.ppid" :link="item.ppid" tabindex="-1">
+                <Link v-if="item.ppid" :link="item.ppid" tabindex="-1" class="mt-2 md:mt-0 md:ml-4">
                   <Button
-                    class="w-full lg:max-w-[160px] mt-2 md:mt-0 md:ml-4"
+                    class="w-full lg:max-w-[160px]"
                     type="button"
                     variant="secondary"
                   >
