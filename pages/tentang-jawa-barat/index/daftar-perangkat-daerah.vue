@@ -94,7 +94,7 @@
                 {{ item.chief }}
               </p>
               <p class="font-lato text-xs font-normal text-[#717F8C] leading-5 line-clamp-1 mb-2">
-                {{ item.address }}
+                {{ item.address }}, Telp. {{ item.phone }}
               </p>
               <div class="flex flex-col md:flex-row">
                 <Link v-if="item.website" :link="item.website" tabindex="-1" @click.native="gtagClickSiteOpd(item)">
