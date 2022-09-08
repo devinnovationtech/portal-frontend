@@ -437,10 +437,10 @@ export const quickLinkMenu = [
   },
   {
     id: 3,
-    title: 'Sasaran Kinerja Pegawai',
-    description: 'Aplikasi penilaian secara daring kinerja dan prestasi Pegawai Negeri Sipil.',
-    icon: '/icons/akses-cepat/sasaran-kinerja-pegawai.svg',
-    link: 'https://kinerja.jabarprov.go.id/login'
+    title: 'Cek Bantuan Sosial',
+    description: 'Pencarian data Penerima Manfaat terkait bantuan sosial yang diselenggarakan Kemensos.',
+    icon: '/icons/akses-cepat/bansos.svg',
+    link: 'https://cekbansos.kemensos.go.id'
   },
   {
     id: 4,
