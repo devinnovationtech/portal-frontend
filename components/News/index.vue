@@ -61,6 +61,7 @@
 
 <script>
 import { newsCategories } from '~/static/data'
+import { formatISODate } from '~/utils/date'
 export default {
   data () {
     return {
@@ -79,6 +80,9 @@ export default {
     }
   },
   async fetch () {
+    const aWeekAgo = formatISODate(new Date(new Date() - (7 * 24 * 60 * 60 * 1000)))
+    const today = formatISODate(new Date())
+
     const params = {
       cat: this.currentCategory,
       sort_by: 'published_at',
@@ -90,7 +94,7 @@ export default {
 
       const [latest, popular, video] = await Promise.all([
         this.$axios.get('/v1/public/news', { params: { ...params, per_page: 5 } }),
-        this.$axios.get('/v1/public/news', { params: { ...params, per_page: 5, sort_by: 'views' } }),
+        this.$axios.get('/v1/public/news', { params: { ...params, per_page: 5, sort_by: 'views', start_date: aWeekAgo, end_date: today } }),
         this.$axios.get('/v1/public/news', { params: { ...params, per_page: 5, type: 'video' } })
       ])
 
