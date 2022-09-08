@@ -303,7 +303,9 @@ export const navigationMenu = [
         icon: '/icons/navigation/informasi.svg',
         link: 'https://ppid.jabarprov.go.id/page/3900-Tata-Cara-Pengaduan-Penyalahgunaan-Wewenang-atau-Pelaporan-Yang-Dilakukan-oleh-Pejabat-Badan-Publik'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_ppid',
+    gtagEventSitemap: 'click_sitemap_ppid'
   }
 ]
 

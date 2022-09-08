@@ -43,7 +43,7 @@
                   </div>
                 </div>
                 <div class="md:flex md:justify-between md:items-center">
-                  <Link :link="`/berita/${item.slug}`">
+                  <Link :link="`/berita/${item.slug}`" @click.native="gtagClickRelatedNews(item)">
                     <button type="button" class="w-full md:w-[fit-content] border border-white border-opacity-30 px-4 py-2 rounded-lg mb-4 md:mb-0">
                       Baca Selengkapnya
                     </button>

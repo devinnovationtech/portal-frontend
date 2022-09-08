@@ -156,8 +156,8 @@ export default {
       await this.$nextTick()
       if (this.isSelected(category)) {
         this.$gtag.event('click', {
-          event_category: 'click_filter_category',
-          event_label: `Click filter category ${category}`,
+          event_category: 'click_filter_category_awards',
+          event_label: `Click filter category awards ${category}`,
           value: category
         })
       }
