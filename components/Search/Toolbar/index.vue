@@ -39,8 +39,9 @@
           />
         </button>
       </div>
+      <!-- Temporary Hide -->
       <!-- Sort Dropdown -->
-      <div v-if="sortable" class="pl-3 flex gap-4 items-center h-full">
+      <!-- <div v-if="sortable" class="pl-3 flex gap-4 items-center h-full">
         <p class="font-lato font-normal text-sm leading-6 text-blue-gray-500 whitespace-nowrap">
           Urut Berdasarkan :
         </p>
@@ -50,7 +51,7 @@
           :value="sortValue"
           @click="onChangeSort"
         />
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
