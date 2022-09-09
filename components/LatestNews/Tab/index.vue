@@ -23,13 +23,14 @@
         :published-at="item.published_at"
         :category="item.category"
         :fetch-state="$fetchState"
+        :selected-tab="selectedTab"
       />
     </ul>
   </div>
 </template>
 
 <script>
-import { format } from '~/utils/date'
+import { format, formatISODate } from '~/utils/date'
 
 export default {
   props: {
@@ -55,9 +56,14 @@ export default {
       }
 
       if (this.selectedTab === 'terpopuler') {
+        const aWeekAgo = formatISODate(new Date(new Date() - (7 * 24 * 60 * 60 * 1000)))
+        const today = formatISODate(new Date())
+
         params = {
           ...params,
-          sort_by: 'views'
+          sort_by: 'views',
+          start_date: aWeekAgo,
+          end_date: today
         }
       }
 

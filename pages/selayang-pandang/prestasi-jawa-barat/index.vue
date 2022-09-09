@@ -139,6 +139,11 @@ export default {
       return this.achievementsData.length > 0
     }
   },
+  watch: {
+    listView (value) {
+      this.gtagClickAwardsTypeDisplay(value)
+    }
+  },
   methods: {
     onPaginationChange (action, value) {
       this.scrollToTop()
@@ -192,6 +197,9 @@ export default {
       this.$fetch()
     },
     onChangeSort (sortOrder) {
+      // record click sort order awards
+      this.gtagClickAwardsSortOrder(sortOrder)
+
       if (!sortOrder || sortOrder.toUpperCase() === this.sortOrder) { return }
       this.sortOrder = sortOrder.toUpperCase()
       this.$fetch()
@@ -202,11 +210,37 @@ export default {
           ...this.pagination,
           currentPage: 1
         }
+
+        // record search history awards by gtag
+        this.gtagSearchAwards(this.searchKeyword)
+
         this.$fetch()
       }
     },
     scrollToTop () {
       window.scrollTo({ top: 200 })
+    },
+    gtagSearchAwards (keyword) {
+      this.$gtag.event('search', {
+        event_category: 'search_awards',
+        event_label: `Search awards ${keyword}`,
+        value: keyword
+      })
+    },
+    gtagClickAwardsTypeDisplay () {
+      this.$gtag.event('click', {
+        event_category: 'click_awards_type_display',
+        event_label: `click awards type display ${this.listView}`,
+        value: this.listView
+      })
+    },
+    gtagClickAwardsSortOrder (value) {
+      const order = value === 'ASC' ? 'Judul A - Z' : 'Judul Z - A'
+      this.$gtag.event('click', {
+        event_category: 'click_awards_order',
+        event_label: `click awards sort order ${order}`,
+        value: order
+      })
     }
   }
 }

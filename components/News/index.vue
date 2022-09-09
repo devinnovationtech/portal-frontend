@@ -19,6 +19,7 @@
           :loading="mainNewsLoading"
           :max-item="pagination.itemsPerPage"
           :class="mainNews.length ? 'min-h-[540px] md:min-h-[850px]' : ''"
+          category-news="terhangat"
         >
           <!-- Main News Pagination -->
           <template #footer>
@@ -36,14 +37,14 @@
       </section>
       <section class="w-full flex flex-col gap-8 lg:gap-14">
         <!-- Latest News -->
-        <NewsList :items="latestNews" small :loading="loading">
+        <NewsList :items="latestNews" small :loading="loading" category-news="terbaru">
           <template #header>
             <NewsListHeader label="Berita Terbaru" :category="currentCategory" class="mb-2" />
           </template>
         </NewsList>
 
         <!-- Popular News -->
-        <NewsList :items="popularNews" small :loading="loading">
+        <NewsList :items="popularNews" small :loading="loading" category-news="terpopuler">
           <template #header>
             <NewsListHeader label="Berita Terpopuler" :category="currentCategory" class="mb-2" />
           </template>
@@ -60,6 +61,7 @@
 
 <script>
 import { newsCategories } from '~/static/data'
+import { formatISODate } from '~/utils/date'
 export default {
   data () {
     return {
@@ -78,6 +80,9 @@ export default {
     }
   },
   async fetch () {
+    const aWeekAgo = formatISODate(new Date(new Date() - (7 * 24 * 60 * 60 * 1000)))
+    const today = formatISODate(new Date())
+
     const params = {
       cat: this.currentCategory,
       sort_by: 'published_at',
@@ -89,7 +94,7 @@ export default {
 
       const [latest, popular, video] = await Promise.all([
         this.$axios.get('/v1/public/news', { params: { ...params, per_page: 5 } }),
-        this.$axios.get('/v1/public/news', { params: { ...params, per_page: 5, sort_by: 'views' } }),
+        this.$axios.get('/v1/public/news', { params: { ...params, per_page: 5, sort_by: 'views', start_date: aWeekAgo, end_date: today } }),
         this.$axios.get('/v1/public/news', { params: { ...params, per_page: 5, type: 'video' } })
       ])
 
@@ -132,6 +137,7 @@ export default {
     currentCategory () {
       this.resetPagination()
       this.$fetch()
+      this.gtagPageViewNews()
     }
   },
   activated () {
@@ -142,6 +148,9 @@ export default {
       this.headlineNews = [] // clear headline news
       this.$fetch()
     }
+  },
+  mounted () {
+    this.gtagPageViewNews()
   },
   methods: {
     setCurrentCategory (category) {
@@ -226,6 +235,13 @@ export default {
         itemsPerPage: 5,
         totalRows: 0
       }
+    },
+    gtagPageViewNews () {
+      this.$gtag.event('page_view', {
+        event_category: 'page_view_news',
+        event_label: `page view news ${this.currentCategory}`,
+        category: this.currentCategory
+      })
     }
   }
 }

@@ -153,7 +153,7 @@ export default {
       this.pagination = JSON.parse(JSON.stringify(paginationObj))
     } catch (error) {
       this.documents = []
-      this.meta = []
+      this.meta = {}
     }
   },
   computed: {

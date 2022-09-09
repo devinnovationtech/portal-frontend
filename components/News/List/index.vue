@@ -21,6 +21,7 @@
           :item="item"
           :small="small"
           :loading="loading"
+          :category-news="categoryNews"
         />
       </div>
     </div>
@@ -56,6 +57,11 @@ export default {
       type: [String, Number],
       required: false,
       default: null
+    },
+    categoryNews: {
+      type: String,
+      required: false,
+      default: ''
     }
   }
 }

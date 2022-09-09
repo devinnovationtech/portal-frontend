@@ -38,6 +38,7 @@
                 :link="`/pencarian?q=${encodeURI(item)}`"
                 class="min-w-[182px] h-[54px] bg-white group hover:bg-green-primary rounded-xl px-[14px] flex items-center justify-between
                 transition-colors ease-brand duration-300"
+                @click.native="gtagPopularSearch(item)"
               >
                 <p class="font-bold text-gray-800 text-base leading-6 group-hover:text-white">
                   {{ item }}
@@ -119,7 +120,13 @@ export default {
       } else {
         this.suggestions = []
       }
-    }, 500)
+    }, 500),
+    gtagPopularSearch (item) {
+      this.$gtag.event('click', {
+        event_category: 'click_popular_topic',
+        value: item
+      })
+    }
   }
 }
 </script>

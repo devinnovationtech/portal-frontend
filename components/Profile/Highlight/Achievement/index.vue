@@ -112,7 +112,7 @@
     </client-only>
 
     <div class="flex justify-center mt-8">
-      <Link link="/selayang-pandang/prestasi-jawa-barat" tabindex="-1">
+      <Link link="/selayang-pandang/prestasi-jawa-barat" tabindex="-1" @click.native="gtagAwards">
         <Button class="max-w-max text-left md:text-center" type="button" variant="secondary">
           Lihat Semua Penghargaan Provinsi Jawa Barat
           <Icon name="open-new-tab" size="14px" />
@@ -207,6 +207,13 @@ export default {
     }
   },
   methods: {
+    gtagAwards () {
+      this.$gtag.event('click', {
+        event_category: 'click_awards',
+        event_label: 'Click Penghargaan',
+        value: 'Penghargaan'
+      })
+    },
     setCurrentSlide () {
       this.currentSlide = this.swiper.activeIndex
     }

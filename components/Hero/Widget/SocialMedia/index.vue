@@ -13,6 +13,7 @@
         :link="socialMediaSite.link"
         :aria-label="socialMediaSite.name"
         class="flex justify-center items-center p-3"
+        @click.native="gtagSocialMedia(socialMediaSite.name)"
       >
         <Icon
           :name="socialMediaSite.icon"
@@ -31,6 +32,14 @@ export default {
   data () {
     return {
       socialMediaSites
+    }
+  },
+  methods: {
+    gtagSocialMedia (name) {
+      this.$gtag.event('click', {
+        event_category: 'click_sosmed',
+        value: name
+      })
     }
   }
 }

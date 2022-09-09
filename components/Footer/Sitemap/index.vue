@@ -24,7 +24,11 @@
             </summary>
             <ul class="grid grid-cols-1 md:grid-cols-2 mt-2 gap-2">
               <li v-for="item in navigation.items" :key="item.id">
-                <Link :link="item.link" class="text-sm font-normal leading-6">
+                <Link
+                  :link="item.link"
+                  class="text-sm font-normal leading-6"
+                  @click.native="gtagFooterSitemap(navigation.gtagEventSitemap, item.title)"
+                >
                   {{ item.title }}
                 </Link>
               </li>
@@ -47,7 +51,11 @@
             </h3>
             <ul class="grid grid-flow-row gap-x-8 gap-y-2">
               <li v-for="item in navigation.items" :key="item.id" class="min-w-[95px]">
-                <Link :link="item.link" class="text-sm font-normal leading-6">
+                <Link
+                  :link="item.link"
+                  class="text-sm font-normal leading-6"
+                  @click.native="gtagFooterSitemap(navigation.gtagEventSitemap, item.title)"
+                >
                   {{ item.title }}
                 </Link>
               </li>
@@ -66,6 +74,14 @@ export default {
   data () {
     return {
       navigationMenu
+    }
+  },
+  methods: {
+    gtagFooterSitemap (sitemapCategory, navigationTitle) {
+      this.$gtag.event('click', {
+        event_category: sitemapCategory,
+        value: navigationTitle
+      })
     }
   }
 }

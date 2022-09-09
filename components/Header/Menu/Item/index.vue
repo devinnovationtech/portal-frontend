@@ -10,11 +10,15 @@
             {{ title }}
           </Link>
           <nav
-            class="grid grid-cols-3 grid-rows-2 gap-y-6 gap-x-20"
+            class="grid grid-cols-3 grid-rows-2 gap-y-6 gap-x-10"
             :class="{ 'grid-flow-col': items.length <= 3}"
           >
             <li v-for="item in items" :key="item.id">
-              <Link :link="item.link" class="flex items-start">
+              <Link
+                :link="item.link"
+                class="flex items-start"
+                @click.native="gtagNavigationItem(item)"
+              >
                 <img
                   class="w-[52px] h-[52px] mt-1.5"
                   :src="item.icon"
@@ -56,6 +60,20 @@ export default {
     items: {
       type: Array,
       required: true
+    },
+    gtagEvent: {
+      type: String,
+      required: false,
+      default: ''
+    }
+  },
+  methods: {
+    gtagNavigationItem (item) {
+      this.$gtag.event('click', {
+        event_category: this.gtagEvent,
+        event_label: `Click Menu ${this.title}`,
+        value: item.title
+      })
     }
   }
 }

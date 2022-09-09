@@ -71,7 +71,9 @@ export const navigationMenu = [
         icon: '/icons/navigation/teknologi.svg',
         link: '/berita?kategori=teknologi'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_berita',
+    gtagEventSitemap: 'click_sitemap_berita'
   },
   {
     id: 2,
@@ -119,8 +121,24 @@ export const navigationMenu = [
         description: 'Cari lowongan kerja gratis dan terpercaya',
         icon: '/icons/navigation/ketenagakerjaan.svg',
         link: 'https://jabarjawara.id'
+      },
+      {
+        id: 7,
+        title: 'PIKOBAR',
+        description: 'Media komunikasi dan informasi penanganan Covid-19 satu pintu di Jawa Barat',
+        icon: '/icons/navigation/covid19.svg',
+        link: 'https://pikobar.jabarprov.go.id'
+      },
+      {
+        id: 8,
+        title: 'Perizinan Online',
+        description: 'Layanan informasi dan kepengurusan perizinan usaha secara online',
+        icon: '/icons/navigation/perijinan-online.svg',
+        link: 'https://dpmptsp.jabarprov.go.id/jelita/main/pendaftaranbaru/perizinanonline'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_layanan',
+    gtagEventSitemap: 'click_sitemap_layanan'
   },
   {
     id: 3,
@@ -169,7 +187,9 @@ export const navigationMenu = [
         icon: '/icons/navigation/bian.svg',
         link: 'https://dashboard.jabarprov.go.id/id/topic/bian'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_dashboard',
+    gtagEventSitemap: 'click_sitemap_dashboard'
   },
   {
     id: 4,
@@ -185,19 +205,35 @@ export const navigationMenu = [
       },
       {
         id: 2,
+        title: 'Tentang Jawa Barat',
+        description: 'Cari tahu sejarah, pimpinan, dan pemerintahan Jawa Barat selengkapnya',
+        icon: '/icons/navigation/informasi.svg',
+        link: '/tentang-jawa-barat'
+      },
+      {
+        id: 3,
         title: 'Arsip dan Dokumen',
         description: 'Akses dan unduh dokumen resmi yang dirilis pemerintah Jawa Barat',
         icon: '/icons/navigation/arsip-dan-dokumen.svg',
         link: '/arsip-dan-dokumen'
       },
       {
-        id: 3,
-        title: 'Tentang Jawa Barat',
-        description: 'Cari tahu sejarah, pimpinan, dan pemerintahan Jawa Barat selengkapnya',
-        icon: '/icons/navigation/informasi.svg',
-        link: '/tentang-jawa-barat'
+        id: 4,
+        title: 'Jaringan Dokumentasi dan Informasi Hukum',
+        description: 'Layanan transparansi informasi produk hukum terpadu di lingkungan Pemdaprov Jawa Barat',
+        icon: '/icons/navigation/arsip-dan-dokumen.svg',
+        link: 'https://jdih.jabarprov.go.id'
+      },
+      {
+        id: 5,
+        title: 'Layanan Pengadaan Secara Elektronik',
+        description: 'Sistem pengadaan berbasis E-Procurement (SPSE) Pemerintah Provinsi Jawa Barat',
+        icon: '/icons/navigation/arsip-dan-dokumen.svg',
+        link: 'https://lpse.jabarprov.go.id'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_profil',
+    gtagEventSitemap: 'click_sitemap_profil'
   },
   {
     id: 5,
@@ -267,7 +303,9 @@ export const navigationMenu = [
         icon: '/icons/navigation/informasi.svg',
         link: 'https://ppid.jabarprov.go.id/page/3900-Tata-Cara-Pengaduan-Penyalahgunaan-Wewenang-atau-Pelaporan-Yang-Dilakukan-oleh-Pejabat-Badan-Publik'
       }
-    ]
+    ],
+    gtagEvent: 'click_menu_ppid',
+    gtagEventSitemap: 'click_sitemap_ppid'
   }
 ]
 
@@ -399,10 +437,10 @@ export const quickLinkMenu = [
   },
   {
     id: 3,
-    title: 'Sasaran Kinerja Pegawai',
-    description: 'Aplikasi penilaian secara daring kinerja dan prestasi Pegawai Negeri Sipil.',
-    icon: '/icons/akses-cepat/sasaran-kinerja-pegawai.svg',
-    link: 'https://kinerja.jabarprov.go.id/login'
+    title: 'Cek Bantuan Sosial',
+    description: 'Pencarian data Penerima Manfaat terkait bantuan sosial yang diselenggarakan Kemensos.',
+    icon: '/icons/akses-cepat/bansos.svg',
+    link: 'https://cekbansos.kemensos.go.id'
   },
   {
     id: 4,
@@ -434,10 +472,10 @@ export const quickLinkMenu = [
   },
   {
     id: 8,
-    title: 'Lapor',
-    description: 'Layanan aspirasi dan pengaduan daring untuk warga Jawa Barat.',
+    title: 'Laporan Pengaduan Masyarakat',
+    description: 'Sarana penyampaian aspirasi dan pengaduan masyarakat Jawa Barat',
     icon: '/icons/akses-cepat/lapor.svg',
-    link: 'https://www.lapor.go.id'
+    link: 'https://inspektorat.jabarprov.go.id/sarana-pengaduan-masyarakat'
   }
 ]
 

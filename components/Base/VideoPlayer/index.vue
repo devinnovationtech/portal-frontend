@@ -3,14 +3,12 @@
     <div
       v-if="show"
       id="modal"
-      class="fixed flex justify-center items-center w-full h-full z-[100] inset-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm"
+      class="fixed flex justify-center items-center w-full h-full z-[100] inset-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm sm:px-6 lg:px-0"
       @click.self="$emit('close')"
     >
       <video
         :src="src"
-        width="100%"
-        height="100%"
-        class="modal__body bg-black rounded-lg md:w-[550px] lg:w-[1200px] lg:h-[600px]"
+        class="modal__body bg-black rounded-lg w-full h-full lg:w-[1200px] max-h-[275px] sm:max-h-[330px] md:max-h-[450px] lg:max-h-[600px]"
         controls
         autoplay
       />

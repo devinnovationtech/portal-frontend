@@ -39,7 +39,7 @@
             </div>
 
             <div class="md:flex justify-between items-center">
-              <Link :link="`/berita/${item.slug}`">
+              <Link :link="`/berita/${item.slug}`" @click.native="gtagClickLatestNews(item)">
                 <button type="button" class="w-full text-sm border border-white border-opacity-30 px-4 py-2 rounded-lg">
                   Baca Selengkapnya
                 </button>
@@ -118,6 +118,14 @@ export default {
       const index = slider?.details().relativeSlide || 0
 
       return this.items[index].slug
+    },
+    gtagClickLatestNews (item) {
+      this.$gtag.event('click', {
+        event_category: 'click_latest_news',
+        event_label: `click latest news ${item.title}`,
+        value: item.title,
+        url: `${document.location.origin}/berita/${item.slug}`
+      })
     }
   }
 }

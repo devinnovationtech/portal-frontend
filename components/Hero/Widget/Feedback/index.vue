@@ -2,7 +2,7 @@
   <div class="w-full max-w-xl">
     <div
       class="flex flex-col mt-6 md:grid md:grid-rows-[184px,154px] md:gap-4 md:mt-0 md:absolute md:top-0 md:bottom-0 md:left-0 content-center"
-      @click="toggleFeedbackForm"
+      @click="onClickFeedback"
     >
       <div class="group cursor-pointer md:relative md:transform md:-rotate-90">
         <div
@@ -33,8 +33,18 @@ export default {
     }
   },
   methods: {
+    onClickFeedback () {
+      this.toggleFeedbackForm()
+      this.gtagFeedbackForm()
+    },
     toggleFeedbackForm () {
       this.isFeedbackFormOpen = !this.isFeedbackFormOpen
+    },
+    gtagFeedbackForm () {
+      this.$gtag.event('click', {
+        event_category: 'click_survey',
+        value: 'Click Isi Survey'
+      })
     }
   }
 }

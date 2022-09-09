@@ -11,7 +11,7 @@
           </p>
         </li>
         <li v-for="menu in menus" :key="menu.id" class="group px-4 py-3 rounded-md hover:bg-green-50 transition-colors ease-brand duration-250">
-          <Link :link="menu.link" class="flex flex-col gap-4">
+          <Link :link="menu.link" class="flex flex-col gap-4" @click.native="gtagClickQuickAccess(menu)">
             <LazyImg :src="menu.icon" :alt="menu.title" width="32" height="32" />
             <p class="font-roboto font-bold group-hover:text-green-700">
               {{ menu.title }}
@@ -33,6 +33,16 @@ export default {
   data () {
     return {
       menus: quickLinkMenu
+    }
+  },
+  methods: {
+    gtagClickQuickAccess (item) {
+      this.$gtag.event('click', {
+        event_category: 'click_quick_access',
+        event_label: `click quick access ${item.title}`,
+        value: item.title,
+        url: item.link
+      })
     }
   }
 }

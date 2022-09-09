@@ -307,9 +307,24 @@ export default {
       }
     }
   },
+  watch: {
+    isEventDetailOpen (value) {
+      if (value) {
+        this.gtagClickAgenda()
+      }
+    }
+  },
   methods: {
     toggleEventDetail () {
       this.isEventDetailOpen = !this.isEventDetailOpen
+    },
+    gtagClickAgenda () {
+      this.$gtag.event('click', {
+        event_category: 'click_agenda',
+        event_label: `click agenda ${this.title}`,
+        value: this.title,
+        url: this.url
+      })
     }
   }
 }
