@@ -264,7 +264,7 @@ export default {
           awards: [
             {
               id: 1,
-              description: 'Pengharagaan Nirwasita Tantra dari Kementerian Lingkungan Hidup dan Kehutanan RI (2022)'
+              description: 'Penghargaan Nirwasita Tantra dari Kementerian Lingkungan Hidup dan Kehutanan RI (2022)'
             },
             {
               id: 2,
@@ -276,7 +276,7 @@ export default {
             },
             {
               id: 4,
-              description: 'Pengahrgaan Anugerah Media Humas Indonesia sebagai Gubernur Terpopuler di media digital (2021)'
+              description: 'Penghargaan Anugerah Media Humas Indonesia sebagai Gubernur Terpopuler di media digital (2021)'
             },
             {
               id: 5,
