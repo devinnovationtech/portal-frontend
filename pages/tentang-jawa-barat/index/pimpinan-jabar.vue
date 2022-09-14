@@ -191,7 +191,6 @@
               variant="secondary"
               type="button"
               class="w-full !justify-center"
-              var
             >
               <Icon name="cloud-download" size="18px" />
               Unduh Dokumen LHKPN
