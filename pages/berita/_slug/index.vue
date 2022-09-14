@@ -54,7 +54,7 @@
 
 <script>
 export default {
-  async asyncData ({ params, $axios }) {
+  async asyncData ({ params, $axios, error }) {
     const slug = await params.slug
 
     try {
@@ -65,8 +65,8 @@ export default {
       const { views, shared } = viewCountResponse.data
 
       return { news, views, shared }
-    } catch (error) {
-      // silent error
+    } catch (e) {
+      error({ statusCode: e.response.status, message: e.response?.data?.message })
     }
   },
   data () {
