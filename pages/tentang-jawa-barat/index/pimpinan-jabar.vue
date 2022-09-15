@@ -22,7 +22,7 @@
               Gubernur
             </p>
             <p class="font-lato font-bold text-sm leading-6 text-white mb-3">
-              Dr. H. Moch. Ridwan Kamil
+              Dr. (H.C.) H. Mochamad Ridwan Kamil, ST., MUD.
             </p>
             <img class="mb-3" src="/images/about/pimpinan/ridwan-kamil.png" alt="Ridwan Kamil" width="103" height="125">
             <button class="bg-green-primary py-[10px] text-sm rounded-lg text-white w-full hover:bg-green-800 transition-colors ease-brand duration-250" @click="setSelectedProfile('gubernur')">
@@ -34,7 +34,7 @@
               Wakil Gubernur
             </p>
             <p class="font-lato font-bold text-sm leading-6 text-white mb-3">
-              H. Uu Ruzhanul Ulum
+              H. Uu Ruzhanul Ulum, SE.
             </p>
             <img class="mb-3" src="/images/about/pimpinan/ruzhanul-ulum.png" alt="Ruzhanul Ulum" width="103" height="125">
             <button class="bg-green-primary py-[10px] text-sm rounded-lg text-white w-full hover:bg-green-800 transition-colors ease-brand duration-250" @click="setSelectedProfile('wakil gubernur')">
@@ -46,7 +46,7 @@
               Sekretaris Daerah
             </p>
             <p class="font-lato font-bold text-sm leading-6 text-white mb-3">
-              Dr. Ir. Setiawan Wangsaatmaja
+              Dr. Ir. Setiawan Wangsaatmaja, Dipl., S.E., M.Eng.
             </p>
             <img class="mb-3" src="/images/about/pimpinan/setiawan-wangsaatmaja.png" alt="Setiawan Wangsaatmaja" width="103" height="125">
             <button class="bg-green-primary py-[10px] text-sm rounded-lg text-white w-full hover:bg-green-800 transition-colors ease-brand duration-250" @click="setSelectedProfile('sekretaris daerah')">
@@ -186,7 +186,7 @@
           <h4 class="font-roboto font-medium text-base text-gray-800 leading-[26px]">
             LHKPN (Laporan Harta Kekayaan Penyelenggara Negara)
           </h4>
-          <Link :link="''" :title="''" download class="mb-6 mt-3">
+          <Link :link="profile[selectedProfile].lhkpn" tabindex="-1" class="mb-6 mt-3">
             <Button
               variant="secondary"
               type="button"
@@ -288,10 +288,11 @@ export default {
           ],
           about: 'Berlatar belakang sebagai seorang arsitek, dosen, aktivis sosial dan pernah memimpin Pemerintah Kota Bandung sebagai Walikota, Ridwan Kamil kini menjabat sebagai Gubernur Provinsi Jawa Barat periode 2018-2013 dengan mengusung visi mewujudkan Jawa Barat Juara Lahir Batin dengan Inovasi dan Kolaborasi.',
           image: '/images/about/profil/ridwan-kamil.png',
+          lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/LHKPN%20Gubernur%20Jabar%20-%20Ridwan%20Kamil.pdf',
           instagram: 'ridwankamil'
         },
         'wakil gubernur': {
-          name: 'H. Uu Ruzhanul Ulum, SE',
+          name: 'H. Uu Ruzhanul Ulum, SE.',
           dateOfBirth: 'Tasikmalaya, 10 Mei 1969',
           educations: [
             {
@@ -349,10 +350,11 @@ export default {
           ],
           about: 'Berlatar belakang seorang politisi yang pernah menjabat sebagai Ketua DPRD dan Bupati di Kabupaten Tasikmalaya, kini Uu Ruzhanul Ulum resmi memimpin Jawa Barat bersama Ridwan Kamil.',
           image: '/images/about/profil/uu-ruzhanul-ulum.png',
+          lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/LHKPN%20Wagub%20Jabar%20-%20UU%20Ruzhanul%20Ulum.pdf',
           instagram: 'ruzhanul'
         },
         'sekretaris daerah': {
-          name: 'Dr. Ir. Setiawan Wangsaatmaja, Dipl., S.E., M.Eng',
+          name: 'Dr. Ir. Setiawan Wangsaatmaja, Dipl., S.E., M.Eng.',
           dateOfBirth: 'Bandung, 26 Agustus 1963',
           educations: [
             {
@@ -418,6 +420,7 @@ export default {
           ],
           about: 'Memulai karir politiknya sebagai Aparatur Sipil Negara di Badan Pengendalian Lingkungan Hidup Daerah (BPLHD) Provinsi Jawa Barat beserta pengalaman kepemimpinannya sebagai Deputi Bidang SDM di Kementerian PAN RB selama 7 tahun, kini Setiawan Wangsaatmaja yang menjabat sebagai Sekretaris Daerah Provinsi Jawa Barat bersama dengan Gubernur dan Wakil Gubernur terpilih memiliki visi untuk mewujudkan Jawa Barat Juara Lahir Batin dengan inovasi dan kolaborasi di tahun 2018-2023.',
           image: '/images/about/profil/setiawan-wangsaatmaja.png',
+          lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/LHKPN%20Sekda%20Jabar%20-%20Setiawan.pdf',
           instagram: 'swangsaatmaja'
         }
       }),
