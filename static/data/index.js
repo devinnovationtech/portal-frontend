@@ -611,3 +611,204 @@ export const archiveAndDocumentTopics = [
     value: 'transparansi pengelolaan keuangan daerah'
   }
 ]
+
+export const GOVERNOR_PROFILE = {
+  gubernur: {
+    name: 'Dr. (H.C.) H. Mochamad Ridwan Kamil, ST., MUD.',
+    dateOfBirth: 'Bandung, 4 Oktober 1971',
+    educations: [
+      {
+        id: 1,
+        description: 'Program Magister (S2), Master of Urban Design, UC Berkeley, USA (1999-2001)'
+      },
+      {
+        id: 2,
+        description: 'Program Sarjana (S1), Sarjana Teknik Arsitektur, Institut Teknologi Bandung (1990-1995)'
+      },
+      {
+        id: 3,
+        description: 'SMAN 3 Bandung (1984-1987)'
+      }
+    ],
+    careers: [
+      {
+        id: 1,
+        description: 'Gubernur Provinsi Jawa Barat (2018-sekarang)'
+      },
+      {
+        id: 2,
+        description: 'Walikota Bandung (2013-2018)'
+      },
+      {
+        id: 3,
+        description: 'Dosen'
+      },
+      {
+        id: 4,
+        description: 'Profesional Arsitek'
+      }
+    ],
+    awards: [
+      {
+        id: 1,
+        description: 'Penghargaan Nirwasita Tantra dari Kementerian Lingkungan Hidup dan Kehutanan RI (2022)'
+      },
+      {
+        id: 2,
+        description: 'Best Governor for Healthcare and Action Against Pandemi dari Indonesia Awards (2021)'
+      },
+      {
+        id: 3,
+        description: 'Kepala Daerah Inovatif 2021 untuk penghargaan Inovasi Pikobar sebagai Layanan Publik terbaik dalam penanganan pandemi Covid-19 (2021)'
+      },
+      {
+        id: 4,
+        description: 'Penghargaan Anugerah Media Humas Indonesia sebagai Gubernur Terpopuler di media digital (2021)'
+      },
+      {
+        id: 5,
+        description: 'The Best 7 Asia Governor dari Asia Business Info (2020)'
+      },
+      {
+        id: 6,
+        description: 'Dr. (H.C) in Public Administration (Gelar Doktor Kehormatan Bidang Administrasi Publik) dari Dong-A University, South Korea (2019)'
+      }
+    ],
+    about: 'Berlatar belakang sebagai seorang arsitek, dosen, aktivis sosial dan pernah memimpin Pemerintah Kota Bandung sebagai Walikota, Ridwan Kamil kini menjabat sebagai Gubernur Provinsi Jawa Barat periode 2018-2023 dengan mengusung visi mewujudkan Jawa Barat Juara Lahir Batin dengan Inovasi dan Kolaborasi.',
+    image: '/images/about/profil/ridwan-kamil.png',
+    lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/LHKPN%20Gubernur%20Jabar%20-%20Ridwan%20Kamil.pdf',
+    instagram: 'ridwankamil'
+  },
+  'wakil gubernur': {
+    name: 'H. Uu Ruzhanul Ulum, SE.',
+    dateOfBirth: 'Tasikmalaya, 10 Mei 1969',
+    educations: [
+      {
+        id: 1,
+        description: 'Program Sarjana (S1), Fakultas Ekonomi Manajemen, Universitas Siliwangi (1997)'
+      },
+      {
+        id: 2,
+        description: 'SMA Pasundan Tasikmalaya (1988)'
+      }
+    ],
+    careers: [
+      {
+        id: 1,
+        description: 'Wakil Gubernur Provinsi Jawa Barat (2018-sekarang)'
+      },
+      {
+        id: 2,
+        description: 'Bupati Kabupaten Tasikmalaya (2011-2018)'
+      },
+      {
+        id: 3,
+        description: 'Anggota DPRD Kabupaten Tasikmalaya (2009-2011)'
+      },
+      {
+        id: 4,
+        description: 'Ketua DPRD Kabupaten Tasikmalaya (2004-2009)'
+      },
+      {
+        id: 5,
+        description: 'Anggota DPRD Kabupaten Tasikmalaya (1999-2004)'
+      }
+    ],
+    awards: [
+      {
+        id: 1,
+        description: 'Peduli Jurnalis dari Persatuan Wartawan Indonesia (2021)'
+      },
+      {
+        id: 2,
+        description: 'Lencana Adhitya Karya Mahatva Yodha Kategori Pembina Umum Karang Taruna Terbaik (2018)'
+      },
+      {
+        id: 3,
+        description: 'Satya Lencana Jasa Bhakti Koperasi dari Kementrian Koperasi dan Usaha Kecil Menengah Republik Indonesia (2017)'
+      },
+      {
+        id: 4,
+        description: 'Penghargaan Adhikarya Pangan Nusantara  Tahun 2016 Kategori Pembina Ketahanan Pangan Kabupaten/Kota Tingkat Provinsi Jawa Barat, Gubernur Jawa Barat (2016)'
+      },
+      {
+        id: 5,
+        description: 'Penghargaan Peningkatan Pembangunan di Bidang Pertanian serta Peningkatan Produksi Gabah, Gubernur Jawa Barat (2014)'
+      }
+    ],
+    about: 'Berlatar belakang seorang politisi yang pernah menjabat sebagai Ketua DPRD dan Bupati di Kabupaten Tasikmalaya, kini Uu Ruzhanul Ulum resmi memimpin Jawa Barat bersama Ridwan Kamil.',
+    image: '/images/about/profil/uu-ruzhanul-ulum.png',
+    lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/LHKPN%20Wagub%20Jabar%20-%20UU%20Ruzhanul%20Ulum.pdf',
+    instagram: 'ruzhanul'
+  },
+  'sekretaris daerah': {
+    name: 'Dr. Ir. Setiawan Wangsaatmaja, Dipl., S.E., M.Eng.',
+    dateOfBirth: 'Bandung, 26 Agustus 1963',
+    educations: [
+      {
+        id: 1,
+        description: 'Program Doktoral (S3), Doktor Teknik Lingkungan, Institut Teknologi Bandung (2004)'
+      },
+      {
+        id: 2,
+        description: 'Program Magister (S2), Master of Engineering in Environmental Engineering, Asian Insititute of Technology, Thailand (1996-1997)'
+      },
+      {
+        id: 3,
+        description: 'Program Magister (S2), Dipl. SE in Sanitary Engineering, IHE Delft, Netherlands (1993-1994)'
+      },
+      {
+        id: 4,
+        description: 'Program Sarjana (S1), Insinyur Teknik Lingkungan, Institut Teknologi Bandung (1989)'
+      }
+    ],
+    careers: [
+      {
+        id: 1,
+        description: 'Sekretaris Daerah Provinsi Jawa Barat (2020-sekarang)'
+      },
+      {
+        id: 2,
+        description: 'Komisaris PT Perusahaan Perdagangan Indonesia (2018-sekarang)'
+      },
+      {
+        id: 3,
+        description: 'Komisaris PT Bhanda Ghara Reksa (2017-2021)'
+      },
+      {
+        id: 4,
+        description: 'Deputi Bidang SDM Aparatur, Kementerian PANRB (2013-2020)'
+      },
+      {
+        id: 5,
+        description: 'Kepala Badan Pengendalian Lingkungan Hidup Provinsi Jawa Barat (2008-2013)'
+      }
+    ],
+    awards: [
+      {
+        id: 1,
+        description: 'Satyalancana Karya Satya 30 Tahun, Presiden RI (2021)'
+      },
+      {
+        id: 2,
+        description: 'Wibawa Seroja Nugraha, Gubernur LEMHANAS RI (2012)'
+      },
+      {
+        id: 3,
+        description: 'Makarti Bhakti Nagari, Kepala LAN RI (2006)'
+      },
+      {
+        id: 4,
+        description: '3rd Mens Softball Championship, Atlet Nasional RI (1985)'
+      },
+      {
+        id: 5,
+        description: 'Medali Perunggu Kontingen PON XI Jawa Barat (1985)'
+      }
+    ],
+    about: 'Memulai karir politiknya sebagai Aparatur Sipil Negara di Badan Pengendalian Lingkungan Hidup Daerah (BPLHD) Provinsi Jawa Barat beserta pengalaman kepemimpinannya sebagai Deputi Bidang SDM di Kementerian PAN RB selama 7 tahun, kini Setiawan Wangsaatmaja yang menjabat sebagai Sekretaris Daerah Provinsi Jawa Barat bersama dengan Gubernur dan Wakil Gubernur terpilih memiliki visi untuk mewujudkan Jawa Barat Juara Lahir Batin dengan inovasi dan kolaborasi di tahun 2018-2023.',
+    image: '/images/about/profil/setiawan-wangsaatmaja.png',
+    lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/LHKPN%20Sekda%20Jabar%20-%20Setiawan.pdf',
+    instagram: 'swangsaatmaja'
+  }
+}
