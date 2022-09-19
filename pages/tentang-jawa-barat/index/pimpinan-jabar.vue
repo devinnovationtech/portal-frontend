@@ -46,6 +46,7 @@
     <!-- Jabar Leader ModaL -->
     <AboutJabarLeadersProfile
       :show="isModalOpen"
+      :selected="selectedProfile"
       @close="closeModal"
     />
   </section>
@@ -55,7 +56,8 @@
 export default {
   data () {
     return {
-      isModalOpen: false
+      isModalOpen: false,
+      selectedProfile: 'gubernur'
     }
   },
   methods: {

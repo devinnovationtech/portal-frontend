@@ -91,12 +91,22 @@ export default {
       type: Boolean,
       default: false,
       required: true
+    },
+    selected: {
+      type: String,
+      default: '',
+      required: true
     }
   },
   data () {
     return {
       selectedProfile: 'gubernur',
       profile: GOVERNOR_PROFILE
+    }
+  },
+  watch: {
+    selected (val) {
+      this.selectedProfile = val
     }
   }
 }
