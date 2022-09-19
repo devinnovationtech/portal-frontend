@@ -17,42 +17,27 @@
           </p>
         </div>
         <div class="grid grid-cols-2 min-w-0 md:grid-cols-4 w-full gap-4">
-          <div class="col-span-2 p-4 bg-green-700 rounded-2xl flex flex-col justify-center items-center w-full min-w-[200px]">
-            <p class="font-lato font-bold text-sm leading-6 text-green-300">
-              Gubernur
-            </p>
-            <p class="font-lato font-bold text-sm leading-6 text-white mb-3">
-              Dr. (H.C.) H. Mochamad Ridwan Kamil, ST., MUD.
-            </p>
-            <img class="mb-3" src="/images/about/pimpinan/ridwan-kamil.png" alt="Ridwan Kamil" width="103" height="125">
-            <button class="bg-green-primary py-[10px] text-sm rounded-lg text-white w-full hover:bg-green-800 transition-colors ease-brand duration-250" @click="setSelectedProfile('gubernur')">
-              Lihat Profil
-            </button>
-          </div>
-          <div class="col-span-2 p-4 bg-green-700 rounded-2xl flex flex-col justify-center items-center w-full min-w-[200px]">
-            <p class="font-lato font-bold text-sm leading-6 text-green-300">
-              Wakil Gubernur
-            </p>
-            <p class="font-lato font-bold text-sm leading-6 text-white mb-3">
-              H. Uu Ruzhanul Ulum, SE.
-            </p>
-            <img class="mb-3" src="/images/about/pimpinan/ruzhanul-ulum.png" alt="Ruzhanul Ulum" width="103" height="125">
-            <button class="bg-green-primary py-[10px] text-sm rounded-lg text-white w-full hover:bg-green-800 transition-colors ease-brand duration-250" @click="setSelectedProfile('wakil gubernur')">
-              Lihat Profil
-            </button>
-          </div>
-          <div class="md:col-start-2 col-span-2 p-4 bg-green-700 rounded-2xl flex flex-col justify-center items-center w-full min-w-[200px]">
-            <p class="font-lato font-bold text-sm leading-6 text-green-300">
-              Sekretaris Daerah
-            </p>
-            <p class="font-lato font-bold text-sm leading-6 text-white mb-3">
-              Dr. Ir. Setiawan Wangsaatmaja, Dipl., S.E., M.Eng.
-            </p>
-            <img class="mb-3" src="/images/about/pimpinan/setiawan-wangsaatmaja.png" alt="Setiawan Wangsaatmaja" width="103" height="125">
-            <button class="bg-green-primary py-[10px] text-sm rounded-lg text-white w-full hover:bg-green-800 transition-colors ease-brand duration-250" @click="setSelectedProfile('sekretaris daerah')">
-              Lihat Profil
-            </button>
-          </div>
+          <AboutJabarLeadersCard
+            position="Gubernur"
+            name="Dr. (H.C.) H. Mochamad Ridwan Kamil, ST., MUD."
+            image="/images/about/pimpinan/ridwan-kamil.png"
+            class="col-span-2 p-4 bg-green-700 rounded-2xl flex flex-col justify-center items-center w-full min-w-[200px]"
+            @click="setSelectedProfile('gubernur')"
+          />
+          <AboutJabarLeadersCard
+            position="Wakil Gubernur"
+            name="H. Uu Ruzhanul Ulum, SE."
+            image="/images/about/pimpinan/ruzhanul-ulum.png"
+            class="col-span-2 p-4 bg-green-700 rounded-2xl flex flex-col justify-center items-center w-full min-w-[200px]"
+            @click="setSelectedProfile('wakil gubernur')"
+          />
+          <AboutJabarLeadersCard
+            position="Sekretaris Daerah"
+            name="Dr. Ir. Setiawan Wangsaatmaja, Dipl., S.E., M.Eng."
+            image="/images/about/pimpinan/setiawan-wangsaatmaja.png"
+            class="md:col-start-2 col-span-2 p-4 bg-green-700 rounded-2xl flex flex-col justify-center items-center w-full min-w-[200px]"
+            @click="setSelectedProfile('sekretaris daerah')"
+          />
         </div>
       </div>
     </div>
