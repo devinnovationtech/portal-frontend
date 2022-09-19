@@ -79,103 +79,13 @@
 </template>
 
 <script>
+import { PREVIOUS_GOVERNORS } from '~/static/data'
 export default {
   data () {
     return {
       currentSlide: 0,
       swiperReady: false,
-      items: [
-        {
-          id: 1,
-          name: 'Ahmad Heryawan',
-          period: 'Juni 2008 - Juni 2018',
-          image: '/images/about/pimpinan/ahmad-heryawan.png'
-        },
-        {
-          id: 2,
-          name: 'Danny Setiawan',
-          period: 'Juni 2003 - Juni 2008',
-          image: '/images/about/pimpinan/danny-setiawan.png'
-        },
-        {
-          id: 3,
-          name: 'HR. Nuriana',
-          period: '1993 - Juni 2003',
-          image: '/images/about/pimpinan/nuriana.png'
-        },
-        {
-          id: 4,
-          name: 'Yogie Suardi Memet',
-          period: '1985 - 1993',
-          image: '/images/about/pimpinan/yogie.png'
-        },
-        {
-          id: 5,
-          name: 'Aang Kunaefi',
-          period: '1975 - 1985',
-          image: '/images/about/pimpinan/aang.png'
-        },
-        {
-          id: 6,
-          name: 'Solihin GP',
-          period: '1970 - 1974',
-          image: '/images/about/pimpinan/solihin.png'
-        },
-        {
-          id: 7,
-          name: 'Mashudi',
-          period: '1960 - 1970',
-          image: '/images/about/pimpinan/mashudi.png'
-        },
-        {
-          id: 8,
-          name: 'Ipik Gandamana',
-          period: '1956 - 1959',
-          image: '/images/about/pimpinan/ipik.png'
-        },
-        {
-          id: 9,
-          name: 'Sanusi Hardjadinata',
-          period: '1951 - 1956',
-          image: '/images/about/pimpinan/sanusi.png'
-        },
-        {
-          id: 10,
-          name: 'R. Mas Sewaka',
-          period: '1950 - 1956',
-          image: '/images/about/pimpinan/sewaka.png'
-        },
-        {
-          id: 11,
-          name: 'Ukar Bratakusumah',
-          period: '1948 - 1950',
-          image: '/images/about/pimpinan/ukar.png'
-        },
-        {
-          id: 12,
-          name: 'R. Mas Sewaka',
-          period: '1946 - 1948',
-          image: '/images/about/pimpinan/sewaka.png'
-        },
-        {
-          id: 13,
-          name: 'Murdjani',
-          period: '1946 - 1946',
-          image: '/images/about/pimpinan/murdjani.png'
-        },
-        {
-          id: 14,
-          name: 'Datuk Djamin',
-          period: '1945 - 1945',
-          image: '/images/about/pimpinan/datuk.png'
-        },
-        {
-          id: 15,
-          name: 'Mas Sutardjo Kertohadikusumo',
-          period: '1945 - 1945',
-          image: '/images/about/pimpinan/sutardjo.png'
-        }
-      ],
+      items: PREVIOUS_GOVERNORS,
       swiperOptions: Object.freeze({
         slidesPerView: 1,
         mousewheel: true,
