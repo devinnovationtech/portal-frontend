@@ -286,7 +286,7 @@ export default {
               description: 'Dr. (H.C) in Public Administration (Gelar Doktor Kehormatan Bidang Administrasi Publik) dari Dong-A University, South Korea (2019)'
             }
           ],
-          about: 'Berlatar belakang sebagai seorang arsitek, dosen, aktivis sosial dan pernah memimpin Pemerintah Kota Bandung sebagai Walikota, Ridwan Kamil kini menjabat sebagai Gubernur Provinsi Jawa Barat periode 2018-2013 dengan mengusung visi mewujudkan Jawa Barat Juara Lahir Batin dengan Inovasi dan Kolaborasi.',
+          about: 'Berlatar belakang sebagai seorang arsitek, dosen, aktivis sosial dan pernah memimpin Pemerintah Kota Bandung sebagai Walikota, Ridwan Kamil kini menjabat sebagai Gubernur Provinsi Jawa Barat periode 2018-2023 dengan mengusung visi mewujudkan Jawa Barat Juara Lahir Batin dengan Inovasi dan Kolaborasi.',
           image: '/images/about/profil/ridwan-kamil.png',
           lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/LHKPN%20Gubernur%20Jabar%20-%20Ridwan%20Kamil.pdf',
           instagram: 'ridwankamil'
