@@ -1,7 +1,7 @@
 <template>
   <div>
     <slot name="header" />
-    <div class="bg-white flex flex-col overflow-hidden h-[354px] sm:h-[390px] lg:h-[900px] xl:h-[350px]">
+    <div class="bg-white flex flex-col overflow-hidden h-[390px] lg:h-[900px] xl:h-[350px]">
       <!--
         TODO: Show a placeholder if an error occur
       -->

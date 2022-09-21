@@ -9,7 +9,7 @@
       </p>
     </div>
     <div class="rounded-br-md rounded-bl-md flex-grow bg-white border border-blue-gray-50 overflow-hidden">
-      <div class="bg-white flex flex-col gap-6 pt-5 h-full">
+      <div class="bg-white flex flex-col gap-6 pt-5">
         <div class="px-4">
           <p class="font-roboto font-medium mb-1">
             {{ currentMonth }}
@@ -22,7 +22,7 @@
         <AgendaWidgetList
           :start-date="selectedDay"
           :end-date="selectedDay"
-          class="ml-5 mr-4 h-full"
+          class="ml-5 mr-4"
         />
       </div>
     </div>
