@@ -97,7 +97,6 @@ export default {
 
         this.events.push(...response.data)
         this.totalPage = response.meta.total_page || 1
-        this.totalEvents = response.meta.total_count
         this.page++
         this.fetchState.pending = false
       } catch (error) {
