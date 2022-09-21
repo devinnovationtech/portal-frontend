@@ -9,7 +9,7 @@
       </p>
     </div>
     <div class="rounded-br-md rounded-bl-md flex-grow bg-white border border-blue-gray-50 overflow-hidden">
-      <div class="bg-white flex flex-col gap-6 pt-5">
+      <div class="bg-white flex flex-col gap-6 pt-5 h-full">
         <div class="px-4">
           <p class="font-roboto font-medium mb-1">
             {{ currentMonth }}
@@ -19,14 +19,14 @@
           </p>
         </div>
         <AgendaWidgetSlider :items="eachDayOfWeek" @click="setSelectedDay" />
-        <div class="pl-5 pr-4">
-          <AgendaWidgetList
-            :start-date="selectedDay"
-            :end-date="selectedDay"
-          />
-        </div>
+        <AgendaWidgetList
+          :start-date="selectedDay"
+          :end-date="selectedDay"
+          class="ml-5 mr-4 h-full"
+        />
       </div>
     </div>
+  </div>
   </div>
 </template>
 
