@@ -19,12 +19,11 @@
           </p>
         </div>
         <AgendaWidgetSlider :items="eachDayOfWeek" @click="setSelectedDay" />
-        <div class="pl-5 pr-4">
-          <AgendaWidgetList
-            :start-date="selectedDay"
-            :end-date="selectedDay"
-          />
-        </div>
+        <AgendaWidgetList
+          :start-date="selectedDay"
+          :end-date="selectedDay"
+          class="ml-5 mr-4"
+        />
       </div>
     </div>
   </div>
