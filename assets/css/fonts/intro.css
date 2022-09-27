@@ -1,0 +1,5 @@
+@font-face {
+  font-family: "Intro";
+  src: local("Intro"),
+  url(~assets/fonts/Intro.otf) format("truetype");
+}
