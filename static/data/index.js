@@ -85,7 +85,7 @@ export const navigationMenu = [
         title: 'Kependudukan dan Tempat Tinggal',
         description: 'Urus Perizinan kependudukan dan tempat tinggal dengan mudah',
         icon: '/icons/navigation/kependudukan.svg',
-        link: 'https://disdukcapil.jabarprov.go.id/portal'
+        link: '/layanan/kependudukan-dan-tempat-tinggal'
       },
       {
         id: 2,
