@@ -17,7 +17,7 @@
             Publik Warga Jawa Barat
           </h2>
           <p class="text-gray-300 font-medium leading-relaxed text-center max-w-xl lg:max-w-2xl mb-4 md:mb-7 text-sm md:text-base">
-            Temukan informasi publik terkini dari Pemerintahan Daerah Provinsi Jawa Barat
+            Temukan informasi publik terkini dari Pemerintah Daerah Provinsi Jawa Barat
           </p>
           <HeroSearch />
           <HeroWidgetFeedback />
