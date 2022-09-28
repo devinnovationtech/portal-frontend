@@ -12,7 +12,7 @@
       <input
         :value="value"
         type="text"
-        class="min-w-0 font-lato text-gray-600 focus:outline-none leading-4"
+        class="min-w-0 font-lato text-gray-600 focus:outline-none leading-4 w-full"
         :placeholder="placeholder"
         @input="setInputValue"
       >
