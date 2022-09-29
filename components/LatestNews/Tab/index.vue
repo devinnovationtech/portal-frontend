@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col gap-4 lg:col-span-3">
-    <div class="grid grid-cols-2">
+  <div class="w-full h-[518px] grid grid-cols-1 grid-rows-[38px,1fr] gap-4">
+    <div class="w-full h-full grid grid-cols-2 mb-4">
       <p
         v-for="(tab, index) in tabs"
         :key="index"
@@ -14,7 +14,7 @@
     <!--
       TODO: Show a placeholder if an error occur
     -->
-    <ul class="flex flex-col gap-4">
+    <ul class="w-full h-full flex flex-col gap-4">
       <LatestNewsTabItem
         v-for="item in items"
         :key="item.id"
