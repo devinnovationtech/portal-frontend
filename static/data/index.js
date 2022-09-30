@@ -396,6 +396,7 @@ export const mostPopularServicesMenu = [
   }
 ]
 
+// TODO: Replace dummy data with real data
 export const featuredProgramMenu = [
   {
     id: 1,
@@ -414,6 +415,48 @@ export const featuredProgramMenu = [
   {
     id: 3,
     title: 'Ekosistem Data Jabar',
+    description: 'Ekosistem Data Jabar adalah portal terintegrasi untuk pengelolaan, keterbukaan, dan kemudahan akses data bagi warga dan pemerintah Jawa Barat.',
+    icon: '/icons/program-unggulan/ekosistem-data-jabar.svg',
+    link: 'http://data.jabarprov.go.id'
+  },
+  {
+    id: 4,
+    title: 'Program Unggulan 4',
+    description: 'Sapawarga bantu warga salurkan aspirasi, dapatkan informasi penting, dan akses layanan publik secara digital.',
+    icon: '/icons/program-unggulan/sapawarga.svg',
+    link: 'https://digitalservice.jabarprov.go.id/sapawarga'
+  },
+  {
+    id: 5,
+    title: 'Program Unggulan 5',
+    description: 'Desa Digital merupakan program pemberdayaan masyarakat melalui pemanfaatan teknologi digital dan internet dalam pengembangan potensi desa, pemasaran, dan percepatan akses serta pelayanan informasi. Melalui peningkatan literasi digital, masyarakat dapat memanfaatkan akses internet untuk meningkatkan kualitas hidup masyarakat dalam berbagai aspek, di antaranya pengelolaan lingkungan, ekonomi, pendidikan, peluang inovasi, dan stabilitas sosial.',
+    icon: '/icons/program-unggulan/desa-digital.svg',
+    link: 'https://desadigital.jabarprov.go.id/'
+  },
+  {
+    id: 6,
+    title: 'Program Unggulan 6',
+    description: 'Ekosistem Data Jabar adalah portal terintegrasi untuk pengelolaan, keterbukaan, dan kemudahan akses data bagi warga dan pemerintah Jawa Barat.',
+    icon: '/icons/program-unggulan/ekosistem-data-jabar.svg',
+    link: 'http://data.jabarprov.go.id'
+  },
+  {
+    id: 7,
+    title: 'Program Unggulan 7',
+    description: 'Sapawarga bantu warga salurkan aspirasi, dapatkan informasi penting, dan akses layanan publik secara digital.',
+    icon: '/icons/program-unggulan/sapawarga.svg',
+    link: 'https://digitalservice.jabarprov.go.id/sapawarga'
+  },
+  {
+    id: 8,
+    title: 'Program Unggulan 8',
+    description: 'Desa Digital merupakan program pemberdayaan masyarakat melalui pemanfaatan teknologi digital dan internet dalam pengembangan potensi desa, pemasaran, dan percepatan akses serta pelayanan informasi. Melalui peningkatan literasi digital, masyarakat dapat memanfaatkan akses internet untuk meningkatkan kualitas hidup masyarakat dalam berbagai aspek, di antaranya pengelolaan lingkungan, ekonomi, pendidikan, peluang inovasi, dan stabilitas sosial.',
+    icon: '/icons/program-unggulan/desa-digital.svg',
+    link: 'https://desadigital.jabarprov.go.id/'
+  },
+  {
+    id: 9,
+    title: 'Program Unggulan 9',
     description: 'Ekosistem Data Jabar adalah portal terintegrasi untuk pengelolaan, keterbukaan, dan kemudahan akses data bagi warga dan pemerintah Jawa Barat.',
     icon: '/icons/program-unggulan/ekosistem-data-jabar.svg',
     link: 'http://data.jabarprov.go.id'
