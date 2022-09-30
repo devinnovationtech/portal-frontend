@@ -14,19 +14,17 @@
             small
             :clear="false"
           />
-          <!-- TODO: add :loading="$fetchState.pending" -->
           <BaseListCounter
             :title="'Total Layanan di OPD ini'"
             :unit="'Layanan'"
-            :counter="serviceLength"
-            :loading="false"
-            :last-update="meta.lastUpdate"
+            :counter="meta.total_count"
+            :loading="$fetchState.pending"
+            :last-update="meta.last_updated"
             class="!w-full sm:!w-[294px]"
           />
-          <!-- TODO: add :loading="$fetchState.pending" -->
           <LayananList
             :service-list="serviceList"
-            :loading="false"
+            :loading="$fetchState.pending"
           />
         </div>
       </BaseContainer>
@@ -39,27 +37,28 @@ export default {
   data () {
     return {
       searchValue: '',
-      serviceList: [
-        {
-          id: 1,
-          name: 'Sistem Informasi Data Kependudukan (SIDATUK)',
-          logo: 'https://dvgddkosknh6r.cloudfront.net/staging/featured-program/logo/kolecer.svg',
-          excerpt: 'Layanan publik berbasis website untuk pengecekan data kependudukan berbasis Nomor Induk Kependudukan (NIK) dan melakukan pengaduan terkait data kependudukan.',
-          slug: 'sekdis-ganteng-123'
-        }
-      ],
-      meta: {
-        currentPage: 1,
-        perPage: 30,
-        totalCount: 300,
-        totalPage: 10,
-        lastUpdate: '2021-10-04T04:20:38Z'
-      },
+      serviceList: [],
+      meta: {},
       jumbotron: {
         title: 'Daftar Layanan Kependudukan dan Tempat Tinggal',
         subtitle: 'Lihat berbagai layanan untuk kebutuhan seputar kependudukan dan tempat tinggal',
         backgroundImageUrl: '/images/jumbotron/default.webp'
       }
+    }
+  },
+  async fetch () {
+    const params = {
+      cat: 'disdukcapil'
+    }
+    try {
+      const response = await this.$axios.get('v1/public/public-service', { params })
+      const { data, meta } = response.data
+      this.serviceList = data
+      this.meta = meta
+    } catch (error) {
+      this.serviceList = []
+      this.meta = {}
+      // silent error
     }
   },
   computed: {
@@ -75,23 +74,6 @@ export default {
       return this.searchValue.length > 3
     }
   },
-  // @TODO: get real data from backend
-  // async fetch () {
-  //   const params = {
-  //     cat: 'disdukcapil'
-  //   }
-  //   try {
-  //     const response = await this.$axios.get('v1/public/public-service', { params })
-  //     const { data, meta } = response.data
-  //     this.data = data
-  //     this.meta = meta
-  //     this.serviceList = this.data.services
-  //   } catch (error) {
-  //     this.serviceList = []
-  //     this.meta = {}
-  //     // silent error
-  //   }
-  // },
   watch: {
     searchValue: {
       handler () {
