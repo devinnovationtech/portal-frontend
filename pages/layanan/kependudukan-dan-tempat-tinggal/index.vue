@@ -92,14 +92,12 @@ export default {
         const { data, meta } = response.data
         this.serviceList = data
         this.meta = meta
-
-        this.loading = false
       } catch (error) {
         this.serviceList = []
         this.meta = {}
-
-        this.loading = false
         // silent error
+      } finally {
+        this.loading = false
       }
     }
   }
