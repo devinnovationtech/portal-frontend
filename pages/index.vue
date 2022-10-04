@@ -2,7 +2,7 @@
   <main class="overflow-hidden">
     <!-- <Campaign /> -->
     <Hero />
-    <section class="relative top-[-14rem] lg:-top-40 z-10 mb-[-14rem] lg:-mb-40">
+    <section class="relative top-[-12rem] mb-[-12rem] md:top-[-14rem] md:mb-[-14rem] lg:-top-40 lg:-mb-40 z-10">
       <BaseContainer>
         <div
           class="w-full h-full p-4 md:p-8 bg-white rounded-xl shadow

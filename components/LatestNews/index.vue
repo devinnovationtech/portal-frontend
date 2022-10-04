@@ -1,8 +1,8 @@
 <template>
   <div class="w-full h-full grid grid-cols-1 gap-4">
     <div class="flex flex-col md:flex-row items-center gap-1 md:gap-4 mb-4">
-      <h2 class="font-medium text-2xl md:text-4xl leading-loose">
-        Berita Jawa Barat
+      <h2 class="font-medium text-[28px] md:text-4xl leading-loose">
+        Berita Terkini
       </h2>
       <div class="flex-1 flex justify-center flex-col text-center">
         <div class="border-b border-gray-300" />
