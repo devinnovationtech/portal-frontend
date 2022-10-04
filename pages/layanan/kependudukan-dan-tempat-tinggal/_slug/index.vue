@@ -18,11 +18,12 @@
 
     <section class="w-full bg-gray-200">
       <BaseContainer class="relative -top-24 z-20">
-        <div class="p-3 md:p-4 lg:py-8 lg:px-10 rounded-xl bg-white">
+        <div class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
           <LayananItemHeader
             :name="'Sistem Informasi Data Kependudukan (SIDATUK)'"
             :last-update="'2022-07-22T04:20:38Z'"
           />
+          <LayananItemMedia />
         </div>
       </BaseContainer>
     </section>
