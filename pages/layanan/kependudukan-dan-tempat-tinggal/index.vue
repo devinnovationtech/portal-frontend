@@ -18,13 +18,13 @@
             :title="'Total Layanan di OPD ini'"
             :unit="'Layanan'"
             :counter="meta.total_count || '-'"
-            :loading="$fetchState.pending || isLoading"
+            :loading="loading"
             :last-update="meta.last_updated || '-'"
             class="!w-full sm:!w-[294px]"
           />
           <LayananList
             :service-list="serviceList"
-            :loading="$fetchState.pending || isLoading"
+            :loading="loading"
           />
         </div>
       </BaseContainer>
@@ -41,7 +41,7 @@ export default {
       searchValue: '',
       serviceList: [],
       meta: {},
-      isLoading: false,
+      loading: false,
       jumbotron: {
         title: 'Daftar Layanan Kependudukan dan Tempat Tinggal',
         subtitle: 'Lihat berbagai layanan untuk kebutuhan seputar kependudukan dan tempat tinggal',
@@ -53,16 +53,7 @@ export default {
     const params = {
       cat: 'disdukcapil'
     }
-    try {
-      const response = await this.$axios.get('v1/public/public-service', { params })
-      const { data, meta } = response.data
-      this.serviceList = data
-      this.meta = meta
-    } catch (error) {
-      this.serviceList = []
-      this.meta = {}
-      // silent error
-    }
+    await this.getServices(params)
   },
   computed: {
     serviceLength () {
@@ -81,26 +72,35 @@ export default {
     searchValue: {
       handler: debounce(async function () {
         if (this.isSearchActive) {
-          const params = { q: this.searchValue }
-
-          try {
-            this.isLoading = true
-            const response = await this.$axios.get('v1/public/public-service', { params })
-
-            const { data, meta } = response.data
-            this.serviceList = data
-            this.meta = meta
-
-            this.isLoading = false
-          } catch (error) {
-            this.serviceList = []
-            this.meta = {}
-
-            this.isLoading = false
-            // silent error
+          const params = {
+            q: this.searchValue,
+            // @TODO: dynamic cat params' value
+            cat: 'disdukcapil'
           }
+
+          await this.getServices(params)
         }
       }, 1000)
+    }
+  },
+  methods: {
+    async getServices (params) {
+      try {
+        this.loading = true
+        const response = await this.$axios.get('v1/public/public-service', { params })
+
+        const { data, meta } = response.data
+        this.serviceList = data
+        this.meta = meta
+
+        this.loading = false
+      } catch (error) {
+        this.serviceList = []
+        this.meta = {}
+
+        this.loading = false
+        // silent error
+      }
     }
   }
 }
