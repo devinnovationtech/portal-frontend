@@ -20,8 +20,17 @@
     </section>
     <BannerBIAN />
     <FeaturedProgramPreview />
-    <!-- TODO: Fix MostPopularServices component style -->
-    <!-- <MostPopularServices /> -->
+    <section class="bg-white py-[52px] md:py-14 xl:py-[60px]">
+      <BaseContainer class="md:!px-0 xl:!px-6">
+        <h2 class="hidden md:block xl:hidden text-4xl text-center font-medium leading-loose mb-10">
+          Layanan Terpopuler
+        </h2>
+        <div class="w-full min-w-0 grid grid-cols-1 md:grid-cols-[314px,1fr] gap-10 md:gap-6 xl:gap-10">
+          <MostPopularServices class="md:overflow-x-auto" />
+          <AgendaWidget class="md:order-first" />
+        </div>
+      </BaseContainer>
+    </section>
     <LazyQuickLink />
   </main>
 </template>
