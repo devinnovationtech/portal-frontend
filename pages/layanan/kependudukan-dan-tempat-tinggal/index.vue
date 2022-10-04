@@ -17,14 +17,14 @@
           <BaseListCounter
             :title="'Total Layanan di OPD ini'"
             :unit="'Layanan'"
-            :counter="meta.total_count"
-            :loading="$fetchState.pending"
-            :last-update="meta.last_updated"
+            :counter="meta.total_count || '-'"
+            :loading="$fetchState.pending || isLoading"
+            :last-update="meta.last_updated || '-'"
             class="!w-full sm:!w-[294px]"
           />
           <LayananList
             :service-list="serviceList"
-            :loading="$fetchState.pending"
+            :loading="$fetchState.pending || isLoading"
           />
         </div>
       </BaseContainer>
@@ -33,12 +33,15 @@
 </template>
 
 <script>
+import debounce from 'lodash/debounce'
+
 export default {
   data () {
     return {
       searchValue: '',
       serviceList: [],
       meta: {},
+      isLoading: false,
       jumbotron: {
         title: 'Daftar Layanan Kependudukan dan Tempat Tinggal',
         subtitle: 'Lihat berbagai layanan untuk kebutuhan seputar kependudukan dan tempat tinggal',
@@ -71,16 +74,33 @@ export default {
      * @returns {Boolean}
      */
     isSearchActive () {
-      return this.searchValue.length > 3
+      return this.searchValue.length >= 3 || this.searchValue.length === 0
     }
   },
   watch: {
     searchValue: {
-      handler () {
+      handler: debounce(async function () {
         if (this.isSearchActive) {
-          // @TODO: implement search
+          const params = { q: this.searchValue }
+
+          try {
+            this.isLoading = true
+            const response = await this.$axios.get('v1/public/public-service', { params })
+
+            const { data, meta } = response.data
+            this.serviceList = data
+            this.meta = meta
+
+            this.isLoading = false
+          } catch (error) {
+            this.serviceList = []
+            this.meta = {}
+
+            this.isLoading = false
+            // silent error
+          }
         }
-      }
+      }, 1000)
     }
   }
 }
