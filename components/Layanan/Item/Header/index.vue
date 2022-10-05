@@ -1,7 +1,7 @@
 <template>
   <section class="grid grid-cols-1 lg:grid-cols-[85px,1fr] gap-4">
     <LazyImg
-      :src="'https://dvgddkosknh6r.cloudfront.net/staging/featured-program/logo/kolecer.svg'"
+      :src="logo"
       alt="Logo Layanan"
       :width="imageSize"
       :height="imageSize"
@@ -25,13 +25,17 @@ import { format } from '~/utils/date'
 
 export default {
   props: {
+    logo: {
+      type: String,
+      default: '/logo.png'
+    },
     name: {
       type: String,
-      required: true
+      default: '-'
     },
     lastUpdate: {
       type: String,
-      required: true
+      default: ''
     }
   },
   computed: {

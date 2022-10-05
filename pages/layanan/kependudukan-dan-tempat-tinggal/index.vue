@@ -51,7 +51,7 @@ export default {
   },
   async fetch () {
     const params = {
-      cat: 'disdukcapil'
+      cat: 'Kependudukan'
     }
     await this.getServices(params)
   },
