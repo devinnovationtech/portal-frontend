@@ -1,8 +1,8 @@
 <template>
-  <section class="py-14">
+  <section class="py-14 featured-program--container">
     <BaseContainer>
       <div class="flex flex-col md:flex-row items-center gap-1 md:gap-4 mb-8">
-        <h2 class="font-medium text-2xl md:text-4xl leading-loose">
+        <h2 class="font-medium text-[28px] md:text-4xl leading-loose">
           Program Unggulan
         </h2>
         <div class="flex-1 flex justify-center flex-col text-center">
@@ -61,11 +61,17 @@
           </swiper>
 
           <!-- Swiper Navigation -->
-          <div v-show="swiperReady">
-            <button class="navigation navigation__wrapper swiper-button-next">
+          <div v-show="swiperReady" class="featured-program__navigation">
+            <button
+              class="navigation navigation__wrapper swiper-button-next
+              transition-all ease-brand duration-300"
+            >
               <Icon class="navigation__button-right" size="16px" name="chevron-right" />
             </button>
-            <button class="navigation navigation__wrapper swiper-button-prev">
+            <button
+              class="navigation navigation__wrapper swiper-button-prev
+              transition-all ease-brand duration-300"
+            >
               <Icon class="navigation__button-left" size="16px" name="chevron-left" />
             </button>
           </div>
@@ -175,6 +181,8 @@ export default {
       top: calc(50% - 24px) !important;
       position: absolute !important;
       width: unset !important;
+      opacity: 0 !important;
+      z-index: 10 !important;
     }
 
     .swiper-button-prev {
@@ -193,14 +201,16 @@ export default {
       pointer-events: none !important;
     }
 
-    .swiper-button-prev.swiper-button-disabled,
-    .swiper-button-next.swiper-button-disabled {
-      opacity: 1 !important;
-    }
-
     .swiper-button-prev:after,
     .swiper-button-next:after {
       display: none !important;
+    }
+  }
+
+  .featured-program--container:hover {
+    .swiper-button-prev,
+    .swiper-button-next {
+      opacity: 1 !important;
     }
   }
 </style>

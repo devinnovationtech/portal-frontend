@@ -25,15 +25,15 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      default: '-'
     },
     counter: {
       type: [String, Number],
-      required: true
+      default: 0
     },
     unit: {
       type: String,
-      required: true
+      default: '-'
     },
     loading: {
       type: Boolean,
@@ -42,7 +42,7 @@ export default {
     },
     lastUpdate: {
       type: String,
-      required: true
+      default: ''
     }
   },
   computed: {

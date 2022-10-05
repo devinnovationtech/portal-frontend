@@ -1,41 +1,38 @@
 <template>
-  <div>
-    <slot name="header" />
-    <div class="bg-white flex flex-col overflow-hidden h-[390px] lg:h-[900px] xl:h-[350px]">
-      <!--
+  <div class="h-[470px] md:h-[380px] xl:h-[470px] bg-white flex flex-col items-center justify-center overflow-hidden">
+    <!--
         TODO: Show a placeholder if an error occur
       -->
-      <template v-if="fetchState.pending">
-        <AgendaWidgetListSkeleton v-for="index in 3" :key="index" />
-      </template>
-      <div v-else-if="!hasEvents && !fetchState.pending" class="h-full px-4 pb-12">
-        <AgendaWidgetEmptyState />
-      </div>
-      <div v-else class="flex flex-col flex-grow overflow-y-auto pt-1 pr-2 md:pr-4">
-        <InfiniteScroll :items="events" @refetch="getEvents">
-          <template #default="{ item }">
-            <AgendaWidgetListItem
-              :id="item.id"
-              :key="item.id"
-              :title="item.title"
-              :date="item.date"
-              :category="item.category"
-              :type="item.type"
-              :url="item.url"
-              :address="item.address"
-              :start-hour="item.start_hour"
-              :end-hour="item.end_hour"
-            />
-          </template>
-        </InfiniteScroll>
-      </div>
-      <Link v-if="hasEvents" link="/agenda-jawa-barat" class="flex justify-center py-5 border-t border-gray-100">
-        <Button type="button" variant="tertiary-paddingless" tabindex="-1">
-          Lihat Semua Agenda
-          <Icon name="open-new-tab" size="12px" />
-        </Button>
-      </Link>
+    <template v-if="fetchState.pending">
+      <AgendaWidgetListSkeleton v-for="index in 3" :key="index" />
+    </template>
+    <div v-else-if="!hasEvents && !fetchState.pending" class="px-4">
+      <AgendaWidgetEmptyState />
     </div>
+    <div v-else class="w-full flex flex-col flex-grow overflow-y-auto pt-1 pr-2 md:pr-4">
+      <InfiniteScroll :items="events" @refetch="getEvents">
+        <template #default="{ item }">
+          <AgendaWidgetListItem
+            :id="item.id"
+            :key="item.id"
+            :title="item.title"
+            :date="item.date"
+            :category="item.category"
+            :type="item.type"
+            :url="item.url"
+            :address="item.address"
+            :start-hour="item.start_hour"
+            :end-hour="item.end_hour"
+          />
+        </template>
+      </InfiniteScroll>
+    </div>
+    <Link v-if="hasEvents" link="/agenda-jawa-barat" class="flex justify-center py-5 border-t border-gray-100">
+      <Button type="button" variant="tertiary-paddingless" tabindex="-1">
+        Lihat Semua Agenda
+        <Icon name="open-new-tab" size="12px" />
+      </Button>
+    </Link>
   </div>
 </template>
 
