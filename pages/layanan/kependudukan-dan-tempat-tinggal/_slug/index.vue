@@ -5,7 +5,7 @@
         <Breadcrumb :items="breadcrumbItems" class="mb-6" />
       </template>
 
-      <template #suffix>
+      <template v-if="isOnline" #suffix>
         <div
           class="flex flex-row w-full sm:w-[258px] px-4 py-3 rounded-xl items-center justify-center
           gap-[14px] bg-green-primary font-lato font-medium text-sm text-white"
@@ -20,10 +20,17 @@
       <BaseContainer class="relative -top-24 z-20">
         <div class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
           <LayananItemHeader
-            :name="'Sistem Informasi Data Kependudukan (SIDATUK)'"
-            :last-update="'2022-07-22T04:20:38Z'"
+            :logo="service.logo"
+            :name="service.name"
+            :last-update="service.updated_at"
           />
-          <LayananItemMedia />
+          <LayananItemMedia
+            :video="service.video"
+            :category="service.category"
+            :website="service.website"
+            :social-media="service.social_media"
+            :images="service.images"
+          />
         </div>
       </BaseContainer>
     </section>
@@ -32,14 +39,30 @@
 
 <script>
 export default {
+  async asyncData ({ params, $axios, error }) {
+    const slug = await params.slug
+
+    try {
+      const response = await $axios.get(`/v1/public/public-service/slug/${slug}`)
+
+      const { data: service } = response.data
+
+      const jumbotron = {
+        title: service.name,
+        subtitle: service.description,
+        backgroundImageUrl: '/images/jumbotron/default.webp'
+      }
+
+      return { service, jumbotron }
+    } catch (e) {
+      // silent error
+    }
+  },
   data () {
     return {
-      jumbotron: {
-        title: 'Sistem Informasi Data Kependudukan (SIDATUK)',
-        subtitle: 'Layanan publik berbasis website untuk pengecekan data kependudukan berbasis Nomor Induk Kependudukan (NIK) dan melakukan pengaduan terkait data kependudukan.',
-        backgroundImageUrl: '/images/jumbotron/default.webp'
-      },
-      searchValue: null
+      jumbotron: {},
+      searchValue: null,
+      service: {}
     }
   },
   computed: {
@@ -55,9 +78,12 @@ export default {
         },
         {
           path: this.$route.path,
-          label: 'SIDATUK'
+          label: this.service.name || '-'
         }
       ]
+    },
+    isOnline () {
+      return this.service.service_type === 'online'
     }
   }
 }

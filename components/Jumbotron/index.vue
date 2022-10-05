@@ -12,7 +12,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-4">
         <h2
           :class="{
-            'font-lato text-sm leading-6 text-white' : true,
+            'font-lato text-sm leading-6 text-white line-clamp-4' : true,
             'sm:col-span-4': isSuffixEmpty,
             'sm:col-span-2': !isSuffixEmpty
           }"

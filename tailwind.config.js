@@ -19,7 +19,8 @@ module.exports = {
         roboto: ['Roboto', 'sans-serif'],
         lora: ['Lora', 'serif'],
         opensans: ['Open Sans', 'sans-serif'],
-        intro: ['Intro', 'sans-serif']
+        intro: ['Intro', 'sans-serif'],
+        segoeui: ['Segoe UI', 'sans-serif']
       },
       boxShadow: {
         DEFAULT: '0px 6px 22px rgba(2, 43, 85, 0.08)'
