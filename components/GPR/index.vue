@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative justify-self-center w-full max-w-[500px] h-[600px] md:h-[975px] lg:h-[608px]
+    class="relative justify-self-center w-full max-w-[500px] h-[600px] md:h-[625px] lg:h-[608px]
     bg-[#262879] rounded-lg flex justify-center items-center overflow-hidden"
   >
     <div
@@ -8,7 +8,7 @@
       class="h-full overflow-y-auto"
     />
     <div
-      v-if="loading"
+      v-if="status === GPR_SCRIPT_STATUS.LOADING"
       class="absolute inset-0 flex items-center justify-center bg-[#262879] bg-opacity-70 z-10"
     >
       <JdsSpinner
@@ -17,7 +17,7 @@
         size="40"
       />
     </div>
-    <div v-if="!loading && timeout" class="absolute inset-0 flex items-center justify-center px-0 md:px-5 z-10">
+    <div v-else-if="status === GPR_SCRIPT_STATUS.TIMEOUT" class="absolute bg-[#262879] inset-0 flex items-center justify-center px-0 md:px-5 z-10">
       <div class="flex flex-col items-center justify-center">
         <img
           src="/images/gpr/gpr-error.png"
@@ -44,16 +44,18 @@
 </template>
 
 <script>
+import { GPR_SCRIPT_STATUS } from '~/static/data'
 
 export default {
   props: {
-    loading: {
-      type: Boolean,
-      default: true
-    },
-    timeout: {
-      type: Boolean,
-      default: false
+    status: {
+      type: String,
+      default: GPR_SCRIPT_STATUS.LOADING
+    }
+  },
+  data () {
+    return {
+      GPR_SCRIPT_STATUS
     }
   }
 }

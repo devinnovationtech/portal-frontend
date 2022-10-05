@@ -948,3 +948,9 @@ export const GOVERNOR_PROFILE = {
     instagram: 'swangsaatmaja'
   }
 }
+
+export const GPR_SCRIPT_STATUS = {
+  LOADING: 'LOADING',
+  LOADED: 'LOADED',
+  TIMEOUT: 'TIMEOUT'
+}
