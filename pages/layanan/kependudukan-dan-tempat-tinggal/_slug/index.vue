@@ -56,6 +56,7 @@ export default {
       return { service, jumbotron }
     } catch (e) {
       // silent error
+      error({ statusCode: e.response.status, message: e.response?.data?.message })
     }
   },
   data () {
