@@ -35,7 +35,7 @@
           <LayananItemPurposes
             section-title="Mengapa SIDATUK Hadir"
             :purposes="service.purposes"
-            class="mt-[97px]"
+            class="mt-4 sm:mt-6 lg:mt-12"
           />
         </div>
       </BaseContainer>
