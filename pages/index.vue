@@ -17,7 +17,9 @@
         </div>
       </BaseContainer>
     </section>
-    <BannerBIAN />
+    <section class="pt-14">
+      <BannerSwiper />
+    </section>
     <FeaturedProgramPreview />
     <section class="bg-white py-[52px] md:py-14 xl:py-[60px]">
       <BaseContainer class="md:!px-0 xl:!px-6">
