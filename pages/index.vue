@@ -2,7 +2,10 @@
   <main class="overflow-hidden">
     <!-- <Campaign /> -->
     <Hero />
-    <section class="relative top-[-12rem] mb-[-12rem] md:top-[-14rem] md:mb-[-14rem] lg:-top-40 lg:-mb-40 z-10">
+    <section
+      class="relative top-[-12rem] mb-[-12rem] md:top-[-14rem] md:mb-[-14rem]
+      lg:-top-40 lg:-mb-40 z-10 pb-6 md:pb-8 xl:pb-12"
+    >
       <BaseContainer>
         <div
           class="w-full h-full p-4 md:p-8 bg-white rounded-xl shadow
@@ -17,11 +20,11 @@
         </div>
       </BaseContainer>
     </section>
-    <section class="pt-14">
+    <section class="py-6 md:py-8 xl:py-12">
       <BannerSwiper />
     </section>
     <FeaturedProgramPreview />
-    <section class="bg-white py-[52px] md:py-14 xl:py-[60px]">
+    <section class="bg-white py-6 md:py-8 xl:py-[60px]">
       <BaseContainer class="md:!px-0 xl:!px-6">
         <h2 class="hidden md:block xl:hidden text-4xl text-center font-medium leading-loose mb-10">
           Layanan Terpopuler
