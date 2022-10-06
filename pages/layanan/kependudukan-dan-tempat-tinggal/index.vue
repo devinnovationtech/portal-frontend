@@ -25,6 +25,7 @@
           <LayananList
             :service-list="serviceList"
             :loading="loading"
+            :search-value="searchValue"
           />
         </div>
       </BaseContainer>
@@ -75,7 +76,7 @@ export default {
           const params = {
             q: this.searchValue,
             // @TODO: dynamic cat params' value
-            cat: 'disdukcapil'
+            cat: 'Kependudukan'
           }
 
           await this.getServices(params)
