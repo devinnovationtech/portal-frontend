@@ -2,7 +2,7 @@
   <main class="overflow-hidden">
     <Jumbotron v-bind="jumbotron">
       <template #breadcrumb>
-        <Breadcrumb :hide-items="['/layanan']" class="mb-6" />
+        <Breadcrumb :items="breadcrumbItems" :capitalize="false" class="mb-6" />
       </template>
     </Jumbotron>
     <section class="w-full bg-gray-200">
@@ -57,6 +57,18 @@ export default {
     await this.getServices(params)
   },
   computed: {
+    breadcrumbItems () {
+      return [
+        {
+          path: '/',
+          label: 'Beranda'
+        },
+        {
+          path: this.$route.path,
+          label: 'Kependudukan dan Tempat Tinggal'
+        }
+      ]
+    },
     serviceLength () {
       return this.meta?.totalCount || 0
     },
