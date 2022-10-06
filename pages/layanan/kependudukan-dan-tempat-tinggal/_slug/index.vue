@@ -30,6 +30,12 @@
             :website="service.website"
             :social-media="service.social_media"
             :images="service.images"
+            class="mt-4 md:mt-6 lg:mt-12 xl:mt-6"
+          />
+          <LayananItemPurposes
+            section-title="Mengapa SIDATUK Hadir"
+            :purposes="service.purposes"
+            class="mt-[97px]"
           />
         </div>
       </BaseContainer>

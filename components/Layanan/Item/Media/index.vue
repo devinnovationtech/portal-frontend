@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col sm:flex-row xl:flex-col flex-wrap gap-4 xl:gap-6 mt-4 md:mt-6 lg:mt-12 xl:mt-6 sm:h-[964px] lg:h-[1004px] xl:h-[557px]">
+  <section class="flex flex-col sm:flex-row xl:flex-col flex-wrap gap-4 xl:gap-6 sm:h-[964px] lg:h-[1004px] xl:h-[557px]">
     <!-- Youtube Video -->
     <section class="bg-gray-900 w-full xl:w-[816px] h-[156px] sm:h-[383px] rounded-xl flex items-center justify-center">
       <lite-youtube
@@ -11,7 +11,7 @@
     <!-- Thumbnail Pictures -->
     <section
       class="flex flex-row sm:grid sm:grid-cols-1 xl:flex xl:flex-row gap-4 md:gap-6 sm:h-[557px] lg:h-[597px] xl:h-[150px]
-      w-full sm:w-[212px] md:w-[252px] lg:w-[456px] xl:w-[816px] sm:order-last xl:order-none overflow-auto"
+      w-full sm:w-[212px] md:w-[252px] lg:w-[456px] xl:w-[816px] sm:order-last xl:order-none overflow-auto xl:overflow-y-hidden"
     >
       <LazyImg
         v-for="(image, index) in images"
