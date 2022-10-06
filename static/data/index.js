@@ -466,10 +466,10 @@ export const featuredProgramMenu = [
 export const quickLinkMenu = [
   {
     id: 1,
-    title: 'Kependudukan',
+    title: 'Keuangan',
     description: 'Ketahui lebih lanjut tentang semua hal hebat yang ditawarkan Jawa Barat.',
-    icon: '/icons/akses-cepat/kependudukan.svg',
-    link: 'https://disdukcapil.jabarprov.go.id/portal'
+    icon: '/icons/akses-cepat/keuangan.svg',
+    link: '#' // Fix: Change item link according to AC
   },
   {
     id: 2,
