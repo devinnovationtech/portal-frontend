@@ -37,6 +37,10 @@
             :purposes="service.purposes"
             class="mt-4 sm:mt-6 lg:mt-12"
           />
+          <LayananItemFacilities
+            section-title="Fasilitas Yang Tersedia"
+            :facilities="service.facilities"
+          />
         </div>
       </BaseContainer>
     </section>
