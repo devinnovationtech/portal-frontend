@@ -2,7 +2,7 @@
   <main class="overflow-hidden">
     <Jumbotron v-bind="jumbotron">
       <template #breadcrumb>
-        <Breadcrumb :items="breadcrumbItems" class="mb-6" />
+        <Breadcrumb :items="breadcrumbItems" :capitalize="false" class="mb-6" />
       </template>
 
       <template v-if="isOnline" #suffix>
