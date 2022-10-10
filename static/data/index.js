@@ -466,10 +466,10 @@ export const featuredProgramMenu = [
 export const quickLinkMenu = [
   {
     id: 1,
-    title: 'Keuangan',
+    title: 'Laporan Keuangan',
     description: 'Ketahui lebih lanjut tentang semua hal hebat yang ditawarkan Jawa Barat.',
     icon: '/icons/akses-cepat/keuangan.svg',
-    link: '#' // Fix: Change item link according to AC
+    link: '/arsip-dan-dokumen?kategori=transparansi%20pengelolaan%20keuangan%20daerah'
   },
   {
     id: 2,
@@ -501,10 +501,10 @@ export const quickLinkMenu = [
   },
   {
     id: 6,
-    title: 'Satu Data',
-    description: 'Tata kelola data antar OPD di lingkungan Pemerintah Daerah Provinsi Jawa Barat.',
-    icon: '/icons/akses-cepat/satu-data.svg',
-    link: 'https://satudata.jabarprov.go.id/auth/login?returnUrl=%2Fhome'
+    title: 'Open Data',
+    description: 'Portal transparansi data dan informasi publik bagi warga Jawa Barat.',
+    icon: '/icons/akses-cepat/open-data.svg',
+    link: 'https://opendata.jabarprov.go.id/id'
   },
   {
     id: 7,
