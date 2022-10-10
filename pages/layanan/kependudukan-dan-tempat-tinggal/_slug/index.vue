@@ -41,6 +41,10 @@
             section-title="Fasilitas Yang Tersedia"
             :facilities="service.facilities"
           />
+          <LayananItemRequirements
+            section-title="Untuk menggunakan aplikasi ini anda perlu mempersiapkan"
+            :requirements="service.info"
+          />
         </div>
       </BaseContainer>
     </section>
