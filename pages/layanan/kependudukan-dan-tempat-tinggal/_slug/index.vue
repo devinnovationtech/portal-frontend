@@ -45,6 +45,12 @@
             section-title="Untuk menggunakan aplikasi ini anda perlu mempersiapkan"
             :requirements="service.info"
           />
+          <LayananItemNews
+            :service-name="service.name"
+            :news="newsList"
+            :loading="$fetchState.pending"
+            class="mt-[58px]"
+          />
         </div>
       </BaseContainer>
     </section>
@@ -53,31 +59,40 @@
 
 <script>
 export default {
-  async asyncData ({ params, $axios, error }) {
-    const slug = await params.slug
-
-    try {
-      const response = await $axios.get(`/v1/public/public-service/slug/${slug}`)
-
-      const { data: service } = response.data
-
-      const jumbotron = {
-        title: service.name,
-        subtitle: service.description,
-        backgroundImageUrl: '/images/jumbotron/default.webp'
-      }
-
-      return { service, jumbotron }
-    } catch (e) {
-      // silent error
-      error({ statusCode: e.response.status, message: e.response?.data?.message })
-    }
-  },
   data () {
     return {
       jumbotron: {},
       searchValue: null,
-      service: {}
+      service: {},
+      newsList: []
+    }
+  },
+  async fetch () {
+    const slug = this.$route.params.slug
+
+    try {
+      // get detail service data
+      const response = await this.$axios.get(`/v1/public/public-service/slug/${slug}`)
+      this.service = response.data.data
+
+      // get related news data
+      const params = {
+        q: this.service.name,
+        per_page: 3,
+        sort_order: 'desc',
+        domain: ['news']
+      }
+      const responseNews = await this.$axios.$get('/v1/search', { params })
+      this.newsList = responseNews.data
+
+      this.jumbotron = {
+        title: this.service.name,
+        subtitle: this.service.description,
+        backgroundImageUrl: '/images/jumbotron/default.webp'
+      }
+    } catch (e) {
+      // silent error
+      this.$nuxt.error({ statusCode: e.response.status, message: e.response?.data?.message })
     }
   },
   computed: {
