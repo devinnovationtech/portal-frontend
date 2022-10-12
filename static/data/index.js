@@ -436,7 +436,7 @@ export const featuredProgramMenu = [
     id: 6,
     title: 'Citarum Harum',
     description: 'Upaya mengatasi pencemaran air sungai melalui 13 Program Rencana Aksi Citarum Harum.',
-    icon: '/icons/program-unggulan/logo-placeholder-paddingless.svg',
+    icon: '/icons/program-unggulan/citarum-harum.svg',
     link: 'https://citarumharum.jabarprov.go.id'
   }
 ]
