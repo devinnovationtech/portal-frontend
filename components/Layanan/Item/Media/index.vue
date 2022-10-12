@@ -13,14 +13,23 @@
       class="flex flex-row sm:grid sm:grid-cols-1 xl:flex xl:flex-row gap-4 md:gap-6 sm:h-[557px] lg:h-[597px] xl:h-[150px]
       w-full sm:w-[212px] md:w-[252px] lg:w-[456px] xl:w-[816px] sm:order-last xl:order-none overflow-auto xl:overflow-y-hidden"
     >
-      <LazyImg
+      <div
         v-for="(image, index) in images"
         :key="index"
-        :src="image"
-        alt="Dokumentasi Kegiatan"
-        class="xl:min-w-[256px] sm:w-[212px] md:w-[252px] lg:w-[456px] xl:w-[256px]
-        rounded-xl h-[150px] sm:h-[170px] lg:h-[183px] xl:h-[150px] object-cover"
-      />
+        class="media__image relative group overflow-hidden"
+      >
+        <div
+          class="media__image opacity-0 absolute flex items-center justify-center bg-[#00000080] group-hover:opacity-100 z-10"
+          @click="showImage(index)"
+        >
+          <Icon src="/icons/zoom.svg" size="50px" />
+        </div>
+        <LazyImg
+          :src="image"
+          alt="Dokumentasi Kegiatan"
+          class="media__image object-cover group-hover:scale-110"
+        />
+      </div>
     </section>
 
     <!-- Social Media -->
@@ -97,6 +106,12 @@
         </div>
       </div>
     </section>
+    <BaseImagePreview
+      :show="show"
+      :images="images"
+      :index="imageIndex"
+      @close="show = false"
+    />
   </section>
 </template>
 
@@ -124,6 +139,12 @@ export default {
       default: () => []
     }
   },
+  data () {
+    return {
+      show: false,
+      imageIndex: 0
+    }
+  },
   computed: {
     videoId () {
       if (this.video) {
@@ -135,6 +156,23 @@ export default {
         return '-'
       }
     }
+  },
+  methods: {
+    showImage (index) {
+      this.imageIndex = index
+      this.show = true
+    }
   }
 }
 </script>
+<style lang="scss" scoped>
+.media {
+  &__image {
+    @apply xl:min-w-[256px] sm:w-[212px] md:w-[252px] lg:w-[456px] xl:w-[256px] h-[150px] sm:h-[170px] lg:h-[183px] xl:h-[150px] rounded-xl transition-all ease-brand duration-250;
+
+    &:hover {
+      @apply cursor-pointer;
+    }
+  }
+}
+</style>
