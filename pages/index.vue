@@ -2,6 +2,7 @@
   <main class="overflow-hidden">
     <!-- <Campaign /> -->
     <Hero />
+    <CounterWidget />
     <section
       class="relative top-[-12rem] mb-[-12rem] md:top-[-14rem] md:mb-[-14rem]
       lg:-top-40 lg:-mb-40 z-10 pb-6 md:pb-8 xl:pb-12"
