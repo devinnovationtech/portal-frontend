@@ -1,7 +1,7 @@
 <template>
   <div class="w-full max-w-xl">
     <div
-      class="flex flex-col mt-6 md:grid md:grid-rows-[184px,154px] md:gap-4 md:mt-0 md:absolute md:top-0 md:bottom-0 md:left-0 content-center"
+      class="flex flex-col mt-6 md:grid md:grid-rows-[184px] md:gap-4 md:mt-0 md:absolute md:top-0 md:bottom-0 md:left-0 content-center"
       @click="onClickFeedback"
     >
       <div class="group cursor-pointer md:relative md:transform md:-rotate-90">
