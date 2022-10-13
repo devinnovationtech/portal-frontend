@@ -18,7 +18,8 @@
 
     <section class="w-full bg-gray-200">
       <BaseContainer class="relative -top-24 z-20">
-        <div class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
+        <!-- @todo: add loading skeleton and change this temporary if conditional -->
+        <div v-if="!$fetchState.pending" class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
           <LayananItemHeader
             :logo="service.logo"
             :name="service.name"
