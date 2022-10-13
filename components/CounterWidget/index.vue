@@ -41,7 +41,9 @@
                   alt="people"
                 />
               </div>
-              <div class="flex flex-row gap-2">
+
+              <!-- NOTE: Temporary Hide Element -->
+              <!-- <div class="flex flex-row gap-2">
                 <JdsIcon
                   :name="positiveGrowthVisit ? 'arrow-up' : 'arrow-down'"
                   :class="positiveGrowthVisit ? 'text-green-500' : 'text-[#DD5E5E]'"
@@ -53,7 +55,7 @@
                 >
                   {{ growthVisit }}
                 </p>
-              </div>
+              </div> -->
             </div>
             <p class="font-lato text-white text-[16px] leading-[26px] font-normal">
               Total visitor
@@ -86,7 +88,8 @@
                   alt="people"
                 />
               </div>
-              <div class="flex flex-row gap-2">
+              <!-- NOTE: Temporary hide element -->
+              <!-- <div class="flex flex-row gap-2">
                 <JdsIcon
                   :name="positiveGrowthVisitor ? 'arrow-up' : 'arrow-down'"
                   :class="positiveGrowthVisitor ? 'text-green-500' : 'text-[#DD5E5E]'"
@@ -98,10 +101,10 @@
                 >
                   {{ growthVisitor }}
                 </p>
-              </div>
+              </div> -->
             </div>
             <p class="font-lato text-white text-[16px] leading-[26px] font-normal">
-              Total visit
+              Total view
             </p>
             <p class="font-roboto text-white text-[49px] leading-[79px] font-medium pb-2.5">
               {{ totalVisit }}
@@ -171,24 +174,26 @@ export default {
     }
   },
   computed: {
-    growthVisit () {
-      return this.visitorData?.growth_visit || '-'
-    },
-    positiveGrowthVisit () {
-      return this.visitorData?.growth_visit >= 0
-    },
+    // NOTE: Temporary disable feature
+    // growthVisit () {
+    //   return this.visitorData?.growth_visit || '-'
+    // },
+    // positiveGrowthVisit () {
+    //   return this.visitorData?.growth_visit >= 0
+    // },
     visitAll () {
       return this.formatNumber(this.visitorData?.visitor_all) || '-'
     },
     onlineVisitor () {
       return this.visitorData?.online30mnt || '-'
     },
-    growthVisitor () {
-      return this.visitorData?.growth_visitor || '-'
-    },
-    positiveGrowthVisitor () {
-      return parseInt(this.visitorData?.growth_visitor) >= 0
-    },
+    // NOTE: Temporary disable feature
+    // growthVisitor () {
+    //   return this.visitorData?.growth_visitor || '-'
+    // },
+    // positiveGrowthVisitor () {
+    //   return parseInt(this.visitorData?.growth_visitor) >= 0
+    // },
     totalVisit () {
       return this.formatNumber(this.visitorData?.visit_all) || '-'
     },
