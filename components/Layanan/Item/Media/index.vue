@@ -168,7 +168,8 @@ export default {
 <style lang="scss" scoped>
 .media {
   &__image {
-    @apply xl:min-w-[256px] sm:w-[212px] md:w-[252px] lg:w-[456px] xl:w-[256px] h-[150px] sm:h-[170px] lg:h-[183px] xl:h-[150px] rounded-xl transition-all ease-brand duration-250;
+    @apply min-w-[224px] xl:min-w-[256px] sm:w-[212px] md:w-[252px] lg:w-[456px] xl:w-[256px]
+    h-[150px] sm:h-[170px] lg:h-[183px] xl:h-[150px] rounded-xl transition-all ease-brand duration-250;
 
     &:hover {
       @apply cursor-pointer;
