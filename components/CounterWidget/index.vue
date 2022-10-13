@@ -5,12 +5,12 @@
     @click.self="toggleOpen"
   >
     <section
-      class="counter-widget__container sticky top-[64px] xl:top-[88px] grid grid-cols-[319px,auto] md:grid-cols-[418px,auto] items-start max-w-max mb-6
+      class="counter-widget__container sticky top-[64px] md:top-[80px] xl:top-[96px] grid grid-cols-[319px,auto] md:grid-cols-[418px,auto] items-start max-w-max mb-6
       transition-transform ease-in duration-150"
       :class="{ 'counter-widget__container--open' : isOpen }"
     >
       <div
-        class="w-full h-[568px] md:h-[600px] py-[18px] px-[26px] rounded-lg overflow-y-scroll pointer-events-auto"
+        class="w-full h-full max-h-[80vh] md:max-h-[600px] py-[18px] px-[26px] rounded-lg overflow-y-auto pointer-events-auto"
         :class="{
           'bg-[#1565C0]' : showData,
           'bg-[#0D47A1]' : !showData
@@ -32,7 +32,7 @@
           </section>
 
           <!-- Counter Widget Visitor Today -->
-          <section class="bg-[#0D47A1] pl-[49px] pt-[36px] pb-[14px] mb-[15px] rounded-[10px]">
+          <section class="bg-[#0D47A1] pl-[49px] pt-[36px] pb-[14px] mb-[15px] rounded-[10px] relative overflow-hidden">
             <div class="flex flex-row gap-[15px] items-center pb-2.5">
               <div class="bg-[#1565C0] p-2 rounded-lg">
                 <Icon
@@ -42,8 +42,15 @@
                 />
               </div>
               <div class="flex flex-row gap-2">
-                <JdsIcon name="arrow-up" class="text-green-500" size="14px" />
-                <p class="text-green-500 font-roboto text-[14px] leading-[23px] font-medium">
+                <JdsIcon
+                  :name="positiveGrowthVisit ? 'arrow-up' : 'arrow-down'"
+                  :class="positiveGrowthVisit ? 'text-green-500' : 'text-[#DD5E5E]'"
+                  size="14px"
+                />
+                <p
+                  class="font-roboto text-[14px] leading-[23px] font-medium"
+                  :class="positiveGrowthVisit ? 'text-green-500' : 'text-[#DD5E5E]'"
+                >
                   {{ growthVisit }}
                 </p>
               </div>
@@ -60,10 +67,17 @@
                 <span class="font-semibold">{{ onlineVisitor }}</span> Online
               </p>
             </div>
+            <img
+              src="/images/counter-widget/pattern-one.png"
+              alt="counter widget pattern"
+              width="275"
+              height="280"
+              class="w-full h-full inset-0 left-[120px] absolute object-contain"
+            >
           </section>
 
           <!-- Counter Widget Visitor All Time -->
-          <section class="bg-[#0D47A1] pl-[49px] pt-[36px] pb-[14px] rounded-[10px]">
+          <section class="bg-[#0D47A1] pl-[49px] pt-[36px] pb-[14px] rounded-[10px] relative overflow-hidden">
             <div class="flex flex-row gap-[15px] items-center pb-2.5">
               <div class="bg-[#1565C0] p-2 rounded-lg">
                 <Icon
@@ -73,8 +87,15 @@
                 />
               </div>
               <div class="flex flex-row gap-2">
-                <JdsIcon name="arrow-down" class="text-[#DD5E5E]" size="14px" />
-                <p class="text-[#DD5E5E] font-roboto text-[14px] leading-[23px] font-medium">
+                <JdsIcon
+                  :name="positiveGrowthVisitor ? 'arrow-up' : 'arrow-down'"
+                  :class="positiveGrowthVisitor ? 'text-green-500' : 'text-[#DD5E5E]'"
+                  size="14px"
+                />
+                <p
+                  class="font-roboto text-[14px] leading-[23px] font-medium"
+                  :class="positiveGrowthVisitor ? 'text-green-500' : 'text-[#DD5E5E]'"
+                >
                   {{ growthVisitor }}
                 </p>
               </div>
@@ -85,6 +106,13 @@
             <p class="font-roboto text-white text-[49px] leading-[79px] font-medium pb-2.5">
               {{ totalVisit }}
             </p>
+            <img
+              src="/images/counter-widget/pattern-two.png"
+              alt="counter widget pattern"
+              width="275"
+              height="280"
+              class="w-full h-full absolute inset-0 left-[110px] object-contain"
+            >
           </section>
         </div>
 
@@ -123,7 +151,6 @@
 
 <script>
 export default {
-  fetchOnServer: false,
   data () {
     return {
       isOpen: false,
@@ -147,8 +174,11 @@ export default {
     growthVisit () {
       return this.visitorData?.growth_visit || '-'
     },
+    positiveGrowthVisit () {
+      return this.visitorData?.growth_visit >= 0
+    },
     visitAll () {
-      return this.getViewsText(this.visitorData?.visitor_all) || '-'
+      return this.formatNumber(this.visitorData?.visitor_all) || '-'
     },
     onlineVisitor () {
       return this.visitorData?.online30mnt || '-'
@@ -156,15 +186,15 @@ export default {
     growthVisitor () {
       return this.visitorData?.growth_visitor || '-'
     },
+    positiveGrowthVisitor () {
+      return parseInt(this.visitorData?.growth_visitor) >= 0
+    },
     totalVisit () {
-      return this.getViewsText(this.visitorData?.visit_all) || '-'
+      return this.formatNumber(this.visitorData?.visit_all) || '-'
     },
     showData () {
       return !this.isError && !this.loading
     }
-  },
-  mounted () {
-
   },
   methods: {
     toggleOpen () {
@@ -181,7 +211,7 @@ export default {
     reloadCounterWidget () {
       this.$fetch()
     },
-    getViewsText (number = 0) {
+    formatNumber (number = 0) {
       return new Intl.NumberFormat('id-ID').format(number)
     }
   }
