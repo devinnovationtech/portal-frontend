@@ -40,6 +40,7 @@ export default {
     '~/plugins/vue-awesome-swiper',
     '~/plugins/vue-touch-events',
     '~/plugins/vue-lazy-load',
+    '~/plugins/vue-easy-lightbox',
     '~/plugins/lite-youtube-embed.client.js',
     '~/plugins/device.server'
   ],
