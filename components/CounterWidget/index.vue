@@ -129,8 +129,8 @@
 
       <!-- Counter Widget Button -->
       <div
-        class="self-center relative left-[-55px] bg-[#1565C0] rounded-br-lg rounded-bl-lg
-        text-white pointer-events-auto transform -rotate-90 cursor-pointer"
+        class="self-center relative left-[-65px] bg-[#1565C0] rounded-br-lg rounded-bl-lg
+          text-white pointer-events-auto transform -rotate-90 cursor-pointer"
         @click="toggleOpen"
       >
         <div class="flex items-center gap-4 py-3 px-2">
@@ -144,7 +144,7 @@
             />
           </div>
           <p class="text-sm font-medium whitespace-nowrap">
-            Counter Widget
+            Statistik Kunjungan
           </p>
         </div>
       </div>

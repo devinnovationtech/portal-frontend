@@ -1,6 +1,6 @@
 <template>
   <main class="overflow-hidden">
-    <!-- <Campaign /> -->
+    <Campaign />
     <Hero />
     <CounterWidget />
     <section
