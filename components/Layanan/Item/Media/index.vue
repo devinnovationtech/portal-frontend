@@ -1,18 +1,14 @@
 <template>
-  <section class="flex flex-col sm:flex-row xl:flex-col flex-wrap gap-4 xl:gap-6 sm:h-[964px] lg:h-[1004px] xl:h-[557px]">
+  <section class="grid grid-flow-row sm:grid-cols-[auto,262px] lg:grid-cols-2 xl:grid-cols-[816px,auto] gap-4 xl:gap-6">
     <!-- Youtube Video -->
-    <section class="bg-gray-900 w-full xl:w-[816px] h-[156px] sm:h-[383px] rounded-xl flex items-center justify-center">
+    <section class="flex justify-center bg-gray-900 rounded-xl h-[156px] sm:h-[383px] sm:col-span-2 xl:col-span-1">
       <lite-youtube
         :videoid="videoId"
-        class="w-full h-full bg-gray-900 rounded-xl"
+        class="w-full h-full rounded-xl"
       />
     </section>
-
     <!-- Thumbnail Pictures -->
-    <section
-      class="flex flex-row sm:grid sm:grid-cols-1 xl:flex xl:flex-row gap-4 md:gap-6 sm:h-[557px] lg:h-[597px] xl:h-[150px]
-      w-full sm:w-[212px] md:w-[252px] lg:w-[456px] xl:w-[816px] sm:order-last xl:order-none overflow-auto xl:overflow-y-hidden"
-    >
+    <section class="flex flex-row sm:grid sm:grid-cols-1 xl:flex xl:flex-row gap-4 md:gap-6 sm:h-[557px] lg:h-[597px] xl:h-auto sm:order-last overflow-auto sm:overflow-x-hidden xl:overflow-x-auto xl:overflow-y-hidden">
       <div
         v-for="(image, index) in images"
         :key="index"
@@ -31,12 +27,8 @@
         />
       </div>
     </section>
-
     <!-- Social Media -->
-    <section
-      class="w-full sm:w-[320px] md:w-[416px] lg:w-[456px] xl:w-[310px] 2xl:w-[360px]
-      sm:h-[557px] lg:h-[597px] xl:h-full border border-solid border-gray-300 rounded-xl p-6 flex flex-col"
-    >
+    <section class="flex flex-col rounded-xl p-4 border border-solid border-gray-300 xl:row-span-2">
       <div class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400">
         <Icon src="/icons/category-blue.svg" size="16px" class="text-blue-700 my-[5px] mr-[5px] " />
         <div class="flex flex-col items-start justify-center gap-2">
@@ -168,7 +160,7 @@ export default {
 <style lang="scss" scoped>
 .media {
   &__image {
-    @apply min-w-[224px] xl:min-w-[256px] sm:w-[212px] md:w-[252px] lg:w-[456px] xl:w-[256px]
+    @apply min-w-[224px] xl:min-w-[256px] sm:w-full xl:w-[256px]
     h-[150px] sm:h-[170px] lg:h-[183px] xl:h-[150px] rounded-xl transition-all ease-brand duration-250;
 
     &:hover {
