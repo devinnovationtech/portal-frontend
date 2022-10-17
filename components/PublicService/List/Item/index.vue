@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :to="`/layanan/kependudukan-dan-tempat-tinggal/${service.slug}`"
+    :to="`/layanan/${category}/${service.slug}`"
     class="w-full flex flex-col gap-1 group bg-white px-4 py-3 rounded-lg
     hover:bg-green-50 hover:cursor-pointer transition-colors ease-brand duration-250"
   >
@@ -24,6 +24,17 @@ export default {
     service: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    /**
+     * get category path based on current route
+     * @returns {String}
+     */
+    category () {
+      const path = this.$route.path.split('/')
+      const category = path.length > 2 ? path[2].split('?') : '-'
+      return category[0] || '-'
     }
   }
 }

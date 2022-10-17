@@ -15,14 +15,14 @@
             :clear="false"
           />
           <BaseListCounter
-            :title="'Total Layanan di OPD ini'"
+            :title="'Total Layanan di kategori ini'"
             :unit="'Layanan'"
             :counter="meta.total_count || '-'"
             :loading="loading"
             :last-update="meta.last_updated || '-'"
             class="!w-full sm:!w-[294px]"
           />
-          <LayananList
+          <PublicServiceList
             :service-list="serviceList"
             :loading="loading"
             :search-value="searchValue"
@@ -44,15 +44,15 @@ export default {
       meta: {},
       loading: false,
       jumbotron: {
-        title: 'Daftar Layanan Kependudukan dan Tempat Tinggal',
-        subtitle: 'Lihat berbagai layanan untuk kebutuhan seputar kependudukan dan tempat tinggal',
+        title: `Daftar Layanan ${this.$route.query.nama}`,
+        subtitle: `Lihat berbagai layanan untuk kebutuhan seputar ${this.$route.query.nama.toLowerCase()}`,
         backgroundImageUrl: '/images/jumbotron/default.webp'
       }
     }
   },
   async fetch () {
     const params = {
-      cat: 'Kependudukan'
+      cat: this.$route.query.kategori
     }
     await this.getServices(params)
   },
@@ -65,7 +65,7 @@ export default {
         },
         {
           path: this.$route.path,
-          label: 'Kependudukan dan Tempat Tinggal'
+          label: this.$route.query.nama
         }
       ]
     },
@@ -87,8 +87,7 @@ export default {
         if (this.isSearchActive) {
           const params = {
             q: this.searchValue,
-            // @TODO: dynamic cat params' value
-            cat: 'Kependudukan'
+            cat: this.$route.query.kategori
           }
 
           await this.getServices(params)

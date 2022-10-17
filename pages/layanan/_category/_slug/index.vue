@@ -17,9 +17,10 @@
     </Jumbotron>
 
     <section class="w-full bg-gray-200">
-      <BaseContainer class="relative -top-24 z-20">
+      <BaseContainer class="min-h-screen relative -top-24 z-20">
         <!-- @todo: add loading skeleton and change this temporary if conditional -->
         <div v-if="!$fetchState.pending" class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
+          <!-- @todo: refactor all public service sections -->
           <LayananItemHeader
             :logo="service.logo"
             :name="service.name"
@@ -104,7 +105,7 @@ export default {
           label: 'Beranda'
         },
         {
-          path: '/layanan/kependudukan-dan-tempat-tinggal',
+          path: '/layanan/kependudukan-dan-tempat-tinggal?nama=Kependudukan dan Tempat Tinggal&kategori=kependudukan',
           label: 'Kependudukan dan Tempat Tinggal'
         },
         {
