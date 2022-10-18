@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :to="`/layanan/${category}/${service.slug}`"
+    :to="`/layanan/${category}/${service.slug}?nama=${$route.query.nama}&kategori=${$route.query.kategori}`"
     class="w-full flex flex-col gap-1 group bg-white px-4 py-3 rounded-lg
     hover:bg-green-50 hover:cursor-pointer transition-colors ease-brand duration-250"
   >
@@ -34,6 +34,7 @@ export default {
     category () {
       const path = this.$route.path.split('/')
       const category = path.length > 2 ? path[2].split('?') : '-'
+
       return category[0] || '-'
     }
   }
