@@ -26,7 +26,7 @@ export default {
         'Selasa, Pukul 07:00 - 12:00'
       ],
       media: {
-        video: 'https://www.youtube.com/watch?v=B1qXImmHB7g',
+        video: 'https://www.youtube.com/watch?v=lMH1RRsyA-E',
         images: [
           'https://dvgddkosknh6r.cloudfront.net/staging/media/img/1664166185-img.png',
           'https://dvgddkosknh6r.cloudfront.net/staging/media/img/1664166185-img.png',
