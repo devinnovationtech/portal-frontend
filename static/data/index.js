@@ -85,7 +85,7 @@ export const navigationMenu = [
         title: 'Kependudukan dan Tempat Tinggal',
         description: 'Urus Perizinan kependudukan dan tempat tinggal dengan mudah',
         icon: '/icons/navigation/kependudukan.svg',
-        link: '/layanan/kependudukan-dan-tempat-tinggal'
+        link: '/layanan/kependudukan-dan-tempat-tinggal?nama=Kependudukan dan Tempat Tinggal&kategori=kependudukan'
       },
       {
         id: 2,
