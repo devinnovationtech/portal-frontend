@@ -108,7 +108,7 @@ export default {
         },
         {
           path: `/layanan/${this.category.path}?nama=${this.category.name}&kategori=${this.category.categoryValue}`,
-          label: 'Kependudukan dan Tempat Tinggal'
+          label: this.category.name || '-'
         },
         {
           path: this.$route.path,
