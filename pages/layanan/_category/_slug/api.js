@@ -2,20 +2,23 @@
 export default {
   data: {
     id: 1,
-    updated_at: '2022-09-29T16:59:12Z', // not available in mock
+    updated_at: '2022-09-29T16:59:12Z',
     general_information: {
       id: 1,
       name: 'Sistem Informasi Data Kependudukan (SIDATUK)',
+      alias: 'SIDATUK', // not available in mock
       description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.',
       slug: 'sistem-informasi-data-kependudukan-1',
       category: 'kependudukan',
       address: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
       unit: 'Disdukcapil',
-      website: 'https://sidatukdukcapil.jabarprov.go.id', // not available in mock
       email: 'contact.rangganis@gmail.com', // not available in mock
-      google_play: 'https://play.google.com/store/apps/details?id=id.go.bapenda.sambara&hl=in', // not available in mock
-      google_form: 'https://play.google.com/store/apps/details?id=id.go.bapenda.sambara&hl=in', // not available in mock
-      app_store: 'https://play.google.com/store/apps/details?id=id.go.bapenda.sambara&hl=in', // not available in mock
+      link: {
+        website: 'https://sidatukdukcapil.jabarprov.go.id', // not available in mock
+        google_play: 'https://play.google.com/store/apps/details?id=id.go.bapenda.sambara&hl=in', // not available in mock
+        google_form: 'https://play.google.com/store/apps/details?id=id.go.bapenda.sambara&hl=in', // not available in mock
+        app_store: 'https://play.google.com/store/apps/details?id=id.go.bapenda.sambara&hl=in' // not available in mock
+      },
       phone: [
         '089xxx',
         '082xxx'

@@ -48,7 +48,7 @@
 
     <!-- Operational Hours -->
     <!-- @todo: add v-show conditional -->
-    <div class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
+    <div v-show="data.operational_hours.length" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
       <Icon src="/icons/layanan-publik/clock.svg" size="16px" class="my-[5px] mr-[5px]" />
       <div class="flex flex-col items-start justify-center gap-2">
         <h3>Jam Operasional ({{ currentDate }})</h3>
@@ -132,25 +132,25 @@ export default {
         website: {
           title: 'SIDATUK', // @todo: dynamic button label
           label: 'Link Akses',
-          link: this.data.website,
+          link: this.data.link.website,
           icon: '/icons/world.svg'
         },
         googlePlay: {
           title: 'Google Play',
           label: 'Unduh Aplikasinya di',
-          link: this.data.google_play,
+          link: this.data.link.google_play,
           icon: '/icons/layanan-publik/google-play.svg'
         },
         appStore: {
           title: 'App Store',
           label: 'Dapatkan di',
-          link: this.data.app_store,
+          link: this.data.link.app_store,
           icon: '/icons/layanan-publik/app-store.svg'
         },
         googleForm: {
           title: 'Google Forms',
           label: 'Akses formulir',
-          link: this.data.google_form,
+          link: this.data.link.google_form,
           icon: '/icons/layanan-publik/google-form.svg'
         }
       }
