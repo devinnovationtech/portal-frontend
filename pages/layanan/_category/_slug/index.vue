@@ -5,6 +5,7 @@
         <Breadcrumb :items="breadcrumbItems" :capitalize="false" class="mb-6" />
       </template>
 
+      <!-- @todo: dynamic service status (general_information.type) -->
       <template v-if="isOnline" #suffix>
         <div
           class="flex flex-row w-full sm:w-[258px] px-4 py-3 rounded-xl items-center justify-center
@@ -21,17 +22,13 @@
         <!-- @todo: add loading skeleton and change this temporary if conditional -->
         <div v-if="!$fetchState.pending" class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
           <!-- @todo: refactor all public service sections -->
-          <LayananItemHeader
-            :logo="service.logo"
-            :name="service.name"
-            :last-update="service.updated_at"
+          <PublicServiceHeader
+            :logo="newService.general_information.logo"
+            :name="newService.general_information.name"
+            :last-update="newService.updated_at"
           />
-          <LayananItemMedia
-            :video="service.video"
-            :category="service.category"
-            :website="service.website"
-            :social-media="service.social_media"
-            :images="service.images"
+          <PublicServiceMedia
+            :data="newService.general_information"
             class="mt-4 md:mt-6 lg:mt-12 xl:mt-6"
           />
           <LayananItemPurposes
@@ -60,12 +57,14 @@
 </template>
 
 <script>
+import mockAPI from './api'
 export default {
   data () {
     return {
       jumbotron: {},
       searchValue: null,
       service: {},
+      newService: {},
       newsList: []
     }
   },
@@ -73,10 +72,13 @@ export default {
     const slug = this.$route.params.slug
 
     try {
+      // @todo: fetch from new slug API
       // get detail service data
       const response = await this.$axios.get(`/v1/public/public-service/slug/${slug}`)
+      this.newService = mockAPI.data
       this.service = response.data.data
 
+      // @todo: get news from slug API
       // get related news data
       const params = {
         q: this.service.name,
@@ -105,14 +107,29 @@ export default {
           label: 'Beranda'
         },
         {
-          path: '/layanan/kependudukan-dan-tempat-tinggal?nama=Kependudukan dan Tempat Tinggal&kategori=kependudukan',
-          label: 'Kependudukan dan Tempat Tinggal'
+          path: `/layanan/${this.category.path}?nama=${this.category.name}&kategori=${this.category.categoryValue}`,
+          label: this.category.name || '-'
         },
         {
           path: this.$route.path,
           label: this.service.name || '-'
         }
       ]
+    },
+    /**
+     * get category path based on current route
+     * @returns {String}
+     */
+    category () {
+      const path = this.$route.path.split('/')
+      const name = this.$route.query.nama
+      const categoryValue = this.$route.query.kategori
+
+      return {
+        name,
+        categoryValue,
+        path: path.length > 2 ? path[2] : '-'
+      }
     },
     isOnline () {
       return this.service.service_type === 'online'
