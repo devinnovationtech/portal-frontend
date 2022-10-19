@@ -2,7 +2,7 @@
   <section class="flex flex-col rounded-xl p-4 border border-solid border-gray-300 xl:row-span-2 sm:max-h-[557px] lg:max-h-[597px] xl:max-h-[557px] overflow-auto">
     <!-- Category -->
     <div v-show="data.category" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400">
-      <Icon src="/icons/layanan-publik/category.svg" size="16px" class="text-blue-700 my-[5px] mr-[5px]" />
+      <Icon src="/icons/layanan-publik/category.svg" size="16px" class="my-[5px] mr-[5px]" />
       <div class="flex flex-col items-start justify-center gap-2">
         <h3>Kategori</h3>
         <p class="text-blue-gray-600 capitalize">
@@ -13,7 +13,7 @@
 
     <!-- Address -->
     <div v-show="data.address" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
-      <Icon src="/icons/layanan-publik/location.svg" size="16px" class="text-blue-700 my-[5px] mr-[5px]" />
+      <Icon src="/icons/layanan-publik/location.svg" size="16px" class="my-[5px] mr-[5px]" />
       <div class="flex flex-col items-start justify-center gap-2">
         <h3>Alamat</h3>
         <p class="text-blue-gray-600">
@@ -24,7 +24,7 @@
 
     <!-- Telephone -->
     <div v-show="data.phone.length" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
-      <Icon src="/icons/layanan-publik/phone.svg" size="16px" class="text-blue-700 my-[5px] mr-[5px]" />
+      <Icon src="/icons/layanan-publik/phone.svg" size="16px" class="my-[5px] mr-[5px]" />
       <div class="flex flex-col items-start justify-center">
         <h3 class="mb-2">
           Telepon
@@ -37,7 +37,7 @@
 
     <!-- Email -->
     <div v-show="data.email" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
-      <Icon src="/icons/layanan-publik/gmail.svg" size="16px" class="text-blue-700 my-[5px] mr-[5px]" />
+      <Icon src="/icons/layanan-publik/gmail.svg" size="16px" class="my-[5px] mr-[5px]" />
       <div class="flex flex-col items-start justify-center gap-2">
         <h3>Email</h3>
         <a :href="`mailto:${data.email}`" class="text-blue-gray-600">
@@ -49,7 +49,7 @@
     <!-- Operational Hours -->
     <!-- @todo: add v-show conditional -->
     <div class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
-      <Icon src="/icons/layanan-publik/clock.svg" size="16px" class="text-blue-700 my-[5px] mr-[5px]" />
+      <Icon src="/icons/layanan-publik/clock.svg" size="16px" class="my-[5px] mr-[5px]" />
       <div class="flex flex-col items-start justify-center gap-2">
         <h3>Jam Operasional ({{ currentDate }})</h3>
         <div class="flex flex-row justify-between items-center w-full py-2 px-3 rounded-lg bg-[#F6FBFB] text-blue-gray-600">
