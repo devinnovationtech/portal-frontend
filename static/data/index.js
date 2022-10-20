@@ -389,7 +389,7 @@ export const mostPopularServicesMenu = [
         id: 9,
         title: 'Daerah Wisata Jawa Barat',
         description: 'Temukan informasi mengenai tempat wisata di Jawa Barat yang wajib dikunjungi.',
-        link: 'https://disparbud.jabarprov.go.id',
+        link: 'https://uspar.braga.co.id/',
         icon: '/icons/layanan-terpopuler/daerah-wisata-di-jawa-barat.svg'
       }
     ]
