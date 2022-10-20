@@ -445,16 +445,16 @@ export const quickLinkMenu = [
   {
     id: 1,
     title: 'Laporan Keuangan',
-    description: 'Ketahui lebih lanjut tentang semua hal hebat yang ditawarkan Jawa Barat.',
+    description: 'Ketahui lebih lanjut mengenai laporan keuangan Jawa Barat.',
     icon: '/icons/akses-cepat/keuangan.svg',
     link: '/arsip-dan-dokumen?kategori=transparansi%20pengelolaan%20keuangan%20daerah'
   },
   {
     id: 2,
-    title: 'PPID Jabar',
-    description: 'Cari tahu mengenai Pejabat Pengelola Informasi dan Dokumentasi Jawa Barat.',
-    icon: '/icons/akses-cepat/ppid-jabar.svg',
-    link: 'http://ppid.jabarprov.go.id'
+    title: 'Mall Pelayanan Publik Digital',
+    description: 'Lakukan aktivitas pengajuan perizinan secara virtual, kapanpun dan dimanapun melalui Mall Pelayanan Publik Digital di Jawa Barat.',
+    icon: '/icons/akses-cepat/mppd.svg',
+    link: 'https://dpmptsp.jabarprov.go.id/mppdigital/'
   },
   {
     id: 3,
@@ -472,10 +472,10 @@ export const quickLinkMenu = [
   },
   {
     id: 5,
-    title: 'E-Samsat',
-    description: 'Cara mudah untuk pajak kendaraan secara daring dimana saja dan kapan saja.',
-    icon: '/icons/akses-cepat/e-samsat.svg',
-    link: 'https://bapenda.jabarprov.go.id/e-samsat-jabar'
+    title: 'Pengembangan Ekspor',
+    description: 'Layanan informasi, pembinaan, fasilitasi dan pengembangan ekspor di Jawa Barat.',
+    icon: '/icons/akses-cepat/infinity.svg',
+    link: 'https://infinity.jabarprov.go.id/'
   },
   {
     id: 6,
