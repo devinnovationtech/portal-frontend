@@ -31,9 +31,8 @@
             :data="newService.general_information"
             class="mt-4 md:mt-6 lg:mt-12 xl:mt-6"
           />
-          <LayananItemPurposes
-            section-title="Mengapa SIDATUK Hadir"
-            :purposes="service.purposes"
+          <PublicServicePurpose
+            :purpose="newService.purpose"
             class="mt-4 sm:mt-6 lg:mt-12"
           />
           <LayananItemFacilities
@@ -72,11 +71,12 @@ export default {
     const slug = this.$route.params.slug
 
     try {
-      // @todo: fetch from new slug API
       // get detail service data
       const response = await this.$axios.get(`/v1/public/public-service/slug/${slug}`)
-      this.newService = mockAPI.data
+      // @todo: fetch from new slug API
+      // const newResponse = await this.$axios.get(`/v1/public/service-public/slug/${slug}`)
       this.service = response.data.data
+      this.newService = mockAPI.data
 
       // @todo: get news from slug API
       // get related news data

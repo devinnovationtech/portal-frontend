@@ -1,37 +1,53 @@
 <template>
-  <section>
-    <div v-if="loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div v-for="index in 3" :key="index" class="w-full h-[166px] bg-gray-200 rounded-lg animate-pulse" />
-    </div>
-    <BaseEmptyState
-      v-else-if="serviceList.length === 0"
-      error-message="Mohon maaf kami tidak dapat menemukan nama layanan yang cocok dengan"
-      :search-value="searchValue"
-    />
-    <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <PublicServiceListItem
-        v-for="service in serviceList"
-        :key="service.id"
-        :service="service"
-      />
-    </div>
+  <section
+    :class="{
+      'grid grid-cols-1 py-4 sm:py-8 min-w-0': true,
+      'lg:grid-cols-[468px,auto] xl:grid-cols-2 gap-3 sm:gap-6 xl:gap-3 sm:max-w-[525px] lg:max-w-4xl xl:max-w-5xl': !isPosterEmpty,
+      'w-full lg:max-w-[800px]': isPosterEmpty
+    }"
+  >
+    <ul>
+      <li
+        v-for="(item, index) in items"
+        :key="index"
+        class="flex gap-4 bg-[#F9FAFB] rounded-xl p-4 font-lato text-sm text-blue-gray-900 w-full mb-4"
+      >
+        <svg height="10" width="10" class="min-w-[10px] mt-[7px]">
+          <circle cx="5" cy="5" r="5" fill="#4DC27E" />
+        </svg>
+        <p class="leading-6">
+          {{ descriptionDisplay(item) }}
+        </p>
+      </li>
+    </ul>
+    <slot name="poster" />
   </section>
 </template>
 
 <script>
 export default {
   props: {
-    serviceList: {
+    items: {
       type: Array,
-      required: true
-    },
-    loading: {
-      type: Boolean,
-      required: true
-    },
-    searchValue: {
-      type: String,
-      default: null
+      default: () => []
+    }
+  },
+  computed: {
+    isPosterEmpty () {
+      return this.$slots.poster === undefined
+    }
+  },
+  methods: {
+    /**
+     * check wether item is string or object
+     * @returns {String}
+     */
+    descriptionDisplay (item) {
+      if (typeof item === 'object') {
+        return item.description
+      }
+
+      return item
     }
   }
 }

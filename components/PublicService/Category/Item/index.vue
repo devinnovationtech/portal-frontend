@@ -9,7 +9,7 @@
       {{ service.name }}
     </h3>
     <p class="text-xs leading-6 text-blue-gray-400 group-hover:text-blue-gray-900 line-clamp-2">
-      {{ service.excerpt }}
+      {{ service.description }}
     </p>
     <Button type="button" variant="tertiary-paddingless" class="font-lato self-start" tabindex="-1">
       Selengkapnya

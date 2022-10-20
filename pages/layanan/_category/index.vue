@@ -22,7 +22,7 @@
             :last-update="meta.last_updated || '-'"
             class="!w-full sm:!w-[294px]"
           />
-          <PublicServiceList
+          <PublicServiceCategory
             :service-list="serviceList"
             :loading="loading"
             :search-value="searchValue"
@@ -99,7 +99,7 @@ export default {
     async getServices (params) {
       try {
         this.loading = true
-        const response = await this.$axios.get('v1/public/public-service', { params })
+        const response = await this.$axios.get('v1/public/service-public', { params })
 
         const { data, meta } = response.data
         this.serviceList = data
