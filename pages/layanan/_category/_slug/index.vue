@@ -39,9 +39,9 @@
             section-title="Fasilitas Yang Tersedia"
             :facilities="service.facilities"
           />
-          <LayananItemRequirements
-            section-title="Untuk menggunakan aplikasi ini anda perlu mempersiapkan"
-            :requirements="service.info"
+          <PublicServiceTerm
+            :term="newService.terms_of_service"
+            class="mt-4 sm:mt-6 lg:mt-12"
           />
           <LayananItemNews
             :service-name="service.name"

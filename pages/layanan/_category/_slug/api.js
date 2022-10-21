@@ -79,7 +79,7 @@ export default {
         }
       ]
     },
-    procedure: {
+    terms_of_service: {
       title: 'Cara mengakses rengganis',
       items: [
         {
