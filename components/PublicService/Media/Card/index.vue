@@ -11,14 +11,50 @@
       </div>
     </div>
 
-    <!-- Address -->
-    <div v-show="data.address" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
+    <!-- Addresses -->
+    <div
+      v-if="hasAddresses"
+      class="grid grid-cols-[16px,auto] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8 mb-[-16px]"
+    >
       <Icon src="/icons/layanan-publik/location.svg" size="16px" class="my-[5px] mr-[5px]" />
-      <div class="flex flex-col items-start justify-center gap-2">
+
+      <div class="flex flex-col min-w-0 items-start justify-center gap-2">
         <h3>Alamat</h3>
-        <p class="text-blue-gray-600">
-          {{ data.address }}
-        </p>
+        <client-only>
+          <swiper
+            v-show="swiperReady"
+            :options="swiperOptions"
+            :auto-update="true"
+            :auto-destroy="true"
+            :delete-instance-on-destroy="true"
+            :cleanup-styles-on-destroy="true"
+            class="public-service__address-swiper w-full"
+            @ready="swiperReady = true"
+          >
+            <swiper-slide
+              v-for="(address, index) in data.addresses"
+              :key="`address-${index}`"
+            >
+              <div
+                :class="{
+                  'w-full min-h-[70px]': true,
+                  'pb-[40px]': hasMoreThanOneAddress
+                }"
+              >
+                <p class="text-blue-gray-600">
+                  {{ address }}
+                </p>
+              </div>
+            </swiper-slide>
+
+            <!-- Swiper Pagination -->
+            <div
+              v-show="hasMoreThanOneAddress"
+              slot="pagination"
+              class="swiper-pagination"
+            />
+          </swiper>
+        </client-only>
       </div>
     </div>
 
@@ -121,6 +157,22 @@ export default {
       default: () => ({})
     }
   },
+  data () {
+    return {
+      swiperReady: false,
+      swiperOptions: Object.freeze({
+        slidesPerView: 1,
+        spaceBetween: 24,
+        mousewheel: true,
+        passiveListeners: true,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true
+        }
+      })
+    }
+  },
   computed: {
     currentDate () {
       const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }
@@ -154,7 +206,34 @@ export default {
           icon: '/icons/layanan-publik/google-form.svg'
         }
       }
+    },
+    hasAddresses () {
+      return Array.isArray(this.data.addresses) && this.data.addresses.length > 0
+    },
+    hasMoreThanOneAddress () {
+      return this.hasAddresses && this.data.addresses.length > 1
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .public-service__address-swiper::v-deep {
+
+    .swiper-pagination-bullet {
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 9999px !important;
+      margin-right: 8px !important;
+      background: #E0E0E0 !important;
+      opacity: 1 !important;
+
+      &-active {
+        background: #4DC27E !important;
+        width: 24px !important;
+        height: 8px !important;
+        transition: width 0.3s ease-out;
+      }
+    }
+  }
+</style>
