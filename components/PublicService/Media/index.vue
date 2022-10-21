@@ -11,7 +11,7 @@
     <!-- Thumbnail Pictures -->
     <section class="flex flex-row sm:grid sm:grid-cols-1 xl:flex xl:flex-row gap-4 md:gap-6 sm:h-[557px] lg:h-[597px] xl:h-auto sm:order-last overflow-auto sm:overflow-x-hidden xl:overflow-x-auto xl:overflow-y-hidden">
       <div
-        v-for="(image, index) in data.media.images"
+        v-for="(image, index) in imageList"
         :key="index"
         class="media__image relative group overflow-hidden"
       >
@@ -34,7 +34,7 @@
 
     <BaseImagePreview
       :show="show"
-      :images="data.media.images"
+      :images="imageList"
       :index="imageIndex"
       @close="show = false"
     />
@@ -56,8 +56,11 @@ export default {
     }
   },
   computed: {
+    hasVideo () {
+      return this.data && this.data.media?.video
+    },
     videoId () {
-      if (this.data.media.video) {
+      if (this.hasVideo) {
         const queryString = this.data.media.video.split('?')[1]
         const urlParams = new URLSearchParams(queryString)
 
@@ -65,6 +68,9 @@ export default {
       } else {
         return '-'
       }
+    },
+    imageList () {
+      return this.data && this.data.media ? this.data.media.images : []
     }
   },
   methods: {

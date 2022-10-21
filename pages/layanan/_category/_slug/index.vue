@@ -23,8 +23,8 @@
         <div v-if="!$fetchState.pending" class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
           <!-- @todo: refactor all public service sections -->
           <PublicServiceHeader
-            :logo="newService.general_information.logo"
-            :name="newService.general_information.name"
+            :logo="logo"
+            :name="name"
             :last-update="newService.updated_at"
           />
           <PublicServiceMedia
@@ -42,8 +42,8 @@
             :term="newService.terms_of_service"
             class="mt-4 sm:mt-6 lg:mt-12"
           />
-          <LayananItemNews
-            :service-name="service.name"
+          <PublicServiceNews
+            :service-name="alias"
             :news="newsList"
             :loading="$fetchState.pending"
             class="mt-[58px]"
@@ -132,6 +132,21 @@ export default {
     },
     isOnline () {
       return this.service.service_type === 'online'
+    },
+    logo () {
+      return this.newService.general_information
+        ? this.newService.general_information.logo
+        : '-'
+    },
+    name () {
+      return this.newService.general_information
+        ? this.newService.general_information.name
+        : '-'
+    },
+    alias () {
+      return this.newService.general_information
+        ? this.newService.general_information.alias
+        : '-'
     }
   }
 }

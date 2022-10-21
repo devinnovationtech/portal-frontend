@@ -9,8 +9,8 @@
         :key="index"
         :class="{
           'flex flex-col border border-solid border-[#DFE6F0] rounded-xl': true,
-          'sm:w-[320px] lg:w-[392px]': facility.items.length <= 2,
-          'sm:w-[208px] lg:w-[256px]': facility.items.length > 2
+          'sm:w-[320px] lg:w-[392px]': !hasMoreThanTwo,
+          'sm:w-[208px] lg:w-[256px]': hasMoreThanTwo
         }"
       >
         <LazyImg
@@ -32,6 +32,11 @@ export default {
     facility: {
       type: Object,
       default: () => ({})
+    }
+  },
+  computed: {
+    hasMoreThanTwo () {
+      return this.facility && Array.isArray(this.facility.items) && this.facility.items.length > 2
     }
   }
 }

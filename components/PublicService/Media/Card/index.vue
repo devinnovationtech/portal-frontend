@@ -59,7 +59,7 @@
     </div>
 
     <!-- Telephone -->
-    <div v-show="data.phone.length" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
+    <div v-show="hasPhone" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
       <Icon src="/icons/layanan-publik/phone.svg" size="16px" class="my-[5px] mr-[5px]" />
       <div class="flex flex-col items-start justify-center">
         <h3 class="mb-2">
@@ -83,8 +83,7 @@
     </div>
 
     <!-- Operational Hours -->
-    <!-- @todo: add v-show conditional -->
-    <div v-show="data.operational_hours.length" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
+    <div v-show="hasOperationalHours" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
       <Icon src="/icons/layanan-publik/clock.svg" size="16px" class="my-[5px] mr-[5px]" />
       <div class="flex flex-col items-start justify-center gap-2">
         <h3>Jam Operasional ({{ currentDate }})</h3>
@@ -184,34 +183,45 @@ export default {
         website: {
           title: 'SIDATUK', // @todo: dynamic button label
           label: 'Link Akses',
-          link: this.data.link.website,
+          link: this.link('website'),
           icon: '/icons/world.svg'
         },
         googlePlay: {
           title: 'Google Play',
           label: 'Unduh Aplikasinya di',
-          link: this.data.link.google_play,
+          link: this.link('google_play'),
           icon: '/icons/layanan-publik/google-play.svg'
         },
         appStore: {
           title: 'App Store',
           label: 'Dapatkan di',
-          link: this.data.link.app_store,
+          link: this.link('app_store'),
           icon: '/icons/layanan-publik/app-store.svg'
         },
         googleForm: {
           title: 'Google Forms',
           label: 'Akses formulir',
-          link: this.data.link.google_form,
+          link: this.link('google_form'),
           icon: '/icons/layanan-publik/google-form.svg'
         }
       }
     },
     hasAddresses () {
-      return Array.isArray(this.data.addresses) && this.data.addresses.length > 0
+      return this.data && Array.isArray(this.data.addresses) && this.data.addresses.length > 0
     },
     hasMoreThanOneAddress () {
       return this.hasAddresses && this.data.addresses.length > 1
+    },
+    hasPhone () {
+      return this.data && Array.isArray(this.data.phone) && this.data.phone.length
+    },
+    hasOperationalHours () {
+      return this.data && Array.isArray(this.data.operational_hours) && this.data.operational_hours.length
+    }
+  },
+  methods: {
+    link (buttonName) {
+      return this.data && this.data.link ? this.data.link[buttonName] : '-'
     }
   }
 }
