@@ -12,7 +12,6 @@
 
     <section class="w-full bg-gray-200">
       <BaseContainer class="min-h-screen relative -top-24 z-20">
-        <!-- @todo: add loading skeleton and change this temporary if conditional -->
         <div v-if="!$fetchState.pending" class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
           <PublicServiceHeader
             :logo="logo"
@@ -63,6 +62,9 @@
             class="mt-[80px]"
           />
         </div>
+
+        <!-- Skeleton -->
+        <PublicServiceSkeleton v-else />
       </BaseContainer>
     </section>
 
