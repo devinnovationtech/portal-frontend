@@ -5,15 +5,8 @@
         <Breadcrumb :items="breadcrumbItems" :capitalize="false" class="mb-6" />
       </template>
 
-      <!-- @todo: dynamic service status (general_information.type) -->
-      <template v-if="isOnline" #suffix>
-        <div
-          class="flex flex-row w-full sm:w-[258px] px-4 py-3 rounded-xl items-center justify-center
-          gap-[14px] bg-green-primary font-lato font-medium text-sm text-white"
-        >
-          <Icon src="/icons/cloud-check.svg" size="24px" />
-          <p>Layanan tersedia secara online</p>
-        </div>
+      <template #suffix>
+        <PublicServiceType :type="type" />
       </template>
     </Jumbotron>
 
@@ -21,49 +14,73 @@
       <BaseContainer class="min-h-screen relative -top-24 z-20">
         <!-- @todo: add loading skeleton and change this temporary if conditional -->
         <div v-if="!$fetchState.pending" class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
-          <!-- @todo: refactor all public service sections -->
           <PublicServiceHeader
             :logo="logo"
             :name="name"
-            :last-update="newService.updated_at"
+            :last-update="service.updated_at"
+            class="mb-6"
           />
           <PublicServiceMedia
-            :data="newService.general_information"
-            class="mt-4 md:mt-6 lg:mt-12 xl:mt-6"
+            :data="service.general_information"
+            class="mb-[80px]"
+            @show-preview="showImagePreview"
           />
           <PublicServicePurpose
-            :purpose="newService.purpose"
-            class="mt-4 sm:mt-6 lg:mt-12"
+            :purpose="service.purpose"
+            class="mb-[80px]"
           />
           <PublicServiceFacility
-            :facility="newService.facility"
+            :facility="service.facility"
+            class="mb-[80px]"
+          />
+          <PublicServiceRequirement
+            :requirement="service.requirement"
+            class="mb-[80px]"
           />
           <PublicServiceTerm
-            :term="newService.terms_of_service"
-            class="mt-4 sm:mt-6 lg:mt-12"
+            :term="service.terms_of_service"
+            class="mb-[80px]"
+            @show-preview="showImagePreview"
+          />
+          <PublicServiceInfographic
+            :images="infographics"
+            class="mb-[80px]"
+            @show-preview="showImagePreview"
+          />
+          <PublicServiceFAQ
+            :items="faq"
+            class="mb-[80px]"
           />
           <PublicServiceNews
             :service-name="alias"
             :news="newsList"
             :loading="$fetchState.pending"
-            class="mt-[58px]"
           />
         </div>
       </BaseContainer>
     </section>
+
+    <!-- Image Preview -->
+    <BaseImagePreview
+      :show="showPreview"
+      :images="imagePreviewList"
+      :index="imagePreviewIndex"
+      @close="showPreview = false"
+    />
   </main>
 </template>
 
 <script>
-import mockAPI from './api'
 export default {
   data () {
     return {
       jumbotron: {},
       searchValue: null,
       service: {},
-      newService: {},
-      newsList: []
+      newsList: [],
+      imagePreviewList: [],
+      showPreview: false,
+      imagePreviewIndex: 0
     }
   },
   async fetch () {
@@ -71,16 +88,12 @@ export default {
 
     try {
       // get detail service data
-      const response = await this.$axios.get(`/v1/public/public-service/slug/${slug}`)
-      // @todo: fetch from new slug API
-      // const newResponse = await this.$axios.get(`/v1/public/service-public/slug/${slug}`)
+      const response = await this.$axios.get(`/v1/public/service-public/slug/${slug}`)
       this.service = response.data.data
-      this.newService = mockAPI.data
 
-      // @todo: get news from slug API
       // get related news data
       const params = {
-        q: this.service.name,
+        q: this.alias,
         per_page: 3,
         sort_order: 'desc',
         domain: ['news']
@@ -89,8 +102,8 @@ export default {
       this.newsList = responseNews.data
 
       this.jumbotron = {
-        title: this.service.name,
-        subtitle: this.service.description,
+        title: this.name,
+        subtitle: this.description,
         backgroundImageUrl: '/images/jumbotron/default.webp'
       }
     } catch (e) {
@@ -111,7 +124,7 @@ export default {
         },
         {
           path: this.$route.path,
-          label: this.service.name || '-'
+          label: this.name
         }
       ]
     },
@@ -130,23 +143,47 @@ export default {
         path: path.length > 2 ? path[2] : '-'
       }
     },
-    isOnline () {
-      return this.service.service_type === 'online'
+    type () {
+      return this.service.general_information
+        ? this.service.general_information.type
+        : '-'
     },
     logo () {
-      return this.newService.general_information
-        ? this.newService.general_information.logo
+      return this.service.general_information
+        ? this.service.general_information.logo
         : '-'
     },
     name () {
-      return this.newService.general_information
-        ? this.newService.general_information.name
+      return this.service.general_information
+        ? this.service.general_information.name
+        : '-'
+    },
+    description () {
+      return this.service.general_information
+        ? this.service.general_information.description
         : '-'
     },
     alias () {
-      return this.newService.general_information
-        ? this.newService.general_information.alias
+      return this.service.general_information
+        ? this.service.general_information.alias
         : '-'
+    },
+    infographics () {
+      return this.service.infographic
+        ? this.service.infographic.images
+        : []
+    },
+    faq () {
+      return this.service.faq
+        ? this.service.faq.items
+        : []
+    }
+  },
+  methods: {
+    showImagePreview (image) {
+      this.imagePreviewList = image.images
+      this.imagePreviewIndex = image.index
+      this.showPreview = true
     }
   }
 }

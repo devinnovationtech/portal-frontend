@@ -1,6 +1,6 @@
 <template>
-  <section class="flex flex-col items-center py-4 sm:py-8 gap-8">
-    <h2 class="font-lora font-bold text-[32px] text-center text-blue-gray-800 mb-4">
+  <section class="flex flex-col items-center gap-8 py-8 bg-[#F9FAFB] rounded-2xl">
+    <h2 class="font-lora font-bold text-[32px] text-center text-blue-gray-800">
       {{ facility.title }}
     </h2>
     <ul class="flex flex-row flex-wrap gap-4 xl:w-[800px] justify-center">
@@ -19,7 +19,7 @@
           class="object-cover rounded-t-xl h-[108px]"
         />
         <p class="font-medium leading-6 text-sm text-blue-gray-600 text-center line-clamp-4 px-3 pt-3 pb-1">
-          {{ item.description }}
+          {{ item.title }}
         </p>
       </li>
     </ul>

@@ -1,5 +1,5 @@
 <template>
-  <section class="border-b border-gray-300 pb-8">
+  <section class="border-b border-gray-300">
     <div class="min-w-0 flex flex-col gap-6 md:flex-row justify-between items-center mb-6">
       <h3 class="font-roboto font-medium text-[22px] text-center md:text-left leading-[26px]">
         Simak berita terbaru terkait <strong class="text-green-700">{{ serviceName }}</strong>

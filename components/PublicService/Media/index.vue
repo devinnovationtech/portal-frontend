@@ -9,35 +9,23 @@
     </section>
 
     <!-- Thumbnail Pictures -->
-    <section class="flex flex-row sm:grid sm:grid-cols-1 xl:flex xl:flex-row gap-4 md:gap-6 sm:h-[557px] lg:h-[597px] xl:h-auto sm:order-last overflow-auto sm:overflow-x-hidden xl:overflow-x-auto xl:overflow-y-hidden">
-      <div
+    <section class="flex flex-row sm:grid sm:grid-cols-1 xl:flex xl:flex-row gap-4 md:gap-6 sm:h-[557px] lg:h-[597px] xl:h-auto sm:order-last overflow-auto xl:overflow-hidden">
+      <PublicServiceMediaImageSwiper
+        :images="imageList"
+        class="hidden xl:block w-full"
+        @show-preview="(index) => $emit('show-preview', { index, images: imageList })"
+      />
+      <PublicServiceMediaImage
         v-for="(image, index) in imageList"
         :key="index"
-        class="media__image relative group overflow-hidden"
-      >
-        <div
-          class="media__image opacity-0 absolute flex items-center justify-center bg-[#00000080] group-hover:opacity-100 z-10"
-          @click="showImage(index)"
-        >
-          <Icon src="/icons/zoom.svg" size="50px" />
-        </div>
-        <LazyImg
-          :src="image"
-          alt="Dokumentasi Kegiatan"
-          class="media__image object-cover group-hover:scale-110"
-        />
-      </div>
+        :image="image"
+        class="xl:hidden"
+        @show-preview="$emit('show-preview', { index, images: imageList })"
+      />
     </section>
 
     <!-- Card -->
     <PublicServiceMediaCard :data="data" />
-
-    <BaseImagePreview
-      :show="show"
-      :images="imageList"
-      :index="imageIndex"
-      @close="show = false"
-    />
   </section>
 </template>
 
@@ -81,15 +69,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.media {
-  &__image {
-    @apply min-w-[224px] xl:min-w-[256px] sm:w-full xl:w-[256px]
-    h-[150px] sm:h-[170px] lg:h-[183px] xl:h-[150px] rounded-xl transition-all ease-brand duration-250;
-
-    &:hover {
-      @apply cursor-pointer;
-    }
-  }
-}
-</style>

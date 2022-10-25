@@ -105,7 +105,7 @@
     </div>
 
     <!-- Button List -->
-    <section class="flex flex-col gap-3 mt-4 sm:mt-8">
+    <section v-show="hasLink" class="flex flex-col gap-3 mt-4 sm:mt-8">
       <Link v-for="(button, name) in buttonList" v-show="button.link" :key="name" :link="button.link">
         <Button
           class="flex flex-row justify-between !px-5 !py-2 !rounded-xl w-full"
@@ -125,7 +125,7 @@
     </section>
 
     <!-- Social Media -->
-    <section class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
+    <section v-show="hasSocialMedia" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
       <Icon src="/icons/share.svg" size="16px" class="my-[5px] mr-[5px]" />
       <div class="flex flex-col justify-center gap-2">
         <h3>Sosial Media</h3>
@@ -135,7 +135,7 @@
             v-show="socialMedia"
             :key="name"
             :link="socialMedia"
-            class="flex flex-col items-center text-[11px] leading-[18px] cursor-pointer"
+            class="flex flex-col items-center text-[11px] leading-[18px] cursor-pointer capitalize"
           >
             <Icon :src="`/icons/social-media/${name}-logo.svg`" :size="name === 'facebook' ? '12px' : '18px'" />
             {{ name }}
@@ -181,7 +181,7 @@ export default {
     buttonList () {
       return {
         website: {
-          title: 'SIDATUK', // @todo: dynamic button label
+          title: this.data.alias,
           label: 'Link Akses',
           link: this.link('website'),
           icon: '/icons/world.svg'
@@ -217,6 +217,12 @@ export default {
     },
     hasOperationalHours () {
       return this.data && Array.isArray(this.data.operational_hours) && this.data.operational_hours.length
+    },
+    hasLink () {
+      return this.data && (this.data.link?.website || this.data.link?.googlePlay || this.data.link?.appStore || this.data.link?.googleForm)
+    },
+    hasSocialMedia () {
+      return this.data && (this.data.social_media?.facebook || this.data.social_media?.instagram || this.data.social_media?.twitter || this.data.social_media?.tiktok || this.data.social_media?.youtube)
     }
   },
   methods: {

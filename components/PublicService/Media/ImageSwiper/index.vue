@@ -16,23 +16,10 @@
           :key="`image-swiper-${index}`"
           class="!w-[fit-content]"
         >
-          <div class="relative h-[150px] w-[186px] flex flex-col gap-4 group rounded-xl overflow-hidden group">
-            <!-- Image Overlay -->
-            <div
-              class="opacity-0 inset-0 absolute flex items-center justify-center bg-[#00000080]
-              group-hover:opacity-100 z-10 transition-opacity ease-brand duration-250 cursor-pointer"
-              @click="$emit('show-preview', index)"
-            >
-              <Icon src="/icons/zoom.svg" size="50px" />
-            </div>
-            <!-- Content Image -->
-            <LazyImg
-              :src="image"
-              width="186"
-              height="150"
-              class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform ease-brand duration-250"
-            />
-          </div>
+          <PublicServiceMediaImage
+            :image="image"
+            @show-preview="$emit('show-preview', index)"
+          />
         </swiper-slide>
 
         <!-- Navigation Buttons -->
@@ -52,8 +39,8 @@
 
       <!-- Render Placeholder -->
       <template #placeholder>
-        <div class="flex w-[fit-content] overflow-x-hidden gap-4">
-          <div v-for="i in 4" :key="i" class="h-[150px] w-[186px] rounded-xl bg-gray-300 animate-pulse" />
+        <div class="flex w-[fit-content] overflow-x-hidden gap-6">
+          <div v-for="i in 3" :key="i" class="h-[150px] w-[256px] rounded-xl bg-gray-300 animate-pulse" />
         </div>
       </template>
     </client-only>
@@ -72,7 +59,7 @@ export default {
     return {
       swiperReady: false,
       swiperOptions: Object.freeze({
-        slidesPerView: 4,
+        slidesPerView: 3,
         spaceBetween: 24,
         mousewheel: true,
         passiveListeners: true,
