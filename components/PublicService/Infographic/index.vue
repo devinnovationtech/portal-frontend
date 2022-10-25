@@ -61,7 +61,8 @@ export default {
         slidesPerView: 'auto',
         spaceBetween: 24,
         mousewheel: true,
-        passiveListeners: true
+        passiveListeners: true,
+        centerInsufficientSlides: true
       })
     }
   }

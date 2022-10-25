@@ -18,43 +18,49 @@
             :logo="logo"
             :name="name"
             :last-update="service.updated_at"
-            class="mb-6"
           />
           <PublicServiceMedia
             :data="service.general_information"
-            class="mb-[80px]"
+            class="mt-6"
             @show-preview="showImagePreview"
           />
           <PublicServicePurpose
+            v-if="hasSection('purpose')"
             :purpose="service.purpose"
-            class="mb-[80px]"
+            class="mt-[80px]"
           />
           <PublicServiceFacility
+            v-if="hasSection('facility')"
             :facility="service.facility"
-            class="mb-[80px]"
+            class="mt-[80px]"
           />
           <PublicServiceRequirement
+            v-if="hasSection('requirement')"
             :requirement="service.requirement"
-            class="mb-[80px]"
+            class="mt-[80px]"
           />
           <PublicServiceTerm
+            v-if="hasSection('terms_of_service')"
             :term="service.terms_of_service"
-            class="mb-[80px]"
+            class="mt-[80px]"
             @show-preview="showImagePreview"
           />
           <PublicServiceInfographic
+            v-if="hasSection('infographic')"
             :images="infographics"
-            class="mb-[80px]"
+            class="mt-[80px]"
             @show-preview="showImagePreview"
           />
           <PublicServiceFAQ
+            v-if="hasSection('faq')"
             :items="faq"
-            class="mb-[80px]"
+            class="mt-[80px]"
           />
           <PublicServiceNews
             :service-name="alias"
             :news="newsList"
             :loading="$fetchState.pending"
+            class="mt-[80px]"
           />
         </div>
       </BaseContainer>
@@ -184,6 +190,9 @@ export default {
       this.imagePreviewList = image.images
       this.imagePreviewIndex = image.index
       this.showPreview = true
+    },
+    hasSection (sectionName) {
+      return this.service && Object.keys(this.service[sectionName]).length !== 0
     }
   }
 }

@@ -129,7 +129,7 @@
       <Icon src="/icons/share.svg" size="16px" class="my-[5px] mr-[5px]" />
       <div class="flex flex-col justify-center gap-2">
         <h3>Sosial Media</h3>
-        <div class="grid grid-cols-3 md:grid-cols-5 items-end justify-items-start sm:justify-items-center sm:justify-start gap-2 w-full">
+        <div class="flex flex-wrap justify-start items-end gap-5 w-full">
           <Link
             v-for="(socialMedia, name) in data.social_media"
             v-show="socialMedia"
