@@ -12,7 +12,13 @@
         </li>
         <li v-for="menu in menus" :key="menu.id" class="group px-4 py-3 rounded-md hover:bg-green-50 transition-colors ease-brand duration-250">
           <Link :link="menu.link" class="flex flex-col gap-4" @click.native="gtagClickQuickAccess(menu)">
-            <LazyImg :src="menu.icon" :alt="menu.title" width="32" height="32" />
+            <LazyImg
+              :src="menu.icon"
+              :alt="menu.title"
+              width="40"
+              height="40"
+              class="w-fit h-10"
+            />
             <p class="font-roboto font-bold group-hover:text-green-700">
               {{ menu.title }}
             </p>
