@@ -79,7 +79,7 @@ export default {
       if (Array.isArray(this.hideItems) && this.hideItems.length > 0) {
         const hiddenItems = this.hideItems.map(item => item.toLowerCase())
 
-        return crumbs.filter(item => !hiddenItems.includes(item.pathName))
+        return crumbs.filter(item => !hiddenItems.includes(item.path))
       }
 
       return crumbs

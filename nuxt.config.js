@@ -29,6 +29,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/css/fonts/intro.css',
+    'node_modules/lite-youtube-embed/src/lite-yt-embed.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -38,6 +40,7 @@ export default {
     '~/plugins/vue-awesome-swiper',
     '~/plugins/vue-touch-events',
     '~/plugins/vue-lazy-load',
+    '~/plugins/lite-youtube-embed.client.js',
     '~/plugins/device.server'
   ],
 

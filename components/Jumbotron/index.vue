@@ -9,9 +9,20 @@
       <h1 class="font-lora font-bold text-3xl leading-relaxed text-green-500 mb-2">
         {{ title }}
       </h1>
-      <h2 class="font-lato text-sm leading-6 text-white">
-        {{ subtitle }}
-      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-4">
+        <h2
+          :class="{
+            'font-lato text-sm leading-6 text-white line-clamp-4' : true,
+            'sm:col-span-4': isSuffixEmpty,
+            'sm:col-span-2': !isSuffixEmpty
+          }"
+        >
+          {{ subtitle }}
+        </h2>
+        <div v-if="!isSuffixEmpty" class="sm:col-span-2 sm:justify-self-end sm:self-end mt-[10px] sm:mt-0">
+          <slot name="suffix" />
+        </div>
+      </div>
     </BaseContainer>
   </section>
 </template>
@@ -47,7 +58,6 @@ export default {
       default: '/images/jumbotron/default.webp'
     }
   },
-
   computed: {
     jumbotronStyle () {
       return {
@@ -56,6 +66,9 @@ export default {
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat'
       }
+    },
+    isSuffixEmpty () {
+      return this.$slots.suffix === undefined
     }
   }
 }

@@ -63,7 +63,10 @@
               </div>
 
               <!-- Related News Swiper (Mobile and Tablet Only) -->
-              <div class="min-h-[153px] md:min-h-[177px] bg-white bg-opacity-5 backdrop-filter backdrop-blur-xl py-3 px-3 md:px-6 rounded-xl border border-white border-opacity-10 mb-6 xl:hidden">
+              <div
+                v-show="hasRelatedNews(currentIndex)"
+                class="min-h-[153px] md:min-h-[177px] bg-white bg-opacity-5 backdrop-filter backdrop-blur-xl py-3 px-3 md:px-6 rounded-xl border border-white border-opacity-10 mb-6 xl:hidden"
+              >
                 <p class="uppercase mb-3 font-bold">
                   Berita Terkait
                 </p>
@@ -112,7 +115,10 @@
               </div>
 
               <!-- Related News List (Dekstop Only) -->
-              <div class="hidden xl:block col-span-3 p-4 rounded-tl-xl rounded-tr-xl bg-white bg-opacity-5 backdrop-filter backdrop-blur-xl border-l border-t border-white border-opacity-10">
+              <div
+                v-show="hasRelatedNews(currentIndex)"
+                class="hidden xl:block col-span-3 p-4 rounded-tl-xl rounded-tr-xl bg-white bg-opacity-5 backdrop-filter backdrop-blur-xl border-l border-t border-white border-opacity-10"
+              >
                 <p class="p-2 uppercase mb-1 font-bold">
                   Berita Terkait
                 </p>
@@ -223,6 +229,9 @@ export default {
         value: item.title,
         url: `${document.location.origin}/berita/${item.slug}`
       })
+    },
+    hasRelatedNews (index) {
+      return Array.isArray(this.items[index].related_news) && this.items[index].related_news.length > 0
     }
   }
 }

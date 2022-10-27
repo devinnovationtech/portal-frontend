@@ -1,13 +1,11 @@
 module.exports = {
-  mode: 'jit',
-  purge: [
-    './components/**/*.{vue,js}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './plugins/**/*.{js,ts}',
+  content: [
+    'components/**/*.{vue,js}',
+    'layouts/**/*.vue',
+    'pages/**/*.vue',
+    'plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}'
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       screens: {
@@ -18,7 +16,9 @@ module.exports = {
         lato: ['Lato', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
         lora: ['Lora', 'serif'],
-        opensans: ['Open Sans', 'sans-serif']
+        opensans: ['Open Sans', 'sans-serif'],
+        intro: ['Intro', 'sans-serif'],
+        segoeui: ['Segoe UI', 'sans-serif']
       },
       boxShadow: {
         DEFAULT: '0px 6px 22px rgba(2, 43, 85, 0.08)'
@@ -85,6 +85,9 @@ module.exports = {
       transform: ['group-hover'],
       scale: ['group-hover']
     }
+  },
+  corePlugins: {
+    aspectRatio: false
   },
   plugins: [
     require('@tailwindcss/line-clamp'),

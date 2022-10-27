@@ -1,8 +1,12 @@
 <template>
-  <div class="news__preview w-full h-[536px] lg:col-span-5 rounded-lg overflow-hidden">
+  <div class="news__preview w-full h-[536px] rounded-lg overflow-hidden">
     <Carousel :items="items" hover pause-on-hover>
       <template #content="{ item, currentIndex, prev, next }">
-        <div class="news__preview__content visible inline-block h-[67%] md:h-[45%] absolute bottom-0 w-full bg-black bg-opacity-50 transition duration-500 ease-in-out group-hover:bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-lg px-8 py-6 text-white">
+        <div
+          class="news__preview__content visible inline-block h-[67%] md:h-[50%] absolute bottom-0 w-full bg-black
+          bg-opacity-50 transition duration-500 ease-in-out group-hover:bg-opacity-70 backdrop-filter backdrop-blur-lg
+          rounded-lg px-8 py-6 text-white"
+        >
           <div class="flex flex-col h-full">
             <!-- Navigation (Mobile Only) -->
             <div class="md:hidden flex items-center justify-between py-2 px-3 rounded-full bg-white bg-opacity-20 mb-4">
@@ -21,9 +25,11 @@
               <p class="font-roboto text-sm uppercase leading-relaxed tracking-wider opacity-80 mb-1">
                 {{ item.category }}
               </p>
-              <h3 class="news__preview__title line-clamp-3 md:line-clamp-2 font-lora font-bold text-2xl md:text-3xl leading-normal max-h-[108px] md:max-h-[90px] mb-3">
-                {{ item.title }}
-              </h3>
+              <Link :link="`/berita/${item.slug}`" @click.native="gtagClickLatestNews(item)">
+                <h3 class="news__preview__title line-clamp-3 md:line-clamp-2 font-intro font-bold text-xl md:text-2xl leading-9 md:leading-10 max-h-[108px] md:max-h-[90px] mb-3">
+                  {{ item.title }}
+                </h3>
+              </Link>
               <div class="flex flex-col md:flex-row gap-2 opacity-60 text-xs md:divide-x divide-white">
                 <div class="flex items-center gap-2 md:pr-2">
                   <Icon src="/icons/calendar.svg" size="16px" alt="Diterbitkan" />

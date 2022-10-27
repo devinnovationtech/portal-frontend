@@ -1,20 +1,23 @@
 <template>
   <div class="relative">
     <HeroImage />
-    <section class="flex justify-center items-center w-full absolute top-0 h-[700px] lg:h-[740px]">
+    <section class="flex justify-center items-center w-full absolute top-0 h-[740px]">
       <BaseContainer>
         <div
           class="flex flex-col items-center -mt-20 bg-no-repeat py-3"
           style="background-image: url('/images/hero.svg'); background-position: center top; background-size: contain;"
         >
           <h1
-            class="text-white font-lora uppercase leading-normal font-bold text-center tracking-wider max-w-[40ch] md:max-w-[35ch] lg:max-w-[40ch]
-            mb-4 md:mb-6 lg:mb-12 -ml-4 -mr-4 md:ml-0 md:mr-0 text-[17px] md:text-[28px] lg:text-[42px]"
+            class="text-white font-intro uppercase leading-normal text-center tracking-tight
+            text-2xl md:text-4xl lg:text-[42px] mb-2 md:mb-3 lg:mb-2"
           >
-            Menjawab Kebutuhan Informasi Publik Warga Jawa Barat
+            Menjawab Kebutuhan Informasi
           </h1>
+          <h2 class="text-white font-intro uppercase leading-normal text-center tracking-tight text-xl md:text-3xl lg:text-4xl mb-4 md:mb-6 lg:mb-12">
+            Publik Warga Jawa Barat
+          </h2>
           <p class="text-gray-300 font-medium leading-relaxed text-center max-w-xl lg:max-w-2xl mb-4 md:mb-7 text-sm md:text-base">
-            Temukan informasi publik terkini dari Pemerintahan Daerah Provinsi Jawa Barat
+            Temukan informasi publik terkini dari Pemerintah Daerah Provinsi Jawa Barat
           </p>
           <HeroSearch />
           <HeroWidgetFeedback />

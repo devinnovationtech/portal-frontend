@@ -98,6 +98,18 @@ import { archiveAndDocumentTopics } from '~/static/data'
 import { formatTz } from '~/utils/date'
 
 export default {
+  beforeRouteEnter (to, _, next) {
+    if (to.query.kategori === null || to.query.kategori === undefined) {
+      next({
+        path: to.path,
+        query: {
+          kategori: 'dokumen perencanaan'
+        }
+      })
+    } else {
+      next()
+    }
+  },
   data () {
     return {
       jumbotron: {
@@ -106,7 +118,7 @@ export default {
         backgroundImageUrl: '/images/jumbotron/default.webp'
       },
       topicOptions: archiveAndDocumentTopics,
-      selectedTopics: archiveAndDocumentTopics[0].value,
+      selectedTopics: this.$route.query.kategori,
       searchKeyword: '',
       documents: [],
       meta: {},
@@ -130,6 +142,10 @@ export default {
   },
   async fetch () {
     try {
+      if (!this.checkValidCategory(this.selectedTopics)) {
+        throw new Error('Invalid category')
+      }
+
       const params = {
         q: this.searchKeyword,
         cat: this.selectedTopics,
@@ -154,6 +170,8 @@ export default {
     } catch (error) {
       this.documents = []
       this.meta = {}
+
+      this.$nuxt.error({ statusCode: 404, message: 'Data tidak ditemukan' })
     }
   },
   computed: {
@@ -170,6 +188,8 @@ export default {
       ]
     },
     activeTopicTitle () {
+      if (!this.checkValidCategory(this.selectedTopics)) { return '' }
+
       const activeTopic = archiveAndDocumentTopics.find(topic => topic.value === this.selectedTopics)
       return activeTopic.label
     },
@@ -180,9 +200,17 @@ export default {
   watch: {
     selectedTopics (newValue, oldValue) {
       if (newValue !== oldValue) {
-        this.resetPagination()
-        this.$fetchState.pending = true
-        debounce(this.$fetch, 500)()
+        this.$router.push({ path: this.$route.path, query: { kategori: newValue } })
+      }
+    },
+    '$route.query.kategori': {
+      handler (newValue, oldValue) {
+        if (newValue !== oldValue && this.checkValidCategory(newValue)) {
+          this.setActiveTopic(newValue)
+          this.resetPagination()
+          this.$fetchState.pending = true
+          debounce(this.$fetch, 500)()
+        }
       }
     }
   },
@@ -289,6 +317,9 @@ export default {
         currentPage: 1
       }
       this.$fetch()
+    },
+    checkValidCategory (category) {
+      return archiveAndDocumentTopics.some(topic => topic.value === category)
     }
   }
 }

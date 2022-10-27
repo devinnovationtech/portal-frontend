@@ -417,16 +417,37 @@ export const featuredProgramMenu = [
     description: 'Ekosistem Data Jabar adalah portal terintegrasi untuk pengelolaan, keterbukaan, dan kemudahan akses data bagi warga dan pemerintah Jawa Barat.',
     icon: '/icons/program-unggulan/ekosistem-data-jabar.svg',
     link: 'http://data.jabarprov.go.id'
+  },
+  {
+    id: 4,
+    title: 'Jabar Saber Hoaks',
+    description: 'Unit kerja di bawah Pemdaprov Jabar yang membantu proses verifikasi informasi atau rumor yang beredar di masyarakat untuk menghadirkan informasi yang akurat dan terpercaya.',
+    icon: '/icons/program-unggulan/jabar-saber-hoaks.svg',
+    link: 'https://saberhoaks.jabarprov.go.id/v2/home'
+  },
+  {
+    id: 5,
+    title: 'One Pesantren One Product',
+    description: 'Program ini bantu menciptakan kemandirian ekonomi di lingkungan pondok pesantren.',
+    icon: '/icons/program-unggulan/one-pesantren-one-product.svg',
+    link: 'https://opop.jabarprov.go.id'
+  },
+  {
+    id: 6,
+    title: 'Citarum Harum',
+    description: 'Upaya mengatasi pencemaran air sungai melalui 13 Program Rencana Aksi Citarum Harum.',
+    icon: '/icons/program-unggulan/citarum-harum.svg',
+    link: 'https://citarumharum.jabarprov.go.id'
   }
 ]
 
 export const quickLinkMenu = [
   {
     id: 1,
-    title: 'Kependudukan',
+    title: 'Laporan Keuangan',
     description: 'Ketahui lebih lanjut tentang semua hal hebat yang ditawarkan Jawa Barat.',
-    icon: '/icons/akses-cepat/kependudukan.svg',
-    link: 'https://disdukcapil.jabarprov.go.id/portal'
+    icon: '/icons/akses-cepat/keuangan.svg',
+    link: '/arsip-dan-dokumen?kategori=transparansi%20pengelolaan%20keuangan%20daerah'
   },
   {
     id: 2,
@@ -458,10 +479,10 @@ export const quickLinkMenu = [
   },
   {
     id: 6,
-    title: 'Satu Data',
-    description: 'Tata kelola data antar OPD di lingkungan Pemerintah Daerah Provinsi Jawa Barat.',
-    icon: '/icons/akses-cepat/satu-data.svg',
-    link: 'https://satudata.jabarprov.go.id/auth/login?returnUrl=%2Fhome'
+    title: 'Open Data',
+    description: 'Portal transparansi data dan informasi publik bagi warga Jawa Barat.',
+    icon: '/icons/akses-cepat/open-data.svg',
+    link: 'https://opendata.jabarprov.go.id/id'
   },
   {
     id: 7,
@@ -611,3 +632,309 @@ export const archiveAndDocumentTopics = [
     value: 'transparansi pengelolaan keuangan daerah'
   }
 ]
+
+export const PREVIOUS_GOVERNORS = [
+  {
+    id: 1,
+    name: 'Ahmad Heryawan',
+    period: 'Juni 2008 - Juni 2018',
+    image: '/images/about/pimpinan/ahmad-heryawan.png'
+  },
+  {
+    id: 2,
+    name: 'Danny Setiawan',
+    period: 'Juni 2003 - Juni 2008',
+    image: '/images/about/pimpinan/danny-setiawan.png'
+  },
+  {
+    id: 3,
+    name: 'HR. Nuriana',
+    period: '1993 - Juni 2003',
+    image: '/images/about/pimpinan/nuriana.png'
+  },
+  {
+    id: 4,
+    name: 'Yogie Suardi Memet',
+    period: '1985 - 1993',
+    image: '/images/about/pimpinan/yogie.png'
+  },
+  {
+    id: 5,
+    name: 'Aang Kunaefi',
+    period: '1975 - 1985',
+    image: '/images/about/pimpinan/aang.png'
+  },
+  {
+    id: 6,
+    name: 'Solihin GP',
+    period: '1970 - 1974',
+    image: '/images/about/pimpinan/solihin.png'
+  },
+  {
+    id: 7,
+    name: 'Mashudi',
+    period: '1960 - 1970',
+    image: '/images/about/pimpinan/mashudi.png'
+  },
+  {
+    id: 8,
+    name: 'Ipik Gandamana',
+    period: '1956 - 1959',
+    image: '/images/about/pimpinan/ipik.png'
+  },
+  {
+    id: 9,
+    name: 'Sanusi Hardjadinata',
+    period: '1951 - 1956',
+    image: '/images/about/pimpinan/sanusi.png'
+  },
+  {
+    id: 10,
+    name: 'R. Mas Sewaka',
+    period: '1950 - 1956',
+    image: '/images/about/pimpinan/sewaka.png'
+  },
+  {
+    id: 11,
+    name: 'Ukar Bratakusumah',
+    period: '1948 - 1950',
+    image: '/images/about/pimpinan/ukar.png'
+  },
+  {
+    id: 12,
+    name: 'R. Mas Sewaka',
+    period: '1946 - 1948',
+    image: '/images/about/pimpinan/sewaka.png'
+  },
+  {
+    id: 13,
+    name: 'Murdjani',
+    period: '1946 - 1946',
+    image: '/images/about/pimpinan/murdjani.png'
+  },
+  {
+    id: 14,
+    name: 'Datuk Djamin',
+    period: '1945 - 1945',
+    image: '/images/about/pimpinan/datuk.png'
+  },
+  {
+    id: 15,
+    name: 'Mas Sutardjo Kertohadikusumo',
+    period: '1945 - 1945',
+    image: '/images/about/pimpinan/sutardjo.png'
+  }
+]
+
+export const GOVERNOR_PROFILE = {
+  gubernur: {
+    name: 'Dr. (H.C.) H. Mochamad Ridwan Kamil, ST., MUD.',
+    dateOfBirth: 'Bandung, 4 Oktober 1971',
+    educations: [
+      {
+        id: 1,
+        description: 'Program Magister (S2), Master of Urban Design, UC Berkeley, USA (1999-2001)'
+      },
+      {
+        id: 2,
+        description: 'Program Sarjana (S1), Sarjana Teknik Arsitektur, Institut Teknologi Bandung (1990-1995)'
+      },
+      {
+        id: 3,
+        description: 'SMAN 3 Bandung (1984-1987)'
+      }
+    ],
+    careers: [
+      {
+        id: 1,
+        description: 'Gubernur Provinsi Jawa Barat (2018-sekarang)'
+      },
+      {
+        id: 2,
+        description: 'Walikota Bandung (2013-2018)'
+      },
+      {
+        id: 3,
+        description: 'Dosen'
+      },
+      {
+        id: 4,
+        description: 'Profesional Arsitek'
+      }
+    ],
+    awards: [
+      {
+        id: 1,
+        description: 'Penghargaan Nirwasita Tantra dari Kementerian Lingkungan Hidup dan Kehutanan RI (2022)'
+      },
+      {
+        id: 2,
+        description: 'Best Governor for Healthcare and Action Against Pandemi dari Indonesia Awards (2021)'
+      },
+      {
+        id: 3,
+        description: 'Kepala Daerah Inovatif 2021 untuk penghargaan Inovasi Pikobar sebagai Layanan Publik terbaik dalam penanganan pandemi Covid-19 (2021)'
+      },
+      {
+        id: 4,
+        description: 'Penghargaan Anugerah Media Humas Indonesia sebagai Gubernur Terpopuler di media digital (2021)'
+      },
+      {
+        id: 5,
+        description: 'The Best 7 Asia Governor dari Asia Business Info (2020)'
+      },
+      {
+        id: 6,
+        description: 'Dr. (H.C) in Public Administration (Gelar Doktor Kehormatan Bidang Administrasi Publik) dari Dong-A University, South Korea (2019)'
+      }
+    ],
+    about: 'Berlatar belakang sebagai seorang arsitek, dosen, aktivis sosial dan pernah memimpin Pemerintah Kota Bandung sebagai Walikota, Ridwan Kamil kini menjabat sebagai Gubernur Provinsi Jawa Barat periode 2018-2023 dengan mengusung visi mewujudkan Jawa Barat Juara Lahir Batin dengan Inovasi dan Kolaborasi.',
+    image: '/images/about/profil/ridwan-kamil.png',
+    lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/LHKPN%20Gubernur%20Jabar%20-%20Ridwan%20Kamil.pdf',
+    instagram: 'ridwankamil'
+  },
+  'wakil gubernur': {
+    name: 'H. Uu Ruzhanul Ulum, SE.',
+    dateOfBirth: 'Tasikmalaya, 10 Mei 1969',
+    educations: [
+      {
+        id: 1,
+        description: 'Program Sarjana (S1), Fakultas Ekonomi Manajemen, Universitas Siliwangi (1997)'
+      },
+      {
+        id: 2,
+        description: 'SMA Pasundan Tasikmalaya (1988)'
+      }
+    ],
+    careers: [
+      {
+        id: 1,
+        description: 'Wakil Gubernur Provinsi Jawa Barat (2018-sekarang)'
+      },
+      {
+        id: 2,
+        description: 'Bupati Kabupaten Tasikmalaya (2011-2018)'
+      },
+      {
+        id: 3,
+        description: 'Anggota DPRD Kabupaten Tasikmalaya (2009-2011)'
+      },
+      {
+        id: 4,
+        description: 'Ketua DPRD Kabupaten Tasikmalaya (2004-2009)'
+      },
+      {
+        id: 5,
+        description: 'Anggota DPRD Kabupaten Tasikmalaya (1999-2004)'
+      }
+    ],
+    awards: [
+      {
+        id: 1,
+        description: 'Peduli Jurnalis dari Persatuan Wartawan Indonesia (2021)'
+      },
+      {
+        id: 2,
+        description: 'Lencana Adhitya Karya Mahatva Yodha Kategori Pembina Umum Karang Taruna Terbaik (2018)'
+      },
+      {
+        id: 3,
+        description: 'Satya Lencana Jasa Bhakti Koperasi dari Kementrian Koperasi dan Usaha Kecil Menengah Republik Indonesia (2017)'
+      },
+      {
+        id: 4,
+        description: 'Penghargaan Adhikarya Pangan Nusantara  Tahun 2016 Kategori Pembina Ketahanan Pangan Kabupaten/Kota Tingkat Provinsi Jawa Barat, Gubernur Jawa Barat (2016)'
+      },
+      {
+        id: 5,
+        description: 'Penghargaan Peningkatan Pembangunan di Bidang Pertanian serta Peningkatan Produksi Gabah, Gubernur Jawa Barat (2014)'
+      }
+    ],
+    about: 'Berlatar belakang seorang politisi yang pernah menjabat sebagai Ketua DPRD dan Bupati di Kabupaten Tasikmalaya, kini Uu Ruzhanul Ulum resmi memimpin Jawa Barat bersama Ridwan Kamil.',
+    image: '/images/about/profil/uu-ruzhanul-ulum.png',
+    lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/LHKPN%20Wagub%20Jabar%20-%20UU%20Ruzhanul%20Ulum.pdf',
+    instagram: 'ruzhanul'
+  },
+  'sekretaris daerah': {
+    name: 'Dr. Ir. Setiawan Wangsaatmaja, Dipl., S.E., M.Eng.',
+    dateOfBirth: 'Bandung, 26 Agustus 1963',
+    educations: [
+      {
+        id: 1,
+        description: 'Program Doktoral (S3), Doktor Teknik Lingkungan, Institut Teknologi Bandung (2004)'
+      },
+      {
+        id: 2,
+        description: 'Program Magister (S2), Master of Engineering in Environmental Engineering, Asian Insititute of Technology, Thailand (1996-1997)'
+      },
+      {
+        id: 3,
+        description: 'Program Magister (S2), Dipl. SE in Sanitary Engineering, IHE Delft, Netherlands (1993-1994)'
+      },
+      {
+        id: 4,
+        description: 'Program Sarjana (S1), Insinyur Teknik Lingkungan, Institut Teknologi Bandung (1989)'
+      }
+    ],
+    careers: [
+      {
+        id: 1,
+        description: 'Sekretaris Daerah Provinsi Jawa Barat (2020-sekarang)'
+      },
+      {
+        id: 2,
+        description: 'Komisaris PT Perusahaan Perdagangan Indonesia (2018-sekarang)'
+      },
+      {
+        id: 3,
+        description: 'Komisaris PT Bhanda Ghara Reksa (2017-2021)'
+      },
+      {
+        id: 4,
+        description: 'Deputi Bidang SDM Aparatur, Kementerian PANRB (2013-2020)'
+      },
+      {
+        id: 5,
+        description: 'Kepala Badan Pengendalian Lingkungan Hidup Provinsi Jawa Barat (2008-2013)'
+      }
+    ],
+    awards: [
+      {
+        id: 1,
+        description: 'Satyalancana Karya Satya 30 Tahun, Presiden RI (2021)'
+      },
+      {
+        id: 2,
+        description: 'Wibawa Seroja Nugraha, Gubernur LEMHANAS RI (2012)'
+      },
+      {
+        id: 3,
+        description: 'Makarti Bhakti Nagari, Kepala LAN RI (2006)'
+      },
+      {
+        id: 4,
+        description: '3rd Mens Softball Championship, Atlet Nasional RI (1985)'
+      },
+      {
+        id: 5,
+        description: 'Medali Perunggu Kontingen PON XI Jawa Barat (1985)'
+      }
+    ],
+    about: 'Memulai karir politiknya sebagai Aparatur Sipil Negara di Badan Pengendalian Lingkungan Hidup Daerah (BPLHD) Provinsi Jawa Barat beserta pengalaman kepemimpinannya sebagai Deputi Bidang SDM di Kementerian PAN RB selama 7 tahun, kini Setiawan Wangsaatmaja yang menjabat sebagai Sekretaris Daerah Provinsi Jawa Barat bersama dengan Gubernur dan Wakil Gubernur terpilih memiliki visi untuk mewujudkan Jawa Barat Juara Lahir Batin dengan inovasi dan kolaborasi di tahun 2018-2023.',
+    image: '/images/about/profil/setiawan-wangsaatmaja.png',
+    lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/LHKPN%20Sekda%20Jabar%20-%20Setiawan.pdf',
+    instagram: 'swangsaatmaja'
+  }
+}
+
+export const GPR_SCRIPT_STATUS = {
+  LOADING: 'LOADING',
+  LOADED: 'LOADED',
+  TIMEOUT: 'TIMEOUT'
+}
+
+export const COUNTER_SCRIPT_STATUS = {
+  LOADING: 'LOADING',
+  LOADED: 'LOADED',
+  TIMEOUT: 'TIMEOUT'
+}
