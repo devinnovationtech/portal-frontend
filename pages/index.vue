@@ -21,10 +21,9 @@
         </div>
       </BaseContainer>
     </section>
-    <!-- NOTE: Temporary Hide Element -->
-    <!-- <section class="py-6 md:py-8 xl:py-12">
+    <section class="py-6 md:py-8 xl:py-12">
       <BannerSwiper />
-    </section> -->
+    </section>
     <FeaturedProgramPreview />
     <section class="bg-white py-6 md:py-8 xl:py-[60px]">
       <BaseContainer class="md:!px-0 xl:!px-6">
