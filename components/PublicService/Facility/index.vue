@@ -3,7 +3,7 @@
     <h2 class="font-lora font-bold text-[32px] text-center text-blue-gray-800">
       {{ facility.title }}
     </h2>
-    <ul class="flex flex-row flex-wrap gap-4 xl:w-[800px] justify-center">
+    <ul class="flex flex-col sm:flex-row flex-wrap gap-4 w-full xl:w-[800px] justify-center">
       <li
         v-for="(item, index) in facility.items"
         :key="index"
