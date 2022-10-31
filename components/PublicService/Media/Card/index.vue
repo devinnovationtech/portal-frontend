@@ -87,20 +87,10 @@
       <Icon src="/icons/layanan-publik/clock.svg" size="16px" class="my-[5px] mr-[5px]" />
       <div class="flex flex-col items-start justify-center gap-2">
         <h3>Jam Operasional ({{ currentDate }})</h3>
-        <div class="flex flex-row justify-between items-center w-full py-2 px-3 rounded-lg bg-[#F6FBFB] text-blue-gray-600">
-          <div>
-            <!-- @todo: dynamic open hours -->
-            <span class="text-green-600 font-bold">
-              Buka
-            </span>
-            - Tutup Pukul 16.00
-          </div>
-          <Icon
-            name="chevron-right"
-            class="text-green-600"
-            size="16px"
-          />
-        </div>
+        <PublicServiceMediaCardOpenHours
+          :operational-hours="data.operational_hours"
+          class="w-full"
+        />
       </div>
     </div>
 
