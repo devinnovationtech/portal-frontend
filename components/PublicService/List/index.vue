@@ -1,7 +1,7 @@
 <template>
   <section
     :class="{
-      'grid grid-cols-1 min-w-0': true,
+      'grid grid-cols-1 min-w-0 w-full': true,
       'lg:grid-cols-[468px,auto] xl:grid-cols-2 gap-3 sm:gap-6 xl:gap-3 sm:max-w-[525px] lg:max-w-4xl xl:max-w-5xl': !isPosterEmpty,
       'w-full sm:max-w-[525px] md:max-w-[656px] lg:max-w-[800px]': isPosterEmpty
     }"

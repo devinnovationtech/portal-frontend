@@ -187,6 +187,9 @@ export default {
         : []
     }
   },
+  activated () {
+    this.$fetch()
+  },
   methods: {
     showImagePreview (image) {
       this.imagePreviewList = image.images

@@ -14,7 +14,10 @@
     <!-- Addresses -->
     <div
       v-if="hasAddresses"
-      class="grid grid-cols-[16px,auto] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8 mb-[-16px]"
+      :class="{
+        'grid grid-cols-[16px,auto] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8': true,
+        'mb-[-16px]': hasMoreThanOneAddress
+      }"
     >
       <Icon src="/icons/layanan-publik/location.svg" size="16px" class="my-[5px] mr-[5px]" />
 
@@ -37,8 +40,8 @@
             >
               <div
                 :class="{
-                  'w-full min-h-[70px]': true,
-                  'pb-[40px]': hasMoreThanOneAddress
+                  'w-full': true,
+                  'pb-[40px] min-h-[70px]': hasMoreThanOneAddress
                 }"
               >
                 <p class="text-blue-gray-600">
@@ -197,13 +200,13 @@ export default {
       }
     },
     hasAddresses () {
-      return this.data && Array.isArray(this.data.addresses) && this.data.addresses.length > 0
+      return this.data && Array.isArray(this.data.addresses) && this.data.addresses.length > 0 && this.data.addresses[0] !== ''
     },
     hasMoreThanOneAddress () {
       return this.hasAddresses && this.data.addresses.length > 1
     },
     hasPhone () {
-      return this.data && Array.isArray(this.data.phone) && this.data.phone.length
+      return this.data && Array.isArray(this.data.phone) && this.data.phone.length && this.data.phone[0] !== ''
     },
     hasOperationalHours () {
       return this.data && Array.isArray(this.data.operational_hours) && this.data.operational_hours.length

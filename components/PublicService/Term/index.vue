@@ -17,7 +17,7 @@
           <LazyImg
             :src="term.image"
             alt="Poster Persyaratan"
-            class="max-w-full object-cover"
+            class="w-full object-cover"
           />
         </div>
       </template>

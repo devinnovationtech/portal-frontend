@@ -17,7 +17,7 @@
           <BaseListCounter
             :title="'Total Layanan di kategori ini'"
             :unit="'Layanan'"
-            :counter="meta.total_count || '-'"
+            :counter="meta.static_count || '-'"
             :loading="loading"
             :last-update="meta.last_updated || '-'"
             class="!w-full sm:!w-[294px]"
@@ -44,8 +44,8 @@ export default {
       meta: {},
       loading: false,
       jumbotron: {
-        title: `Daftar Layanan ${this.$route.query.nama}`,
-        subtitle: `Lihat berbagai layanan untuk kebutuhan seputar ${this.$route.query.nama.toLowerCase()}`,
+        title: `Daftar Layanan ${this.$route.query.nama || '-'}`,
+        subtitle: `Lihat berbagai layanan untuk kebutuhan seputar ${this.$route.query.nama ? this.$route.query.nama.toLowerCase() : '-'}`,
         backgroundImageUrl: '/images/jumbotron/default.webp'
       }
     }
@@ -96,9 +96,14 @@ export default {
     }
   },
   methods: {
-    async getServices (params) {
+    async getServices (parameters) {
       try {
         this.loading = true
+
+        const params = {
+          ...parameters,
+          per_page: 50
+        }
         const response = await this.$axios.get('v1/public/service-public', { params })
 
         const { data, meta } = response.data

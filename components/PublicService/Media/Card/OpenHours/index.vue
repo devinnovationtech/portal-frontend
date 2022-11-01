@@ -57,7 +57,6 @@
       <JdsPopoverDropdown class="flex flex-col w-full p-4">
         <div v-for="(day, index) in operationalHours" :key="index">
           <div
-            v-if="isOpenThisDay(day)"
             :class="{
               'grid grid-cols-[60px,auto] font-lato leading-6 text-sm': true,
               'mb-2': index !== operationalHours.length - 1
@@ -177,7 +176,7 @@ export default {
       }
     },
     isOpenThisDay (day) {
-      return Object.keys(day).length !== 0
+      return day.start && day.start !== '' && day.start !== null
     }
   }
 }
