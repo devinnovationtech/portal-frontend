@@ -104,7 +104,8 @@ export default {
         q: this.alias,
         per_page: 3,
         sort_order: 'desc',
-        domain: ['news']
+        domain: ['news'],
+        fuzziness: false
       }
       const responseNews = await this.$axios.$get('/v1/search', { params })
       this.newsList = responseNews.data

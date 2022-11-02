@@ -92,28 +92,28 @@ export const navigationMenu = [
         title: 'Pendidikan dan Pembelajaran',
         description: 'Dapat informasi program pemerintah bagi siswa dan pelajar',
         icon: '/icons/navigation/pendidikan.svg',
-        link: 'https://disdik.jabarprov.go.id'
+        link: '/layanan/pendidikan-dan-pembelajaran?nama=Pendidikan dan Pembelajaran&kategori=pendidikan'
       },
       {
         id: 3,
         title: 'Kesehatan',
         description: 'Akses layanan untuk Legalisir STR dan STRTTK bagi Tenaga Kesehatan di Provinsi Jawa Barat',
         icon: '/icons/navigation/kesehatan.svg',
-        link: 'https://bit.ly/legalisirSTR'
+        link: '/layanan/kesehatan?nama=Kesehatan&kategori=kesehatan'
       },
       {
         id: 4,
         title: 'Pajak',
         description: 'Cari semua informasi terkait perpajakan di Jawa Barat',
         icon: '/icons/navigation/pajak.svg',
-        link: 'https://bapenda.jabarprov.go.id'
+        link: '/layanan/pajak?nama=Pajak&kategori=perpajakan'
       },
       {
         id: 5,
         title: 'Sosial dan Keluarga',
         description: 'Akses ke berbagai layanan bagi anak-anak, perempuan dan masyarakat',
         icon: '/icons/navigation/sosial.svg',
-        link: 'https://dinsos.jabarprov.go.id'
+        link: '/layanan/sosial-dan-keluarga?nama=Sosial dan Keluarga&kategori=sosial'
       },
       {
         id: 6,
