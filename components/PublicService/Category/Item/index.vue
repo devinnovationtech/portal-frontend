@@ -4,7 +4,7 @@
     class="w-full flex flex-col gap-1 group bg-white px-4 py-3 rounded-lg
     hover:bg-green-50 hover:cursor-pointer transition-colors ease-brand duration-250"
   >
-    <LazyImg :src="service.logo" :alt="service.name" width="42" height="42" />
+    <LazyImg :src="service.logo" :alt="service.name" width="42" height="42" class="w-[42px] h-[42px] object-contain" />
     <h3 class="font-lato font-bold text-base text-blue-gray-700 leading-normal group-hover:text-green-700 line-clamp-1">
       {{ service.name }}
     </h3>

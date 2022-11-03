@@ -56,6 +56,7 @@
             class="mt-[80px]"
           />
           <PublicServiceNews
+            v-if="newsList"
             :service-name="alias"
             :news="newsList"
             :loading="$fetchState.pending"

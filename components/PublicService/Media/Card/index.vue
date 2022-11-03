@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col rounded-xl p-4 border border-solid border-gray-300 xl:row-span-2 sm:max-h-[557px] lg:max-h-[597px] xl:max-h-[557px] overflow-auto">
+  <section>
     <!-- Category -->
     <div v-show="data.category" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400">
       <Icon src="/icons/layanan-publik/category.svg" size="16px" class="my-[5px] mr-[5px]" />

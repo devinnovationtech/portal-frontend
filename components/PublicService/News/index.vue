@@ -5,6 +5,7 @@
         Simak berita terbaru terkait <strong class="text-green-700">{{ serviceName }}</strong>
       </h3>
       <Link
+        v-if="news.length >= 3"
         :link="`/pencarian/berita?q=${serviceName}`"
         tabindex="-1"
       >

@@ -3,13 +3,15 @@
     <!-- Youtube Video -->
     <section class="flex justify-center bg-gray-900 rounded-xl h-[156px] sm:h-[383px] sm:col-span-2 xl:col-span-1">
       <lite-youtube
+        v-if="videoId"
         :videoid="videoId"
         class="w-full h-full rounded-xl"
       />
+      <LazyImg v-else :src="imageList[0]" class="object-cover" />
     </section>
 
     <!-- Thumbnail Pictures -->
-    <section class="flex flex-row sm:grid sm:grid-cols-1 xl:flex xl:flex-row gap-4 md:gap-6 sm:h-[557px] lg:h-[597px] xl:h-auto sm:order-last overflow-auto xl:overflow-hidden">
+    <section v-if="hasImageList" class="flex flex-row sm:grid sm:grid-cols-1 xl:flex xl:flex-row gap-4 md:gap-6 sm:h-[557px] lg:h-[597px] xl:h-auto sm:order-last overflow-auto xl:overflow-hidden">
       <PublicServiceMediaImageSwiper
         :images="imageList"
         class="hidden xl:block w-full"
@@ -25,7 +27,13 @@
     </section>
 
     <!-- Card -->
-    <PublicServiceMediaCard :data="data" />
+    <PublicServiceMediaCard
+      :data="data"
+      :class="{
+        'flex flex-col rounded-xl p-4 border border-solid border-gray-300 xl:row-span-2 sm:max-h-[557px] lg:max-h-[597px] xl:max-h-[557px] overflow-auto': true,
+        'xl:row-span-1 xl:max-h-[383px] sm:col-span-2 xl:col-span-1': !hasImageList
+      }"
+    />
   </section>
 </template>
 
@@ -54,11 +62,14 @@ export default {
 
         return urlParams.get('v')
       } else {
-        return '-'
+        return ''
       }
     },
     imageList () {
       return this.data && this.data.media ? this.data.media.images : []
+    },
+    hasImageList () {
+      return this.imageList.length > 0
     }
   },
   methods: {
