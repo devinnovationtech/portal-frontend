@@ -13,11 +13,17 @@
           'sm:w-[208px] lg:w-[256px]': hasMoreThanTwo
         }"
       >
-        <LazyImg
-          :src="item.image"
-          alt="Ilustrasi Fasilitas"
-          class="object-cover rounded-t-xl h-[108px]"
-        />
+        <figure class="w-full h-[108px] bg-gray-200 flex items-center justify-center rounded-t-xl overflow-hidden">
+          <!-- @TODO: move logo placeholder to somewhere general -->
+          <LazyImg
+            :src="item.image || '/icons/program-unggulan/logo-placeholder.svg'"
+            alt="Ilustrasi Fasilitas"
+            :class="{
+              'w-full h-full object-cover' : item.image,
+              'w-12 h-12' : !item.image
+            }"
+          />
+        </figure>
         <p class="font-medium leading-6 text-sm text-blue-gray-600 text-center line-clamp-4 px-3 pt-3 pb-1">
           {{ item.title }}
         </p>
