@@ -2,10 +2,25 @@
   <nav class="flex items-center">
     <Link
       link="/"
-      class="mr-auto w-8 h-8 lg:w-[60px] lg:h-[60px]"
+      class="mr-auto w-8 h-8 lg:w-[38px] lg:h-[38px] xl:w-[228px] xl:h-[38px]"
       @click.native="gtagHeaderLogo"
     >
-      <img src="/logo.png" width="55" height="60" alt="Beranda">
+      <picture>
+        <source
+          media="(min-width:1280px)"
+          srcset="/logo.png"
+          width="228"
+          height="38"
+          alt="Beranda"
+        >
+        <img
+          src="/logo-mobile.png"
+          width="32"
+          height="32"
+          alt="Beranda"
+          class="w-full h-full"
+        >
+      </picture>
     </Link>
     <HeaderMenu class="hidden lg:flex">
       <HeaderMenuList

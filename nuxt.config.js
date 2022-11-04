@@ -13,8 +13,13 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+      { rel: 'manifest', href: '/site.webmanifest' },
+      // Preload Images
       { rel: 'preload', as: 'image', href: '/images/banners/1.webp' },
-      { rel: 'preload', as: 'image', href: '/logo.png' },
+      { rel: 'preload', as: 'image', href: '/logo-mobile.png' },
       { rel: 'preload', as: 'image', href: '/images/hero.svg' }
     ]
   },

@@ -27,7 +27,7 @@ export default {
   props: {
     logo: {
       type: String,
-      default: '/logo.png'
+      default: '/pemda-logo.png'
     },
     name: {
       type: String,

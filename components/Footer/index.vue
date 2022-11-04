@@ -6,17 +6,12 @@
         :style="{ backgroundImage: `url('/images/menu.svg')`, backgroundPosition: '100% 100%' }"
       >
         <Link link="/" class="w-[fit-content]" @click.native="gtagFooterLogo">
-          <div class="flex items-center gap-4">
-            <img src="/logo.png" alt="Logo Jawa Barat" width="65" height="76">
-            <div>
-              <p class="text-white text-lg font-roboto">
-                Pemerintah Daerah Provinsi
-              </p>
-              <p class="font-medium text-lg text-white font-roboto">
-                Jawa Barat
-              </p>
-            </div>
-          </div>
+          <img
+            src="/logo.png"
+            width="228"
+            height="38"
+            alt="Beranda"
+          >
         </Link>
         <FooterInfo />
         <FooterSitemap />
