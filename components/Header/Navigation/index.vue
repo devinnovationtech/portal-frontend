@@ -8,7 +8,7 @@
       <picture>
         <source
           media="(min-width:1280px)"
-          srcset="/logo.png"
+          srcset="/logo-new.png"
           width="228"
           height="38"
           alt="Beranda"

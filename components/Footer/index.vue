@@ -7,7 +7,7 @@
       >
         <Link link="/" class="w-[fit-content]" @click.native="gtagFooterLogo">
           <img
-            src="/logo.png"
+            src="/logo-new.png"
             width="228"
             height="38"
             alt="Beranda"
