@@ -54,7 +54,16 @@ export default {
   components: true,
 
   publicRuntimeConfig: {
-    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID
+    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,
+    axios: {
+      browserBaseURL: process.env.BROWSER_API_URL
+    }
+  },
+
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.API_URL
+    }
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -94,7 +103,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: process.env.API_URL
+    baseURL: 'http://localhost:3000'
   },
 
   // Sentry configuration https://sentry.nuxtjs.org/sentry/options
