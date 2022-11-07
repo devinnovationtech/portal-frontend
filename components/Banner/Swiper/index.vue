@@ -51,25 +51,13 @@
 </template>
 
 <script>
+import { HOMEPAGE_BANNERS } from '~/static/data'
+
 export default {
   data () {
     return {
       swiperReady: false,
-      // TODO: Change banner data with actual contents
-      banners: [
-        {
-          id: 1,
-          title: 'G20',
-          image: '/images/banners/homepage/banner-g20.webp',
-          link: 'https://www.g20.org/'
-        },
-        {
-          id: 2,
-          title: 'Mall Pelayanan Publik',
-          image: '/images/banners/homepage/banner-mpp.webp',
-          link: 'https://dpmptsp.jabarprov.go.id/mppdigital/'
-        }
-      ],
+      banners: HOMEPAGE_BANNERS,
       swiperOptions: Object.freeze({
         slidesPerView: 1,
         spaceBetween: 32,

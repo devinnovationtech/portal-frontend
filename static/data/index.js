@@ -16,6 +16,21 @@ export const heroImages = [
   }
 ]
 
+export const HOMEPAGE_BANNERS = [
+  {
+    id: 1,
+    title: 'Mall Pelayanan Publik',
+    image: '/images/banners/homepage/banner-mpp.webp',
+    link: 'https://dpmptsp.jabarprov.go.id/mppdigital/'
+  },
+  {
+    id: 2,
+    title: 'G20',
+    image: '/images/banners/homepage/g20-banner.webp',
+    link: 'https://www.g20.org/'
+  }
+]
+
 export const navigationMenu = [
   {
     id: 1,
