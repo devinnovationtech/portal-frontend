@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Portal Jabar - Satu Portal untuk Semua Hal Tentang Jawa Barat',
+    title: 'Portal Jabarprov - Satu Portal untuk Semua Hal Tentang Jawa Barat',
     htmlAttrs: {
       lang: 'id'
     },
