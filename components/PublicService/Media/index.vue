@@ -1,7 +1,12 @@
 <template>
   <section class="grid grid-flow-row sm:grid-cols-[auto,262px] lg:grid-cols-2 xl:grid-cols-[816px,auto] gap-4 xl:gap-6">
     <!-- Youtube Video -->
-    <section class="flex justify-center bg-gray-900 rounded-xl h-[156px] sm:h-[383px] sm:col-span-2 xl:col-span-1">
+    <section
+      :class="{
+        'flex justify-center bg-[#F5F5F5] rounded-xl h-[156px] sm:h-[383px] sm:col-span-2 xl:col-span-1': true,
+        'bg-gray-900': !!videoId
+      }"
+    >
       <lite-youtube
         v-if="videoId"
         :videoid="videoId"

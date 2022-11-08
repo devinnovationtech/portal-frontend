@@ -5,20 +5,22 @@
     </h2>
     <PublicServiceList :items="term.items">
       <template v-if="term.image" #poster>
-        <div class="relative w-full h-full group overflow-hidden rounded-xl">
-          <!-- Image Overlay -->
-          <div
-            class="opacity-0 inset-0 absolute flex items-center justify-center bg-[#00000080]
-            group-hover:opacity-100 z-10 transition-opacity ease-brand duration-250 cursor-pointer"
-            @click="$emit('show-preview', { index: 0, images: [term.image] })"
-          >
-            <Icon src="/icons/zoom.svg" size="50px" />
+        <div>
+          <div class="relative w-full group overflow-hidden rounded-xl">
+            <!-- Image Overlay -->
+            <div
+              class="opacity-0 inset-0 absolute flex items-center justify-center bg-[#00000080]
+              group-hover:opacity-100 z-10 transition-opacity ease-brand duration-250 cursor-pointer"
+              @click="$emit('show-preview', { index: 0, images: [term.image] })"
+            >
+              <Icon src="/icons/zoom.svg" size="50px" />
+            </div>
+            <LazyImg
+              :src="term.image"
+              alt="Poster Ketentuan"
+              class="w-full object-cover"
+            />
           </div>
-          <LazyImg
-            :src="term.image"
-            alt="Poster Persyaratan"
-            class="w-full object-cover"
-          />
         </div>
       </template>
     </PublicServiceList>

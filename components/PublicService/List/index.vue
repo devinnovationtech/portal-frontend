@@ -3,10 +3,15 @@
     :class="{
       'grid grid-cols-1 min-w-0 w-full': true,
       'lg:grid-cols-[468px,auto] xl:grid-cols-2 gap-3 sm:gap-6 xl:gap-3 sm:max-w-[525px] lg:max-w-4xl xl:max-w-5xl': !isPosterEmpty,
-      'w-full sm:max-w-[525px] md:max-w-[656px] lg:max-w-[800px]': isPosterEmpty
+      'sm:max-w-[525px] md:max-w-[656px] lg:max-w-[800px]': isPosterEmpty
     }"
   >
-    <ul class="flex flex-col gap-4">
+    <ul
+      :class="{
+        'grid grid-cols-1 gap-4': true,
+        'grid-cols-2': grid
+      }"
+    >
       <li
         v-for="(item, index) in items"
         :key="index"
@@ -38,6 +43,10 @@ export default {
     items: {
       type: Array,
       default: () => []
+    },
+    grid: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
