@@ -5,7 +5,7 @@
     @close="$emit('close')"
   >
     <template #header>
-      <div class="grid grid-cols-2 w-full px-4 py-3 md:px-6 md:py-4 pb-0 gap-y-5">
+      <div class="grid grid-cols-2 w-full max-w-[550px] px-4 py-3 md:px-6 md:py-4 pb-0 gap-y-5">
         <section class="col-span-2">
           <figure
             class="inline-flex w-12 h-12 p-1 items-center justify-center mb-1 bg-white rounded-full"
