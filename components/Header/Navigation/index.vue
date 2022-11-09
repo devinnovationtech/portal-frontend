@@ -8,13 +8,13 @@
       <picture>
         <source
           media="(min-width:1280px)"
-          srcset="/logo-new.png"
+          srcset="/logo.svg"
           width="228"
           height="38"
           alt="Beranda"
         >
         <img
-          src="/logo-mobile.png"
+          src="/logo-mobile.svg"
           width="32"
           height="32"
           alt="Beranda"
