@@ -9,7 +9,7 @@
     <ul
       :class="{
         'grid grid-cols-1 gap-4': true,
-        'grid-cols-2': grid
+        'sm:grid-cols-2': grid
       }"
     >
       <li

@@ -4,15 +4,15 @@
     <section
       :class="{
         'flex justify-center bg-[#F5F5F5] rounded-xl h-[156px] sm:h-[383px] sm:col-span-2 xl:col-span-1': true,
-        'bg-gray-900': !!videoId
+        'bg-gray-900': hasYoutubeVideo
       }"
     >
       <lite-youtube
-        v-if="videoId"
+        v-if="hasYoutubeVideo"
         :videoid="videoId"
         class="w-full h-full rounded-xl"
       />
-      <LazyImg v-else :src="imageList[0]" class="object-cover" />
+      <LazyImg v-else :src="videoCoverImage" />
     </section>
 
     <!-- Thumbnail Pictures -->
@@ -75,6 +75,33 @@ export default {
     },
     hasImageList () {
       return this.imageList.length > 0
+    },
+    videoUrlOrigin () {
+      if (!this.hasVideo) {
+        return ''
+      }
+
+      const pathArray = this.data.media.video.split('/')
+      const origin = pathArray[2]
+
+      return origin
+    },
+    hasVideoCover () {
+      return this.hasVideo && this.videoUrlOrigin !== 'www.youtube.com'
+    },
+    hasYoutubeVideo () {
+      return this.hasVideo && this.videoUrlOrigin === 'www.youtube.com'
+    },
+    videoCoverImage () {
+      if (this.hasImageList) {
+        return this.imageList[0]
+      }
+
+      if (this.hasVideoCover) {
+        return this.data.media.video
+      }
+
+      return '/images/no-image.svg'
     }
   },
   methods: {
