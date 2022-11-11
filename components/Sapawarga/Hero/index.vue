@@ -6,7 +6,7 @@
         <span class="text-green-700 font-semibold">
           Beragam Kebutuhan
         </span>
-        di Jawa Barat
+        Warga Jawa Barat
       </h1>
       <p class="pb-12 font-roboto text-blue-gray-800 text-[22px] leading-[32px] font-normal md:text-[24px] md:leading-[26px]">
         Jadi

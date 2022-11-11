@@ -3,15 +3,15 @@
     <h2 class="font-roboto text-center text-blue-gray-800 text-[28px] leading-[45px] font-semibold md:text-[44px] md:leading-[70px] lg:px-[80px] xl:px-10">
       Bikin <span class="text-green-600">Ringan</span> Segala <span class="text-green-600">Urusan</span>
     </h2>
-    <div class="pt-8 grid grid-cols-1 gap-[30px] justify-items-center md:grid-cols-2 lg:px-[80px] xl:px-0 xl:pb-[50px] xl:grid-cols-4">
+    <div class="pt-8 grid grid-cols-1 gap-[30px] justify-items-center md:grid-cols-2 lg:px-6 xl:px-0 xl:pb-[50px] xl:grid-cols-4">
       <div
         v-for="item in publicServices"
         :key="item.id"
         class="group"
       >
-        <div class="group-hover:bg-green-600 px-5 py-2.5 border border-solid border-[#DDDDDD] rounded-[32px] w-[304px] h-[340px] xl:w-[288px]">
+        <div class="group-hover:bg-green-600 p-6 border border-solid border-[#DDDDDD] rounded-[32px] w-[304px] h-[340px] lg:w-[424px] xl:w-[288px]">
           <div class="flex flex-row gap-x-3 pb-4">
-            <Icon :src="item.img" size="46" />
+            <Icon :src="item.img" size="48" />
             <h2
               class="self-center font-roboto text-[14px] leading-[34px] font-medium md:leading-[22px] text-blue-gray-800 group-hover:text-white"
             >
@@ -32,7 +32,7 @@
           >
             <Icon :src="feature.image" size="28" />
             <p
-              class="font-roboto text-[12px] leading-[23px] font-normal text-blue-gray-500 group-hover:text-white"
+              class="font-roboto self-center text-[12px] leading-[23px] font-normal text-blue-gray-500 group-hover:text-white"
             >
               {{ feature.description }}
             </p>

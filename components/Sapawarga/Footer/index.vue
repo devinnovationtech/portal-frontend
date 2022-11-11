@@ -1,7 +1,7 @@
 <template>
-  <section class="mt-[186px] min-h-[950px] md:min-h-[924px] lg:min-h-[924px] xl:min-h-[738px]">
-    <div class="footer--background-wave bg-[#F1FBFF] px-4 py-6 md:py-8 md:px-6">
-      <div class="bg-white p-6 mb-6 rounded-[32px] shadow-[0px_2px_32px_#0c4b8514] max-h-[338px] md:max-h-[308px] lg:flex lg:flex-row lg:justify-between lg:gap-4 lg:p-0 ">
+  <section class="mt-[186px] min-h-[950px] md:min-h-[680px] xl:min-h-[600px]">
+    <div class="footer--background-wave bg-[#F1FBFF] px-4 py-6 rounded-b-2xl md:py-8 md:px-6">
+      <div class="bg-white p-6 mb-6 rounded-[32px] mx-auto max-w-[1030px] shadow-[0px_2px_32px_#0c4b8514] max-h-[422px] md:max-h-[308px] lg:flex lg:flex-row lg:justify-between lg:gap-4 lg:p-0 ">
         <div class="text-center flex flex-col gap-y-6 lg:w-full lg:text-left lg:py-10 lg:pl-[64px] xl:w-[631px]">
           <div>
             <h2 class="text-blue-gray-800 font-roboto font-bold text-[24px] leading-[38px] md:text-[32px] md:leading-[51px]">
@@ -16,15 +16,13 @@
               Hubungi Hotline kami untuk informasi lebih lanjut seputar aplikasi ini.
             </p>
           </div>
-          <div class="self-center lg:self-start w-[150px]">
-            <a
-              href="http://s.id/ChatbotSW"
-              class="bg-green-primary hover:bg-green-800 w-full py-4 px-6 rounded-lg text-sm text-white transition-colors ease-brand duration-250"
-              target="_blank"
-            >
-              Hubungi Kami
-            </a>
-          </div>
+          <a
+            href="http://s.id/ChatbotSW"
+            class="self-center bg-green-primary hover:bg-green-800 py-4 px-6 rounded-lg text-sm text-white transition-colors ease-brand duration-250 lg:self-start"
+            target="_blank"
+          >
+            Hubungi Kami
+          </a>
         </div>
         <img class="hidden lg:block lg:w-[249px] lg:self-center xl:mx-auto xl:w-[294px]" width="294" height="210" src="/images/sapawarga/sapawarga-faq-women.svg" alt="women">
       </div>
