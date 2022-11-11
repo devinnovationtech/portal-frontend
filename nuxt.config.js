@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Portal Jabar - Satu Portal untuk Semua Hal Tentang Jawa Barat',
+    title: 'Portal Jabarprov - Satu Portal untuk Semua Hal Tentang Jawa Barat',
     htmlAttrs: {
       lang: 'id'
     },
@@ -13,8 +13,13 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+      { rel: 'manifest', href: '/site.webmanifest' },
+      // Preload Images
       { rel: 'preload', as: 'image', href: '/images/banners/1.webp' },
-      { rel: 'preload', as: 'image', href: '/logo.png' },
+      { rel: 'preload', as: 'image', href: '/logo-mobile.png' },
       { rel: 'preload', as: 'image', href: '/images/hero.svg' }
     ]
   },
@@ -40,6 +45,7 @@ export default {
     '~/plugins/vue-awesome-swiper',
     '~/plugins/vue-touch-events',
     '~/plugins/vue-lazy-load',
+    '~/plugins/vue-easy-lightbox',
     '~/plugins/lite-youtube-embed.client.js',
     '~/plugins/device.server'
   ],
@@ -48,7 +54,16 @@ export default {
   components: true,
 
   publicRuntimeConfig: {
-    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID
+    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,
+    axios: {
+      browserBaseURL: process.env.BROWSER_API_URL
+    }
+  },
+
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.API_URL
+    }
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -88,7 +103,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: process.env.API_URL
+    baseURL: 'http://localhost:3000'
   },
 
   // Sentry configuration https://sentry.nuxtjs.org/sentry/options

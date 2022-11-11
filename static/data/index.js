@@ -16,6 +16,21 @@ export const heroImages = [
   }
 ]
 
+export const HOMEPAGE_BANNERS = [
+  {
+    id: 1,
+    title: 'Mall Pelayanan Publik',
+    image: '/images/banners/homepage/banner-mpp.webp',
+    link: 'https://dpmptsp.jabarprov.go.id/mppdigital/'
+  },
+  {
+    id: 2,
+    title: 'G20',
+    image: '/images/banners/homepage/g20-banner.webp',
+    link: 'https://www.g20.org/'
+  }
+]
+
 export const navigationMenu = [
   {
     id: 1,
@@ -85,35 +100,35 @@ export const navigationMenu = [
         title: 'Kependudukan dan Tempat Tinggal',
         description: 'Urus Perizinan kependudukan dan tempat tinggal dengan mudah',
         icon: '/icons/navigation/kependudukan.svg',
-        link: 'https://disdukcapil.jabarprov.go.id/portal'
+        link: '/layanan/kependudukan-dan-tempat-tinggal?nama=Kependudukan dan Tempat Tinggal&kategori=kependudukan'
       },
       {
         id: 2,
         title: 'Pendidikan dan Pembelajaran',
         description: 'Dapat informasi program pemerintah bagi siswa dan pelajar',
         icon: '/icons/navigation/pendidikan.svg',
-        link: 'https://disdik.jabarprov.go.id'
+        link: '/layanan/pendidikan-dan-pembelajaran?nama=Pendidikan dan Pembelajaran&kategori=pendidikan'
       },
       {
         id: 3,
         title: 'Kesehatan',
         description: 'Akses layanan untuk Legalisir STR dan STRTTK bagi Tenaga Kesehatan di Provinsi Jawa Barat',
         icon: '/icons/navigation/kesehatan.svg',
-        link: 'https://bit.ly/legalisirSTR'
+        link: '/layanan/kesehatan?nama=Kesehatan&kategori=kesehatan'
       },
       {
         id: 4,
         title: 'Pajak',
         description: 'Cari semua informasi terkait perpajakan di Jawa Barat',
         icon: '/icons/navigation/pajak.svg',
-        link: 'https://bapenda.jabarprov.go.id'
+        link: '/layanan/pajak?nama=Pajak&kategori=perpajakan'
       },
       {
         id: 5,
         title: 'Sosial dan Keluarga',
         description: 'Akses ke berbagai layanan bagi anak-anak, perempuan dan masyarakat',
         icon: '/icons/navigation/sosial.svg',
-        link: 'https://dinsos.jabarprov.go.id'
+        link: '/layanan/sosial-dan-keluarga?nama=Sosial dan Keluarga&kategori=sosial'
       },
       {
         id: 6,
@@ -230,6 +245,13 @@ export const navigationMenu = [
         description: 'Sistem pengadaan berbasis E-Procurement (SPSE) Pemerintah Provinsi Jawa Barat',
         icon: '/icons/navigation/arsip-dan-dokumen.svg',
         link: 'https://lpse.jabarprov.go.id'
+      },
+      {
+        id: 6,
+        title: 'Sapawarga',
+        description: 'Akses dan unduh dokumen resmi yang dirilis pemerintah Jawa barat',
+        icon: '/icons/navigation/sapawarga.svg',
+        link: '/sapawarga'
       }
     ],
     gtagEvent: 'click_menu_profil',
@@ -938,3 +960,27 @@ export const COUNTER_SCRIPT_STATUS = {
   LOADED: 'LOADED',
   TIMEOUT: 'TIMEOUT'
 }
+
+export const socialMediaSapawarga = [
+  {
+    id: 1,
+    name: 'Facebook',
+    icon: 'facebook',
+    image: '/images/sapawarga/facebook.svg',
+    link: 'https://www.facebook.com/302983417213311/posts/995589351286044/'
+  },
+  {
+    id: 2,
+    name: 'Twitter',
+    icon: 'twitter',
+    image: '/images/sapawarga/twitter.svg',
+    link: 'https://twitter.com/jabardigital'
+  },
+  {
+    id: 3,
+    name: 'Instagram',
+    icon: 'instagram',
+    image: '/images/sapawarga/instagram.svg',
+    link: 'https://www.instagram.com/jabardigitalservice/'
+  }
+]

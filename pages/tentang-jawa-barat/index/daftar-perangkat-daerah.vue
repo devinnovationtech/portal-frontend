@@ -79,7 +79,7 @@
           >
             <div class="flex-shrink-0 w-[100px] h-[100px] grid place-content-center">
               <img
-                :src="item.logo || '/logo.png'"
+                :src="item.logo || '/pemda-logo.png'"
                 :alt="item.name"
                 class="h-[80px]"
                 height="80"
@@ -248,7 +248,7 @@ export default {
       this.$fetch()
     },
     onErrorImage (event) {
-      event.target.src = '/logo.png'
+      event.target.src = '/pemda-logo.png'
     },
     scrollToTop () {
       window.scrollTo({ top: 200 })

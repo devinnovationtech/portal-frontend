@@ -38,10 +38,28 @@ jobs:
           build-args: |
             APP_ENVIRONMENT=development
             NUXT_ENV_PUBLIC_URL=${{ secrets.NUXT_ENV_PUBLIC_URL_STAGING }}
-            API_URL=${{ secrets.API_URL_STAGING }}
             SENTRY_ENABLED=${{ secrets.SENTRY_ENABLED }}
             SENTRY_DSN=${{ secrets.SENTRY_DSN }}
             SENTRY_SAMPLE_RATE=${{ secrets.SENTRY_SAMPLE_RATE }}
-            GOOGLE_ANALYTICS_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}
+      # GitOps
+      - name: GitOps ArgoCD Setup
+        run: |
+          echo "${{ secrets.GITLAB_ARGOCD_KEY }}" > /tmp/gitlab-deploy-ssh-key
+          chmod 600 /tmp/gitlab-deploy-ssh-key
+          export GIT_SSH_COMMAND="ssh -i /tmp/gitlab-deploy-ssh-key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+          git clone ${{ secrets.GITLAB_ARGOCD_REPOSITORY }}
+      - name: GitOps ArgoCD Update Image Tag
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq -i '.spec.template.spec.containers[0].image = "${{ secrets.SERVICE_IMAGENAME_STAGING }}:${{ steps.vars.outputs.sha_short }}"' 'jds-terraform-gke/k8s/portal-jabar-web/development/deployment.yaml'
 
-
+      - name: GitOps ArgoCD Create Branch, Commit, Push
+        run: |
+          export GIT_SSH_COMMAND="ssh -i /tmp/gitlab-deploy-ssh-key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+          cd jds-terraform-gke/k8s/portal-jabar-web/development
+          git config user.email "github-action@github.com"
+          git config user.name "Github Action"
+          git checkout master
+          git add deployment.yaml
+          git commit -m "config: update portal jabar web images ${{ steps.vars.outputs.sha_short }} to staging"
+          git push origin master

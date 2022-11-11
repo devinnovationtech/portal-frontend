@@ -59,7 +59,7 @@
       @close="toggleEventDetail"
     >
       <template #header>
-        <h1 class="font-roboto font-medium text-[21px] leading-[34px] text-green-700 px-6 py-2">
+        <h1 class="max-w-[525px] font-roboto font-medium text-[21px] leading-[34px] text-green-700 px-6 py-2">
           {{ title }}
         </h1>
       </template>
