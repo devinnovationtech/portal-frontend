@@ -245,6 +245,13 @@ export const navigationMenu = [
         description: 'Sistem pengadaan berbasis E-Procurement (SPSE) Pemerintah Provinsi Jawa Barat',
         icon: '/icons/navigation/arsip-dan-dokumen.svg',
         link: 'https://lpse.jabarprov.go.id'
+      },
+      {
+        id: 6,
+        title: 'Sapawarga',
+        description: 'Akses dan unduh dokumen resmi yang dirilis pemerintah Jawa barat',
+        icon: '/icons/navigation/sapawarga.svg',
+        link: '/sapawarga'
       }
     ],
     gtagEvent: 'click_menu_profil',
@@ -953,3 +960,27 @@ export const COUNTER_SCRIPT_STATUS = {
   LOADED: 'LOADED',
   TIMEOUT: 'TIMEOUT'
 }
+
+export const socialMediaSapawarga = [
+  {
+    id: 1,
+    name: 'Facebook',
+    icon: 'facebook',
+    image: '/images/sapawarga/facebook.svg',
+    link: 'https://www.facebook.com/302983417213311/posts/995589351286044/'
+  },
+  {
+    id: 2,
+    name: 'Twitter',
+    icon: 'twitter',
+    image: '/images/sapawarga/twitter.svg',
+    link: 'https://twitter.com/jabardigital'
+  },
+  {
+    id: 3,
+    name: 'Instagram',
+    icon: 'instagram',
+    image: '/images/sapawarga/instagram.svg',
+    link: 'https://www.instagram.com/jabardigitalservice/'
+  }
+]
