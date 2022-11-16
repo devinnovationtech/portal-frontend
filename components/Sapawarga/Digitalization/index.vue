@@ -23,9 +23,10 @@
             Warga dapat mengakses layanan publik digital, informasi umum hingga informasi Covid-19, dan serta berpartisipasi aktif dalam menyampaikan aspirasi secara mudah dan efisien melalui satu aplikasi.
           </p>
         </div>
-        <div class="text-center pb-4 md:w-[350px] md:pb-0">
-          <img class="w-full lg:h-full" src="/images/sapawarga/sapawarga-digital.svg" width="420" height="416" alt="sapawarga">
-        </div>
+        <picture class="text-center pb-4 md:w-[350px] lg:w-[396px] md:pb-0">
+          <source width="420" height="416" srcset="/images/sapawarga/sapawarga-digital.webp">
+          <img class="w-full lg:h-full" src="/images/sapawarga/sapawarga-digital.png" width="420" height="416" alt="sapawarga">
+        </picture>
       </div>
     </div>
   </section>

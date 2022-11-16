@@ -18,7 +18,7 @@
               :class="{ 'bg-white rounded-[16px]' : publicService.id === clicked }"
               @click="clickService(publicService.id)"
             >
-              <Icon :src="publicService.id === clicked ? publicService.imageActive : publicService.image " :alt="publicService.alt" width="24" height="24" />
+              <BaseIcon :icon="publicService.image" :fill-color="publicService.id === clicked ? '#16A75C' : '#C3E9D0'" :size="24" />
               <p
                 class="font-roboto font-medium text-[14px] leading-[23px] "
                 :class="publicService.id === clicked ? 'text-green-600' : 'text-green-100'"
@@ -63,8 +63,6 @@ export default {
           id: 1,
           name: 'SAPAWARGA',
           image: require('~/static/images/sapawarga/sapawarga-icon-person.svg'),
-          imageActive: require('~/static/images/sapawarga/sapawarga-icon-person-green.svg'),
-          alt: 'Sapawarga',
           questionAndAnswer: [
             {
               question: 'Apa saja layanan yang tersedia di aplikasi Sapawarga?',
@@ -90,8 +88,6 @@ export default {
           id: 2,
           name: 'SAMBARA',
           image: require('~/static/images/sapawarga/sapawarga-icon-sambara.svg'),
-          imageActive: require('~/static/images/sapawarga/sapawarga-icon-sambara-green.svg'),
-          alt: 'Sambara',
           questionAndAnswer: [
             {
               question: 'Apa itu layanan pembayaran Pajak Kendaraan Bermotor (Sambara)?',
@@ -134,8 +130,6 @@ export default {
           id: 3,
           name: 'SIJUARA',
           image: require('~/static/images/sapawarga/sapawarga-icon-bag.svg'),
-          imageActive: require('~/static/images/sapawarga/sapawarga-icon-bag-green.svg'),
-          alt: 'Sijuara',
           questionAndAnswer: [
             {
               question: 'Apa itu layanan pencarian lowongan kerja (Si Juara)?',
@@ -161,8 +155,6 @@ export default {
           id: 4,
           name: 'SAPAWARGA RW',
           image: require('~/static/images/sapawarga/sapawarga-icon-rw.svg'),
-          imageActive: require('~/static/images/sapawarga/sapawarga-icon-rw-green.svg'),
-          alt: 'Sapawarga RW',
           questionAndAnswer: [
             {
               question: 'Apa itu layanan Sapawarga RW?',

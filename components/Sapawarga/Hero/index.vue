@@ -48,7 +48,10 @@
       </div>
     </div>
     <div>
-      <img src="/images/sapawarga/sapawarga-app.svg" width="481" height="594" alt="sapawarga">
+      <picture>
+        <source width="481" height="594" srcset="/images/sapawarga/sapawarga-app.webp">
+        <img src="/images/sapawarga/sapawarga-app.png" width="481" height="594" alt="sapawarga">
+      </picture>
     </div>
   </section>
 </template>
@@ -82,7 +85,7 @@ export default {
   head () {
     return {
       link: [
-        { rel: 'preload', as: 'image', href: '/images/sapawarga/sapawarga-app.svg' }
+        { rel: 'preload', as: 'image', href: '/images/sapawarga/sapawarga-app.png' }
       ]
     }
   }

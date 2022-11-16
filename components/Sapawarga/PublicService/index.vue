@@ -9,7 +9,7 @@
         :key="item.id"
         class="group"
       >
-        <div class="group-hover:bg-green-600 p-6 border border-solid border-[#DDDDDD] rounded-[32px] w-[304px] h-[340px] lg:w-[424px] xl:w-[288px]">
+        <div class="group-hover:bg-green-600 relative overflow-hidden p-6 border border-solid border-[#DDDDDD] rounded-[32px] min-w-[304px] min-h-[356px] lg:min-w-[424px] xl:min-w-[288px]">
           <div class="flex flex-row gap-x-3 pb-4">
             <Icon :src="item.img" size="48" />
             <h2
@@ -37,6 +37,13 @@
               {{ feature.description }}
             </p>
           </div>
+          <BaseIcon
+            class="absolute bottom-[-60px] right-[-80px] md:bottom-[-50px] lg:bottom-[-40px] lg:right-[-45px] xl:right-[-95px]"
+            :class=" {'rotate-[30deg]' : item.id === 2 }"
+            :icon="item.imagePattern"
+            :size="165"
+            fill-color="#F9EDFF"
+          />
         </div>
       </div>
     </div>
@@ -52,6 +59,7 @@ export default {
         {
           id: 1,
           img: require('~/static/images/sapawarga/sapawarga-layanan-publik-digital.svg'),
+          imagePattern: require('~/static/images/sapawarga/sapawarga-card-pattern-one.svg'),
           title: 'Layanan Publik Digital',
           description: 'Satu pintu layanan publik yang ramah pengguna',
           features: [
@@ -72,6 +80,7 @@ export default {
         {
           id: 2,
           img: require('~/static/images/sapawarga/sapawarga-informasi.svg'),
+          imagePattern: require('~/static/images/sapawarga/sapawarga-card-pattern-two.svg'),
           title: 'Informasi Publik Terkini Pemprov Jabar',
           description: 'Berbagai informasi publik, program unggulan, dan berita aktual terpercaya seputar Jawa Barat.',
           features: [
@@ -88,6 +97,7 @@ export default {
         {
           id: 3,
           img: require('~/static/images/sapawarga/sapawarga-pembangunan.svg'),
+          imagePattern: require('~/static/images/sapawarga/sapawarga-card-pattern-three.svg'),
           title: 'Aspirasi Untuk Pembangunan Daerah Yang Lebih Baik',
           description: 'Berkontribusi dalam pembangunan Jawa Barat dengan libatkan diri dalam survei dan poling pemerintah.',
           features: [
@@ -100,6 +110,7 @@ export default {
         {
           id: 4,
           img: require('~/static/images/sapawarga/sapawarga-logo-sambara.svg'),
+          imagePattern: require('~/static/images/sapawarga/sapawarga-card-pattern-four.svg'),
           title: 'Sambara - Samsat Mobile Jawa Barat',
           description: 'Sambara, Samsat Mobile Jawa Barat merupakan sebuah bentuk komitmen Pemerintah Provinsi Jawa Barat bekerja sama dengan Tim Pembina Samsat Jawa Barat.',
           features: [
