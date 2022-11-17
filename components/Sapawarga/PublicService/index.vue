@@ -38,8 +38,11 @@
             </p>
           </div>
           <BaseIcon
-            class="absolute bottom-[-60px] right-[-80px] md:bottom-[-50px] lg:bottom-[-40px] lg:right-[-45px] xl:right-[-95px]"
-            :class=" {'rotate-[30deg]' : item.id === 2 }"
+            class="absolute bottom-[-40px] right-[-20px] lg:bottom-[-30px] lg:right-[-30px] xl:bottom-[-40px]"
+            :class="{
+              'rotate-[30deg]' : item.id === 2,
+              'right-[-80px] xl:right-[-95px]' : item.id === 4
+            }"
             :icon="item.imagePattern"
             :size="165"
             fill-color="#F9EDFF"
