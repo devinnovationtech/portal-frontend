@@ -1,10 +1,11 @@
 <template>
-  <section class="breadcrumb inline-flex">
-    <template v-for="(item, index) in breadcrumbItems">
+  <section class="breadcrumb">
+    <nav class="hidden md:inline-flex">
       <nuxt-link
+        v-for="(item, index) in breadcrumbItems"
         :key="index"
         :to="item.path"
-        class="breadcrumb__item font-roboto text-sm flex items-center max-w-[35ch] line-clamp-1 md:max-w-full md:line-clamp-none"
+        class="breadcrumb__item font-lato text-sm flex items-center max-w-[35ch] line-clamp-1 md:max-w-full md:line-clamp-none"
         :class="[
           item.active || isActive(item.path) ? 'font-bold text-white' : 'text-blue-400',
           { 'capitalize': capitalize }
@@ -12,7 +13,20 @@
       >
         {{ item.label }}
       </nuxt-link>
-    </template>
+    </nav>
+    <nav
+      :class="{
+        'md:hidden': true,
+        'capitalize': capitalize
+      }"
+    >
+      <nuxt-link :to="prevLink.path" class="font-lato font-bold text-sm text-blue-400 flex items-center">
+        <span class="w-6 h-6 flex items-center justify-start">
+          <Icon name="chevron-left" size="12px" />
+        </span>
+        {{ prevLink.label }}
+      </nuxt-link>
+    </nav>
   </section>
 </template>
 
@@ -83,6 +97,18 @@ export default {
       }
 
       return crumbs
+    },
+    prevLink () {
+      const secondToLastIndex = Array.isArray(this.breadcrumbItems) ? this.breadcrumbItems.length - 2 : -1
+
+      if (secondToLastIndex < 0) {
+        return {
+          path: '/',
+          label: 'beranda'
+        }
+      }
+
+      return this.breadcrumbItems[secondToLastIndex]
     }
   },
   methods: {
