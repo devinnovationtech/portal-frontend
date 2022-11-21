@@ -5,12 +5,12 @@
     v-on="$listeners"
   >
     <summary class="sapawarga-accordion__summary min-w-0 w-full flex justify-between">
-      <h3
+      <h4
         class="sapawarga-accordion__title mr-4 font-roboto text-base font-bold leading-7 text-blue-gray-800
         cursor-pointer transition-colors ease-brand duration-200"
       >
         {{ title }}
-      </h3>
+      </h4>
       <div class="sapawarga-accordion__icon--background flex-shrink-0 w-6 h-6 flex items-center justify-center ml-auto self-center cursor-pointer">
         <Icon
           name="chevron-right"

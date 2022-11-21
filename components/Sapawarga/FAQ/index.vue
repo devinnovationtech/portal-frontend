@@ -9,24 +9,21 @@
       </p>
       <div class="flex flex-col gap-10 lg:flex-row-reverse lg:justify-between">
         <div class="w-full bg-green-600 px-4 py-6 rounded-[16px] h-[320px] lg:max-w-[380px]">
-          <div
+          <button
             v-for="publicService in publicServices"
             :key="publicService.id"
+            class="w-full flex flex-row gap-4 items-center px-[30px] py-[22px] "
+            :class="{ 'bg-white rounded-[16px]' : publicService.id === clicked }"
+            @click="clickService(publicService.id)"
           >
-            <button
-              class="w-full flex flex-row gap-4 items-center px-[30px] py-[22px] "
-              :class="{ 'bg-white rounded-[16px]' : publicService.id === clicked }"
-              @click="clickService(publicService.id)"
+            <BaseIcon :icon="publicService.image" :fill-color="publicService.id === clicked ? '#16A75C' : '#C3E9D0'" :size="24" />
+            <p
+              class="font-roboto font-medium text-[14px] leading-[23px] "
+              :class="publicService.id === clicked ? 'text-green-600' : 'text-green-100'"
             >
-              <BaseIcon :icon="publicService.image" :fill-color="publicService.id === clicked ? '#16A75C' : '#C3E9D0'" :size="24" />
-              <p
-                class="font-roboto font-medium text-[14px] leading-[23px] "
-                :class="publicService.id === clicked ? 'text-green-600' : 'text-green-100'"
-              >
-                {{ publicService.name }}
-              </p>
-            </button>
-          </div>
+              {{ publicService.name }}
+            </p>
+          </button>
         </div>
         <div class="lg:w-full">
           <div
@@ -34,9 +31,9 @@
             :key="publicService.id"
           >
             <div v-show="publicService.id === clicked">
-              <h2 class="font-roboto text-center text-blue-gray-800 text-[28px] leading-[45px] font-semibold lg:text-left pb-6">
+              <h3 class="font-roboto text-center text-blue-gray-800 text-[28px] leading-[45px] font-semibold lg:text-left pb-6">
                 Layanan {{ publicService.name }}
-              </h2>
+              </h3>
               <SapawargaBaseAccordion
                 v-for="(question, index) in publicService.questionAndAnswer"
                 :key="index"

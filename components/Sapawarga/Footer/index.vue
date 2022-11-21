@@ -1,15 +1,15 @@
 <template>
-  <section class="mt-[186px] min-h-[950px] md:min-h-[680px] xl:min-h-[600px]">
-    <div class="footer--background-wave bg-[#F1FBFF] px-4 py-6 rounded-b-2xl md:py-8 md:px-6">
+  <footer class="mt-[186px] min-h-[950px] md:min-h-[680px] xl:min-h-[600px]">
+    <address class="not-italic footer--background-wave bg-[#F1FBFF] px-4 py-6 rounded-b-2xl md:py-8 md:px-6">
       <div class="bg-white p-6 mb-6 rounded-[32px] mx-auto max-w-[1030px] shadow-[0px_2px_32px_#0c4b8514] max-h-[422px] md:max-h-[308px] lg:flex lg:flex-row lg:justify-between lg:gap-4 lg:p-0 ">
         <div class="text-center flex flex-col gap-y-6 lg:w-full lg:text-left lg:py-10 lg:pl-[64px] xl:w-[631px]">
           <div>
             <h2 class="text-blue-gray-800 font-roboto font-bold text-[24px] leading-[38px] md:text-[32px] md:leading-[51px]">
               Ada pertanyaan seputar
             </h2>
-            <h1 class="text-green-600 font-roboto text-[24px] leading-[38px] font-bold md:text-[32px] md:leading-[51px]">
+            <h2 class="text-green-600 font-roboto text-[24px] leading-[38px] font-bold md:text-[32px] md:leading-[51px]">
               Aplikasi Sapawarga?
-            </h1>
+            </h2>
           </div>
           <div>
             <p class="text-blue-gray-800 font-roboto text-[16px] leading-[26px]">
@@ -29,7 +29,7 @@
       <div class="pt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 xl:gap-8">
         <div>
           <div class="pb-4 flex flex-row gap-x-4 items-center md:pb-5">
-            <img class="" width="22" height="40" src="/images/sapawarga/sapawarga-logo.svg" alt="Sapawarga">
+            <img width="22" height="40" src="/images/sapawarga/sapawarga-logo.svg" alt="Sapawarga">
             <h2 class="text-blue-gray-800 font-roboto font-extrabold text-[20px] leading-[24px]">
               SAPAWARGA
             </h2>
@@ -40,7 +40,7 @@
             urus layanan publik, tinggal klik.
           </p>
         </div>
-        <div v-for="item in publicServices" :key="item.id" class="pb-6">
+        <div v-for="item in publicServices" :key="item.id">
           <h2 class="text-blue-gray-800 font-roboto font-bold text-[22px] leading-[40px] pb-4 md:pb-5">
             {{ item.title }}
           </h2>
@@ -79,16 +79,14 @@
           </div>
         </div>
       </div>
-      <div>
-        <hr class="mx-4 border-1 border-[#F1FBFF]">
-        <div class="md:hidden">
-          <p class="text-blue-gray-800 font-lato text-sm font-medium leading-6 text-center py-6">
-            Copyright © {{ year }}. All Right Reserved
-          </p>
-        </div>
+      <div class="md:hidden pt-6">
+        <hr class="mx-4 border-[1px] border-blue-gray-50">
+        <p class="text-blue-gray-800 font-lato text-sm font-medium leading-6 text-center py-6">
+          Copyright © {{ year }}. All Right Reserved
+        </p>
       </div>
-    </div>
-  </section>
+    </address>
+  </footer>
 </template>
 
 <script>
