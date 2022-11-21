@@ -1,33 +1,23 @@
 <template>
-  <section class="mb-8 pt-4 md:px-6 lg:px-8 min-h-[988px] md:min-h-[662px] lg:min-h-[580px] xl:min-h-[420px]">
-    <div class="p-6 flex flex-col justify-center items-center">
-      <h2 class="font-roboto text-center text-blue-gray-800 text-[28px] leading-[45px] font-semibold pb-6 md:pb-[30px] md:text-[48px] md:leading-[77px] lg:hidden">
-        Serba
-        <span class="text-green-600 font-semibold">Terkoneksi</span>
-        Serba
-        <span class="text-green-600 font-semibold">Terdigitalisasi</span>
-      </h2>
-      <div class="md:flex md:flex-row-reverse md:gap-x-[30px] md:pb-10 xl:gap-x-[60px]">
-        <div class="pb-[15px] text-center md:pb-0 md:w-[310px] md:text-left lg:w-[443px] lg:text-left xl:w-[750px]">
-          <h2 class="hidden lg:font-roboto lg:text-blue-gray-800 lg:font-semibold lg:text-[48px] lg:leading-[77px] lg:block">
-            Serba
-            <span class="text-green-600 font-semibold">Terkoneksi</span>
-            Serba
-            <span class="text-green-600 font-semibold">Terdigitalisasi</span>
-          </h2>
-          <p class="font-lato text-blue-gray-800 font-normal text-[16px] leading-[26px] pb-6 md:py-5">
-            Keinginan bertransformasi menjadi provinsi digital mendorong  Pemerintah Daerah Provinsi Jawa Barat berkomitmen melalui sebuah inisiatif berupa aplikasi layanan publik, Sapawarga.
-          </p>
-          <p class="font-lato text-blue-gray-800 font-normal text-[16px] leading-[26px] pb-10 md:pb-0 lg:pb-[18px]">
-            Bukan hanya Ketua RW, <b>kini, aplikasi</b> Sapawarga siap diakses buat publik.
-            Warga dapat mengakses layanan publik digital, informasi umum hingga informasi Covid-19, dan serta berpartisipasi aktif dalam menyampaikan aspirasi secara mudah dan efisien melalui satu aplikasi.
-          </p>
-        </div>
-        <picture class="text-center pb-4 md:w-[350px] lg:w-[396px] md:pb-0">
-          <source width="420" height="416" srcset="/images/sapawarga/sapawarga-digital.webp">
-          <img class="w-full lg:h-full" src="/images/sapawarga/sapawarga-digital.png" width="420" height="416" alt="sapawarga">
-        </picture>
-      </div>
-    </div>
+  <section class="mb-8 pt-4 grid grid-cols-1 min-h-[792px] md:min-h-[594px] lg:min-h-[404px] xl:min-h-[420px] gap-4 md:gap-[30px] md:grid-cols-[350px,1fr] md:grid-rows-1 md:px-6 lg:px-8 lg:gap-y-5 lg:grid-cols-[390px,1fr] xl:grid-cols-[396px_1fr] xl:grid-rows-[154px,auto]">
+    <h2 class="font-roboto text-center text-blue-gray-800 text-[28px] leading-[45px] font-semibold md:text-[48px] md:leading-[77px] md:col-span-2 md:row-span-1 lg:col-start-2 lg:col-end-2 lg:text-left xl:h-[154px]">
+      Serba
+      <span class="text-green-600 font-semibold">Terkoneksi</span>
+      Serba
+      <span class="text-green-600 font-semibold">Terdigitalisasi</span>
+    </h2>
+    <p class="px-4 pb-10 font-lato text-blue-gray-800 font-normal text-center text-[16px] leading-[26px] md:p-0 md:text-left md:col-start-2 md:col-end-3 xl:h-full">
+      <span class="block pb-5">
+        Keinginan bertransformasi menjadi provinsi digital mendorong Pemerintah Daerah Provinsi Jawa Barat berkomitmen melalui sebuah inisiatif berupa aplikasi layanan publik, Sapawarga.
+      </span>
+      <span>
+        Bukan hanya Ketua RW, <b>kini, aplikasi</b> Sapawarga siap diakses buat publik.
+        Warga dapat mengakses layanan publik digital, informasi umum hingga informasi Covid-19, dan serta berpartisipasi aktif dalam menyampaikan aspirasi secara mudah dan efisien melalui satu aplikasi.
+      </span>
+    </p>
+    <picture class="text-center md:w-[350px] md:row-start-2 md:row-end-3 lg:row-start-1 lg:w-[396px]">
+      <source width="420" height="416" srcset="/images/sapawarga/sapawarga-digital.webp">
+      <img class="w-full lg:h-full" src="/images/sapawarga/sapawarga-digital.png" width="420" height="416" alt="sapawarga">
+    </picture>
   </section>
 </template>
