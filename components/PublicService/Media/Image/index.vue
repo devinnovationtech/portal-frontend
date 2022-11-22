@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative h-[150px] sm:h-[170px] lg:h-[183px] xl:h-[150px] min-w-[224px] xl:min-w-[256px] sm:w-full xl:w-[256px]
+    class="relative h-[150px] sm:min-h-[170px] lg:min-h-[183px] xl:min-h-0 xl:h-[150px] min-w-[224px] xl:min-w-[256px] sm:w-full xl:w-[256px]
     flex flex-col gap-6 group rounded-xl overflow-hidden group"
   >
     <!-- Image Overlay -->

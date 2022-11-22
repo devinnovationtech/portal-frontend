@@ -16,7 +16,7 @@
     </section>
 
     <!-- Thumbnail Pictures -->
-    <section v-if="hasImageList" class="flex flex-row sm:grid sm:grid-cols-1 xl:flex xl:flex-row gap-4 md:gap-6 sm:h-[557px] lg:h-[597px] xl:h-auto sm:order-last overflow-auto xl:overflow-hidden">
+    <section v-if="hasImageList" class="flex sm:flex-col xl:flex-row gap-4 md:gap-6 sm:h-[557px] lg:h-[597px] xl:h-auto sm:order-last overflow-auto xl:overflow-hidden">
       <PublicServiceMediaImageSwiper
         :images="imageList"
         class="hidden xl:block w-full"
