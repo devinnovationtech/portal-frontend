@@ -19,15 +19,21 @@ export const heroImages = [
 export const HOMEPAGE_BANNERS = [
   {
     id: 1,
-    title: 'Mall Pelayanan Publik',
-    image: '/images/banners/homepage/banner-mpp.webp',
-    link: 'https://dpmptsp.jabarprov.go.id/mppdigital/'
+    title: 'Sapawarga',
+    image: '/images/banners/homepage/banner-sapawarga.webp',
+    link: 'https://sapawarga.jabarprov.go.id/'
   },
   {
     id: 2,
     title: 'G20',
     image: '/images/banners/homepage/g20-banner.webp',
     link: 'https://www.g20.org/'
+  },
+  {
+    id: 3,
+    title: 'Mall Pelayanan Publik',
+    image: '/images/banners/homepage/banner-mpp.webp',
+    link: 'https://dpmptsp.jabarprov.go.id/mppdigital/'
   }
 ]
 
