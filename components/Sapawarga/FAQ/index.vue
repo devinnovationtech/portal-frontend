@@ -1,5 +1,5 @@
 <template>
-  <section class="mb-8 pt-4 min-h-[851px] md:min-h-[860px] lg:min-h-[628px] xl:min-h-[635px]">
+  <section class="min-h-fit">
     <div class="flex flex-col gap-6 justify-center">
       <h2 class="font-roboto text-center text-blue-gray-800 text-[28px] leading-[45px] font-semibold md:text-[40px] md:leading-[64px] lg:text-[44px] lg:leading-[70px] lg:px-[80px] lg:text-left lg:self-center xl:text-[48px] xl:leading-[77px] xl:px-10">
         Frequently Asked <span class="text-green-600">Question</span>

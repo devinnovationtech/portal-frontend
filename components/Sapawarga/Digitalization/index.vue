@@ -1,5 +1,5 @@
 <template>
-  <section class="mb-8 pt-4 grid grid-cols-1 min-h-[792px] md:min-h-[594px] lg:min-h-[404px] xl:min-h-[420px] gap-4 md:gap-[30px] md:grid-cols-[350px,1fr] md:grid-rows-1 md:px-6 lg:px-8 lg:gap-y-5 lg:grid-cols-[390px,1fr] xl:grid-cols-[396px_1fr] xl:grid-rows-[154px,auto]">
+  <section class="grid grid-cols-1 min-h-[792px] md:min-h-[594px] lg:min-h-[404px] xl:min-h-[420px] gap-4 md:gap-[30px] md:grid-cols-[350px,1fr] md:grid-rows-1 md:px-6 lg:px-8 lg:gap-y-5 lg:grid-cols-[390px,1fr] xl:grid-cols-[396px_1fr] xl:grid-rows-[154px,auto]">
     <h2 class="font-roboto text-center text-blue-gray-800 text-[28px] leading-[45px] font-semibold md:text-[48px] md:leading-[77px] md:col-span-2 md:row-span-1 lg:col-start-2 lg:col-end-2 lg:text-left xl:h-[154px]">
       Serba
       <span class="text-green-600 font-semibold">Terkoneksi</span>

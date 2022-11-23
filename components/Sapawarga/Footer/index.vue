@@ -1,5 +1,5 @@
 <template>
-  <footer class="mt-[186px] min-h-[950px] md:min-h-[680px] xl:min-h-[600px]">
+  <footer class="mt-[175px] min-h-[950px] md:min-h-[680px] xl:min-h-[600px]">
     <address class="not-italic footer--background-wave bg-[#F1FBFF] px-4 py-6 rounded-b-2xl md:py-8 md:px-6">
       <div class="bg-white p-6 mb-6 rounded-[32px] mx-auto max-w-[1030px] shadow-[0px_2px_32px_#0c4b8514] max-h-[422px] md:max-h-[308px] lg:flex lg:flex-row lg:justify-between lg:gap-4 lg:p-0 ">
         <div class="text-center flex flex-col gap-y-6 lg:w-full lg:text-left lg:py-10 lg:pl-[64px] xl:w-[631px]">

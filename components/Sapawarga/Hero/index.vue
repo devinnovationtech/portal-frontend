@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-[#F1FBFF] rounded-2xl grid grid-cols-1 justify-center items-center mb-8 pt-[72px] md:px-6 md:pt-6 lg:px-8 xl:grid-cols-2 xl:gap-x-8 min-h-[840px] md:min-h-[1012px] xl:min-h-[617px]">
+  <header class="bg-[#F1FBFF] rounded-2xl grid grid-cols-1 justify-center items-center pt-[72px] md:px-6 md:pt-6 lg:px-8 xl:grid-cols-2 xl:gap-x-8 min-h-[840px] md:min-h-[1012px] xl:min-h-[617px]">
     <div class="xl:max-w-[550px] xl:self-center text-center xl:text-left">
       <h1 class=" font-roboto text-[32px] leading-[42px] font-extrabold text-blu-gray-800 pb-4 md:text-[52px] md:leading-[70px]">
         Satu Aplikasi Untuk

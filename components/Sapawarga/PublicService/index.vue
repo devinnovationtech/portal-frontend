@@ -1,15 +1,15 @@
 <template>
-  <section class="mb-8 pt-4 min-h-[1594px] md:min-h-[930px] xl:min-h-[573px]">
+  <section class="pb-6 min-h-[1594px] md:pb-10 md:min-h-[688px] xl:min-h-[458px]">
     <h2 class="font-roboto text-center text-blue-gray-800 text-[28px] leading-[45px] font-semibold md:text-[44px] md:leading-[70px] lg:px-[80px] xl:px-10">
       Bikin <span class="text-green-600">Ringan</span> Segala <span class="text-green-600">Urusan</span>
     </h2>
-    <div class="pt-8 grid grid-cols-1 gap-[30px] justify-items-center md:grid-cols-2 lg:px-6 xl:px-0 xl:pb-[50px] xl:grid-cols-4">
+    <div class="pt-8 grid grid-cols-1 gap-[30px] justify-items-center md:grid-cols-2 lg:px-6 xl:pt-[56px] xl:px-0 xl:grid-cols-4">
       <div
         v-for="item in publicServices"
         :key="item.id"
         class="group"
       >
-        <div class="group-hover:bg-green-600 relative overflow-hidden p-6 border border-solid border-[#DDDDDD] rounded-[32px] min-w-[304px] min-h-[356px] lg:min-w-[424px] xl:min-w-[288px]">
+        <div class="group-hover:bg-green-600 relative overflow-hidden p-6 border border-solid border-[#DDDDDD] rounded-[32px] min-w-[272px] max-w-[304px] min-h-[356px] lg:p-5 lg:min-w-[424px] xl:min-w-[288px]">
           <div class="flex flex-row gap-x-3 pb-4">
             <Icon :src="item.img" size="48" />
             <h2
@@ -20,7 +20,7 @@
           </div>
           <div class="mb-6 h-[70px] w-full line-clamp-3">
             <p
-              class="font-roboto  text-[14px] leading-[23px] font-normal text-blue-gray-500 group-hover:text-white"
+              class="font-roboto text-[14px] leading-[23px] font-normal text-blue-gray-500 group-hover:text-white"
             >
               {{ item.description }}
             </p>
@@ -41,7 +41,7 @@
             class="absolute bottom-[-40px] right-[-20px] lg:bottom-[-30px] lg:right-[-30px] xl:bottom-[-40px]"
             :class="{
               'rotate-[30deg]' : item.id === 2,
-              'right-[-80px] xl:right-[-95px]' : item.id === 4
+              'right-[-100px] sm:right-[-80px] xl:right-[-95px]' : item.id === 4
             }"
             :icon="item.imagePattern"
             :size="165"
