@@ -7,12 +7,13 @@
     </Jumbotron>
     <section class="w-full bg-gray-200">
       <BaseContainer class="relative -top-24 z-20">
-        <div class="p-3 md:p-4 lg:py-8 lg:px-10 rounded-xl bg-white grid grid-cols-1 gap-6">
+        <div class="min-h-[377px] p-3 md:p-4 lg:py-8 lg:px-10 rounded-xl bg-white flex flex-col gap-6">
           <InputSearch
             v-model="searchValue"
             placeholder="Cari layanan"
             small
             :clear="false"
+            class="h-[38px]"
           />
           <BaseListCounter
             :title="'Total Layanan di kategori ini'"
@@ -20,7 +21,7 @@
             :counter="meta.static_count || '-'"
             :loading="loading"
             :last-update="meta.last_updated || '-'"
-            class="!w-full sm:!w-[294px]"
+            class="!w-full sm:!w-[294px] h-[61px]"
           />
           <PublicServiceCategory
             :service-list="serviceList"
@@ -56,6 +57,7 @@ export default {
     }
     await this.getServices(params)
   },
+  fetchDelay: 1000,
   computed: {
     breadcrumbItems () {
       return [

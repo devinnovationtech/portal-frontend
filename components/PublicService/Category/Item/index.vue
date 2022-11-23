@@ -13,7 +13,7 @@
     </p>
     <Button type="button" variant="tertiary-paddingless" class="font-lato self-start" tabindex="-1">
       Selengkapnya
-      <Icon name="arrow-right" size="20px" />
+      <Icon name="arrow-right" size="15px" />
     </Button>
   </NuxtLink>
 </template>
