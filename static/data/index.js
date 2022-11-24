@@ -26,7 +26,7 @@ export const HOMEPAGE_BANNERS = [
   {
     id: 2,
     title: 'G20',
-    image: '/images/banners/homepage/g20-banner.webp',
+    image: '/images/banners/homepage/banner-g20.webp',
     link: 'https://www.g20.org/'
   },
   {
