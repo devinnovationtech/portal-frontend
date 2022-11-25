@@ -25,13 +25,16 @@
               rel="noopener"
               :title="banner.title"
             >
-              <img
-                :src="banner.image"
-                :alt="banner.title"
-                class="w-full h-full object-cover bg-gray-200"
-                width="360"
-                height="120"
-              >
+              <picture>
+                <source :srcset="banner.image" type="image/webp">
+                <img
+                  :src="banner.fallbackImage"
+                  :alt="banner.title"
+                  class="w-full h-full object-cover bg-gray-200"
+                  width="360"
+                  height="120"
+                >
+              </picture>
             </Link>
           </div>
         </swiper-slide>

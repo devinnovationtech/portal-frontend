@@ -21,18 +21,21 @@ export const HOMEPAGE_BANNERS = [
     id: 1,
     title: 'Sapawarga',
     image: '/images/banners/homepage/banner-sapawarga.webp',
+    fallbackImage: '/images/banners/homepage/banner-sapawarga.jpg',
     link: 'https://sapawarga.jabarprov.go.id/'
   },
   {
     id: 2,
     title: 'G20',
     image: '/images/banners/homepage/banner-g20.webp',
+    fallbackImage: '/images/banners/homepage/banner-g20.jpg',
     link: 'https://www.g20.org/'
   },
   {
     id: 3,
     title: 'Mall Pelayanan Publik',
     image: '/images/banners/homepage/banner-mpp.webp',
+    fallbackImage: '/images/banners/homepage/banner-mpp.jpg',
     link: 'https://dpmptsp.jabarprov.go.id/mppdigital/'
   }
 ]
