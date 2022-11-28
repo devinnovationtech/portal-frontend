@@ -258,7 +258,7 @@ export const navigationMenu = [
       {
         id: 6,
         title: 'Sapawarga',
-        description: 'Akses dan unduh dokumen resmi yang dirilis pemerintah Jawa barat',
+        description: 'Aplikasi layanan publik digital di Jawa Barat yang terintegrasi',
         icon: '/icons/navigation/sapawarga.svg',
         link: '/sapawarga'
       }
