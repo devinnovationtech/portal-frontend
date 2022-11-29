@@ -14,17 +14,19 @@
         </button>
       </div>
     </template>
-    <div class="flex min-w-0 w-full justify-center md:overflow-y-auto">
+    <div
+      class="flex justify-center min-w-full sm:w-[550px] lg:w-[800px] sm:min-h-[470px] max-h-full overflow-y-auto"
+    >
       <Link :link="contentLink">
-        <picture class="md:max-w-[550px] xl:max-w-full">
+        <picture>
           <source
-            media="(min-width:1200px)"
+            media="(min-width:1025px)"
             srcset="/images/campaign/donasi-cianjur-dekstop.jpg"
             width="800"
             height="470"
           >
           <source
-            media="(min-width:465px)"
+            media="(min-width:450px)"
             srcset="/images/campaign/donasi-cianjur-tablet.jpg"
             width="550"
             height="976"
@@ -32,7 +34,7 @@
           <img
             src="/images/campaign/donasi-cianjur-mobile.jpg"
             alt="donasi bencana cianjur"
-            class="max-w-full h-auto"
+            class="w-auto h-auto object-contain"
             width="390"
             height="627"
           >
