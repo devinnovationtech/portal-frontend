@@ -433,7 +433,7 @@ export const featuredProgramMenu = [
     title: 'Sapawarga',
     description: 'Sapawarga adalah aplikasi layanan publik digital terintegrasi di Jawa Barat yang menyediakan berbagai kebutuhan masyarakat dalam satu aplikasi.',
     icon: '/icons/program-unggulan/sapawarga.svg',
-    link: 'https://sapawarga.jabarprov.go.id'
+    link: 'https://sapawarga.digitalservice.id/'
   },
   {
     id: 2,
