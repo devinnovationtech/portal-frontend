@@ -15,7 +15,7 @@
       </div>
     </template>
     <div
-      class="flex justify-center min-w-full sm:w-[550px] lg:w-[800px] sm:min-h-[470px] max-h-full overflow-y-auto"
+      class="flex justify-center min-w-full sm:w-[550px] lg:w-[800px] max-h-full overflow-y-auto"
     >
       <Link :link="contentLink">
         <picture>

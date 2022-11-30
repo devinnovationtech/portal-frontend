@@ -18,9 +18,12 @@ export default {
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
       { rel: 'manifest', href: '/site.webmanifest' },
       // Preload Images
+      { rel: 'preload', as: 'image', href: '/logo-mobile.svg' },
       { rel: 'preload', as: 'image', href: '/images/banners/1.webp' },
-      { rel: 'preload', as: 'image', href: '/logo-mobile.png' },
-      { rel: 'preload', as: 'image', href: '/images/hero.svg' }
+      { rel: 'preload', as: 'image', href: '/images/hero.svg' },
+      { rel: 'preload', as: 'image', href: '/images/campaign/donasi-cianjur-mobile.jpg', media: '(max-width: 449px)' },
+      { rel: 'preload', as: 'image', href: '/images/campaign/donasi-cianjur-tablet.jpg', media: '(min-width: 450px) and (max-width: 1024px)' },
+      { rel: 'preload', as: 'image', href: '/images/campaign/donasi-cianjur-dekstop.jpg', media: '(min-width: 1025px)' }
     ]
   },
 
