@@ -22,7 +22,7 @@ export const HOMEPAGE_BANNERS = [
     title: 'Sapawarga',
     image: '/images/banners/homepage/banner-sapawarga.webp',
     fallbackImage: '/images/banners/homepage/banner-sapawarga.jpg',
-    link: 'https://sapawarga.jabarprov.go.id/'
+    link: 'https://sapawarga.digitalservice.id/'
   },
   {
     id: 2,
