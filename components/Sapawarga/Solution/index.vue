@@ -1,9 +1,9 @@
-s<template>
-  <section class="mb-8 pt-4 min-h-[1500px] md:min-h-[1230px] lg:min-h-[1346px] xl:min-h-[895px]">
-    <h2 class="font-roboto text-center text-blue-gray-800 text-[28px] leading-[45px] font-semibold pb-[44px] md:text-[40px] md:leading-[64px] lg:text-[44px] lg:leading-[70px] xl:text-[48px] xl:leading-[77px]">
+<template>
+  <section class="min-h-[1452px] md:pb-10 md:min-h-[1230px] lg:min-h-[1241px] xl:pb-0 xl:min-h-[780px]">
+    <h2 class="font-roboto text-center text-blue-gray-800 text-[28px] leading-[45px] font-semibold pb-[44px] md:pb-[56px] md:text-[40px] md:leading-[64px] lg:text-[44px] lg:leading-[70px] xl:text-[48px] xl:leading-[77px]">
       Satu <span class="text-green-600">Solusi,</span> Satu <span class="text-green-600">Aplikasi</span>
     </h2>
-    <div class="flex flex-col items-center xl:flex-row-reverse xl:pt-[100px] xl:pb-[67px]">
+    <div class="flex flex-col items-center xl:flex-row-reverse">
       <div class="self-start grid grid-cols-1 md:grid-cols-2 md:gap-8 xl:w-[706px]">
         <div
           v-for="item in publicServices"
@@ -23,7 +23,7 @@ s<template>
           </div>
         </div>
       </div>
-      <picture class="pt-[25px] lg:pt-[38px] xl:pt-0">
+      <picture class="pt-[25px] pb-[41px] md:py-[35px] lg:pb-0 lg:pt-[38px] xl:pt-0">
         <source width="413" height="532" srcset="/images/sapawarga/sapawarga-app-background.webp">
         <img class="max-w-full max-h-full" src="/images/sapawarga/sapawarga-app-background.png" width="413" height="532" alt="sapawarga">
       </picture>

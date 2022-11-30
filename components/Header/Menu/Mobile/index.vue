@@ -7,23 +7,21 @@
       </Link> -->
       <button
         class="w-7 h-7 flex items-center justify-center"
-        aria-label="Navigasi Menu"
         @click="toggleSidebar"
       >
-        <Icon
-          v-if="open"
-          key="sidebar-close"
-          src="/icons/close.svg"
-          size="24"
-          alt="Tutup Menu"
+        <BaseIcon
+          v-show="open"
+          icon="icons/close.svg"
+          :size="24"
+          fill-color="white"
         />
-        <Icon
-          v-else
-          key="sidebar-open"
-          src="/icons/hamburger.svg"
-          size="24"
-          alt="Buka Menu"
+        <BaseIcon
+          v-show="!open"
+          icon="icons/hamburger.svg"
+          :size="24"
+          fill-color="white"
         />
+        <span class="sr-only">{{ open ? 'Tutup Menu' : 'Buka Menu' }}</span>
       </button>
     </div>
     <slot />

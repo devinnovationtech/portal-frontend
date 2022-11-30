@@ -14,31 +14,38 @@
         </button>
       </div>
     </template>
-    <div class="flex min-w-0 w-full justify-center">
-      <figure class="md:w-[550px] lg:w-[700px]">
-        <img
-          v-if="device.isMobile"
-          src="/images/campaign/bian-mobile.jpg"
-          alt="Informasi Bulan Imunisasi Anak Nasional 2022"
-          width="328"
-          height="576"
-          class="w-full h-full"
-        >
-        <img
-          v-else
-          src="/images/campaign/bian-dekstop.jpg"
-          alt="Informasi Bulan Imunisasi Anak Nasional 2022"
-          width="700"
-          height="453"
-          class="w-full h-full"
-        >
-      </figure>
+    <div
+      class="flex justify-center min-w-full sm:w-[550px] lg:w-[800px] max-h-full overflow-y-auto"
+    >
+      <Link :link="contentLink">
+        <picture>
+          <source
+            media="(min-width:1025px)"
+            srcset="/images/campaign/donasi-cianjur-dekstop.jpg"
+            width="800"
+            height="470"
+          >
+          <source
+            media="(min-width:450px)"
+            srcset="/images/campaign/donasi-cianjur-tablet.jpg"
+            width="550"
+            height="976"
+          >
+          <img
+            src="/images/campaign/donasi-cianjur-mobile.jpg"
+            alt="donasi bencana cianjur"
+            class="w-auto h-auto object-contain"
+            width="390"
+            height="627"
+          >
+        </picture>
+      </Link>
     </div>
     <template #footer>
       <div class="bg-gray-50 flex w-full items-center justify-center p-4 z-[100] mt-auto">
         <Link :link="contentLink">
           <Button type="button" class="w-full md:w-auto !justify-center">
-            Lihat Info Lengkap
+            Kunjungi Link
           </Button>
         </Link>
       </div>
@@ -58,7 +65,7 @@ export default {
   data () {
     return {
       isOpen: false,
-      contentLink: 'https://youtu.be/i6vnjBsJs2A?t=594'
+      contentLink: 'https://kitabisa.com/campaign/jqruntukcianjur'
     }
   },
   computed: {

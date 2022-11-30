@@ -1,7 +1,7 @@
 <template>
   <span
     :style="computedStyle"
-    aria-label="hidden"
+    aria-hidden="true"
   />
 </template>
 

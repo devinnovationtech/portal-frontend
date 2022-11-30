@@ -19,15 +19,24 @@ export const heroImages = [
 export const HOMEPAGE_BANNERS = [
   {
     id: 1,
-    title: 'Mall Pelayanan Publik',
-    image: '/images/banners/homepage/banner-mpp.webp',
-    link: 'https://dpmptsp.jabarprov.go.id/mppdigital/'
+    title: 'Sapawarga',
+    image: '/images/banners/homepage/banner-sapawarga.webp',
+    fallbackImage: '/images/banners/homepage/banner-sapawarga.jpg',
+    link: 'https://sapawarga.digitalservice.id/'
   },
   {
     id: 2,
     title: 'G20',
-    image: '/images/banners/homepage/g20-banner.webp',
+    image: '/images/banners/homepage/banner-g20.webp',
+    fallbackImage: '/images/banners/homepage/banner-g20.jpg',
     link: 'https://www.g20.org/'
+  },
+  {
+    id: 3,
+    title: 'Mall Pelayanan Publik',
+    image: '/images/banners/homepage/banner-mpp.webp',
+    fallbackImage: '/images/banners/homepage/banner-mpp.jpg',
+    link: 'https://dpmptsp.jabarprov.go.id/mppdigital/'
   }
 ]
 
@@ -249,7 +258,7 @@ export const navigationMenu = [
       {
         id: 6,
         title: 'Sapawarga',
-        description: 'Akses dan unduh dokumen resmi yang dirilis pemerintah Jawa barat',
+        description: 'Aplikasi layanan publik digital di Jawa Barat yang terintegrasi',
         icon: '/icons/navigation/sapawarga.svg',
         link: '/sapawarga'
       }
@@ -422,9 +431,9 @@ export const featuredProgramMenu = [
   {
     id: 1,
     title: 'Sapawarga',
-    description: 'Sapawarga bantu warga salurkan aspirasi, dapatkan informasi penting, dan akses layanan publik secara digital.',
+    description: 'Sapawarga adalah aplikasi layanan publik digital terintegrasi di Jawa Barat yang menyediakan berbagai kebutuhan masyarakat dalam satu aplikasi.',
     icon: '/icons/program-unggulan/sapawarga.svg',
-    link: 'https://digitalservice.jabarprov.go.id/sapawarga'
+    link: 'https://sapawarga.digitalservice.id/'
   },
   {
     id: 2,

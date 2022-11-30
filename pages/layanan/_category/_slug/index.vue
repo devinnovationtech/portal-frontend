@@ -11,8 +11,8 @@
     </Jumbotron>
 
     <section class="w-full bg-gray-200">
-      <BaseContainer class="min-h-screen relative -top-24 z-20">
-        <div v-if="!$fetchState.pending" class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
+      <BaseContainer class="relative -top-24 z-20">
+        <div v-if="!$fetchState.pending" class="min-h-screen p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
           <PublicServiceHeader
             :logo="logo"
             :name="name"
@@ -121,6 +121,7 @@ export default {
       this.$nuxt.error({ statusCode: e.response.status, message: e.response?.data?.message })
     }
   },
+  fetchDelay: 1000,
   computed: {
     breadcrumbItems () {
       return [

@@ -1,5 +1,5 @@
 <template>
-  <section class="mb-8 pt-4 min-h-[851px] md:min-h-[860px] lg:min-h-[628px] xl:min-h-[635px]">
+  <section class="min-h-fit">
     <div class="flex flex-col gap-6 justify-center">
       <h2 class="font-roboto text-center text-blue-gray-800 text-[28px] leading-[45px] font-semibold md:text-[40px] md:leading-[64px] lg:text-[44px] lg:leading-[70px] lg:px-[80px] lg:text-left lg:self-center xl:text-[48px] xl:leading-[77px] xl:px-10">
         Frequently Asked <span class="text-green-600">Question</span>
@@ -9,24 +9,21 @@
       </p>
       <div class="flex flex-col gap-10 lg:flex-row-reverse lg:justify-between">
         <div class="w-full bg-green-600 px-4 py-6 rounded-[16px] h-[320px] lg:max-w-[380px]">
-          <div
+          <button
             v-for="publicService in publicServices"
             :key="publicService.id"
+            class="w-full flex flex-row gap-4 items-center px-[30px] py-[22px] "
+            :class="{ 'bg-white rounded-[16px]' : publicService.id === clicked }"
+            @click="clickService(publicService.id)"
           >
-            <button
-              class="w-full flex flex-row gap-4 items-center px-[30px] py-[22px] "
-              :class="{ 'bg-white rounded-[16px]' : publicService.id === clicked }"
-              @click="clickService(publicService.id)"
+            <BaseIcon :icon="publicService.image" :fill-color="publicService.id === clicked ? '#16A75C' : '#C3E9D0'" :size="24" />
+            <p
+              class="font-roboto font-medium text-[14px] leading-[23px] "
+              :class="publicService.id === clicked ? 'text-green-600' : 'text-green-100'"
             >
-              <Icon :src="publicService.id === clicked ? publicService.imageActive : publicService.image " :alt="publicService.alt" width="24" height="24" />
-              <p
-                class="font-roboto font-medium text-[14px] leading-[23px] "
-                :class="publicService.id === clicked ? 'text-green-600' : 'text-green-100'"
-              >
-                {{ publicService.name }}
-              </p>
-            </button>
-          </div>
+              {{ publicService.name }}
+            </p>
+          </button>
         </div>
         <div class="lg:w-full">
           <div
@@ -34,9 +31,9 @@
             :key="publicService.id"
           >
             <div v-show="publicService.id === clicked">
-              <h2 class="font-roboto text-center text-blue-gray-800 text-[28px] leading-[45px] font-semibold lg:text-left pb-6">
+              <h3 class="font-roboto text-center text-blue-gray-800 text-[28px] leading-[45px] font-semibold lg:text-left pb-6">
                 Layanan {{ publicService.name }}
-              </h2>
+              </h3>
               <SapawargaBaseAccordion
                 v-for="(question, index) in publicService.questionAndAnswer"
                 :key="index"
@@ -63,8 +60,6 @@ export default {
           id: 1,
           name: 'SAPAWARGA',
           image: require('~/static/images/sapawarga/sapawarga-icon-person.svg'),
-          imageActive: require('~/static/images/sapawarga/sapawarga-icon-person-green.svg'),
-          alt: 'Sapawarga',
           questionAndAnswer: [
             {
               question: 'Apa saja layanan yang tersedia di aplikasi Sapawarga?',
@@ -90,8 +85,6 @@ export default {
           id: 2,
           name: 'SAMBARA',
           image: require('~/static/images/sapawarga/sapawarga-icon-sambara.svg'),
-          imageActive: require('~/static/images/sapawarga/sapawarga-icon-sambara-green.svg'),
-          alt: 'Sambara',
           questionAndAnswer: [
             {
               question: 'Apa itu layanan pembayaran Pajak Kendaraan Bermotor (Sambara)?',
@@ -134,8 +127,6 @@ export default {
           id: 3,
           name: 'SIJUARA',
           image: require('~/static/images/sapawarga/sapawarga-icon-bag.svg'),
-          imageActive: require('~/static/images/sapawarga/sapawarga-icon-bag-green.svg'),
-          alt: 'Sijuara',
           questionAndAnswer: [
             {
               question: 'Apa itu layanan pencarian lowongan kerja (Si Juara)?',
@@ -161,8 +152,6 @@ export default {
           id: 4,
           name: 'SAPAWARGA RW',
           image: require('~/static/images/sapawarga/sapawarga-icon-rw.svg'),
-          imageActive: require('~/static/images/sapawarga/sapawarga-icon-rw-green.svg'),
-          alt: 'Sapawarga RW',
           questionAndAnswer: [
             {
               question: 'Apa itu layanan Sapawarga RW?',
