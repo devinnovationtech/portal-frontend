@@ -106,7 +106,7 @@ export default {
         return highlight[0]
       }
 
-      return this.item?.excerpt || '-'
+      return this.item?.content || '-'
     },
     date () {
       if (this.item?.published_at) {
