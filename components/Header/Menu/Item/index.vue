@@ -6,9 +6,12 @@
         :style="{ backgroundImage: `url('/images/menu.svg')`, backgroundPosition: '100% 100%' }"
       >
         <div class="flex flex-col gap-8 flex-grow">
-          <Link :link="link" class="text-white font-roboto font-medium text-3xl leading-10">
+          <Link v-if="link" :link="link" class="text-white font-roboto font-medium text-3xl leading-10">
             {{ title }}
           </Link>
+          <h1 v-else class="text-white font-roboto font-medium text-3xl leading-10">
+            {{ title }}
+          </h1>
           <nav
             class="grid grid-cols-3 grid-rows-2 gap-y-6 gap-x-10"
             :class="{ 'grid-flow-col': items.length <= 3}"
@@ -25,11 +28,12 @@
                   width="52"
                   height="52"
                   :alt="item.title"
+                  aria-hidden="true"
                 >
                 <div class="ml-4">
-                  <h4 class="text-lg font-bold text-gray-50 mb-1">
+                  <h2 class="text-lg font-bold text-gray-50 mb-1">
                     {{ item.title }}
-                  </h4>
+                  </h2>
                   <p class="text-sm text-gray-50 font-roboto opacity-80">
                     {{ item.description }}
                   </p>
@@ -38,9 +42,13 @@
             </li>
           </nav>
         </div>
-        <div class="cursor-pointer" tabindex="0" @click.stop="$emit('close')">
-          <Icon name="times" size="24px" class="text-white" />
-        </div>
+        <button title="Tutup Menu Navigasi" @click.stop="$emit('close')">
+          <Icon
+            name="times"
+            size="24px"
+            class="text-white"
+          />
+        </button>
       </div>
     </BaseContainer>
   </section>
