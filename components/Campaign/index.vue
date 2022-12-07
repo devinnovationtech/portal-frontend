@@ -6,18 +6,26 @@
     <template #header>
       <div v-if="!device.isMobile" class="flex py-3 px-4 w-full items-center justify-end">
         <button
+          ref="campaignModalCloseButton"
           class="h-10 w-10 bg-green-600 flex items-center justify-center rounded-full
         hover:bg-green-700 transition-colors ease-brand duration-250"
+          tabindex="1"
+          aria-label="Tutup Pop Up"
           @click="closeModal"
         >
-          <Icon name="times" size="16px" class="text-white" />
+          <Icon
+            name="times"
+            size="16px"
+            class="text-white"
+            aria-hidden="true"
+          />
         </button>
       </div>
     </template>
     <div
       class="flex justify-center min-w-full sm:w-[550px] lg:w-[800px] max-h-full overflow-y-auto"
     >
-      <Link :link="contentLink">
+      <Link :link="contentLink" tabindex="2">
         <picture>
           <source
             media="(min-width:1025px)"
@@ -43,8 +51,12 @@
     </div>
     <template #footer>
       <div class="bg-gray-50 flex w-full items-center justify-center p-4 z-[100] mt-auto">
-        <Link :link="contentLink">
-          <Button type="button" class="w-full md:w-auto !justify-center">
+        <Link :link="contentLink" tabindex="3">
+          <Button
+            type="button"
+            class="w-full md:w-auto !justify-center"
+            tabindex="-1"
+          >
             Kunjungi Link
           </Button>
         </Link>
@@ -76,6 +88,13 @@ export default {
   mounted () {
     setTimeout(() => {
       this.isOpen = true
+
+      // wait modal transition to complete before set focus
+      setTimeout(() => {
+        this.$nextTick(() => {
+          this.$refs.campaignModalCloseButton && this.$refs.campaignModalCloseButton.focus()
+        })
+      }, 500)
     }, this.delay)
   },
   methods: {
