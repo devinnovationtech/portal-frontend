@@ -29,7 +29,7 @@
       <div class="pt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 xl:gap-8">
         <div>
           <div class="pb-4 flex flex-row gap-x-4 items-center md:pb-5">
-            <img width="22" height="40" src="/images/sapawarga/sapawarga-logo.svg" alt="Sapawarga">
+            <img width="22" height="40" src="/images/sapawarga/sapawarga-logo.svg" alt="">
             <h2 class="text-blue-gray-800 font-roboto font-extrabold text-[20px] leading-[24px]">
               SAPAWARGA
             </h2>
@@ -71,7 +71,7 @@
               target="_blank"
               class="flex flex-row gap-x-3"
             >
-              <Icon :src="socialMedia.image" :alt="socialMedia.name" width="22" height="22" />
+              <Icon :src="socialMedia.image" alt="" width="22" height="22" />
               <p class="text-blue-gray-800 font-lato text-[14px] leading-[23px] font-medium">
                 {{ socialMedia.name }}
               </p>
@@ -102,7 +102,7 @@ export default {
           features: [
             {
               image: require('~/static/images/sapawarga/sapawarga-icon-chat.svg'),
-              alt: 'icon chat',
+              alt: '',
               link: 'https://form.jotform.com/223050549341045',
               description: 'Ajukan Layanan Publik Lain'
             }
@@ -114,13 +114,13 @@ export default {
           features: [
             {
               image: require('~/static/images/sapawarga/sapawarga-icon-privacy.svg'),
-              alt: 'icon privacy',
+              alt: '',
               link: 'https://sapawarga.jabarprov.go.id/kebijakan-privasi-ketentuan-pengguna/kebijakan-privasi',
               description: 'Kebijakan Privasi'
             },
             {
               image: require('~/static/images/sapawarga/sapawarga-icon-terms.svg'),
-              alt: 'icon terms',
+              alt: '',
               link: 'https://sapawarga.jabarprov.go.id/kebijakan-privasi-ketentuan-pengguna/ketentuan-pengguna',
               description: 'Ketentuan Pengguna'
             }
