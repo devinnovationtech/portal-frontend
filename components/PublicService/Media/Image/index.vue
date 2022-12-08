@@ -9,7 +9,7 @@
       group-hover:opacity-100 z-10 transition-opacity ease-brand duration-250 cursor-pointer"
       @click="$emit('show-preview')"
     >
-      <Icon src="/icons/zoom.svg" size="50px" />
+      <Icon src="/icons/zoom.svg" size="50px" alt="" />
     </div>
 
     <!-- Content Image -->
