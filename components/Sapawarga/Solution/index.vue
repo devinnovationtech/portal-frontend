@@ -11,7 +11,7 @@
           class="pb-[45px] md:px-4 md:pt-[25px] lg:px-[50px] lg:pt-[45px] lg:pb-[38px] xl:pt-[50px] xl:pl-[25px] xl:pr-0"
         >
           <div class="pb-[30px]">
-            <Icon :src="item.img" size="46" />
+            <Icon :src="item.img" size="46" alt="" />
           </div>
           <div>
             <h2 class="pb-2.5 font-roboto text-blue-gray-800 text-[21px] leading-[34px] font-medium">
@@ -25,7 +25,7 @@
       </div>
       <picture class="pt-[25px] pb-[41px] md:py-[35px] lg:pb-0 lg:pt-[38px] xl:pt-0">
         <source width="413" height="532" srcset="/images/sapawarga/sapawarga-app-background.webp">
-        <img class="max-w-full max-h-full" src="/images/sapawarga/sapawarga-app-background.png" width="413" height="532" alt="sapawarga">
+        <img class="max-w-full max-h-full" src="/images/sapawarga/sapawarga-app-background.png" width="413" height="532" alt="Aplikasi sapawarga menu layanan publik">
       </picture>
     </div>
   </section>

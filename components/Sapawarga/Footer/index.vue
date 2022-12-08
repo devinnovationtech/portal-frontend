@@ -6,9 +6,9 @@
           <div>
             <h2 class="text-blue-gray-800 font-roboto font-bold text-[24px] leading-[38px] md:text-[32px] md:leading-[51px]">
               Ada pertanyaan seputar
-            </h2>
-            <h2 class="text-green-600 font-roboto text-[24px] leading-[38px] font-bold md:text-[32px] md:leading-[51px]">
-              Aplikasi Sapawarga?
+              <span class="block text-green-600 font-roboto text-[24px] leading-[38px] font-bold md:text-[32px] md:leading-[51px]">
+                Aplikasi Sapawarga?
+              </span>
             </h2>
           </div>
           <div>
@@ -24,7 +24,7 @@
             Hubungi Kami
           </a>
         </div>
-        <img class="hidden lg:block lg:w-[249px] lg:self-center xl:mx-auto xl:w-[294px]" width="294" height="210" src="/images/sapawarga/sapawarga-faq-women.svg" alt="women">
+        <img class="hidden lg:block lg:w-[249px] lg:self-center xl:mx-auto xl:w-[294px]" width="294" height="210" src="/images/sapawarga/sapawarga-faq-women.svg" alt="">
       </div>
       <div class="pt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 xl:gap-8">
         <div>

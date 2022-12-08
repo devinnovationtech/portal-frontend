@@ -17,7 +17,7 @@
     </p>
     <picture class="text-center md:w-[350px] md:row-start-2 md:row-end-3 lg:row-start-1 lg:w-[396px]">
       <source width="420" height="416" srcset="/images/sapawarga/sapawarga-digital.webp">
-      <img class="w-full lg:h-full" src="/images/sapawarga/sapawarga-digital.png" width="420" height="416" alt="sapawarga">
+      <img class="w-full lg:h-full" src="/images/sapawarga/sapawarga-digital.png" width="420" height="416" alt="Laki-laki berbaju biru memegang handphone membuka aplikasi sapawarga">
     </picture>
   </section>
 </template>
