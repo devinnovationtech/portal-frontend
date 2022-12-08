@@ -29,18 +29,18 @@
         <picture>
           <source
             media="(min-width:1025px)"
-            srcset="/images/campaign/donasi-cianjur-dekstop.jpg"
+            :srcset="contentImages.desktop"
             width="800"
             height="470"
           >
           <source
             media="(min-width:450px)"
-            srcset="/images/campaign/donasi-cianjur-tablet.jpg"
+            :srcset="contentImages.tablet"
             width="550"
             height="976"
           >
           <img
-            src="/images/campaign/donasi-cianjur-mobile.jpg"
+            :src="contentImages.mobile"
             alt="donasi bencana cianjur"
             class="w-auto h-auto object-contain"
             width="390"
@@ -77,7 +77,12 @@ export default {
   data () {
     return {
       isOpen: false,
-      contentLink: 'https://kitabisa.com/campaign/jqruntukcianjur'
+      contentLink: 'https://pisodapur.jabarprov.go.id/',
+      contentImages: {
+        mobile: '/images/campaign/pisodapur-mobile.jpg',
+        tablet: '/images/campaign/pisodapur-tablet.jpg',
+        desktop: '/images/campaign/pisodapur-desktop.jpg'
+      }
     }
   },
   computed: {
