@@ -19,10 +19,10 @@
         />
       </div>
     </summary>
-    <ul
-      class="sapawarga-accordion__description list-disc list-inside mt-[22px] font-lato font-normal text-[14px] leading-[20px] text-gray-800"
-    >
+    <p class="mt-[22px] font-lato font-normal text-[14px] leading-[20px] text-gray-800">
       {{ description }}
+    </p>
+    <ul class="sapawarga-accordion__description list-disc list-inside">
       <li
         v-for="(list, index) in lists"
         :key="index"
