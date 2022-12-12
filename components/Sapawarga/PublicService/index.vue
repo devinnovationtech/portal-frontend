@@ -11,7 +11,7 @@
       >
         <div class="group-hover:bg-green-600 relative overflow-hidden p-6 border border-solid border-[#DDDDDD] rounded-[32px] min-w-[272px] max-w-[304px] min-h-[356px] lg:p-5 lg:min-w-[424px] xl:min-w-[288px]">
           <div class="flex flex-row gap-x-3 pb-4">
-            <Icon :src="item.img" size="48" />
+            <Icon :src="item.img" size="48" alt="" />
             <h2
               class="self-center font-roboto text-[14px] leading-[34px] font-medium md:leading-[22px] text-blue-gray-800 group-hover:text-white"
             >
@@ -30,7 +30,7 @@
             :key="index"
             class="flex flex-row gap-x-3 pb-2"
           >
-            <Icon :src="feature.image" size="28" />
+            <Icon :src="feature.image" size="28" alt="" />
             <p
               class="font-roboto self-center text-[12px] leading-[23px] font-normal text-blue-gray-500 group-hover:text-white"
             >

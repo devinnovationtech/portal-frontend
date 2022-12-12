@@ -2,7 +2,7 @@
   <section>
     <!-- Category -->
     <div v-show="data.category" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400">
-      <Icon src="/icons/layanan-publik/category.svg" size="16px" class="my-[5px] mr-[5px]" />
+      <Icon src="/icons/layanan-publik/category.svg" size="16px" class="my-[5px] mr-[5px]" alt="" />
       <div class="flex flex-col items-start justify-center gap-2">
         <h3>Kategori</h3>
         <p class="text-blue-gray-600 capitalize">
@@ -19,7 +19,7 @@
         'mb-[-16px]': hasMoreThanOneAddress
       }"
     >
-      <Icon src="/icons/layanan-publik/location.svg" size="16px" class="my-[5px] mr-[5px]" />
+      <Icon src="/icons/layanan-publik/location.svg" size="16px" class="my-[5px] mr-[5px]" alt="" />
 
       <div class="flex flex-col min-w-0 items-start justify-center gap-2">
         <h3>Alamat</h3>
@@ -63,7 +63,7 @@
 
     <!-- Telephone -->
     <div v-show="hasPhone" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
-      <Icon src="/icons/layanan-publik/phone.svg" size="16px" class="my-[5px] mr-[5px]" />
+      <Icon src="/icons/layanan-publik/phone.svg" size="16px" class="my-[5px] mr-[5px]" alt="" />
       <div class="flex flex-col items-start justify-center">
         <h3 class="mb-2">
           Telepon
@@ -76,7 +76,7 @@
 
     <!-- Email -->
     <div v-show="data.email" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
-      <Icon src="/icons/layanan-publik/gmail.svg" size="16px" class="my-[5px] mr-[5px]" />
+      <Icon src="/icons/layanan-publik/gmail.svg" size="16px" class="my-[5px] mr-[5px]" alt="" />
       <div class="flex flex-col items-start justify-center gap-2">
         <h3>Email</h3>
         <a :href="`mailto:${data.email}`" class="text-blue-gray-600">
@@ -87,7 +87,7 @@
 
     <!-- Operational Hours -->
     <div v-show="hasOperationalHours" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
-      <Icon src="/icons/layanan-publik/clock.svg" size="16px" class="my-[5px] mr-[5px]" />
+      <Icon src="/icons/layanan-publik/clock.svg" size="16px" class="my-[5px] mr-[5px]" alt="" />
       <div class="flex flex-col items-start justify-center gap-2">
         <h3>Jam Operasional ({{ currentDate }})</h3>
         <PublicServiceMediaCardOpenHours
@@ -112,14 +112,14 @@
               {{ button.title }}
             </p>
           </div>
-          <Icon :src="button.icon" size="24px" />
+          <Icon :src="button.icon" size="24px" alt="" />
         </Button>
       </Link>
     </section>
 
     <!-- Social Media -->
     <section v-show="hasSocialMedia" class="grid grid-cols-[16px,1fr] gap-3 font-lato text-sm leading-6 text-blue-gray-400 mt-4 sm:mt-8">
-      <Icon src="/icons/share.svg" size="16px" class="my-[5px] mr-[5px]" />
+      <Icon src="/icons/share.svg" size="16px" class="my-[5px] mr-[5px]" alt="" />
       <div class="flex flex-col justify-center gap-2">
         <h3>Sosial Media</h3>
         <div class="flex flex-wrap justify-start items-end gap-5 w-full">
@@ -130,7 +130,7 @@
             :link="socialMedia"
             class="flex flex-col items-center text-[11px] leading-[18px] cursor-pointer capitalize"
           >
-            <Icon :src="`/icons/social-media/${name}-logo.svg`" :size="name === 'facebook' ? '12px' : '18px'" />
+            <Icon :src="`/icons/social-media/${name}-logo.svg`" :size="name === 'facebook' ? '12px' : '18px'" alt="" />
             {{ name }}
           </Link>
         </div>

@@ -7,7 +7,7 @@
       'bg-red-400': type === 'non-active'
     }"
   >
-    <Icon src="/icons/layanan-publik/cloud-check.svg" size="24px" />
+    <Icon src="/icons/layanan-publik/cloud-check.svg" size="24px" alt="" />
     <p>{{ label }}</p>
   </div>
 </template>

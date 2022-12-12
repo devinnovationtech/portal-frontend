@@ -11,7 +11,7 @@
         {{ name }}
       </h1>
       <div class="flex flex-row gap-2">
-        <Icon src="/icons/history.svg" size="16px" />
+        <Icon src="/icons/history.svg" size="16px" alt="" />
         <p class="font-lato text-xs text-blue-gray-800 leading-5">
           Terakhir diupdate {{ date }}
         </p>

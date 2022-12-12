@@ -43,7 +43,7 @@
     </div>
     <picture>
       <source width="481" height="594" srcset="/images/sapawarga/sapawarga-app.webp">
-      <img class="mx-auto" src="/images/sapawarga/sapawarga-app.png" width="481" height="594" alt="sapawarga">
+      <img class="mx-auto" src="/images/sapawarga/sapawarga-app.png" width="481" height="594" alt="Aplikasi sapawarga menu layanan publik">
     </picture>
   </header>
 </template>

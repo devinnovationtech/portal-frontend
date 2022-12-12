@@ -3,9 +3,10 @@
     <Link
       link="/"
       class="mr-auto w-8 h-8 lg:w-[38px] lg:h-[38px] xl:w-[228px] xl:h-[38px]"
+      aria-label="Beranda"
       @click.native="gtagHeaderLogo"
     >
-      <picture>
+      <picture aria-hidden="true">
         <source
           media="(min-width:1280px)"
           srcset="/logo.svg"

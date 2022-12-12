@@ -6,33 +6,41 @@
     <template #header>
       <div v-if="!device.isMobile" class="flex py-3 px-4 w-full items-center justify-end">
         <button
+          ref="campaignModalCloseButton"
           class="h-10 w-10 bg-green-600 flex items-center justify-center rounded-full
         hover:bg-green-700 transition-colors ease-brand duration-250"
+          tabindex="1"
+          aria-label="Tutup Pop Up"
           @click="closeModal"
         >
-          <Icon name="times" size="16px" class="text-white" />
+          <Icon
+            name="times"
+            size="16px"
+            class="text-white"
+            aria-hidden="true"
+          />
         </button>
       </div>
     </template>
     <div
       class="flex justify-center min-w-full sm:w-[550px] lg:w-[800px] max-h-full overflow-y-auto"
     >
-      <Link :link="contentLink">
+      <Link :link="contentLink" tabindex="2">
         <picture>
           <source
             media="(min-width:1025px)"
-            srcset="/images/campaign/donasi-cianjur-dekstop.jpg"
+            :srcset="contentImages.desktop"
             width="800"
             height="470"
           >
           <source
             media="(min-width:450px)"
-            srcset="/images/campaign/donasi-cianjur-tablet.jpg"
+            :srcset="contentImages.tablet"
             width="550"
             height="976"
           >
           <img
-            src="/images/campaign/donasi-cianjur-mobile.jpg"
+            :src="contentImages.mobile"
             alt="donasi bencana cianjur"
             class="w-auto h-auto object-contain"
             width="390"
@@ -43,8 +51,12 @@
     </div>
     <template #footer>
       <div class="bg-gray-50 flex w-full items-center justify-center p-4 z-[100] mt-auto">
-        <Link :link="contentLink">
-          <Button type="button" class="w-full md:w-auto !justify-center">
+        <Link :link="contentLink" tabindex="3">
+          <Button
+            type="button"
+            class="w-full md:w-auto !justify-center"
+            tabindex="-1"
+          >
             Kunjungi Link
           </Button>
         </Link>
@@ -65,7 +77,12 @@ export default {
   data () {
     return {
       isOpen: false,
-      contentLink: 'https://kitabisa.com/campaign/jqruntukcianjur'
+      contentLink: 'https://pisodapur.jabarprov.go.id/',
+      contentImages: {
+        mobile: '/images/campaign/pisodapur-mobile.jpg',
+        tablet: '/images/campaign/pisodapur-tablet.jpg',
+        desktop: '/images/campaign/pisodapur-desktop.jpg'
+      }
     }
   },
   computed: {
@@ -76,6 +93,13 @@ export default {
   mounted () {
     setTimeout(() => {
       this.isOpen = true
+
+      // wait modal transition to complete before set focus
+      setTimeout(() => {
+        this.$nextTick(() => {
+          this.$refs.campaignModalCloseButton && this.$refs.campaignModalCloseButton.focus()
+        })
+      }, 500)
     }, this.delay)
   },
   methods: {
