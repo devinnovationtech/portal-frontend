@@ -115,13 +115,13 @@ export default {
             {
               image: require('~/static/images/sapawarga/sapawarga-icon-privacy.svg'),
               alt: '',
-              link: 'https://sapawarga.jabarprov.go.id/kebijakan-privasi-ketentuan-pengguna/kebijakan-privasi',
+              link: 'https://sapawarga.digitalservice.id/kebijakan-privasi-ketentuan-pengguna/kebijakan-privasi',
               description: 'Kebijakan Privasi'
             },
             {
               image: require('~/static/images/sapawarga/sapawarga-icon-terms.svg'),
               alt: '',
-              link: 'https://sapawarga.jabarprov.go.id/kebijakan-privasi-ketentuan-pengguna/ketentuan-pengguna',
+              link: 'https://sapawarga.digitalservice.id/kebijakan-privasi-ketentuan-pengguna/ketentuan-pengguna',
               description: 'Ketentuan Pengguna'
             }
           ]
