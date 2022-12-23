@@ -20,6 +20,7 @@
         >
           <div class="w-full aspect-w-3 aspect-h-1 rounded-lg overflow-hidden">
             <Link
+              v-if="banner.link"
               :link="banner.link"
               target="_blank"
               rel="noopener"
@@ -36,6 +37,16 @@
                 >
               </picture>
             </Link>
+            <picture v-else>
+              <source :srcset="banner.image" type="image/webp">
+              <img
+                :src="banner.fallbackImage"
+                :alt="banner.title"
+                class="w-full h-full object-cover bg-gray-200"
+                width="360"
+                height="120"
+              >
+            </picture>
           </div>
         </swiper-slide>
         <!-- Pagination Bullet -->
