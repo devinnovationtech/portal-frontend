@@ -120,7 +120,7 @@ export default {
   activated () {
     if (this.isRunningTextActive) {
       this.$nextTick(() => {
-        this.swiper.slideTo(this.swiper.activeIndex + 1)
+        this.swiper.slideTo(this.swiper.activeIndex + 1, 1000, false)
         this.swiper.autoplay.stop()
         this.swiper.autoplay.start()
       })
