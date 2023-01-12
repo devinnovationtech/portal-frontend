@@ -19,6 +19,7 @@
           :name="socialMediaSite.icon"
           size="18px"
           class="text-white group-hover:opacity-100 md:opacity-40"
+          aria-hidden="true"
         />
       </Link>
     </li>
