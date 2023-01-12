@@ -1,24 +1,31 @@
 <template>
   <LatestNewsTabItemSkeleton v-if="fetchState.pending" />
   <li v-else class="hover:bg-green-50 p-3 rounded-lg group transition-colors ease-brand duration-250">
-    <Link :link="`/berita/${slug}`" @click.native="gtagClickLatestNews">
+    <Link
+      :link="`/berita/${slug}`"
+      @click.native="gtagClickLatestNews"
+    >
       <div class="flex flex-col gap-3 w-full">
-        <p class="line-clamp-2 font-medium leading-7 group-hover:text-green-900">
+        <h2 class="line-clamp-2 font-medium leading-7 group-hover:text-green-900">
           {{ title }}
-        </p>
+        </h2>
         <div class="flex justify-between items-center">
-          <div class="flex gap-2 text-xs">
-            <p class="text-gray-700 group-hover:text-blue-gray-800 capitalize">
-              {{ category }}
-            </p>
-            <div class="text-gray-700 group-hover:text-blue-gray-800">
+          <h3 class="text-xs text-gray-700 group-hover:text-blue-gray-800 capitalize">
+            {{ category }}
+            <span class="text-gray-700 group-hover:text-blue-gray-800 ml-1" aria-hidden="true">
               |
-            </div>
-            <p class="text-gray-700 group-hover:text-blue-gray-800">
+            </span>
+            <span class="sr-only">Dipublikasikan tanggal</span>
+            <span class="text-gray-700 group-hover:text-blue-gray-800 ml-1">
               {{ date }}
-            </p>
-          </div>
-          <Icon name="open-new-tab" size="16px" class="invisible text-green-800 group-hover:visible" />
+            </span>
+          </h3>
+          <Icon
+            name="open-new-tab"
+            size="16px"
+            class="invisible text-green-800 group-hover:visible"
+            aria-hidden="true"
+          />
         </div>
       </div>
     </Link>

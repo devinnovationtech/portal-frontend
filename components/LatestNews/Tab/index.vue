@@ -1,20 +1,26 @@
 <template>
   <div class="w-full h-[518px] grid grid-cols-1 grid-rows-[38px,1fr] gap-4">
-    <div class="w-full h-full grid grid-cols-2 mb-4">
-      <p
+    <div
+      class="w-full h-full grid grid-cols-2 mb-4"
+      role="tablist"
+      aria-label="Tab berita terbaru dan terpopuler"
+    >
+      <button
         v-for="(tab, index) in tabs"
         :key="index"
         class="text-sm uppercase text-center border-b-4 pb-3 cursor-pointer"
         :class="[selectedTab === tab ? 'font-bold border-green-700' : 'text-gray-700 border-blue-gray-50']"
+        role="tab"
+        aria-controls="latest-news-panel"
         @click="setSelectedTab(tab)"
       >
         {{ tab }}
-      </p>
+      </button>
     </div>
     <!--
       TODO: Show a placeholder if an error occur
     -->
-    <ul class="w-full h-full flex flex-col gap-4">
+    <ul id="latest-news-panel" class="w-full h-full flex flex-col gap-4">
       <LatestNewsTabItem
         v-for="item in items"
         :key="item.id"
