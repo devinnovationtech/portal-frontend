@@ -482,10 +482,10 @@ export const featuredProgramMenu = [
 export const quickLinkMenu = [
   {
     id: 1,
-    title: 'Laporan Keuangan',
-    description: 'Ketahui lebih lanjut mengenai laporan keuangan Jawa Barat.',
-    icon: '/icons/akses-cepat/keuangan.svg',
-    link: '/arsip-dan-dokumen?kategori=transparansi%20pengelolaan%20keuangan%20daerah'
+    title: 'Surat Jabar Juara',
+    description: 'Kirim Surat untuk Gubernur dan Perangkat Daerah',
+    icon: '/icons/akses-cepat/suara-jabar.svg',
+    link: 'http://suara.jabarprov.go.id/'
   },
   {
     id: 2,

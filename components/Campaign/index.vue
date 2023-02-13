@@ -77,11 +77,11 @@ export default {
   data () {
     return {
       isOpen: false,
-      contentLink: 'https://pisodapur.jabarprov.go.id/',
+      contentLink: 'http://s.id/jabardigitalservice',
       contentImages: {
-        mobile: '/images/campaign/pisodapur-mobile.jpg',
-        tablet: '/images/campaign/pisodapur-tablet.jpg',
-        desktop: '/images/campaign/pisodapur-desktop.jpg'
+        mobile: '/images/campaign/jsa-mobile.webp',
+        tablet: '/images/campaign/jsa-tablet.webp',
+        desktop: '/images/campaign/jsa-desktop.webp'
       }
     }
   },
