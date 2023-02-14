@@ -69,19 +69,13 @@
 
 <script>
 export default {
-  props: {
-    // Modal open delay in milliseconds
-    delay: {
-      type: Number,
-      default: 0
-    }
-  },
   data () {
     return {
       isOpen: false,
       banner: {}
     }
   },
+  fetchOnServer: false,
   async fetch () {
     try {
       const response = await this.$axios.get('/v1/public/pop-up-banners/live')
@@ -118,16 +112,7 @@ export default {
       this.isOpen = false
     },
     showPopup () {
-      setTimeout(() => {
-        this.isOpen = true
-
-        // wait modal transition to complete before set focus
-        setTimeout(() => {
-          this.$nextTick(() => {
-            this.$refs.campaignModalCloseButton && this.$refs.campaignModalCloseButton.focus()
-          })
-        }, 500)
-      }, this.delay)
+      this.isOpen = true
     },
     handleModal () {
       if (this.contentLink === '') {

@@ -1,6 +1,6 @@
 <template>
   <main class="overflow-hidden">
-    <Campaign :delay="500" />
+    <Campaign />
     <Hero />
     <CounterWidget />
     <section
