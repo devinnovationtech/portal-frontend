@@ -230,7 +230,7 @@ export default {
     },
     slideToActiveIndex () {
       if (this.isSwiperReady) {
-        this.swiper.slideTo(this.activeMenuIndex)
+        this.swiper.slideTo(this.activeMenuIndex, 1000, false)
       }
     },
     gtagClickMenuAbout (value) {
