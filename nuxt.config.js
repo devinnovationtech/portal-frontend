@@ -47,7 +47,8 @@ export default {
     '~/plugins/vue-lazy-load',
     '~/plugins/vue-easy-lightbox',
     '~/plugins/lite-youtube-embed.client.js',
-    '~/plugins/device.server'
+    '~/plugins/device.server',
+    '~/plugins/newrelic-browser.server'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -57,6 +58,11 @@ export default {
     googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,
     axios: {
       browserBaseURL: process.env.BROWSER_API_URL
+    },
+    newrelic: {
+      accountId: process.env.NEW_RELIC_ACCOUNT_ID,
+      applicationId: process.env.NEW_RELIC_APPLICATION_ID,
+      licenseKey: process.env.NEW_RELIC_LICENSE_KEY
     }
   },
 
