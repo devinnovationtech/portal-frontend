@@ -5,6 +5,7 @@ export default ({ $config: { newrelic }, app }) => {
   const newRelicScript = generateBrowserScript(newrelic)
 
   app.head.script.push({
+    vmid: 'newrelic',
     hid: 'newrelic',
     defer: true,
     type: "text/javascript",

@@ -21,7 +21,10 @@ export default {
       { rel: 'preload', as: 'image', href: '/logo-mobile.svg' },
       { rel: 'preload', as: 'image', href: '/images/banners/1.webp' },
       { rel: 'preload', as: 'image', href: '/images/hero.svg' }
-    ]
+    ],
+    __dangerouslyDisableSanitizersByTagID: {
+      newrelic: ['innerHTML']
+    }
   },
 
   render: {
