@@ -30,6 +30,7 @@
     "lite-youtube-embed": "^0.2.0",
     "lodash": "^4.17.21",
     "mobile-detect": "^1.4.5",
+    "newrelic": "^9.10.1",
     "nuxt": "^2.15.7",
     "portal-vue": "^2.1.7",
     "swiper": "^5.4.5",

@@ -19,27 +19,13 @@ export const heroImages = [
 export const HOMEPAGE_BANNERS = [
   {
     id: 1,
-    title: 'Al Jabar',
-    image: '/images/banners/homepage/banner-aljabar.webp',
-    fallbackImage: '/images/banners/homepage/banner-aljabar.jpg',
-    link: ''
-  },
-  {
-    id: 2,
     title: 'Sapawarga',
     image: '/images/banners/homepage/banner-sapawarga.webp',
     fallbackImage: '/images/banners/homepage/banner-sapawarga.jpg',
     link: 'https://sapawarga.digitalservice.id/'
   },
   {
-    id: 3,
-    title: 'G20',
-    image: '/images/banners/homepage/banner-g20.webp',
-    fallbackImage: '/images/banners/homepage/banner-g20.jpg',
-    link: 'https://www.g20.org/'
-  },
-  {
-    id: 4,
+    id: 2,
     title: 'Mall Pelayanan Publik',
     image: '/images/banners/homepage/banner-mpp.webp',
     fallbackImage: '/images/banners/homepage/banner-mpp.jpg',
@@ -641,11 +627,10 @@ export const jabarAchievementsCategory = [
 ]
 
 export const popularSearchSuggestions = [
-  'Jawa Barat',
+  'Masjid Al-Jabbar',
   'Ridwan Kamil',
-  'Covid-19',
-  'G20',
-  'Minyak Goreng'
+  'Jawa Barat',
+  'Wisata Jabar'
 ]
 
 export const archiveAndDocumentTopics = [
