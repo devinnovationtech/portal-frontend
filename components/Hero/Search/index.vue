@@ -68,7 +68,7 @@ export default {
     return {
       inputValue: '',
       /* FIX ME: Input Placeholders should be dynamic */
-      inputPlaceholders: ['Jawa Barat', 'Ridwan Kamil', 'Covid-19', 'G20', 'Minyak Goreng'],
+      inputPlaceholders: ['Masjid Al-Jabbar', 'Ridwan Kamil', 'Jawa Barat', 'Wisata Jabar'],
       suggestions: [],
       popularSearchSuggestions,
       swiperOptions: Object.freeze({
