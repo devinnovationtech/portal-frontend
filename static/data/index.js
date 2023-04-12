@@ -627,7 +627,7 @@ export const jabarAchievementsCategory = [
 ]
 
 export const popularSearchSuggestions = [
-  'Masjid Al-Jabbar',
+  'Masjid Al Jabbar',
   'Ridwan Kamil',
   'Jawa Barat',
   'Wisata Jabar'
