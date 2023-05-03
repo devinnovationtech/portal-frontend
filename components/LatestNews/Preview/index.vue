@@ -147,7 +147,6 @@ export default {
       const response = await this.$axios.$get('/v1/public/news', { params })
       this.items = response.data
     } catch (error) {
-      this.$sentry.captureException(error)
     }
   },
   activated () {

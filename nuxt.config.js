@@ -81,9 +81,7 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-fonts',
-    // https://sentry.nuxtjs.org/
-    '@nuxtjs/sentry'
+    '@nuxtjs/google-fonts'
   ],
 
   eslint: {
@@ -113,27 +111,6 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: 'http://localhost:3000'
-  },
-
-  // Sentry configuration https://sentry.nuxtjs.org/sentry/options
-  sentry: {
-    dsn: process.env.SENTRY_DSN,
-    disabled: !parseInt(process.env.SENTRY_ENABLED) || false,
-    tracing: {
-      tracesSampleRate: parseFloat(process.env.SENTRY_SAMPLE_RATE),
-      vueOptions: {
-        tracing: true,
-        tracingOptions: {
-          hooks: ['mount', 'update'],
-          timeout: 2000,
-          trackComponents: true
-        }
-      },
-      browserOptions: {}
-    },
-    config: {
-      environment: process.env.APP_ENVIRONMENT
-    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
