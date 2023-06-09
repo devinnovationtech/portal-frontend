@@ -416,18 +416,19 @@ export const mostPopularServicesMenu = [
         link: 'https://disparbud.jabarprov.go.id',
         icon: '/icons/layanan-terpopuler/info-wisata-jabar.svg'
       },
-      {
-        id: 8,
-        title: 'Informasi Rute Angkutan Umum',
-        description: 'Temukan informasi rute angkutan umum yang terdapat di Jawa Barat.',
-        link: 'http://dishub.jabarprov.go.id/angkutan.html',
-        icon: '/icons/layanan-terpopuler/informasi-rute-angkutan-umum.svg'
-      },
+      // Hide link temporarily
+      // {
+      //   id: 8,
+      //   title: 'Informasi Rute Angkutan Umum',
+      //   description: 'Temukan informasi rute angkutan umum yang terdapat di Jawa Barat.',
+      //   link: 'http://dishub.jabarprov.go.id/angkutan.html',
+      //   icon: '/icons/layanan-terpopuler/informasi-rute-angkutan-umum.svg'
+      // },
       {
         id: 9,
         title: 'Daerah Wisata Jawa Barat',
         description: 'Temukan informasi mengenai tempat wisata di Jawa Barat yang wajib dikunjungi.',
-        link: 'https://uspar.braga.co.id/',
+        link: 'https://smilingwestjava.com/',
         icon: '/icons/layanan-terpopuler/daerah-wisata-di-jawa-barat.svg'
       }
     ]
@@ -508,13 +509,14 @@ export const quickLinkMenu = [
     icon: '/icons/akses-cepat/info-harga-pangan.svg',
     link: 'http://silinda.jabarprov.go.id/komoditas'
   },
-  {
-    id: 5,
-    title: 'Pengembangan Ekspor',
-    description: 'Layanan informasi, pembinaan, fasilitasi dan pengembangan ekspor di Jawa Barat.',
-    icon: '/icons/akses-cepat/infinity.svg',
-    link: 'https://infinity.jabarprov.go.id/'
-  },
+  // Hide item temporarily
+  // {
+  //   id: 5,
+  //   title: 'Pengembangan Ekspor',
+  //   description: 'Layanan informasi, pembinaan, fasilitasi dan pengembangan ekspor di Jawa Barat.',
+  //   icon: '/icons/akses-cepat/infinity.svg',
+  //   link: 'https://infinity.jabarprov.go.id/'
+  // },
   {
     id: 6,
     title: 'Open Data',
