@@ -79,8 +79,8 @@ export default {
   async fetch () {
     try {
       const response = await this.$axios.get('/v1/public/pop-up-banners/live')
-      this.banner = response.data.data
       if (response.status === 200) {
+        this.banner = response.data.data
         this.showPopup()
       }
     } catch (error) {
