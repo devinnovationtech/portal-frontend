@@ -7,24 +7,25 @@
         <div class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
           <div class="items-baseline grid grid-cols-1 lg:grid-cols-[220px,1fr] lg:gap-x-6">
             <!-- Mobile Top Menu Slider -->
-            <!-- @todo add Mobile Top Menu Slider component -->
-            <div class="w-full h-[42px] bg-gray-200 lg:hidden" />
+            <PublicServiceRevampMenuSwiper :menus="menus" />
 
-            <!-- Dekstop Sidebar Menu -->
-            <!-- @todo add Dekstop Sidebar Menu component -->
-            <aside class="hidden lg:block sticky top-[96px] bg-gray-200">
-              <ul>
-                <li>A</li>
-                <li>B</li>
-                <li>C</li>
-                <li>D</li>
-              </ul>
-            </aside>
+            <!-- Desktop Sidebar Menu -->
+            <PublicServiceRevampSidebar :menus="menus" />
 
             <!-- Main Container -->
-            <div class="h-screen overflow-auto">
-              <div class="h-[9999px] bg-blue-400">
-                <p>lorem</p>
+            <div>
+              <!-- @todo: remove this dummy section with content -->
+              <div id="section-one" class="h-[500px] bg-green-300">
+                Section A
+              </div>
+              <div id="section-two" class="h-[500px] bg-blue-300">
+                Section B
+              </div>
+              <div id="section-three" class="h-[500px] bg-red-300">
+                Section C
+              </div>
+              <div id="section-four" class="h-[500px] bg-yellow-300">
+                Section D
               </div>
             </div>
           </div>
@@ -70,8 +71,28 @@ export default {
         category: 'Perpajakan',
         serviceType: 'online'
       }
+    },
+    // @todo: Generate sub-menu dinamically based on API data
+    menus () {
+      return [
+        {
+          label: 'Section One',
+          link: '#section-one'
+        },
+        {
+          label: 'Section Two',
+          link: '#section-two'
+        },
+        {
+          label: 'Section Three',
+          link: '#section-three'
+        },
+        {
+          label: 'Section Four',
+          link: '#section-four'
+        }
+      ]
     }
   }
-
 }
 </script>
