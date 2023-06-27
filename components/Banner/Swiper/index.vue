@@ -27,7 +27,7 @@
               :title="banner.title"
             >
               <picture>
-                <source :srcset="device.isMobile ? banner.image.mobile : banner.image.desktop" type="image/webp">
+                <source :srcset="device.isMobile ? banner.image.mobile : banner.image.desktop">
                 <img
                   :src="device.isMobile ? banner.image.mobile : banner.image.desktop"
                   :alt="banner.title"
@@ -38,7 +38,7 @@
               </picture>
             </Link>
             <picture v-else>
-              <source :srcset="device.isMobile ? banner.image.mobile : banner.image.desktop" type="image/webp">
+              <source :srcset="device.isMobile ? banner.image.mobile : banner.image.desktop">
               <img
                 :src="device.isMobile ? banner.image.mobile : banner.image.desktop"
                 :alt="banner.title"
