@@ -98,8 +98,13 @@ export default {
   },
   fetchOnServer: false,
   async fetch () {
+    const params = {
+      is_active: 1,
+      per_page: 15
+    }
+
     try {
-      const response = await this.$axios.get('/v1/public/infographic-banners')
+      const response = await this.$axios.get('/v1/public/infographic-banners', { params })
       if (response.status === 200) {
         this.banners = response.data.data
       }
