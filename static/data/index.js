@@ -16,37 +16,6 @@ export const heroImages = [
   }
 ]
 
-export const HOMEPAGE_BANNERS = [
-  {
-    id: 1,
-    title: 'Sayembara Desa Digital',
-    image: '/images/banners/homepage/banner-sayembara-dedi.webp',
-    fallbackImage: '/images/banners/homepage/banner-sayembara-dedi.jpg',
-    link: 'https://desadigital.jabarprov.go.id/sayembara'
-  },
-  {
-    id: 2,
-    title: 'Subscribe Portal Jabarprov',
-    image: '/images/banners/homepage/banner-subscribe-ipj.webp',
-    fallbackImage: '/images/banners/homepage/banner-subscribe-ipj.jpg',
-    link: 'https://mailchi.mp/jabarprov/jabarprovgoid'
-  },
-  {
-    id: 3,
-    title: 'Sapawarga',
-    image: '/images/banners/homepage/banner-sapawarga.webp',
-    fallbackImage: '/images/banners/homepage/banner-sapawarga.jpg',
-    link: 'https://sapawarga.digitalservice.id/'
-  },
-  {
-    id: 4,
-    title: 'Mall Pelayanan Publik',
-    image: '/images/banners/homepage/banner-mpp.webp',
-    fallbackImage: '/images/banners/homepage/banner-mpp.jpg',
-    link: 'https://dpmptsp.jabarprov.go.id/mppdigital/'
-  }
-]
-
 export const navigationMenu = [
   {
     id: 1,

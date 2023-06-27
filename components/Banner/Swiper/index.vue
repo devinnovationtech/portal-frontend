@@ -27,9 +27,8 @@
               :title="banner.title"
             >
               <picture>
-                <source :srcset="banner.image" type="image/webp">
                 <img
-                  :src="banner.fallbackImage"
+                  :src="device.isMobile ? banner.image.mobile : banner.image.desktop"
                   :alt="banner.title"
                   class="w-full h-full object-cover bg-gray-200"
                   width="360"
@@ -38,9 +37,8 @@
               </picture>
             </Link>
             <picture v-else>
-              <source :srcset="banner.image" type="image/webp">
               <img
-                :src="banner.fallbackImage"
+                :src="device.isMobile ? banner.image.mobile : banner.image.desktop"
                 :alt="banner.title"
                 class="w-full h-full object-cover bg-gray-200"
                 width="360"
@@ -65,13 +63,11 @@
 </template>
 
 <script>
-import { HOMEPAGE_BANNERS } from '~/static/data'
-
 export default {
   data () {
     return {
       swiperReady: false,
-      banners: HOMEPAGE_BANNERS,
+      banners: [],
       swiperOptions: Object.freeze({
         slidesPerView: 1,
         spaceBetween: 32,
@@ -100,7 +96,26 @@ export default {
       })
     }
   },
+  fetchOnServer: false,
+  async fetch () {
+    const params = {
+      is_active: 1,
+      per_page: 15
+    }
+
+    try {
+      const response = await this.$axios.get('/v1/public/infographic-banners', { params })
+      if (response.status === 200) {
+        this.banners = response.data.data
+      }
+    } catch {
+      this.banners = []
+    }
+  },
   computed: {
+    device () {
+      return this.$store.state.device.device
+    },
     swiper () {
       return this.$refs.bannerSwiper.$swiper
     }
