@@ -1,5 +1,5 @@
 <template>
-  <aside class="hidden lg:block sticky top-[96px]">
+  <aside class="hidden xl:block sticky top-[96px]">
     <h3 class="text-sm font-bold leading-5 text-gray-800 mb-3">
       Konten Layanan
     </h3>

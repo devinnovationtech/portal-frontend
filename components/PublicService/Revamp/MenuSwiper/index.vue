@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky top-[48px] bg-white w-full h-[42px] mb-4 md:top-[64px] lg:hidden">
+  <div class="sticky z-10 top-[48px] bg-white w-full h-[42px] mb-4 md:top-[64px] xl:hidden">
     <swiper
       v-show="isSwiperReady"
       ref="publicServiceMenuSwiper"
