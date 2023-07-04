@@ -1,23 +1,35 @@
 <template>
   <main>
-    <PublicServiceRevampJumbotron v-bind="jumbotron" />
+    <PublicServiceRevampJumbotron
+      v-bind="jumbotron"
+      :loading="$fetchState.pending"
+    />
 
     <section class="w-full bg-gray-200">
       <BaseContainer class="relative -top-24 z-20">
         <div class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
-          <div class="items-baseline grid grid-cols-1 xl:grid-cols-[220px,1fr] xl:gap-x-6">
+          <div class="items-start grid grid-cols-1 xl:grid-cols-[220px,1fr] xl:gap-x-6">
             <!-- Mobile Top Menu Slider -->
             <PublicServiceRevampMenuSwiper :menus="menus" />
 
             <!-- Desktop Sidebar Menu -->
             <PublicServiceRevampSidebar :menus="menus" />
 
-            <!-- Main Container -->
             <div class="px-[18px] py-3 rounded-2xl border border-gray-300">
-              <PublicServiceRevampMediaInformation
-                v-bind="mediaInfomation"
-                @show-preview="showImagePreview"
-              />
+              <transition name="fade" mode="out-in">
+                <!-- Main Container Skeleton-->
+                <template v-if="$fetchState.pending">
+                  <PublicServiceRevampSkeleton />
+                </template>
+
+                <!-- Main Container -->
+                <template v-else>
+                  <PublicServiceRevampMediaInformation
+                    v-bind="mediaInfomation"
+                    @show-preview="showImagePreview"
+                  />
+                </template>
+              </transition>
             </div>
           </div>
         </div>
@@ -61,14 +73,13 @@ export default {
       }
     }
   },
-  fetchDelay: 500,
+  fetchDelay: 1000,
   computed: {
     currentDate () {
       const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }
 
       return format(Date.now(), options)
     },
-    // @todo: Change jumbotron data using real data from API
     jumbotron () {
       const category = this.serviceData.portal_category || ''
       const categoryPath = category.toLowerCase().split(' ').join('-')
@@ -163,3 +174,15 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  @apply transition-opacity ease-brand duration-300 opacity-100;
+}
+
+.fade-enter,
+.fade-leave-to {
+  @apply opacity-0;
+}
+</style>

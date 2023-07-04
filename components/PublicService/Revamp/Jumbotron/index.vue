@@ -7,23 +7,63 @@
     <BaseContainer class="relative pt-24 pb-40 z-10">
       <Breadcrumb :items="breadcrumbItems" :capitalize="false" class="mb-6" />
 
-      <div class="grid grid-cols-1 md:grid-cols-[80px,1fr,1fr] md:gap-x-4">
+      <div class="grid grid-cols-1 items-start md:grid-cols-[80px,1fr,1fr] md:gap-x-4">
+        <!-- Logo Skeleton -->
         <img
+          v-if="loading"
+          width="80"
+          height="80"
+          class="rounded-full bg-gray-500 opacity-25 animate-pulse mb-3 md:row-span-3 md:mb-1 md:self-center"
+        >
+        <img
+          v-else
           :src="logo"
           :alt="`Logo layanan ${title}`"
           width="80"
           height="80"
           class="rounded-full object-cover object-center mb-3 md:row-span-3 md:mb-1 md:self-center"
         >
+
+        <!-- Title Skeleton -->
+        <div
+          v-if="loading"
+          class="w-3/4 flex flex-col gap-4 justify-center mb-6 md:col-span-2"
+        >
+          <div class="w-full h-8 bg-gray-500 opacity-25 rounded-lg animate-pulse" />
+          <div class="lg:hidden w-3/5 h-8 bg-gray-500 opacity-25 rounded-lg animate-pulse" />
+        </div>
         <h1
+          v-else
           class="font-lora font-bold text-[28px] leading-relaxed text-green-500 mb-2 md:col-span-2"
         >
           {{ title }}
         </h1>
-        <span class="w-fit px-3 py-1 rounded-full bg-[#67676C] bg-opacity-40 text-white text-xs line-clamp-1 mb-4 md:col-span-2 md:mb-3">
+
+        <!-- Category Skeleton -->
+        <span
+          v-if="loading"
+          class="w-20 h-6 px-3 py-1 rounded-full bg-gray-500 opacity-25 animate-pulse mb-4 md:col-span-2 md:mb-3"
+        />
+        <span
+          v-else
+          class="w-fit px-3 py-1 rounded-full bg-[#67676C] bg-opacity-40 text-white text-xs line-clamp-1 mb-4 md:col-span-2 md:mb-3"
+        >
           {{ portalCategory }}
         </span>
-        <div class="grid grid-cols-[auto_1fr] gap-x-[14px] md:flex md:col-span-2 md:mb-0">
+
+        <!-- Date and Category Skeleton -->
+        <div
+          v-if="loading"
+          class="grid grid-cols-[auto_1fr] mb-2 md:gap-x-[14px] md:flex md:col-span-2 md:max-w-md"
+        >
+          <div class="w-full h-4 rounded-md bg-gray-500 animate-pulse opacity-25" />
+          <div class="w-full h-4 rounded-md bg-gray-500 animate-pulse opacity-25" />
+        </div>
+
+        <div
+          v-else
+          class="grid grid-cols-[auto_1fr] gap-x-[14px] md:flex md:col-span-2 md:mb-0"
+        >
           <span class="text-xs text-white flex items-center">
             <BaseIcon
               icon="/icons/rewind-clock.svg"
@@ -43,11 +83,28 @@
             {{ category }}
           </span>
         </div>
-        <h2 class="font-lato text-sm leading-6 text-white line-clamp-5 mb-6 mt-1 md:mb-0 md:col-span-2 md:mt-5">
+
+        <!-- Description Skeleton -->
+        <div
+          v-if="loading"
+          class="grid grid-cols-1 gap-y-2 mb-6 mt-1 md:mb-0 md:col-span-2 md:mt-5"
+        >
+          <div class="w-full h-4 rounded-md bg-gray-500 animate-pulse opacity-25" />
+          <div class="w-full h-4 rounded-md bg-gray-500 animate-pulse opacity-25" />
+          <div class="w-full h-4 rounded-md bg-gray-500 animate-pulse opacity-25" />
+          <div class="w-full h-4 rounded-md bg-gray-500 animate-pulse opacity-25" />
+          <div class="w-3/4 h-4 rounded-md bg-gray-500 animate-pulse opacity-25" />
+        </div>
+        <p
+          v-else
+          class="font-lato text-sm leading-6 text-white line-clamp-5 mb-6 mt-1 md:mb-0 md:col-span-2 md:mt-5"
+        >
           {{ subtitle }}
-        </h2>
+        </p>
+
         <PublicServiceType
           :type="serviceType"
+          :loading="loading"
           class="mt-1 md:justify-self-end md:self-center md:mt-5"
         />
       </div>
@@ -103,6 +160,11 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    loading: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
   computed: {
