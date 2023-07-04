@@ -45,8 +45,8 @@ export default {
       meta: {},
       loading: false,
       jumbotron: {
-        title: `Daftar Layanan ${this.$route.query.nama || '-'}`,
-        subtitle: `Lihat berbagai layanan untuk kebutuhan seputar ${this.$route.query.nama ? this.$route.query.nama.toLowerCase() : '-'}`,
+        title: `Daftar Layanan ${this.$route.query.kategori || '-'}`,
+        subtitle: `Lihat berbagai layanan untuk kebutuhan seputar ${this.$route.query.kategori ? this.$route.query.kategori.toLowerCase() : '-'}`,
         backgroundImageUrl: '/images/jumbotron/default.webp'
       }
     }
@@ -66,8 +66,8 @@ export default {
           label: 'Beranda'
         },
         {
-          path: this.$route.path,
-          label: this.$route.query.nama
+          path: this.$route.fullPath,
+          label: this.$route.query.kategori
         }
       ]
     },
@@ -103,10 +103,9 @@ export default {
         this.loading = true
 
         const params = {
-          ...parameters,
-          per_page: 50
+          ...parameters
         }
-        const response = await this.$axios.get('v1/public/service-public', { params })
+        const response = await this.$axios.get('v1/public/master-data-publications', { params })
 
         const { data, meta } = response.data
         this.serviceList = data

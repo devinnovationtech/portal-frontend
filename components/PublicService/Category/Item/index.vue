@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :to="`/layanan/${category}/${service.slug}?nama=${$route.query.nama}&kategori=${$route.query.kategori}`"
+    :to="`/layanan/${category}/${service.slug}`"
     class="w-full flex flex-col gap-1 group bg-white px-4 py-3 rounded-lg
     hover:bg-green-50 hover:cursor-pointer transition-colors ease-brand duration-250"
   >

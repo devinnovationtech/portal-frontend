@@ -85,52 +85,80 @@ export const navigationMenu = [
         title: 'Kependudukan dan Tempat Tinggal',
         description: 'Urus Perizinan kependudukan dan tempat tinggal dengan mudah',
         icon: '/icons/navigation/kependudukan.svg',
-        link: '/layanan/kependudukan-dan-tempat-tinggal?nama=Kependudukan dan Tempat Tinggal&kategori=kependudukan'
+        link: '/layanan/kependudukan-dan-tempat-tinggal?kategori=Kependudukan dan Tempat Tinggal'
       },
       {
         id: 2,
         title: 'Pendidikan dan Pembelajaran',
         description: 'Dapat informasi program pemerintah bagi siswa dan pelajar',
         icon: '/icons/navigation/pendidikan.svg',
-        link: '/layanan/pendidikan-dan-pembelajaran?nama=Pendidikan dan Pembelajaran&kategori=pendidikan'
+        link: '/layanan/pendidikan-dan-pembelajaran?kategori=Pendidikan dan Pembelajaran'
       },
       {
         id: 3,
         title: 'Kesehatan',
         description: 'Akses layanan untuk Legalisir STR dan STRTTK bagi Tenaga Kesehatan di Provinsi Jawa Barat',
         icon: '/icons/navigation/kesehatan.svg',
-        link: '/layanan/kesehatan?nama=Kesehatan&kategori=kesehatan'
+        link: '/layanan/kesehatan?kategori=Kesehatan'
       },
       {
         id: 4,
-        title: 'Pajak',
-        description: 'Cari semua informasi terkait perpajakan di Jawa Barat',
-        icon: '/icons/navigation/pajak.svg',
-        link: '/layanan/pajak?nama=Pajak&kategori=perpajakan'
-      },
-      {
-        id: 5,
         title: 'Sosial dan Keluarga',
         description: 'Akses ke berbagai layanan bagi anak-anak, perempuan dan masyarakat',
         icon: '/icons/navigation/sosial.svg',
-        link: '/layanan/sosial-dan-keluarga?nama=Sosial dan Keluarga&kategori=sosial'
+        link: '/layanan/sosial-dan-keluarga?kategori=Sosial dan Keluarga'
+      },
+      {
+        id: 5,
+        title: 'Lingkungan',
+        description: 'Lorem ipsum',
+        icon: '/icons/navigation/sosial.svg',
+        link: '/layanan/lingkungan?kategori=Lingkungan'
       },
       {
         id: 6,
+        title: 'Ekonomi, Bisnis dan Profesi',
+        description: 'Lorem ipsum',
+        icon: '/icons/navigation/sosial.svg',
+        link: '/layanan/ekonomi-bisnis-dan-profesi?kategori=Ekonomi, Bisnis dan Profesi'
+      },
+      {
+        id: 7,
+        title: 'Teknologi dan Komunikasi',
+        description: 'Lorem ipsum',
+        icon: '/icons/navigation/sosial.svg',
+        link: '/layanan/teknologi-dan-komunikasi?kategori=Teknologi dan Komunikasi'
+      },
+      {
+        id: 8,
+        title: 'Sarana dan Prasarana',
+        description: 'Lorem ipsum',
+        icon: '/icons/navigation/sosial.svg',
+        link: '/layanan/sarana-dan-prasarana?kategori=Sarana dan Prasarana'
+      },
+      {
+        id: 9,
+        title: 'Khusus',
+        description: 'Lorem ipsum',
+        icon: '/icons/navigation/sosial.svg',
+        link: '/layanan/khusus?kategori=Khusus'
+      },
+      {
+        id: 10,
         title: 'Ketenagakerjaan',
         description: 'Cari lowongan kerja gratis dan terpercaya',
         icon: '/icons/navigation/ketenagakerjaan.svg',
         link: 'https://jabarjawara.id'
       },
       {
-        id: 7,
+        id: 11,
         title: 'PIKOBAR',
         description: 'Media komunikasi dan informasi penanganan Covid-19 satu pintu di Jawa Barat',
         icon: '/icons/navigation/covid19.svg',
         link: 'https://pikobar.jabarprov.go.id'
       },
       {
-        id: 8,
+        id: 12,
         title: 'Perizinan Online',
         description: 'Layanan informasi dan kepengurusan perizinan usaha secara online',
         icon: '/icons/navigation/perijinan-online.svg',
