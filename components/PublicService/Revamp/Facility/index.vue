@@ -1,7 +1,7 @@
 <template>
   <section class="px-4 py-8 flex flex-col items-center gap-4 bg-[#F9FAFB] rounded-2xl bg-[url('/images/public-service/supergraphics.webp')] bg-no-repeat bg-right 2xl:w-[964px]">
     <h2 class="font-lora font-bold text-[32px] text-center text-blue-gray-800 mb-4">
-      {{ facility.title }}
+      {{ title }}
     </h2>
     <ul
       :class="{
@@ -11,7 +11,7 @@
       }"
     >
       <li
-        v-for="(item, index) in facility.items"
+        v-for="(item, index) in items"
         :key="index"
         :class="{
           'border border-solid bg-white border-[#DFE6F0] rounded-xl': true,
@@ -30,15 +30,18 @@
 <script>
 export default {
   props: {
-    facility: {
-      type: Object,
-      required: true,
-      default: () => ({})
+    title: {
+      type: String,
+      default: ''
+    },
+    items: {
+      type: Array,
+      default: () => ([])
     }
   },
   computed: {
     isItemHasImage () {
-      return this.facility.items.every(item => !!item.image?.file_download_uri)
+      return this.items.every(item => !!item.image?.file_download_uri)
     }
   }
 }
