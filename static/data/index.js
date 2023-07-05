@@ -85,56 +85,56 @@ export const navigationMenu = [
         title: 'Kependudukan dan Tempat Tinggal',
         description: 'Temukan informasi, panduan, dan layanan terkait urusan administratif tempat tinggal Anda.',
         icon: '/icons/navigation/kependudukan.svg',
-        link: '/layanan/kependudukan-dan-tempat-tinggal?kategori=Kependudukan dan Tempat Tinggal'
+        link: '/layanan?kategori=Kependudukan dan Tempat Tinggal'
       },
       {
         id: 2,
         title: 'Pendidikan dan Pembelajaran',
         description: 'Jelajahi informasi dan layanan terkait untuk membantu kebutuhan pendidikan dan pembelajaran Anda.',
         icon: '/icons/navigation/pendidikan.svg',
-        link: '/layanan/pendidikan-dan-pembelajaran?kategori=Pendidikan dan Pembelajaran'
+        link: '/layanan?kategori=Pendidikan dan Pembelajaran'
       },
       {
         id: 3,
         title: 'Kesehatan',
         description: 'Temukan informasi, dukungan, dan fasilitas untuk hidup sehat dan bahagia.',
         icon: '/icons/navigation/kesehatan.svg',
-        link: '/layanan/kesehatan?kategori=Kesehatan'
+        link: '/layanan?kategori=Kesehatan'
       },
       {
         id: 4,
         title: 'Sosial dan Keluarga',
         description: 'Temukan bantuan, pemberdayaan, dan kesempatan untuk meningkatkan kesejahteraan sosial bersama.',
         icon: '/icons/navigation/sosial.svg',
-        link: '/layanan/sosial-dan-keluarga?kategori=Sosial dan Keluarga'
+        link: '/layanan?kategori=Sosial dan Keluarga'
       },
       {
         id: 5,
         title: 'Lingkungan',
         description: 'Temukan informasi dan layanan pengelolaan lingkungan yang berkelanjutan untuk hidup yang lebih baik.',
         icon: '/icons/navigation/lingkungan.svg',
-        link: '/layanan/lingkungan?kategori=Lingkungan'
+        link: '/layanan?kategori=Lingkungan'
       },
       {
         id: 6,
         title: 'Ekonomi, Bisnis dan Profesi',
         description: 'Temukan wawasan, dukungan, dan layanan seputar ekonomi, bisnis, dan profesi Anda.',
         icon: '/icons/navigation/bisnis.svg',
-        link: '/layanan/ekonomi-bisnis-dan-profesi?kategori=Ekonomi, Bisnis dan Profesi'
+        link: '/layanan?kategori=Ekonomi, Bisnis dan Profesi'
       },
       {
         id: 7,
         title: 'Teknologi dan Komunikasi',
         description: 'Dapatkan informasi dan layanan terkini yang mendekatkan Anda dengan transformasi digital.',
         icon: '/icons/navigation/teknologi-dan-komunikasi.svg',
-        link: '/layanan/teknologi-dan-komunikasi?kategori=Teknologi dan Komunikasi'
+        link: '/layanan?kategori=Teknologi dan Komunikasi'
       },
       {
         id: 8,
         title: 'Sarana dan Prasarana',
         description: 'Temukan fasilitas umum, dukungan, dan regulasi yang mendorong kemajuan bersama.',
         icon: '/icons/navigation/sarana-prasarana.svg',
-        link: '/layanan/sarana-dan-prasarana?kategori=Sarana dan Prasarana'
+        link: '/layanan?kategori=Sarana dan Prasarana'
       },
       {
         id: 9,
@@ -148,7 +148,7 @@ export const navigationMenu = [
         title: 'Khusus',
         description: 'Jelajahi beragam informasi dan layanan yang disesuaikan dengan kebutuhan Anda.',
         icon: '/icons/navigation/khusus.svg',
-        link: '/layanan/khusus?kategori=Khusus'
+        link: '/layanan?kategori=Khusus'
       },
       {
         id: 11,
@@ -568,6 +568,18 @@ export const publicServiceMenu = [
     title: 'Pengaduan Publik',
     link: 'https://www.lapor.go.id'
   }
+]
+
+export const publicServiceCategories = [
+  'Kependudukan dan Tempat Tinggal',
+  'Pendidikan dan Pembelajaran',
+  'Kesehatan',
+  'Sosial dan Keluarga',
+  'Lingkungan',
+  'Ekonomi, Bisnis dan Profesi',
+  'Teknologi dan Komunikasi',
+  'Sarana dan Prasarana',
+  'Khusus'
 ]
 
 export const socialMediaSites = [
