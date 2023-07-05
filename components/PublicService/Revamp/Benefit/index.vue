@@ -1,5 +1,5 @@
 <template>
-  <section class="px-4 py-8 flex flex-col items-center gap-4 2xl:w-[964px]">
+  <section class="py-8 flex flex-col items-center gap-8">
     <h2 class="font-lora font-bold text-[32px] text-center text-blue-gray-800 mb-4">
       {{ title }}
     </h2>

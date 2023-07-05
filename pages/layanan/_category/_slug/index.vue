@@ -7,7 +7,7 @@
 
     <section class="w-full bg-gray-200">
       <BaseContainer class="relative -top-24 z-20">
-        <div class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white">
+        <div class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white min-h-screen">
           <div class="items-start grid grid-cols-1 xl:grid-cols-[220px,1fr] xl:gap-x-6">
             <!-- Mobile Top Menu Slider -->
             <PublicServiceRevampMenuSwiper :menus="menus" />
@@ -15,20 +15,44 @@
             <!-- Desktop Sidebar Menu -->
             <PublicServiceRevampSidebar :menus="menus" />
 
-            <div class="px-[18px] py-3 rounded-2xl border border-gray-300">
+            <div class="px-[18px] py-3 min-h-screen rounded-2xl border border-gray-300 xl:min-w-0">
               <transition name="fade" mode="out-in">
                 <!-- Main Container Skeleton-->
-                <template v-if="$fetchState.pending">
+                <div v-if="$fetchState.pending" key="skeleton">
                   <PublicServiceRevampSkeleton />
-                </template>
+                </div>
 
                 <!-- Main Container -->
-                <template v-else>
+                <div v-else key="public-service-content">
                   <PublicServiceRevampMediaInformation
                     v-bind="mediaInfomation"
                     @show-preview="showImagePreview"
                   />
-                </template>
+                  <PublicServiceRevampBenefit
+                    v-bind="benefit"
+                  />
+                  <PublicServiceRevampFacility
+                    v-bind="facility"
+                  />
+                  <PublicServiceRevampApplication
+                    v-bind="application"
+                  />
+                  <PublicServiceRevampTermAndCondition
+                    v-bind="termAndCondition"
+                    @show-preview="showImagePreview"
+                  />
+                  <PublicServiceRevampProcedure
+                    v-bind="procedure"
+                    @show-preview="showImagePreview"
+                  />
+                  <PublicServiceRevampInfographic
+                    v-bind="infographic"
+                    @show-preview="showImagePreview"
+                  />
+                  <PublicServiceRevampFAQ
+                    v-bind="frequentlyAskedQuestion"
+                  />
+                </div>
               </transition>
             </div>
           </div>
@@ -143,6 +167,49 @@ export default {
         email: this.serviceData?.hotline_mail || '',
         links: Array.isArray(this.serviceData.links) ? this.serviceData.links : [],
         socialMedia: Array.isArray(this.serviceData.social_media) ? this.serviceData.social_media : []
+      }
+    },
+    benefit () {
+      return {
+        items: Array.isArray(this.serviceData.benefits.items) ? this.serviceData.benefits.items : [],
+        title: this.serviceData.benefits?.title || ''
+      }
+    },
+    facility () {
+      return {
+        items: Array.isArray(this.serviceData.facilities.items) ? this.serviceData.facilities.items : [],
+        title: this.serviceData.facilities?.title || ''
+      }
+    },
+    application () {
+      return {
+        features: Array.isArray(this.serviceData.application.features) ? this.serviceData.application.features : [],
+        name: this.serviceData.application?.name || '',
+        title: this.serviceData.application?.title || ''
+      }
+    },
+    termAndCondition () {
+      return {
+        coverImage: this.serviceData.terms_and_conditions?.cover?.file_download_uri || '',
+        items: Array.isArray(this.serviceData.terms_and_conditions.items) ? this.serviceData.terms_and_conditions.items : [],
+        title: this.serviceData.terms_and_conditions?.title || ''
+      }
+    },
+    procedure () {
+      return {
+        coverImage: this.serviceData.service_procedures?.cover?.file_download_uri || '',
+        items: Array.isArray(this.serviceData.service_procedures.items) ? this.serviceData.service_procedures.items : [],
+        title: this.serviceData.service_procedures?.title || ''
+      }
+    },
+    infographic () {
+      return {
+        images: Array.isArray(this.serviceData.infographics.images) ? this.serviceData.infographics.images : []
+      }
+    },
+    frequentlyAskedQuestion () {
+      return {
+        items: Array.isArray(this.serviceData.faq.Items) ? this.serviceData.faq.Items : []
       }
     }
   },

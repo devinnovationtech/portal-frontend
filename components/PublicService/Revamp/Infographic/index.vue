@@ -1,5 +1,5 @@
 <template>
-  <section class="lg:w-[900px]">
+  <section class="py-8">
     <client-only>
       <swiper
         v-show="swiperReady"
@@ -16,7 +16,7 @@
           :key="`infographic-swiper-${index}`"
           class="!w-[fit-content]"
         >
-          <div class="relative w-[250px] h-[250px] md:w-[353px] md:h-[353px] rounded-xl overflow-hidden group">
+          <div class="relative rounded-xl overflow-hidden group">
             <!-- Image Overlay -->
             <div
               class="opacity-0 inset-0 absolute flex items-center justify-center bg-[#00000080]
@@ -29,7 +29,7 @@
               :src="image.file_download_uri"
               width="250"
               height="250"
-              class="object-cover w-full h-full"
+              class="object-cover w-full h-full md:w-[353px] md:h-[353px]"
               :alt="`Infografis ${index}`"
             />
           </div>
@@ -38,7 +38,7 @@
 
       <!-- Render Placeholder -->
       <template #placeholder>
-        <div class="flex justify-center w-[fit-content] overflow-x-hidden gap-6">
+        <div class="flex justify-center overflow-x-hidden gap-6">
           <div v-for="i in 3" :key="i" class="w-[250px] h-[250px] md:w-[353px] md:h-[353px] rounded-xl bg-gray-300 animate-pulse" />
         </div>
       </template>
