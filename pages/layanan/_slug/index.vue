@@ -10,10 +10,10 @@
         <div class="p-3 md:p-4 lg:p-6 xl:py-8 xl:px-10 rounded-xl bg-white min-h-screen">
           <div class="items-start grid grid-cols-1 xl:grid-cols-[220px,1fr] xl:gap-x-6">
             <!-- Mobile Top Menu Slider -->
-            <PublicServiceRevampMenuSwiper :menus="menus" />
+            <PublicServiceRevampMenuSwiper :menus="activeSections" />
 
             <!-- Desktop Sidebar Menu -->
-            <PublicServiceRevampSidebar :menus="menus" />
+            <PublicServiceRevampSidebar :menus="activeSections" />
 
             <div class="px-[18px] py-3 min-h-screen rounded-2xl border border-gray-300 xl:min-w-0">
               <transition name="fade" mode="out-in">
@@ -25,31 +25,46 @@
                 <!-- Main Container -->
                 <div v-else key="public-service-content">
                   <PublicServiceRevampMediaInformation
+                    id="media-dan-informasi"
                     v-bind="mediaInfomation"
                     @show-preview="showImagePreview"
                   />
                   <PublicServiceRevampBenefit
+                    v-if="isBenefitSectionActive"
+                    id="manfaat-layanan"
                     v-bind="benefit"
                   />
                   <PublicServiceRevampFacility
+                    v-if="isFacilitySectionActive"
+                    id="fasilitas-layanan"
                     v-bind="facility"
                   />
                   <PublicServiceRevampApplication
+                    v-if="isApplicationSectionActive"
+                    id="fitur-layanan"
                     v-bind="application"
                   />
                   <PublicServiceRevampTermAndCondition
+                    v-if="isTermAndConditionSectionActive"
+                    id="syarat-dan-ketentuan-layanan"
                     v-bind="termAndCondition"
                     @show-preview="showImagePreview"
                   />
                   <PublicServiceRevampProcedure
+                    v-if="isServiceProcedureSectionActive"
+                    id="prosedur-layanan"
                     v-bind="procedure"
                     @show-preview="showImagePreview"
                   />
                   <PublicServiceRevampInfographic
+                    v-if="isInfographicSectionActive"
+                    id="infografis-layanan"
                     v-bind="infographic"
                     @show-preview="showImagePreview"
                   />
                   <PublicServiceRevampFAQ
+                    v-if="isFAQSectionActive"
+                    id="faq"
                     v-bind="frequentlyAskedQuestion"
                   />
                 </div>
@@ -80,7 +95,8 @@ export default {
       serviceData: {},
       imagePreviewList: [],
       showPreview: false,
-      imagePreviewIndex: 0
+      imagePreviewIndex: 0,
+      activeSections: []
     }
   },
   async fetch () {
@@ -91,6 +107,7 @@ export default {
       const { data } = response.data
 
       this.serviceData = { ...data }
+      this.getActiveSections()
     } catch (error) {
       if (error.response.status === 404) {
         this.$nuxt.error({ statusCode: 404, message: 'Halaman tidak ditemukan' })
@@ -106,7 +123,6 @@ export default {
     },
     jumbotron () {
       const category = this.serviceData.portal_category || ''
-      const categoryPath = category.toLowerCase().split(' ').join('-')
 
       return {
         breadcrumbItems: [
@@ -115,7 +131,7 @@ export default {
             label: 'Beranda'
           },
           {
-            path: `/layanan/${categoryPath}`,
+            path: `/layanan?kategori=${category}`,
             label: category
           },
           {
@@ -131,27 +147,6 @@ export default {
         category,
         serviceType: this.getServiceType(this.serviceData.technical, this.serviceData.operator_status)
       }
-    },
-    // @todo: Generate sub-menu dinamically based on API data
-    menus () {
-      return [
-        {
-          label: 'Section One',
-          link: '#section-one'
-        },
-        {
-          label: 'Section Two',
-          link: '#section-two'
-        },
-        {
-          label: 'Section Three',
-          link: '#section-three'
-        },
-        {
-          label: 'Section Four',
-          link: '#section-four'
-        }
-      ]
     },
     mediaInfomation () {
       return {
@@ -211,6 +206,27 @@ export default {
       return {
         items: Array.isArray(this.serviceData.faq.Items) ? this.serviceData.faq.Items : []
       }
+    },
+    isBenefitSectionActive () {
+      return this.serviceData.benefits?.is_active === 1
+    },
+    isApplicationSectionActive () {
+      return this.serviceData.technical === 'ONLINE'
+    },
+    isFacilitySectionActive () {
+      return this.serviceData.facilities?.is_active === 1 && this.serviceData.technical === 'OFFLINE'
+    },
+    isTermAndConditionSectionActive () {
+      return this.serviceData.terms_and_conditions?.is_active === 1
+    },
+    isServiceProcedureSectionActive () {
+      return this.serviceData.service_procedures?.is_active === 1
+    },
+    isInfographicSectionActive () {
+      return this.serviceData.infographics?.is_active === 1
+    },
+    isFAQSectionActive () {
+      return this.serviceData.faq?.is_active === 1
     }
   },
   methods: {
@@ -237,6 +253,65 @@ export default {
       this.imagePreviewList = images
       this.imagePreviewIndex = index
       this.showPreview = true
+    },
+    getActiveSections () {
+      const sections = []
+
+      sections.push({
+        link: '#media-dan-informasi',
+        label: 'Media dan Informasi'
+      })
+
+      if (this.isBenefitSectionActive) {
+        sections.push({
+          link: '#manfaat-layanan',
+          label: this.serviceData.benefits?.title
+        })
+      }
+
+      if (this.isApplicationSectionActive) {
+        sections.push({
+          link: '#fitur-layanan',
+          label: this.serviceData.application?.title
+        })
+      }
+
+      if (this.isFacilitySectionActive) {
+        sections.push({
+          link: '#fasilitas-layanan',
+          label: this.serviceData.facilities?.title
+        })
+      }
+
+      if (this.isTermAndConditionSectionActive) {
+        sections.push({
+          link: '#syarat-dan-ketentuan-layanan',
+          label: this.serviceData.terms_and_conditions?.title
+        })
+      }
+
+      if (this.isServiceProcedureSectionActive) {
+        sections.push({
+          link: '#prosedur-layanan',
+          label: this.serviceData.service_procedures?.title
+        })
+      }
+
+      if (this.isServiceProcedureSectionActive) {
+        sections.push({
+          link: '#infografis-layanan',
+          label: 'Infografis'
+        })
+      }
+
+      if (this.isFAQSectionActive) {
+        sections.push({
+          link: '#faq',
+          label: 'Frequently Asked Questions'
+        })
+      }
+
+      this.activeSections = [...sections]
     }
   }
 }

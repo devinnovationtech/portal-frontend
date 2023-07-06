@@ -9,7 +9,7 @@
           :to="menu.link"
           class="relative ml-[-2px] text-sm font-medium leading-5 text-gray-800 py-2 pr-2 border-l-2 border-transparent"
         >
-          <span class="pl-3">
+          <span class="pl-3 line-clamp-1">
             {{ menu.label }}
           </span>
         </NuxtLink>
