@@ -14,7 +14,7 @@
         <swiper-slide
           v-for="(image, index) in images"
           :key="`infographic-swiper-${index}`"
-          class="!w-[fit-content]"
+          class="sm:!w-[fit-content]"
         >
           <div class="relative rounded-xl overflow-hidden group">
             <!-- Image Overlay -->
@@ -58,11 +58,16 @@ export default {
     return {
       swiperReady: false,
       swiperOptions: Object.freeze({
-        slidesPerView: 'auto',
+        slidesPerView: 1,
         spaceBetween: 24,
         mousewheel: true,
         passiveListeners: true,
-        centerInsufficientSlides: true
+        breakpoints: {
+          375: {
+            slidesPerView: 'auto',
+            centerInsufficientSlides: true
+          }
+        }
       })
     }
   },

@@ -75,6 +75,17 @@
       </BaseContainer>
     </section>
 
+    <section v-if="hasNews" class="w-full bg-white">
+      <BaseContainer class="p-4 lg:p-6 xl:py-8 xl:px-10">
+        <PublicServiceRevampNews
+          :service-name="jumbotron.title"
+          :news="newsList"
+          :keyword="keyword"
+          :loading="$fetchState.pending"
+        />
+      </BaseContainer>
+    </section>
+
     <!-- Image Preview -->
     <BaseImagePreview
       :show="showPreview"
@@ -93,6 +104,7 @@ export default {
   data () {
     return {
       serviceData: {},
+      newsList: [],
       imagePreviewList: [],
       showPreview: false,
       imagePreviewIndex: 0,
@@ -105,9 +117,10 @@ export default {
 
       const response = await this.$axios.get(`/v1/public/master-data-publications/slug/${slug}`)
       const { data } = response.data
-
       this.serviceData = { ...data }
+
       this.getActiveSections()
+      this.getServiceNews()
     } catch (error) {
       if (error.response.status === 404) {
         this.$nuxt.error({ statusCode: 404, message: 'Halaman tidak ditemukan' })
@@ -227,6 +240,16 @@ export default {
     },
     isFAQSectionActive () {
       return this.serviceData.faq?.is_active === 1
+    },
+    keyword () {
+      if (Array.isArray(this.serviceData.keywords)) {
+        return this.serviceData.keywords.join(' ')
+      }
+
+      return ''
+    },
+    hasNews () {
+      return Array.isArray(this.newsList) && this.newsList.length > 0
     }
   },
   methods: {
@@ -312,6 +335,24 @@ export default {
       }
 
       this.activeSections = [...sections]
+    },
+    async getServiceNews () {
+      try {
+        const params = {
+          q: this.keyword,
+          per_page: 3,
+          sort_order: 'desc',
+          domain: ['news'],
+          fuzziness: false
+        }
+
+        const response = await this.$axios.$get('/v1/search', { params })
+        if (response.data) {
+          this.newsList = [...response.data]
+        }
+      } catch (error) {
+        this.newsList = []
+      }
     }
   }
 }
