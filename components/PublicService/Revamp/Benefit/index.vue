@@ -7,11 +7,7 @@
       <li
         v-for="(item, index) in items"
         :key="index"
-        :class="{
-          'bg-[#F9FAFB] px-3 py-4 rounded-xl md:w-[316px] 2xl:w-[450px]': true,
-          'xl:w-[425px] ': isItemHasImage,
-          'xl:w-[400px] p-3': !isItemHasImage
-        }"
+        class="bg-[#F9FAFB] p-4 rounded-xl w-full"
       >
         <PublicServiceRevampBenefitCard v-if="isItemHasImage" :item="item" />
         <PublicServiceRevampList v-else :item="item" />

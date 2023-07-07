@@ -3,7 +3,7 @@
     <h2 class="font-lora font-bold text-[32px] text-center text-blue-gray-800 mb-4 sm:max-w-xl">
       {{ title }}
     </h2>
-    <div v-if="coverImage">
+    <div v-if="coverImage" class="w-full h-full md:w-[368px] md:h-[368px]">
       <div class="relative w-full group overflow-hidden rounded-xl">
         <!-- Image Overlay -->
         <div
@@ -13,17 +13,19 @@
           <Icon src="/icons/zoom.svg" size="50px" />
         </div>
         <LazyImg
+          width="368"
+          height="368"
           :src="coverImage"
           alt="Gambar Syarat dan Ketentuan"
-          class="w-full object-cover"
+          class="w-full h-full object-cover"
         />
       </div>
     </div>
-    <ul class="grid grid-cols-1 justify-items-center gap-4 w-full sm:grid-cols-2">
+    <ul class="grid grid-cols-1 justify-items-center items-start gap-4 w-full sm:grid-cols-2">
       <li
         v-for="(item, index) in items"
         :key="index"
-        class="bg-[#F9FAFB] px-3 py-4 rounded-xl md:w-[316px] 2xl:w-[450px]"
+        class="bg-[#F9FAFB] p-4 rounded-xl w-full"
       >
         <PublicServiceRevampList :item="item" />
       </li>

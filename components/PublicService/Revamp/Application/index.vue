@@ -7,7 +7,7 @@
       <li
         v-for="(item, index) in features"
         :key="index"
-        class="p-3 border border-solid bg-white border-[#DFE6F0] rounded-xl sm:w-[240px] md:w-[300px] lg:w-[304px] xl:w-[392px]"
+        class="p-4 border border-solid bg-white border-[#DFE6F0] rounded-xl w-full"
       >
         <PublicServiceRevampList :item="item" />
       </li>

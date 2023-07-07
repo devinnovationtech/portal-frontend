@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col w-full gap-4 sm:flex-row">
-    <figure class="w-full h-[115px] bg-gray-200 rounded-[6px] overflow-hidden md:w-[125px]">
+    <figure class="w-full h-full bg-gray-200 rounded-md overflow-hidden md:max-w-[125px]">
       <LazyImg
         :src="item.image.file_download_uri"
         :alt="item.image.file_name"

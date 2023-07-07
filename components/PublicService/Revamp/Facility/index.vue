@@ -6,17 +6,16 @@
     <ul
       :class="{
         'grid grid-cols-1 justify-items-center gap-4 w-full': true,
-        'sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3': isItemHasImage,
-        'sm:grid-cols-2': !isItemHasImage
+        'sm:grid-cols-3 px-4': isItemHasImage,
+        'sm:grid-cols-2 items-start': !isItemHasImage
       }"
     >
       <li
         v-for="(item, index) in items"
         :key="index"
         :class="{
-          'border border-solid bg-white border-[#DFE6F0] rounded-xl': true,
-          'sm:w-[162px] md:w-[197px] lg:w-[264px] xl:w-[256px]': isItemHasImage,
-          'sm:w-[240px] md:w-[300px] lg:w-[304px] xl:w-[392px] p-3': !isItemHasImage
+          'border border-solid bg-white border-[#DFE6F0] rounded-xl w-full': true,
+          'p-4': !isItemHasImage
         }"
         class=""
       >

@@ -6,14 +6,13 @@
     <div
       :class="{
         'grid grid-cols-1 min-w-0 w-full': true,
-        'lg:grid-cols-[468px,auto] xl:grid-cols-2 gap-3 sm:gap-6 xl:gap-3 sm:max-w-[525px] lg:max-w-full xl:max-w-5xl': coverImage,
-        'sm:max-w-[525px] md:max-w-[656px] lg:max-w-[800px]': !coverImage
+        'gap-y-4 lg:grid-cols-[468px,1fr] xl:grid-cols-2 gap-3 sm:gap-6 xl:gap-3': coverImage,
       }"
     >
-      <div class="lg:order-last">
+      <div class="md:justify-self-center lg:order-last">
         <div
           v-if="coverImage"
-          class="relative w-full group overflow-hidden rounded-xl"
+          class="relative w-full h-full md:w-[392px] md:h-[501px] group overflow-hidden rounded-xl"
         >
           <!-- Image Overlay -->
           <div
@@ -23,17 +22,24 @@
             <Icon src="/icons/zoom.svg" size="50px" />
           </div>
           <LazyImg
+            width="392"
+            height="501"
             :src="coverImage"
             alt="Gambar Alur dan Prosedur"
-            class="w-full object-cover"
+            class="w-full h-full md:w-[392px] md:h-[501px] object-cover"
           />
         </div>
       </div>
-      <ul class="grid grid-cols-1 justify-items-center gap-4 w-full lg:h-fit">
+      <ul
+        :class="{
+          'grid grid-cols-1 gap-4 w-full': true,
+          'sm:grid-cols-2 items-start': !coverImage,
+        }"
+      >
         <li
           v-for="(item, index) in items"
           :key="index"
-          class="bg-[#F9FAFB] px-3 py-4 rounded-xl md:w-full 2xl:w-[450px]"
+          class="bg-[#F9FAFB] p-4 rounded-xl w-full"
         >
           <PublicServiceRevampList :item="item" />
         </li>
