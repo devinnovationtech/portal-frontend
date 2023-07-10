@@ -3,7 +3,7 @@ export default function (to, from, savedPosition) {
   if (to.hash) {
     return {
       selector: to.hash,
-      offset: { x: 0, y: 96 }, // 96px is safe offset from Website Navbar
+      offset: { x: 0, y: 150 }, // 150px is safe offset from Website Navbar
       behavior: 'smooth'
     }
   }

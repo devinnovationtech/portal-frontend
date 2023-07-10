@@ -164,6 +164,7 @@ export default {
           }
         ],
         logo: this.serviceData.logo?.file_download_uri || '',
+        organizationName: this.serviceData?.opd_name || '',
         title: this.serviceData.service_name || '',
         subtitle: this.serviceData.description || '',
         portalCategory: category,
@@ -331,7 +332,7 @@ export default {
         })
       }
 
-      if (this.isServiceProcedureSectionActive) {
+      if (this.isInfographicSectionActive) {
         sections.push({
           link: '#infografis-layanan',
           label: 'Infografis'

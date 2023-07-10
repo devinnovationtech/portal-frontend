@@ -13,7 +13,7 @@
           v-if="loading"
           width="80"
           height="80"
-          class="rounded-full bg-gray-500 opacity-25 animate-pulse mb-3 md:row-span-3 md:mb-1 md:self-center"
+          class="w-[80px] h-[80px] rounded-full bg-gray-500 opacity-25 animate-pulse mb-3 md:row-span-3 md:mb-1 md:self-center"
         >
         <img
           v-else
@@ -21,7 +21,7 @@
           :alt="`Logo layanan ${title}`"
           width="80"
           height="80"
-          class="rounded-full object-cover object-center mb-3 md:row-span-3 md:mb-1 md:self-center"
+          class="w-[80px] h-[80px] rounded-full object-cover object-center mb-3 md:row-span-3 md:mb-1 md:self-center"
         >
 
         <!-- Title Skeleton -->
@@ -39,7 +39,7 @@
           {{ title }}
         </h1>
 
-        <!-- Category Skeleton -->
+        <!-- Organization name Skeleton -->
         <span
           v-if="loading"
           class="w-20 h-6 px-3 py-1 rounded-full bg-gray-500 opacity-25 animate-pulse mb-4 md:col-span-2 md:mb-3"
@@ -48,7 +48,7 @@
           v-else
           class="w-fit px-3 py-1 rounded-full bg-[#67676C] bg-opacity-40 text-white text-xs line-clamp-1 mb-4 md:col-span-2 md:mb-3"
         >
-          {{ portalCategory }}
+          {{ organizationName }}
         </span>
 
         <!-- Date and Category Skeleton -->
@@ -69,7 +69,7 @@
               icon="/icons/rewind-clock.svg"
               :size="12"
               fill-color="#fff"
-              class="mr-[10px]"
+              class="mr-[10px] flex-shrink-0"
             />
             Terakhir diupdate {{ updatedAt }}
           </span>
@@ -78,7 +78,7 @@
               icon="/icons/category.svg"
               :size="12"
               fill-color="#fff"
-              class="mr-[10px]"
+              class="mr-[10px] flex-shrink-0"
             />
             {{ category }}
           </span>
@@ -87,7 +87,7 @@
         <!-- Description Skeleton -->
         <div
           v-if="loading"
-          class="grid grid-cols-1 gap-y-2 mb-6 mt-1 md:mb-0 md:col-span-2 md:mt-5"
+          class="grid grid-cols-1 gap-y-2 mb-6 mt-2 md:mb-0 md:col-span-2 md:mt-5"
         >
           <div class="w-full h-4 rounded-md bg-gray-500 animate-pulse opacity-25" />
           <div class="w-full h-4 rounded-md bg-gray-500 animate-pulse opacity-25" />
@@ -97,7 +97,7 @@
         </div>
         <p
           v-else
-          class="font-lato text-sm leading-6 text-white line-clamp-5 mb-6 mt-1 md:mb-0 md:col-span-2 md:mt-5"
+          class="font-lato text-sm leading-6 text-white mb-6 mt-1 md:mb-0 md:col-span-2 md:mt-5"
         >
           {{ subtitle }}
         </p>
@@ -128,6 +128,11 @@ export default {
     },
     title: {
       type: [String, Number],
+      required: true,
+      default: ''
+    },
+    organizationName: {
+      type: String,
       required: true,
       default: ''
     },
