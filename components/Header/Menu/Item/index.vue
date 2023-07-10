@@ -1,5 +1,8 @@
 <template>
-  <section class="bg-green-primary w-full absolute top-full left-0 border-t border-green-400">
+  <section
+    class="bg-green-primary w-full absolute top-full left-0 border-t border-green-400 overflow-auto
+    max-h-[calc(100vh-64px)] xl:max-h-[calc(100vh-80px)]"
+  >
     <BaseContainer>
       <div
         class="flex mx-auto items-start pt-6 pb-10 bg-no-repeat"

@@ -113,7 +113,7 @@ export default {
   },
   methods: {
     isActive (path) {
-      return path === this.$route.path
+      return path === this.$route.path || path === this.$route.fullPath
     }
   }
 }
