@@ -117,10 +117,21 @@ export default {
 
       const response = await this.$axios.get(`/v1/public/master-data-publications/slug/${slug}`)
       const { data } = response.data
+
       this.serviceData = { ...data }
 
+      const params = {
+        q: this.keyword,
+        per_page: 3,
+        sort_order: 'desc',
+        domain: ['news'],
+        fuzziness: false
+      }
+
+      const newsResponse = await this.$axios.$get('/v1/search', { params })
+      this.newsList = [...newsResponse.data]
+
       this.getActiveSections()
-      this.getServiceNews()
     } catch (error) {
       if (error.response.status === 404) {
         this.$nuxt.error({ statusCode: 404, message: 'Halaman tidak ditemukan' })
@@ -335,24 +346,6 @@ export default {
       }
 
       this.activeSections = [...sections]
-    },
-    async getServiceNews () {
-      try {
-        const params = {
-          q: this.keyword,
-          per_page: 3,
-          sort_order: 'desc',
-          domain: ['news'],
-          fuzziness: false
-        }
-
-        const response = await this.$axios.$get('/v1/search', { params })
-        if (response.data) {
-          this.newsList = [...response.data]
-        }
-      } catch (error) {
-        this.newsList = []
-      }
     }
   }
 }
