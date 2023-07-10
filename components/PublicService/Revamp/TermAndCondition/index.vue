@@ -3,7 +3,7 @@
     <h2 class="font-lora font-bold text-[32px] text-center text-blue-gray-800 mb-4 sm:max-w-xl">
       {{ title }}
     </h2>
-    <div v-if="coverImage" class="w-full h-full md:w-[368px] md:h-[368px]">
+    <div v-if="coverImage">
       <div class="relative w-full group overflow-hidden rounded-xl">
         <!-- Image Overlay -->
         <div
@@ -17,7 +17,7 @@
           height="368"
           :src="coverImage"
           alt="Gambar Syarat dan Ketentuan"
-          class="w-full h-full object-cover"
+          class="w-[368px] object-cover"
         />
       </div>
     </div>
