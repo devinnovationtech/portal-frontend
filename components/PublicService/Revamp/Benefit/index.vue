@@ -3,7 +3,12 @@
     <h2 class="font-lora font-bold text-[32px] text-center text-blue-gray-800 mb-4">
       {{ title }}
     </h2>
-    <ul class="grid grid-cols-1 justify-items-center gap-4 w-full sm:grid-cols-2">
+    <ul
+      :class="{
+        'grid grid-cols-1 justify-items-center gap-4 w-full': true,
+        'sm:grid-cols-2': items.length > 1,
+      }"
+    >
       <li
         v-for="(item, index) in items"
         :key="index"
