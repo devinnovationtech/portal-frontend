@@ -120,16 +120,18 @@ export default {
 
       this.serviceData = { ...data }
 
-      const params = {
-        q: this.keyword,
-        per_page: 3,
-        sort_order: 'desc',
-        domain: ['news'],
-        fuzziness: false
-      }
+      if (this.keyword) {
+        const params = {
+          q: this.keyword,
+          per_page: 3,
+          sort_order: 'desc',
+          domain: ['news'],
+          fuzziness: false
+        }
 
-      const newsResponse = await this.$axios.$get('/v1/search', { params })
-      this.newsList = [...newsResponse.data]
+        const newsResponse = await this.$axios.$get('/v1/search', { params })
+        this.newsList = [...newsResponse.data]
+      }
 
       this.getActiveSections()
     } catch (error) {
@@ -254,7 +256,7 @@ export default {
       return this.serviceData.faq?.is_active === 1
     },
     keyword () {
-      if (Array.isArray(this.serviceData.keywords)) {
+      if (Array.isArray(this.serviceData.keywords) && this.serviceData.keywords.length > 0) {
         return this.serviceData.keywords.join(' ')
       }
 
