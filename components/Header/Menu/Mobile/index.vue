@@ -11,13 +11,13 @@
       >
         <BaseIcon
           v-show="open"
-          icon="icons/close.svg"
+          icon="/icons/close.svg"
           :size="24"
           fill-color="white"
         />
         <BaseIcon
           v-show="!open"
-          icon="icons/hamburger.svg"
+          icon="/icons/hamburger.svg"
           :size="24"
           fill-color="white"
         />
