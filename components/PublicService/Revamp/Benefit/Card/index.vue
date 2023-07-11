@@ -9,7 +9,7 @@
         class="w-full h-full object-cover object-center"
       />
     </figure>
-    <p class="w-full font-lato font-normal leading-[23px] text-sm text-blue-gray-900 text-left line-clamp-5">
+    <p class="w-full font-lato font-normal leading-[23px] text-sm text-blue-gray-900 text-left">
       {{ item.name }}
     </p>
   </div>
