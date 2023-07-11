@@ -236,7 +236,7 @@ export default {
       return this.serviceData.benefits?.is_active === 1
     },
     isApplicationSectionActive () {
-      return this.serviceData.technical === 'ONLINE'
+      return this.serviceData.technical === 'ONLINE' && this.serviceData.application?.status === 'AVAILABLE'
     },
     isFacilitySectionActive () {
       return this.serviceData.facilities?.is_active === 1 && this.serviceData.technical === 'OFFLINE'
