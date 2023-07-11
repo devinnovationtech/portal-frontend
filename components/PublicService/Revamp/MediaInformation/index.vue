@@ -88,6 +88,8 @@
           :current-date="currentDate"
           :operational-times="operationalTimes"
           :service-fee="serviceFeeLabel"
+          :has-description="hasDescription"
+          :is-external-link="isExternalLink"
         />
 
         <OfficialWebsite :website="website" />
@@ -227,6 +229,12 @@ export default {
       }
 
       return `Rp. ${this.formatNumber(this.serviceFee.minimum_fee)}`
+    },
+    hasDescription () {
+      return this.serviceFee.has_description === 1
+    },
+    isExternalLink () {
+      return this.hasDescription && this.serviceFeeLabel.startsWith('http')
     },
     hasMultipleLocations () {
       return this.locations.length > 1

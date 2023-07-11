@@ -23,7 +23,28 @@
         Tarif Layanan
       </h3>
     </div>
-    <p class="w-fit font-lato font-bold text-sm leading-6 bg-blue-100 text-blue-900 p-2 rounded-lg">
+    <Link
+      v-if="hasDescription && isExternalLink"
+      :link="serviceFee"
+      class="block w-full md:max-w-[132px]"
+    >
+      <Button
+        type="button"
+        class="w-full !justify-center"
+      >
+        Detail
+      </Button>
+    </Link>
+    <p
+      v-else-if="hasDescription && !isExternalLink"
+      class="w-fit font-lato font-bold text-sm leading-6 bg-[#F3B8211A] bg-opacity-10 text-[#FF7500] p-2 ml-4 rounded-lg"
+    >
+      {{ serviceFee }}
+    </p>
+    <p
+      v-else
+      class="w-fit font-lato font-bold text-sm leading-6 bg-blue-100 text-blue-900 p-2 ml-4 rounded-lg"
+    >
       {{ serviceFee }}
     </p>
   </section>
@@ -47,11 +68,15 @@ export default {
     serviceFee: {
       type: String,
       default: ''
+    },
+    hasDescription: {
+      type: Boolean,
+      default: false
+    },
+    isExternalLink: {
+      type: Boolean,
+      default: false
     }
   }
 }
 </script>
-
-<style>
-
-</style>

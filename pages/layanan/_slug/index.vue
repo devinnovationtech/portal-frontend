@@ -181,7 +181,7 @@ export default {
         telephone: this.serviceData?.hotline_number || '',
         currentDate: this.currentDate,
         operationalTimes: Array.isArray(this.serviceData?.operational_times) ? this.serviceData?.operational_times : [],
-        serviceFee: this.serviceData.service_fee,
+        serviceFee: this.serviceData?.service_fee || {},
         website: this.serviceData?.website || '',
         locations: Array.isArray(this.serviceData.locations) ? this.serviceData.locations : [],
         email: this.serviceData?.hotline_mail || '',
