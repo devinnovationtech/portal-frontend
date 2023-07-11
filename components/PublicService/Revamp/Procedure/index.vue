@@ -34,7 +34,7 @@
         :class="{
           'grid grid-cols-1 gap-4 w-full': true,
           'h-fit': coverImage,
-          'sm:grid-cols-2 items-start': !coverImage,
+          'sm:grid-cols-2 items-start': !coverImage && items.length >= 2,
         }"
       >
         <li
@@ -42,7 +42,7 @@
           :key="index"
           class="bg-[#F9FAFB] p-4 rounded-xl w-full"
         >
-          <PublicServiceRevampList :item="item" />
+          <PublicServiceRevampList :item="item" :is-detail-text-button="isDetailText" />
         </li>
       </ul>
     </div>
@@ -63,6 +63,11 @@ export default {
     items: {
       type: Array,
       default: () => []
+    }
+  },
+  data () {
+    return {
+      isDetailText: true
     }
   }
 }
