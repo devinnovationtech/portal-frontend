@@ -6,8 +6,8 @@
     <ul
       :class="{
         'grid grid-cols-1 justify-items-center gap-4 w-full': true,
-        'sm:grid-cols-3 px-4': isItemHasImage,
-        'sm:grid-cols-2 items-start': !isItemHasImage
+        'sm:grid-cols-2': !isItemHasImage || items.length === 2 ,
+        'sm:grid-cols-3': isItemHasImage && items.length > 2,
       }"
     >
       <li
@@ -15,9 +15,9 @@
         :key="index"
         :class="{
           'border border-solid bg-white border-[#DFE6F0] rounded-xl w-full': true,
-          'p-4': !isItemHasImage
+          'sm:w-[320px] lg:w-[392px]' : isItemHasImage && items.length === 1,
+          'p-4 h-[113px]': !isItemHasImage
         }"
-        class=""
       >
         <PublicServiceRevampFacilityCard v-if="isItemHasImage" :item="item" />
         <PublicServiceRevampList v-else :item="item" />

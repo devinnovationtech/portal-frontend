@@ -10,7 +10,7 @@
     <p
       :class="{
         'w-full font-lato text-left text-blue-gray-900': true,
-        'line-clamp-3 md:line-clamp-5': !hasDescription,
+        'line-clamp-3': !hasDescription,
         'line-clamp-6': hasDescription
       }"
     >
