@@ -138,31 +138,17 @@ export const navigationMenu = [
       },
       {
         id: 9,
-        title: 'Ketenagakerjaan',
-        description: 'Cari lowongan kerja gratis dan terpercaya',
-        icon: '/icons/navigation/ketenagakerjaan.svg',
-        link: 'https://jabarjawara.id'
-      },
-      {
-        id: 10,
         title: 'Khusus',
         description: 'Jelajahi beragam informasi dan layanan yang disesuaikan dengan kebutuhan Anda.',
         icon: '/icons/navigation/khusus.svg',
         link: '/layanan?kategori=Khusus'
       },
       {
-        id: 11,
+        id: 10,
         title: 'PIKOBAR',
         description: 'Media komunikasi dan informasi penanganan Covid-19 satu pintu di Jawa Barat',
         icon: '/icons/navigation/covid19.svg',
         link: 'https://pikobar.jabarprov.go.id'
-      },
-      {
-        id: 12,
-        title: 'Perizinan Online',
-        description: 'Layanan informasi dan kepengurusan perizinan usaha secara online',
-        icon: '/icons/navigation/perijinan-online.svg',
-        link: 'https://dpmptsp.jabarprov.go.id/jelita/main/pendaftaranbaru/perizinanonline'
       }
     ],
     gtagEvent: 'click_menu_layanan',
