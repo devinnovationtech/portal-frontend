@@ -213,7 +213,7 @@ export default {
       }
     },
     hasContentImages () {
-      return this.contentImages.length > 0
+      return this.contentImages.length > 0 && this.contentImages.some(image => image.file_download_uri !== '')
     },
     serviceFeeLabel () {
       if (this.serviceFee.has_description) {
