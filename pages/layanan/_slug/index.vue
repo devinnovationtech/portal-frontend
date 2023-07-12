@@ -130,12 +130,12 @@ export default {
         }
 
         const newsResponse = await this.$axios.$get('/v1/search', { params })
-        this.newsList = [...newsResponse.data]
+        this.newsList = newsResponse.data
       }
 
       this.getActiveSections()
     } catch (error) {
-      if (error.response.status === 404) {
+      if (error.response?.status === 404) {
         this.$nuxt.error({ statusCode: 404, message: 'Halaman tidak ditemukan' })
       }
     }
