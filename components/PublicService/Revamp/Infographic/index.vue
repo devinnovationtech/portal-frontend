@@ -34,6 +34,20 @@
             />
           </div>
         </swiper-slide>
+
+        <!-- Navigation Buttons -->
+        <button
+          slot="button-prev"
+          class="hidden md:flex infographic-swiper__navigation  infographic-swiper__button-prev"
+        >
+          <Icon size="16px" name="chevron-left" />
+        </button>
+        <button
+          slot="button-next"
+          class="hidden md:flex infographic-swiper__navigation infographic-swiper__button-next"
+        >
+          <Icon size="16px" name="chevron-right" />
+        </button>
       </swiper>
 
       <!-- Render Placeholder -->
@@ -67,6 +81,10 @@ export default {
             slidesPerView: 'auto',
             centerInsufficientSlides: true
           }
+        },
+        navigation: {
+          nextEl: '.infographic-swiper__button-next',
+          prevEl: '.infographic-swiper__button-prev'
         }
       })
     }
@@ -79,3 +97,45 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .infographic-swiper__button-next,
+  .infographic-swiper__button-prev {
+    top: calc(50% - 21px);
+    position: absolute;
+    width: unset;
+    opacity: 1;
+    z-index: 10;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #E6F6EC;
+    color: #16A75C;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .infographic-swiper__button-next {
+    right: 8px;
+  }
+
+  .infographic-swiper__button-prev {
+    left: 8px;
+  }
+
+  .swiper-button-disabled::v-deep {
+    color: #BDBDBD !important;
+    background: #F5F5F5 !important;
+    cursor: auto !important;
+    pointer-events: none !important;
+  }
+
+  .infographic-swiper__navigation {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .infographic-swiper:hover .infographic-swiper__navigation {
+    opacity: 1;
+  }
+</style>
