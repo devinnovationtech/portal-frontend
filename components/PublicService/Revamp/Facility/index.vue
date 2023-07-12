@@ -1,5 +1,5 @@
 <template>
-  <section class="py-8 flex flex-col items-center gap-8 bg-[#F9FAFB] rounded-2xl bg-[url('/images/public-service/supergraphics.webp')] bg-no-repeat bg-right">
+  <section class="py-8 px-6 xl:px-[64px] flex flex-col items-center gap-8 bg-[#F9FAFB] rounded-2xl bg-[url('/images/public-service/supergraphics.webp')] bg-no-repeat bg-right">
     <h2 class="font-lora font-bold text-[32px] text-center text-blue-gray-800 mb-4">
       {{ title }}
     </h2>
@@ -16,7 +16,7 @@
         :class="{
           'border border-solid bg-white border-[#DFE6F0] rounded-xl w-full': true,
           'sm:w-[320px] lg:w-[392px]' : isItemHasImage && items.length === 1,
-          'p-4 h-[113px]': !isItemHasImage
+          'p-4': !isItemHasImage
         }"
       >
         <PublicServiceRevampFacilityCard v-if="isItemHasImage" :item="item" />
