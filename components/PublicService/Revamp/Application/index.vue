@@ -1,9 +1,14 @@
 <template>
-  <section class="py-8 flex flex-col items-center gap-8 bg-[#F9FAFB] rounded-2xl bg-[url('/images/public-service/supergraphics.webp')] bg-no-repeat bg-right">
+  <section class="py-8 px-6 xl:px-[64px] flex flex-col items-center gap-8 bg-[#F9FAFB] rounded-2xl bg-[url('/images/public-service/supergraphics.webp')] bg-no-repeat bg-right">
     <h2 class="font-lora font-bold text-[32px] text-center text-blue-gray-800 mb-4">
       {{ title }}
     </h2>
-    <ul class="grid grid-cols-1 justify-items-center gap-4 w-full sm:grid-cols-2">
+    <ul
+      :class="{
+        'grid grid-cols-1 justify-items-center gap-4 w-full': true,
+        'sm:grid-cols-2': features.length > 1,
+      }"
+    >
       <li
         v-for="(item, index) in features"
         :key="index"

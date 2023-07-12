@@ -1,12 +1,12 @@
 <template>
-  <section class="py-8 flex flex-col items-center gap-8">
+  <section class="py-8 px-6 xl:px-[64px] flex flex-col items-center gap-8">
     <h2 class="font-lora font-bold text-[32px] text-center text-blue-gray-800 mb-4 sm:max-w-xl">
       {{ title }}
     </h2>
     <div
       :class="{
         'grid grid-cols-1 min-w-0 w-full': true,
-        'gap-y-4 lg:grid-cols-[468px,1fr] xl:grid-cols-2 gap-3 sm:gap-6 xl:gap-3': coverImage,
+        'gap-y-4 gap-3 sm:gap-6 lg:grid-cols-[1fr,392px]': coverImage,
       }"
     >
       <div class="md:justify-self-center lg:order-last">

@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full px-2 py-8 rounded-2xl bg-[#F9FAFB]">
+  <section class="w-full px-6 py-8 xl:px-[64px] rounded-2xl bg-[#F9FAFB]">
     <h2 class="font-lora font-bold text-2xl leading-8 md:text-[32px] md:leading-10 text-center mb-6">
       Frequently Asked Question
     </h2>

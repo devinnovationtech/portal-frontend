@@ -6,8 +6,8 @@
     <ul
       :class="{
         'grid grid-cols-1 justify-items-center gap-4 w-full': true,
-        'sm:grid-cols-2': items.length === 2 ,
-        'sm:grid-cols-3': items.length > 2,
+        'sm:grid-cols-2': (isItemHasImage && items.length === 2) || (!isItemHasImage && items.length >= 2),
+        'sm:grid-cols-3': isItemHasImage && items.length > 2,
       }"
     >
       <li
