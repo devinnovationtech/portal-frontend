@@ -280,12 +280,16 @@ export default {
         TIKTOK: '/icons/social-media/tiktok-logo.svg'
       }
 
-      return this.socialMedia.map(item => ({
+      const socialMedia = this.socialMedia.map(item => ({
         title: item.name,
         label: item.type.toLowerCase(),
         link: item.link,
         icon: SOCIAL_MEDIA_ICON_MAP[item.type]
       }))
+
+      // filter social media with link property
+      // because data from API doesn't always have link data
+      return socialMedia.filter(item => item.link !== '')
     }
   },
   methods: {

@@ -22,6 +22,7 @@
         :key="`link-${index}`"
       >
         <Link
+          v-show="!!item.link"
           :link="item.link"
           :title="item.label"
         >
@@ -48,39 +49,42 @@
       </li>
     </ul>
 
-    <div class="flex items-center">
-      <BaseIcon
-        icon="/icons/share.svg"
-        :size="16"
-        fill-color="#42A5F5"
-      />
-      <h3 class="ml-2 font-lato text-sm font-normal leading-6 text-blue-gray-400">
-        Sosial Media
-      </h3>
-    </div>
+    <template v-if="hasSocialMedia">
+      <div class="flex items-center">
+        <BaseIcon
+          icon="/icons/share.svg"
+          :size="16"
+          fill-color="#42A5F5"
+        />
+        <h3 class="ml-2 font-lato text-sm font-normal leading-6 text-blue-gray-400">
+          Sosial Media
+        </h3>
+      </div>
 
-    <ul class="grid grid-cols-3 gap-x-2">
-      <li
-        v-for="(item, index) in socialMedia"
-        :key="`social-media-${index}`"
-      >
-        <Link
-          :link="item.link"
-          class="flex flex-col p-2 items-center justify-center gap-1
-          cursor-pointer hover:bg-green-50"
-          :title="item.title"
+      <ul class="grid grid-cols-3 gap-x-2">
+        <li
+          v-for="(item, index) in socialMedia"
+          :key="`social-media-${index}`"
         >
-          <BaseIcon
-            :icon="item.icon"
-            :size="16"
-            mode="image"
-          />
-          <p class="text-blue-gray-400 capitalize font-normal text-xs leading-relaxed">
-            {{ item.label }}
-          </p>
-        </Link>
-      </li>
-    </ul>
+          <Link
+            v-show="!!item.link"
+            :link="item.link"
+            class="flex flex-col p-2 items-center justify-center gap-1
+          cursor-pointer hover:bg-green-50"
+            :title="item.title"
+          >
+            <BaseIcon
+              :icon="item.icon"
+              :size="16"
+              mode="image"
+            />
+            <p class="text-blue-gray-400 capitalize font-normal text-xs leading-relaxed">
+              {{ item.label }}
+            </p>
+          </Link>
+        </li>
+      </ul>
+    </template>
   </section>
 </template>
 
@@ -98,6 +102,11 @@ export default {
     links: {
       type: Array,
       default: () => []
+    }
+  },
+  computed: {
+    hasSocialMedia () {
+      return this.socialMedia.length > 0
     }
   }
 }
