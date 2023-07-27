@@ -10,10 +10,10 @@
             Dapatkan kemudahaan akses ke beberapa layanan Pemerintah Provinsi Jawa Barat untuk kebutuhan Anda.
           </p>
         </li>
-        <li v-for="menu in menus" :key="menu.id" class="group px-4 py-3 rounded-md hover:bg-green-50 transition-colors ease-brand duration-250">
+        <li v-for="menu in menus" v-show="!$fetchState.pending" :key="menu.id" class="group px-4 py-3 rounded-md hover:bg-green-50 transition-colors ease-brand duration-250">
           <Link :link="menu.link" class="flex flex-col gap-4" @click.native="gtagClickQuickAccess(menu)">
             <LazyImg
-              :src="menu.icon"
+              :src="menu.image"
               :alt="menu.title"
               width="40"
               height="40"
@@ -27,18 +27,39 @@
             </p>
           </Link>
         </li>
+        <li v-for="(skeleton, index) in 8" v-show="$fetchState.pending" :key="index">
+          <div class="flex flex-col gap-4">
+            <div class="w-10 h-10 animate-pulse bg-gray-200 rounded-lg" />
+            <div class="w-1/2 h-2 animate-pulse bg-gray-200 rounded-lg" />
+            <div class="w-full h-2 animate-pulse bg-gray-200 rounded-lg" />
+          </div>
+        </li>
       </ul>
     </BaseContainer>
   </section>
 </template>
 
 <script>
-import { quickLinkMenu } from '~/static/data'
 
 export default {
   data () {
     return {
-      menus: quickLinkMenu
+      menus: []
+    }
+  },
+  async fetch () {
+    const params = {
+      is_active: 1,
+      per_page: 8
+    }
+
+    try {
+      const response = await this.$axios.get('/v1/public/quick-accesses', { params })
+      if (response.status === 200) {
+        this.menus = response.data.data
+      }
+    } catch {
+      this.menus = []
     }
   },
   methods: {

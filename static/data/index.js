@@ -463,66 +463,6 @@ export const featuredProgramMenu = [
   }
 ]
 
-export const quickLinkMenu = [
-  {
-    id: 1,
-    title: 'Surat Jabar Juara',
-    description: 'Kirim Surat untuk Gubernur dan Perangkat Daerah',
-    icon: '/icons/akses-cepat/suara-jabar.svg',
-    link: 'http://suara.jabarprov.go.id/'
-  },
-  {
-    id: 2,
-    title: 'Mall Pelayanan Publik Digital',
-    description: 'Lakukan aktivitas pengajuan perizinan secara virtual, kapanpun dan dimanapun melalui Mall Pelayanan Publik Digital di Jawa Barat.',
-    icon: '/icons/akses-cepat/mppd.svg',
-    link: 'https://dpmptsp.jabarprov.go.id/mppdigital/'
-  },
-  {
-    id: 3,
-    title: 'Cek Bantuan Sosial',
-    description: 'Pencarian data Penerima Manfaat terkait bantuan sosial yang diselenggarakan Kemensos.',
-    icon: '/icons/akses-cepat/bansos.svg',
-    link: 'https://cekbansos.kemensos.go.id'
-  },
-  {
-    id: 4,
-    title: 'Info Harga Komoditas Pangan',
-    description: 'Dapatkan info harga rata-rata komoditas harian di daerah sekitar Jawa Barat.',
-    icon: '/icons/akses-cepat/info-harga-pangan.svg',
-    link: 'http://silinda.jabarprov.go.id/komoditas'
-  },
-  // Hide item temporarily
-  // {
-  //   id: 5,
-  //   title: 'Pengembangan Ekspor',
-  //   description: 'Layanan informasi, pembinaan, fasilitasi dan pengembangan ekspor di Jawa Barat.',
-  //   icon: '/icons/akses-cepat/infinity.svg',
-  //   link: 'https://infinity.jabarprov.go.id/'
-  // },
-  {
-    id: 6,
-    title: 'Open Data',
-    description: 'Portal transparansi data dan informasi publik bagi warga Jawa Barat.',
-    icon: '/icons/akses-cepat/open-data.svg',
-    link: 'https://opendata.jabarprov.go.id/id'
-  },
-  {
-    id: 7,
-    title: 'Saber Pungli',
-    description: 'Laporkan segala aktivitas Pungutan Liar (Pungli) di sekitarmu!',
-    icon: '/icons/akses-cepat/saber-pungli.svg',
-    link: 'http://saberpungli.jabarprov.go.id'
-  },
-  {
-    id: 8,
-    title: 'Laporan Pengaduan Masyarakat',
-    description: 'Sarana penyampaian aspirasi dan pengaduan masyarakat Jawa Barat',
-    icon: '/icons/akses-cepat/lapor.svg',
-    link: 'https://inspektorat.jabarprov.go.id/sarana-pengaduan-masyarakat'
-  }
-]
-
 export const publicServiceMenu = [
   {
     id: 1,
