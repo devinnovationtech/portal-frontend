@@ -1,5 +1,9 @@
 <template>
   <BaseContainer class="px-0 max-w-full xl:max-w-7xl xl:px-6">
+    <div v-if="$fetchState.pending" class="flex h-[340px]">
+      <div class="animate-pulse bg-gray-200 rounded-xl w-5/6 mr-8" />
+      <div class="animate-pulse bg-gray-200 rounded-l-xl w-1/6" />
+    </div>
     <client-only>
       <swiper
         v-show="swiperReady"
