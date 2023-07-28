@@ -207,7 +207,7 @@ export default {
       return {
         features: Array.isArray(this.serviceData.application.features) ? this.serviceData.application.features : [],
         name: this.serviceData.application?.name || '',
-        title: this.serviceData.application?.title || ''
+        title: this.serviceData.application?.title || 'Fitur Aplikasi'
       }
     },
     termAndCondition () {
@@ -309,7 +309,7 @@ export default {
       if (this.isApplicationSectionActive) {
         sections.push({
           link: '#fitur-layanan',
-          label: this.serviceData.application?.title
+          label: this.serviceData.application?.title || 'Fitur Aplikasi'
         })
       }
 
