@@ -105,13 +105,21 @@ export default {
     '@nuxtjs/axios',
     'portal-vue/nuxt',
     // https://www.npmjs.com/package/vue-social-sharing
-    'vue-social-sharing/nuxt'
+    'vue-social-sharing/nuxt',
+    // https://www.npmjs.com/package/@nuxtjs/toast
+    '@nuxtjs/toast'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: 'http://localhost:3000'
   },
+
+  // // Nuxt Toast configuration: https://github.com/shakee93/vue-toasted#options
+  // toast: {
+  //   position: 'top-center',
+  //   theme: 'bubble'
+  // },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

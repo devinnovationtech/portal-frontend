@@ -36,19 +36,33 @@
 
 <script>
 import debounce from 'lodash/debounce'
+import { publicServiceCategories } from '~/static/data'
 
 export default {
+  beforeRouteEnter (to, _, next) {
+    const category = to.query?.kategori
+
+    if (!category) {
+      return next({
+        path: to.path,
+        query: {
+          kategori: publicServiceCategories[0]
+        }
+      })
+    }
+
+    if (category && !publicServiceCategories.includes(category)) {
+      return next({ path: '/404' })
+    }
+
+    return next()
+  },
   data () {
     return {
       searchValue: '',
       serviceList: [],
       meta: {},
-      loading: false,
-      jumbotron: {
-        title: `Daftar Layanan ${this.$route.query.nama || '-'}`,
-        subtitle: `Lihat berbagai layanan untuk kebutuhan seputar ${this.$route.query.nama ? this.$route.query.nama.toLowerCase() : '-'}`,
-        backgroundImageUrl: '/images/jumbotron/default.webp'
-      }
+      loading: false
     }
   },
   async fetch () {
@@ -66,10 +80,20 @@ export default {
           label: 'Beranda'
         },
         {
-          path: this.$route.path,
-          label: this.$route.query.nama
+          path: this.$route.fullPath,
+          label: this.$route.query.kategori
         }
       ]
+    },
+    jumbotron () {
+      return {
+        title: this.serviceCategory ? `Daftar Layanan ${this.serviceCategory}` : '',
+        subtitle: `Lihat berbagai layanan untuk kebutuhan seputar ${this.serviceCategory ? this.serviceCategory.toLowerCase() : '-'}`,
+        backgroundImageUrl: '/images/jumbotron/default.webp'
+      }
+    },
+    serviceCategory () {
+      return this.$route.query.kategori
     },
     serviceLength () {
       return this.meta?.totalCount || 0
@@ -95,6 +119,12 @@ export default {
           await this.getServices(params)
         }
       }, 1000)
+    },
+    async serviceCategory (newValue, oldValue) {
+      await this.$nextTick()
+      if (newValue !== oldValue) {
+        this.getServices({ cat: newValue })
+      }
     }
   },
   methods: {
@@ -103,10 +133,9 @@ export default {
         this.loading = true
 
         const params = {
-          ...parameters,
-          per_page: 50
+          ...parameters
         }
-        const response = await this.$axios.get('v1/public/service-public', { params })
+        const response = await this.$axios.get('v1/public/master-data-publications', { params })
 
         const { data, meta } = response.data
         this.serviceList = data

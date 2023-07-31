@@ -83,58 +83,72 @@ export const navigationMenu = [
       {
         id: 1,
         title: 'Kependudukan dan Tempat Tinggal',
-        description: 'Urus Perizinan kependudukan dan tempat tinggal dengan mudah',
+        description: 'Temukan informasi, panduan, dan layanan terkait urusan administratif tempat tinggal Anda.',
         icon: '/icons/navigation/kependudukan.svg',
-        link: '/layanan/kependudukan-dan-tempat-tinggal?nama=Kependudukan dan Tempat Tinggal&kategori=kependudukan'
+        link: '/layanan?kategori=Kependudukan dan Tempat Tinggal'
       },
       {
         id: 2,
         title: 'Pendidikan dan Pembelajaran',
-        description: 'Dapat informasi program pemerintah bagi siswa dan pelajar',
+        description: 'Jelajahi informasi dan layanan terkait untuk membantu kebutuhan pendidikan dan pembelajaran Anda.',
         icon: '/icons/navigation/pendidikan.svg',
-        link: '/layanan/pendidikan-dan-pembelajaran?nama=Pendidikan dan Pembelajaran&kategori=pendidikan'
+        link: '/layanan?kategori=Pendidikan dan Pembelajaran'
       },
       {
         id: 3,
         title: 'Kesehatan',
-        description: 'Akses layanan untuk Legalisir STR dan STRTTK bagi Tenaga Kesehatan di Provinsi Jawa Barat',
+        description: 'Temukan informasi, dukungan, dan fasilitas untuk hidup sehat dan bahagia.',
         icon: '/icons/navigation/kesehatan.svg',
-        link: '/layanan/kesehatan?nama=Kesehatan&kategori=kesehatan'
+        link: '/layanan?kategori=Kesehatan'
       },
       {
         id: 4,
-        title: 'Pajak',
-        description: 'Cari semua informasi terkait perpajakan di Jawa Barat',
-        icon: '/icons/navigation/pajak.svg',
-        link: '/layanan/pajak?nama=Pajak&kategori=perpajakan'
+        title: 'Sosial dan Keluarga',
+        description: 'Temukan bantuan, pemberdayaan, dan kesempatan untuk meningkatkan kesejahteraan sosial bersama.',
+        icon: '/icons/navigation/sosial.svg',
+        link: '/layanan?kategori=Sosial dan Keluarga'
       },
       {
         id: 5,
-        title: 'Sosial dan Keluarga',
-        description: 'Akses ke berbagai layanan bagi anak-anak, perempuan dan masyarakat',
-        icon: '/icons/navigation/sosial.svg',
-        link: '/layanan/sosial-dan-keluarga?nama=Sosial dan Keluarga&kategori=sosial'
+        title: 'Lingkungan',
+        description: 'Temukan informasi dan layanan pengelolaan lingkungan yang berkelanjutan untuk hidup yang lebih baik.',
+        icon: '/icons/navigation/lingkungan.svg',
+        link: '/layanan?kategori=Lingkungan'
       },
       {
         id: 6,
-        title: 'Ketenagakerjaan',
-        description: 'Cari lowongan kerja gratis dan terpercaya',
-        icon: '/icons/navigation/ketenagakerjaan.svg',
-        link: 'https://jabarjawara.id'
+        title: 'Ekonomi, Bisnis dan Profesi',
+        description: 'Temukan wawasan, dukungan, dan layanan seputar ekonomi, bisnis, dan profesi Anda.',
+        icon: '/icons/navigation/bisnis.svg',
+        link: '/layanan?kategori=Ekonomi, Bisnis dan Profesi'
       },
       {
         id: 7,
+        title: 'Teknologi dan Komunikasi',
+        description: 'Dapatkan informasi dan layanan terkini yang mendekatkan Anda dengan transformasi digital.',
+        icon: '/icons/navigation/teknologi-dan-komunikasi.svg',
+        link: '/layanan?kategori=Teknologi dan Komunikasi'
+      },
+      {
+        id: 8,
+        title: 'Sarana dan Prasarana',
+        description: 'Temukan fasilitas umum, dukungan, dan regulasi yang mendorong kemajuan bersama.',
+        icon: '/icons/navigation/sarana-prasarana.svg',
+        link: '/layanan?kategori=Sarana dan Prasarana'
+      },
+      {
+        id: 9,
+        title: 'Khusus',
+        description: 'Jelajahi beragam informasi dan layanan yang disesuaikan dengan kebutuhan Anda.',
+        icon: '/icons/navigation/khusus.svg',
+        link: '/layanan?kategori=Khusus'
+      },
+      {
+        id: 10,
         title: 'PIKOBAR',
         description: 'Media komunikasi dan informasi penanganan Covid-19 satu pintu di Jawa Barat',
         icon: '/icons/navigation/covid19.svg',
         link: 'https://pikobar.jabarprov.go.id'
-      },
-      {
-        id: 8,
-        title: 'Perizinan Online',
-        description: 'Layanan informasi dan kepengurusan perizinan usaha secara online',
-        icon: '/icons/navigation/perijinan-online.svg',
-        link: 'https://dpmptsp.jabarprov.go.id/jelita/main/pendaftaranbaru/perizinanonline'
       }
     ],
     gtagEvent: 'click_menu_layanan',
@@ -480,6 +494,18 @@ export const publicServiceMenu = [
     title: 'Pengaduan Publik',
     link: 'https://www.lapor.go.id'
   }
+]
+
+export const publicServiceCategories = [
+  'Kependudukan dan Tempat Tinggal',
+  'Pendidikan dan Pembelajaran',
+  'Kesehatan',
+  'Sosial dan Keluarga',
+  'Lingkungan',
+  'Ekonomi, Bisnis dan Profesi',
+  'Teknologi dan Komunikasi',
+  'Sarana dan Prasarana',
+  'Khusus'
 ]
 
 export const socialMediaSites = [
