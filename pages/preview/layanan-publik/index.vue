@@ -313,9 +313,29 @@ export default {
     },
     setServiceData (event) {
       this.serviceData = { ...event.data }
+      this.getActiveSections()
+      this.fetchNews()
       setTimeout(() => {
         this.isLoading = false
-      }, 2000)
+      }, 1000)
+    },
+    async fetchNews () {
+      try {
+        if (this.keyword) {
+          const params = {
+            q: this.keyword,
+            per_page: 3,
+            sort_order: 'desc',
+            domain: ['news'],
+            fuzziness: false
+          }
+
+          const newsResponse = await this.$axios.$get('/v1/search', { params })
+          this.newsList = newsResponse.data
+        }
+      } catch (error) {
+        this.newsList = []
+      }
     }
   }
 }
