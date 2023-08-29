@@ -51,7 +51,8 @@ export default {
     '~/plugins/vue-easy-lightbox',
     '~/plugins/lite-youtube-embed.client.js',
     '~/plugins/device.server',
-    '~/plugins/newrelic-browser.server'
+    '~/plugins/newrelic-browser.server',
+    '~/plugins/hotjar.client.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -66,7 +67,8 @@ export default {
       accountId: process.env.NEW_RELIC_ACCOUNT_ID,
       applicationId: process.env.NEW_RELIC_APPLICATION_ID,
       licenseKey: process.env.NEW_RELIC_LICENSE_KEY
-    }
+    },
+    hotjarSiteId: process.env.HOTJAR_SITE_ID
   },
 
   privateRuntimeConfig: {
