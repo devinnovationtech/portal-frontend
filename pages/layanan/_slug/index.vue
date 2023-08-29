@@ -140,6 +140,69 @@ export default {
       }
     }
   },
+  head () {
+    return {
+      title: `Portal Jabar - Layanan ${this.jumbotron.title}`,
+      meta: [
+        {
+          hid: 'title',
+          name: 'title',
+          content: this.jumbotron.title
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.jumbotron.subtitle
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.jumbotron.title
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.mediaInfomation.coverImage
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.jumbotron.subtitle
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: this.publicationUrl
+        },
+        // Twitter Meta
+        {
+          hid: 'twitter:card',
+          property: 'twitter:card',
+          content: 'summary'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.jumbotron.title
+        },
+        {
+          hid: 'twitter:description',
+          property: 'twitter:description',
+          content: this.jumbotron.subtitle
+        },
+        {
+          hid: 'twitter:image',
+          property: 'twitter:image',
+          content: this.mediaInfomation.coverImage
+        },
+        {
+          hid: 'twitter:url',
+          property: 'twitter:url',
+          content: this.publicationUrl
+        }
+      ]
+    }
+  },
   fetchDelay: 1000,
   computed: {
     currentDate () {
@@ -264,6 +327,15 @@ export default {
     },
     hasNews () {
       return Array.isArray(this.newsList) && this.newsList.length > 0
+    },
+    publicationUrl () {
+      const publicUrl = process.env.NUXT_ENV_PUBLIC_URL
+      const fullPath = this.$route.fullPath
+
+      if (publicUrl && fullPath) {
+        return `${publicUrl}/${fullPath}`
+      }
+      return ''
     }
   },
   methods: {
