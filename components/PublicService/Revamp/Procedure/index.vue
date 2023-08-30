@@ -34,7 +34,6 @@
         :class="{
           'grid grid-cols-1 gap-4 w-full': true,
           'h-fit': coverImage,
-          'sm:grid-cols-2 items-start': !coverImage && items.length >= 2,
         }"
       >
         <li
