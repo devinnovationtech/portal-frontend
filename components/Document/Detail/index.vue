@@ -83,6 +83,8 @@
 </template>
 
 <script>
+import mime from 'mime-types'
+
 export default {
   props: {
     showDetail: {
@@ -116,14 +118,16 @@ export default {
   },
   computed: {
     mimeTypeLabel () {
-      switch (this.mimeType) {
-        case 'application/pdf':
+      switch (mime.extension(this.mimeType)) {
+        case 'pdf':
           return 'Portable Document Format (PDF)'
 
-        case 'application/msword':
+        case 'doc':
+        case 'docx':
           return 'Microsoft Word'
 
-        case 'application/vnd.ms-excel':
+        case 'xls':
+        case 'xlsx':
           return 'Microsoft Excel'
 
         default:

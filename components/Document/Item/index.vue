@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import mime from 'mime-types'
+
 export default {
   props: {
     id: {
@@ -71,18 +73,20 @@ export default {
   },
   computed: {
     documentIcon () {
-      switch (this.mimeType) {
-        case 'application/pdf':
+      switch (mime.extension(this.mimeType)) {
+        case 'pdf':
           return '/icons/document/pdf.svg'
 
-        case 'application/msword':
+        case 'doc':
+        case 'docx':
           return '/icons/document/doc.svg'
 
-        case 'application/vnd.ms-excel':
+        case 'xls':
+        case 'xlsx':
           return '/icons/document/xls.svg'
 
         default:
-          return '/icons/document/pdf.svg'
+          return '/icons/document/file.svg'
       }
     }
   }
