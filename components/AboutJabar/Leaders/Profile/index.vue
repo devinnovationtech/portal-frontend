@@ -2,7 +2,7 @@
   <BaseModal :show="show" button-label="Tutup" @close="$emit('close')">
     <template #header>
       <h1 class="font-roboto font-medium text-[21px] leading-[34px] capitalize text-green-700 px-6 py-2">
-        Profil {{ selectedProfile }} Jawa Barat
+        Profil {{ profile[selectedProfile].title }} Jawa Barat
       </h1>
     </template>
     <section class="flex flex-col overflow-y-auto md:overflow-hidden md:flex-row md:max-h-[443px] md:max-w-[640px]">
@@ -39,10 +39,10 @@
             {{ career.description }}
           </li>
         </ul>
-        <h4 class="font-roboto font-medium text-base text-gray-800 leading-[26px]">
+        <h4 v-if="hasAwards" class="font-roboto font-medium text-base text-gray-800 leading-[26px]">
           Penghargaan
         </h4>
-        <ul class="mb-6 list-disc">
+        <ul v-if="hasAwards" class="mb-6 list-disc">
           <li v-for="award in profile[selectedProfile].awards" :key="award.id" class="font-lato text-sm text-gray-800 leading-6 ml-6">
             {{ award.description }}
           </li>
@@ -102,6 +102,11 @@ export default {
     return {
       selectedProfile: 'gubernur',
       profile: GOVERNOR_PROFILE
+    }
+  },
+  computed: {
+    hasAwards () {
+      return Array.isArray(this.profile[this.selectedProfile].awards) && this.profile[this.selectedProfile].awards.length > 0
     }
   },
   watch: {

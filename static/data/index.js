@@ -610,90 +610,96 @@ export const archiveAndDocumentTopics = [
 export const PREVIOUS_GOVERNORS = [
   {
     id: 1,
+    name: 'Mochamad Ridwan Kamil',
+    period: 'September 2018 - September 2023',
+    image: '/images/about/pimpinan/ridwan-kamil-small.png'
+  },
+  {
+    id: 2,
     name: 'Ahmad Heryawan',
     period: 'Juni 2008 - Juni 2018',
     image: '/images/about/pimpinan/ahmad-heryawan.png'
   },
   {
-    id: 2,
+    id: 3,
     name: 'Danny Setiawan',
     period: 'Juni 2003 - Juni 2008',
     image: '/images/about/pimpinan/danny-setiawan.png'
   },
   {
-    id: 3,
+    id: 4,
     name: 'HR. Nuriana',
     period: '1993 - Juni 2003',
     image: '/images/about/pimpinan/nuriana.png'
   },
   {
-    id: 4,
+    id: 5,
     name: 'Yogie Suardi Memet',
     period: '1985 - 1993',
     image: '/images/about/pimpinan/yogie.png'
   },
   {
-    id: 5,
+    id: 6,
     name: 'Aang Kunaefi',
     period: '1975 - 1985',
     image: '/images/about/pimpinan/aang.png'
   },
   {
-    id: 6,
+    id: 7,
     name: 'Solihin GP',
     period: '1970 - 1974',
     image: '/images/about/pimpinan/solihin.png'
   },
   {
-    id: 7,
+    id: 8,
     name: 'Mashudi',
     period: '1960 - 1970',
     image: '/images/about/pimpinan/mashudi.png'
   },
   {
-    id: 8,
+    id: 9,
     name: 'Ipik Gandamana',
     period: '1956 - 1959',
     image: '/images/about/pimpinan/ipik.png'
   },
   {
-    id: 9,
+    id: 10,
     name: 'Sanusi Hardjadinata',
     period: '1951 - 1956',
     image: '/images/about/pimpinan/sanusi.png'
   },
   {
-    id: 10,
+    id: 11,
     name: 'R. Mas Sewaka',
     period: '1950 - 1956',
     image: '/images/about/pimpinan/sewaka.png'
   },
   {
-    id: 11,
+    id: 12,
     name: 'Ukar Bratakusumah',
     period: '1948 - 1950',
     image: '/images/about/pimpinan/ukar.png'
   },
   {
-    id: 12,
+    id: 13,
     name: 'R. Mas Sewaka',
     period: '1946 - 1948',
     image: '/images/about/pimpinan/sewaka.png'
   },
   {
-    id: 13,
+    id: 14,
     name: 'Murdjani',
     period: '1946 - 1946',
     image: '/images/about/pimpinan/murdjani.png'
   },
   {
-    id: 14,
+    id: 15,
     name: 'Datuk Djamin',
     period: '1945 - 1945',
     image: '/images/about/pimpinan/datuk.png'
   },
   {
-    id: 15,
+    id: 16,
     name: 'Mas Sutardjo Kertohadikusumo',
     period: '1945 - 1945',
     image: '/images/about/pimpinan/sutardjo.png'
@@ -702,72 +708,53 @@ export const PREVIOUS_GOVERNORS = [
 
 export const GOVERNOR_PROFILE = {
   gubernur: {
-    name: 'Dr. (H.C.) H. Mochamad Ridwan Kamil, ST., MUD.',
-    dateOfBirth: 'Bandung, 4 Oktober 1971',
+    title: 'PJ Gubernur',
+    name: 'Bey Triadi Machmudin, S.E., M.T.',
+    dateOfBirth: 'Cirebon, 15 April 1970',
     educations: [
       {
         id: 1,
-        description: 'Program Magister (S2), Master of Urban Design, UC Berkeley, USA (1999-2001)'
+        description: 'Magister Teknik dari Institut Teknologi Bandung'
       },
       {
         id: 2,
-        description: 'Program Sarjana (S1), Sarjana Teknik Arsitektur, Institut Teknologi Bandung (1990-1995)'
-      },
-      {
-        id: 3,
-        description: 'SMAN 3 Bandung (1984-1987)'
+        description: 'Sarjana Ekonomi dari Universitas Katolik Parahyangan'
       }
     ],
     careers: [
       {
         id: 1,
-        description: 'Gubernur Provinsi Jawa Barat (2018-sekarang)'
+        description: 'Penjabat Gubernur Jawa Barat (5 September - sekarang)'
       },
       {
         id: 2,
-        description: 'Walikota Bandung (2013-2018)'
+        description: 'Deputi Bidang Protokol, Pers, dan Media Sekretariat Presiden Republik Indonesia (2021 - 2023)'
       },
       {
         id: 3,
-        description: 'Dosen'
+        description: 'Asisten Deputi Dokumentasi dan Diseminasi Informasi di Sekretariat Wakil Presiden Republik Indonesia'
       },
       {
         id: 4,
-        description: 'Profesional Arsitek'
-      }
-    ],
-    awards: [
-      {
-        id: 1,
-        description: 'Penghargaan Nirwasita Tantra dari Kementerian Lingkungan Hidup dan Kehutanan RI (2022)'
-      },
-      {
-        id: 2,
-        description: 'Best Governor for Healthcare and Action Against Pandemi dari Indonesia Awards (2021)'
-      },
-      {
-        id: 3,
-        description: 'Kepala Daerah Inovatif 2021 untuk penghargaan Inovasi Pikobar sebagai Layanan Publik terbaik dalam penanganan pandemi Covid-19 (2021)'
-      },
-      {
-        id: 4,
-        description: 'Penghargaan Anugerah Media Humas Indonesia sebagai Gubernur Terpopuler di media digital (2021)'
+        description: 'Kepala Biro Pers, Media dan Informasi Sekretariat Presiden Republik Indonesia (Setpres RI)(2015)'
       },
       {
         id: 5,
-        description: 'The Best 7 Asia Governor dari Asia Business Info (2020)'
+        description: 'Komisaris PT Pertamina Patra Niaga (2019 - 2020)'
       },
       {
         id: 6,
-        description: 'Dr. (H.C) in Public Administration (Gelar Doktor Kehormatan Bidang Administrasi Publik) dari Dong-A University, South Korea (2019)'
+        description: 'Komisaris PT Kialng Pertamina Internasional (2021)'
       }
     ],
-    about: 'Berlatar belakang sebagai seorang arsitek, dosen, aktivis sosial dan pernah memimpin Pemerintah Kota Bandung sebagai Walikota, Ridwan Kamil kini menjabat sebagai Gubernur Provinsi Jawa Barat periode 2018-2023 dengan mengusung visi mewujudkan Jawa Barat Juara Lahir Batin dengan Inovasi dan Kolaborasi.',
-    image: '/images/about/profil/ridwan-kamil.png',
-    lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/LHKPN%20Gubernur%20Jabar%20-%20Ridwan%20Kamil.pdf',
-    instagram: 'ridwankamil'
+    awards: [],
+    about: 'Birokrat Indonesia yang menjabat Deputi Bidang Protokol, Pers, dan Media Sekretariat Presiden Republik Indonesia sejak 2021. Presiden Joko Widodo menunjuk menjadi Penjabat Gubernur Jawa Barat pada 5 September 2023 dilantik oleh Menteri Dalam Negeri RI.',
+    image: '/images/about/profil/bey-triadi-machmudin.png',
+    lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/1.%20LHKPN_PJ%20Gubernur%20Jabar.pdf',
+    instagram: 'bey.machmudin'
   },
   'wakil gubernur': {
+    title: 'Wakil Gubernur',
     name: 'H. Uu Ruzhanul Ulum, SE.',
     dateOfBirth: 'Tasikmalaya, 10 Mei 1969',
     educations: [
@@ -830,6 +817,7 @@ export const GOVERNOR_PROFILE = {
     instagram: 'ruzhanul'
   },
   'sekretaris daerah': {
+    title: 'Plh Sekretaris Daerah',
     name: 'Dr. Ir. Setiawan Wangsaatmaja, Dipl., S.E., M.Eng.',
     dateOfBirth: 'Bandung, 26 Agustus 1963',
     educations: [
@@ -896,7 +884,7 @@ export const GOVERNOR_PROFILE = {
     ],
     about: 'Memulai karir politiknya sebagai Aparatur Sipil Negara di Badan Pengendalian Lingkungan Hidup Daerah (BPLHD) Provinsi Jawa Barat beserta pengalaman kepemimpinannya sebagai Deputi Bidang SDM di Kementerian PAN RB selama 7 tahun, kini Setiawan Wangsaatmaja yang menjabat sebagai Sekretaris Daerah Provinsi Jawa Barat bersama dengan Gubernur dan Wakil Gubernur terpilih memiliki visi untuk mewujudkan Jawa Barat Juara Lahir Batin dengan inovasi dan kolaborasi di tahun 2018-2023.',
     image: '/images/about/profil/setiawan-wangsaatmaja.png',
-    lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/LHKPN%20Sekda%20Jabar%20-%20Setiawan.pdf',
+    lhkpn: 'https://file.jabarprov.go.id/live/media/docs/west-java-profiles/1.%20LHKPN%20SEKRETARIAT%20DAERAH.pdf',
     instagram: 'swangsaatmaja'
   }
 }

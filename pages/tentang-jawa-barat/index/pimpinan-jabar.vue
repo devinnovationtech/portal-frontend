@@ -12,30 +12,23 @@
           <h3 class="mb-3 font-lora font-bold text-2xl leading-9 text-white text-center md:mx-auto">
             Struktur Pimpinan Provinsi Jawa Barat
           </h3>
-          <p class="font-lora font-bold text-green-100 text-center">
-            Periode 2018-2023
+          <p class="font-lora font-medium text-green-50 text-center">
+            Periode 2023 - Sekarang
           </p>
         </div>
         <div class="grid grid-cols-2 min-w-0 md:grid-cols-4 w-full gap-4">
           <AboutJabarLeadersCard
-            position="Gubernur"
-            name="Dr. (H.C.) H. Mochamad Ridwan Kamil, ST., MUD."
-            image="/images/about/pimpinan/ridwan-kamil.png"
+            position="PJ Gubernur"
+            name="Bey Triadi Machmudin, S.E., M.T."
+            image="/images/about/pimpinan/plh-gubernur-bey-triadi-machmudin.png"
             class="col-span-2 p-4 bg-green-700 rounded-2xl flex flex-col justify-center items-center w-full min-w-[200px]"
             @click="setSelectedProfile('gubernur')"
           />
           <AboutJabarLeadersCard
-            position="Wakil Gubernur"
-            name="H. Uu Ruzhanul Ulum, SE."
-            image="/images/about/pimpinan/ruzhanul-ulum.png"
-            class="col-span-2 p-4 bg-green-700 rounded-2xl flex flex-col justify-center items-center w-full min-w-[200px]"
-            @click="setSelectedProfile('wakil gubernur')"
-          />
-          <AboutJabarLeadersCard
-            position="Sekretaris Daerah"
+            position="Plh Sekretaris Daerah"
             name="Dr. Ir. Setiawan Wangsaatmaja, Dipl., S.E., M.Eng."
             image="/images/about/pimpinan/setiawan-wangsaatmaja.png"
-            class="md:col-start-2 col-span-2 p-4 bg-green-700 rounded-2xl flex flex-col justify-center items-center w-full min-w-[200px]"
+            class="col-span-2 p-4 bg-green-700 rounded-2xl flex flex-col justify-center items-center w-full min-w-[200px]"
             @click="setSelectedProfile('sekretaris daerah')"
           />
         </div>
