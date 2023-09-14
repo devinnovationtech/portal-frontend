@@ -291,8 +291,8 @@ export const navigationMenu = [
       },
       {
         id: 5,
-        title: 'Daftar Informasi Publik',
-        description: 'Daftar informasi publik Pemerintah Provinsi Jawa Barat yang tersedia dan dapat diakses masyarakat',
+        title: 'Informasi yang Wajib Tersedia Setiap Saat',
+        description: 'Informasi yang harus disediakan oleh Badan Publik dan siap tersedia apabila terdapat Permohon Informasi Publik.',
         icon: '/icons/navigation/informasi.svg',
         link: 'https://ppid.jabarprov.go.id/page/3448-Daftar-Informasi-Publik'
       },
@@ -323,6 +323,13 @@ export const navigationMenu = [
         description: 'Informasi tata cara pengaduan penyalahgunaan wewenang atau pelanggaran yang dilakukan oleh Pejabat Badan Publik',
         icon: '/icons/navigation/informasi.svg',
         link: 'https://ppid.jabarprov.go.id/page/3900-Tata-Cara-Pengaduan-Penyalahgunaan-Wewenang-atau-Pelaporan-Yang-Dilakukan-oleh-Pejabat-Badan-Publik'
+      },
+      {
+        id: 10,
+        title: 'Daftar Informasi Dikecualikan ',
+        description: 'Daftar informasi yang tidak dapat diakses oleh Pemohon Informasi Publik sebagaimana dimaksud dalam UU No 14 Tahun 2008 tentang Keterbukaan Informasi Publik',
+        icon: '/icons/navigation/informasi.svg',
+        link: 'https://ppid.jabarprov.go.id/page/5095-Informasi-Dikecualikan'
       }
     ],
     gtagEvent: 'click_menu_ppid',
