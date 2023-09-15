@@ -731,7 +731,7 @@ export const GOVERNOR_PROFILE = {
     careers: [
       {
         id: 1,
-        description: 'Penjabat Gubernur Jawa Barat (5 September - sekarang)'
+        description: 'Penjabat Gubernur Jawa Barat (5 September 2023 - sekarang)'
       },
       {
         id: 2,
@@ -751,7 +751,7 @@ export const GOVERNOR_PROFILE = {
       },
       {
         id: 6,
-        description: 'Komisaris PT Kialng Pertamina Internasional (2021)'
+        description: 'Komisaris PT Kilang Pertamina Internasional (2021)'
       }
     ],
     awards: [],
